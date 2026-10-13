@@ -291,3 +291,14 @@ pre {
   margin-top: -10px;
 }
 
+h3.usage,
+h4.usage,
+h5.usage,
+h6.usage {
+  font-size: 100%;
+  font-weight: bold;
+  font-style: normal;
+  font-variant: normal;
+  margin: 1em 0 0.3em 0;
+}
+

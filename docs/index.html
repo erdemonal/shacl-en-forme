@@ -680,7 +680,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
             
             <div id="shapes-usage">
-                <h4>Usage</h4>
+                <h4 class="usage">Usage</h4>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -842,7 +842,7 @@ WHERE {
 }</pre>
                     </div>
                 
-                    <h6>Usage</h6>
+                    <h6 class="usage">Usage</h6>
                     <table class="data">
                         <tbody>
                             <tr>
@@ -906,7 +906,7 @@ WHERE {
                     </div>
 
                 
-                    <h6>Usage</h6>
+                    <h6 class="usage">Usage</h6>
                     <table class="data">
                         <tbody>
                             <tr>
@@ -992,7 +992,7 @@ WHERE {
 }</pre>
                     </div>
                 
-                    <h6>Usage</h6>
+                    <h6 class="usage">Usage</h6>
                     <table class="data">
                         <tbody>
                             <tr>
@@ -1047,7 +1047,7 @@ WHERE {
 }</pre>
                     </div>
                 
-                    <h6>Usage</h6>
+                    <h6 class="usage">Usage</h6>
                     <table class="data">
                         <tbody>
                             <tr>
@@ -1086,7 +1086,7 @@ WHERE {
             <p>
                 Informally, node shapes specify constraints that need to be met with respect to <a href="#dfn-focus-node" class="internalDFN" data-link-type="dfn">focus nodes</a>. In contrast to <a href="#dfn-property-shape" class="internalDFN" data-link-type="dfn">property shapes</a>                they primarily apply to the focus node itself, not to its property values.
             </p>
-            <h4>Usage</h4>
+            <h4 class="usage">Usage</h4>
             <table class="data">
                 <tbody>
                     <tr>
@@ -1140,7 +1140,7 @@ ex:ExamplePropertyShape
 	sh:description "We need at least one email value" ;
 	sh:minCount 1 .</pre>
 
-            <h4>Usage</h4>
+            <h4 class="usage">Usage</h4>
             <table class="data">
                 <tbody>
                     <tr>
@@ -1297,7 +1297,7 @@ SHACL Property path: [ sh:alternativePath ( ex:father ex:mother  ) ]</pre>
 ex:Bob ex:address [ a ex:PostalAddress ; ex:city ex:Berlin ] .
 <span class="focus-node-error">ex:Carol</span> ex:address [ ex:city ex:Cairo ] .</pre>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -1369,7 +1369,7 @@ ex:Bob ex:address [ a ex:PostalAddress ; ex:city ex:Berlin ] .
 <span class="focus-node-error">ex:Bob</span> ex:age "twenty two" .
 <span class="focus-node-error">ex:Carol</span> ex:age "23"^^xsd:int .</pre>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -1444,7 +1444,7 @@ ex:Bob ex:address [ a ex:PostalAddress ; ex:city ex:Berlin ] .
                 <pre class="example-data">ex:Bob ex:knows ex:Alice .
 	ex:Alice ex:knows <span class="focus-node-error">"Bob"</span> .</pre>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -1527,7 +1527,7 @@ HAVING (COUNT(DISTINCT ?value) &lt; $minCount)</pre>
                 <pre class="example-data">ex:Alice ex:name "Alice" .
 <span class="focus-node-error">ex:Bob</span> ex:givenName "Bob"@en .</pre>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -1601,7 +1601,7 @@ HAVING (COUNT(DISTINCT ?value) > $maxCount)</pre>
 
                 <pre class="example-data">ex:Bob ex:birthDate "May 5th 1990" .</pre>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -1683,7 +1683,7 @@ HAVING (COUNT(DISTINCT ?value) > $maxCount)</pre>
 }</pre>
                 </div>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -1740,7 +1740,7 @@ HAVING (COUNT(DISTINCT ?value) > $maxCount)</pre>
 }</pre>
                 </div>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -1797,7 +1797,7 @@ HAVING (COUNT(DISTINCT ?value) > $maxCount)</pre>
 }</pre>
                 </div>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -1854,7 +1854,7 @@ HAVING (COUNT(DISTINCT ?value) > $maxCount)</pre>
 }</pre>
                 </div>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -1927,7 +1927,7 @@ HAVING (COUNT(DISTINCT ?value) > $maxCount)</pre>
 }</pre>
                 </div>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -2001,7 +2001,7 @@ HAVING (COUNT(DISTINCT ?value) > $maxCount)</pre>
                 <pre class="example-data">ex:Bob ex:password "123456789" .
 <span class="focus-node-error">ex:Alice</span> ex:password "1234567890ABC" .</pre>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -2082,7 +2082,7 @@ HAVING (COUNT(DISTINCT ?value) > $maxCount)</pre>
 ex:Alice ex:bCode "B102" .
 <span class="focus-node-error">ex:Carol</span> ex:bCode "C103" .</pre>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -2186,7 +2186,7 @@ ASK {
 	ex:prefLabel "Berg"@de ;
 	ex:prefLabel ex:BergLabel .</pre>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -2276,7 +2276,7 @@ WHERE {
 	ex:label "Bob"@en ;
 	ex:label "Bobby"@en .</pre>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -2355,7 +2355,7 @@ WHERE {
 	ex:firstName "Bob" ;
 	ex:givenName "Bob" .</pre>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -2435,7 +2435,7 @@ WHERE {
 	ex:prefLabel "Germany" ;
 	ex:altLabel "Germany" .</pre>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -2509,7 +2509,7 @@ WHERE {
 		sh:lessThan ex:endDate ;
 	] .</pre>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -2573,7 +2573,7 @@ WHERE {
 }</pre>
                 </div>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -2649,7 +2649,7 @@ WHERE {
 	] .</pre>
                 <pre class="example-data"><span class="focus-node-error">ex:InvalidInstance1</span> ex:property "Some value" .</pre>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -2737,7 +2737,7 @@ ex:ExampleAndShape
 	ex:property "One" ;
 	ex:property "Two" .</pre>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -2832,7 +2832,7 @@ ex:ExampleAndShape
 	] .</pre>
                 <pre class="example-data">ex:Bob ex:address "123 Prinzengasse, Vaduz, Liechtenstein" .</pre>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -2928,7 +2928,7 @@ ex:Carla a ex:Person ;
 	ex:lastName "Dunce" ;
 	ex:fullName "Dory Dunce" .</pre>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -3032,7 +3032,7 @@ ex:RetosAddress
 	]
 ] .</pre>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -3096,7 +3096,7 @@ ex:RetosAddress
                         data-link-type="dfn">property shape</a> although it is reached via different paths in the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-shapes-graph" class="internalDFN" data-link-type="dfn">shapes graph</a>.
                 </p>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -3250,7 +3250,7 @@ ex:Jane
 		sh:qualifiedMaxCount 4 ;
 	] .</pre>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
 
                 <h6><code>sh:qualifiedValueShape</code></h6>
                 <table class="data">
@@ -3424,7 +3424,7 @@ WHERE {
 	ex:firstName "Bob" ;
 	ex:middleInitial "J" .</pre>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
 
                 <h6><code>sh:closed</code></h6>
                 <table class="data">
@@ -3516,7 +3516,7 @@ WHERE {
 	ex:alumniOf ex:Harvard ;
 	ex:alumniOf ex:Stanford .</pre>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -3593,7 +3593,7 @@ WHERE {
 
                 <pre class="example-data">ex:RainbowPony ex:color ex:Pink .</pre>
             
-                <h5>Usage</h5>
+                <h5 class="usage">Usage</h5>
                 <table class="data">
                     <tbody>
                         <tr>
@@ -3654,7 +3654,7 @@ WHERE {
         
         
     
-        <h3>Usage</h3>
+        <h3 class="usage">Usage</h3>
         <table class="data">
             <tbody>
                 <tr>
