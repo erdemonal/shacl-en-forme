@@ -352,9 +352,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             Section 4 covers SPARQL-based constraints.
         </p>
         <p>
-            The syntax of SHACL is RDF. Examples use Turtle [<cite><a class="bibref" href="#bib-turtle">turtle</a></cite>]. Other RDF serializations
-            such as RDF/XML may be used in practice. The reader should be familiar with basic RDF concepts [<cite><a class="bibref" href="#bib-rdf11-concepts">rdf11-concepts</a></cite>] such as triples and, for SPARQL-based features of SHACL, with SPARQL
-            [<cite><a class="bibref" href="#bib-sparql11-query">sparql11-query</a></cite>].
+            The syntax of SHACL is RDF. Examples use Turtle [<cite><a class="bibref" href="https://www.w3.org/TR/2017/REC-shacl-20170720/#bib-turtle">turtle</a></cite>]. Other RDF serializations
+            such as RDF/XML may be used in practice. The reader should be familiar with basic RDF concepts [<cite><a class="bibref" href="https://www.w3.org/TR/2017/REC-shacl-20170720/#bib-rdf11-concepts">rdf11-concepts</a></cite>] such as triples and, for SPARQL-based features of SHACL, with SPARQL
+            [<cite><a class="bibref" href="https://www.w3.org/TR/2017/REC-shacl-20170720/#bib-sparql11-query">sparql11-query</a></cite>].
         </p>
     </section>
 
@@ -389,8 +389,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     <a href="https://www.w3.org/TR/rdf11-concepts/#dfn-subject"><dfn data-dfn-type="dfn" id="dfn-subject">subject</dfn></a>,
                     <a href="https://www.w3.org/TR/rdf11-concepts/#dfn-predicate"><dfn data-dfn-type="dfn" id="dfn-predicate">predicate</dfn></a>, and
                     <a href="https://www.w3.org/TR/rdf11-concepts/#dfn-object"><dfn data-dfn-type="dfn" id="dfn-object">object</dfn></a> of RDF triples, and
-                    <a href="https://www.w3.org/TR/rdf11-concepts/#dfn-datatype"><dfn data-dfn-type="dfn" id="dfn-datatype">datatype</dfn></a> as defined in RDF 1.1 Concepts and Abstract Syntax [<cite><a class="bibref" href="#bib-rdf11-concepts">rdf11-concepts</a></cite>].
-                    <dfn data-dfn-type="dfn" id="dfn-language-tags">Language tags</dfn> are defined as in [<cite><a class="bibref" href="#bib-BCP47">BCP47</a></cite>].
+                    <a href="https://www.w3.org/TR/rdf11-concepts/#dfn-datatype"><dfn data-dfn-type="dfn" id="dfn-datatype">datatype</dfn></a> as defined in RDF 1.1 Concepts and Abstract Syntax [<cite><a class="bibref" href="https://www.w3.org/TR/2017/REC-shacl-20170720/#bib-rdf11-concepts">rdf11-concepts</a></cite>].
+                    <dfn data-dfn-type="dfn" id="dfn-language-tags">Language tags</dfn> are defined as in [<cite><a class="bibref" href="https://www.w3.org/TR/2017/REC-shacl-20170720/#bib-BCP47">BCP47</a></cite>].
                 </div>
             </div>
             <div class="def">
@@ -521,7 +521,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 # Elements highlighted in blue are <a href="#dfn-focus-node" class="internalDFN" data-link-type="dfn">focus nodes</a>
 <span class="focus-node-selected">ex:Bob</span> a ex:Person .
 
-# Elements highlighted in red are focus nodes that fail <a href="#validation">validation</a>
+# Elements highlighted in red are focus nodes that fail <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#validation">validation</a>
 <span class="focus-node-error">ex:Alice</span> a ex:Person .</pre>
 
             <pre class="example-results"># This box represents an output results graph</pre>
@@ -535,7 +535,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             </div>
 
             <p class="syntax">
-                Grey boxes such as this include syntax rules that apply to the <a href="#dfn-shapes-graph" class="internalDFN" data-link-type="dfn">shapes graph</a>.
+                Grey boxes such as this include syntax rules that apply to the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-shapes-graph" class="internalDFN" data-link-type="dfn">shapes graph</a>.
             </p>
 
             <p>
@@ -584,9 +584,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                         <div><a href="#targetSubjectsOf">sh:targetSubjectsOf</a> : rdf:Property</div>
                     </div>
                     <div class="diagram-class-properties-section">
-                        <div><a href="#deactivated">sh:deactivated</a> : xsd:boolean</div>
-                        <div><a href="#message">sh:message</a> : xsd:string or rdf:langString</div>
-                        <div><a href="#severity">sh:severity</a> : sh:Severity</div>
+                        <div><a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#deactivated">sh:deactivated</a> : xsd:boolean</div>
+                        <div><a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#message">sh:message</a> : xsd:string or rdf:langString</div>
+                        <div><a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#severity">sh:severity</a> : sh:Severity</div>
                     </div>
                 </div>
             </div>
@@ -616,10 +616,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                             <div><a href="#NodeConstraintComponent">sh:node</a> : sh:NodeShape</div>
                         </div>
                         <div class="diagram-class-properties-section">
-                            <div><a href="#name">sh:name</a> : xsd:string or rdf:langString</div>
-                            <div><a href="#description">sh:description</a> : xsd:string or rdf:langString</div>
-                            <div><a href="#defaultValue">sh:defaultValue</a> : any</div>
-                            <div><a href="#group">sh:group</a> : sh:PropertyGroup</div>
+                            <div><a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#name">sh:name</a> : xsd:string or rdf:langString</div>
+                            <div><a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#description">sh:description</a> : xsd:string or rdf:langString</div>
+                            <div><a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#defaultValue">sh:defaultValue</a> : any</div>
+                            <div><a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#group">sh:group</a> : sh:PropertyGroup</div>
                         </div>
                         <div class="diagram-class-properties-section">
                             <div><a href="#property-shapes">sh:path</a> : rdfs:Resource</div>
@@ -639,7 +639,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             </h3>
             <div class="syntax" data-syntax-rule="shape" id="syntax-rule-shape">
                 A <dfn data-dfn-type="dfn" id="dfn-shape">shape</dfn> is an <a href="#dfn-iri" class="internalDFN" data-link-type="dfn">IRI</a> or <a href="#dfn-blank-node" class="internalDFN" data-link-type="dfn">blank node</a> <code>s</code> that fulfills
-                at least one of the following conditions in the <a href="#dfn-shapes-graph" class="internalDFN" data-link-type="dfn">shapes graph</a>:
+                at least one of the following conditions in the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-shapes-graph" class="internalDFN" data-link-type="dfn">shapes graph</a>:
                 <ul>
                     <li>
                         <code>s</code> is a <a href="#dfn-shacl-instance" class="internalDFN" data-link-type="dfn">SHACL instance</a> of <code>sh:NodeShape</code> or <code>sh:PropertyShape</code>.
@@ -653,15 +653,15 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                             data-link-type="dfn">predicate</a>.
                     </li>
                     <li>
-                        <code>s</code> is a <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> of a <a href="#dfn-shape-expecting-constraint-parameters" class="internalDFN" data-link-type="dfn">shape-expecting</a>, non-<a href="#dfn-list-taking-constraint-parameters"
-                            class="internalDFN" data-link-type="dfn">list-taking</a> <a href="#dfn-parameters" class="internalDFN" data-link-type="dfn">parameter</a> such as <code>sh:node</code>, or a <a href="#dfn-members" class="internalDFN" data-link-type="dfn">member</a>                        of a <a href="#dfn-shacl-list" class="internalDFN" data-link-type="dfn">SHACL list</a> that is a <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> of a <a href="#dfn-shape-expecting-constraint-parameters"
-                            class="internalDFN" data-link-type="dfn">shape-expecting</a> and <a href="#dfn-list-taking-constraint-parameters" class="internalDFN" data-link-type="dfn">list-taking</a> parameter such as <code>sh:or</code>.
+                        <code>s</code> is a <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> of a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-shape-expecting-constraint-parameters" class="internalDFN" data-link-type="dfn">shape-expecting</a>, non-<a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-list-taking-constraint-parameters"
+                            class="internalDFN" data-link-type="dfn">list-taking</a> <a href="#dfn-parameters" class="internalDFN" data-link-type="dfn">parameter</a> such as <code>sh:node</code>, or a <a href="#dfn-members" class="internalDFN" data-link-type="dfn">member</a>                        of a <a href="#dfn-shacl-list" class="internalDFN" data-link-type="dfn">SHACL list</a> that is a <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> of a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-shape-expecting-constraint-parameters"
+                            class="internalDFN" data-link-type="dfn">shape-expecting</a> and <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-list-taking-constraint-parameters" class="internalDFN" data-link-type="dfn">list-taking</a> parameter such as <code>sh:or</code>.
                     </li>
                 </ul>
             </div>
             <p>
-                Note that the definition above does not include all of the syntax rules of <a href="#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> shapes. Those rules are defined throughout SHACL 1.0 and summarized in its
-                <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#syntax-rules" class="sec-ref">Appendix B, Summary of SHACL Syntax Rules</a>. For example, shapes that have <a href="#dfn-literal" class="internalDFN" data-link-type="dfn">literals</a> as values for <code>sh:targetClass</code>                    are <a href="#dfn-ill-formed" class="internalDFN" data-link-type="dfn">ill-formed</a>.
+                Note that the definition above does not include all of the syntax rules of <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> shapes. Those rules are defined throughout SHACL 1.0 and summarized in its
+                <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#syntax-rules" class="sec-ref">Appendix B, Summary of SHACL Syntax Rules</a>. For example, shapes that have <a href="#dfn-literal" class="internalDFN" data-link-type="dfn">literals</a> as values for <code>sh:targetClass</code>                    are <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-ill-formed" class="internalDFN" data-link-type="dfn">ill-formed</a>.
             </p>
             <p>
                 Informally, a shape determines how to validate a <a href="#dfn-focus-node" class="internalDFN" data-link-type="dfn">focus node</a> based on the <a href="#dfn-value" class="internalDFN" data-link-type="dfn">values</a> of properties and
@@ -716,7 +716,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 </p>
                 <p>
                     For a <a href="#dfn-constraint-component" class="internalDFN" data-link-type="dfn">constraint component</a> <code>C</code> with <a href="#dfn-mandatory-parameters" class="internalDFN" data-link-type="dfn">mandatory parameters</a> <code>p1</code>,
-                    ... <code>pn</code>, a <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a> <code>s</code> in a <a href="#dfn-shapes-graph" class="internalDFN" data-link-type="dfn">shapes graph</a> <code>SG</code> <em>declares</em>                    a <dfn data-dfn-type="dfn" id="dfn-constraint">constraint</dfn> that has <dfn data-dfn-type="dfn" id="dfn-kind">kind</dfn> <code>C</code> with <a href="#dfn-mandatory-parameters" class="internalDFN" data-link-type="dfn">mandatory parameter</a>                    <a href="#dfn-value" class="internalDFN" data-link-type="dfn">values</a> <code>&lt;p1,v1&gt;</code>, ... <code>&lt;pn,vn&gt;</code> in <code>SG</code> when <code>s</code> has <code>vi</code> as a <a href="#dfn-value" class="internalDFN"
+                    ... <code>pn</code>, a <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a> <code>s</code> in a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-shapes-graph" class="internalDFN" data-link-type="dfn">shapes graph</a> <code>SG</code> <em>declares</em>                    a <dfn data-dfn-type="dfn" id="dfn-constraint">constraint</dfn> that has <dfn data-dfn-type="dfn" id="dfn-kind">kind</dfn> <code>C</code> with <a href="#dfn-mandatory-parameters" class="internalDFN" data-link-type="dfn">mandatory parameter</a>                    <a href="#dfn-value" class="internalDFN" data-link-type="dfn">values</a> <code>&lt;p1,v1&gt;</code>, ... <code>&lt;pn,vn&gt;</code> in <code>SG</code> when <code>s</code> has <code>vi</code> as a <a href="#dfn-value" class="internalDFN"
                         data-link-type="dfn">value</a> for <code>pi</code> in <code>SG</code>. For constraint components with <a href="#dfn-optional-parameters" class="internalDFN" data-link-type="dfn">optional parameters</a>, the constraint declaration consists
                     of the <a href="#dfn-value" class="internalDFN" data-link-type="dfn">values</a> that the shape has for all mandatory and optional parameters of that component.
                 </p>
@@ -735,7 +735,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 	] .</pre>
                 <p class="syntax" data-syntax-rule="multiple-parameters" id="syntax-rule-multiple-parameters">
                     Some constraint components such as <a href="#PatternConstraintComponent"><code>sh:PatternConstraintComponent</code></a> declare more than one parameter. Shapes that have more than one value for any of the parameters of such components
-                    are <a href="#dfn-ill-formed" class="internalDFN" data-link-type="dfn">ill-formed</a>.
+                    are <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-ill-formed" class="internalDFN" data-link-type="dfn">ill-formed</a>.
                 </p>
                 <p>
                     One way to bypass this syntax rule is to spread the constraints across multiple (property) shapes, as illustrated in the following example.
@@ -758,7 +758,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     component.
                 </p>
                 <p>
-                    The list of constraint components included in SHACL Core is described in <a href="#core-components">section 3</a>. SHACL-SPARQL can be used to declare additional <a href="#sparql-constraint-components">constraint components based on SPARQL</a>.
+                    The list of constraint components included in SHACL Core is described in <a href="#core-components">section 3</a>. SHACL-SPARQL can be used to declare additional <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#sparql-constraint-components">constraint components based on SPARQL</a>.
                 </p>
             </section>
 
@@ -768,7 +768,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 <h4 id="x2.1.2-focus-nodes" resource="#x2.1.2-focus-nodes"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.2 </span>Focus Nodes</span>
                 </h4>
                 <p>
-                    An <a href="#dfn-rdf-term" class="internalDFN" data-link-type="dfn">RDF term</a> that is <a href="#dfn-validation" class="internalDFN" data-link-type="dfn">validated</a> against a <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a>                    using the triples from a <a href="#dfn-data-graph" class="internalDFN" data-link-type="dfn">data graph</a> is called a <dfn data-dfn-type="dfn" id="dfn-focus-node">focus node</dfn>.
+                    An <a href="#dfn-rdf-term" class="internalDFN" data-link-type="dfn">RDF term</a> that is <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation" class="internalDFN" data-link-type="dfn">validated</a> against a <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a>                    using the triples from a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-data-graph" class="internalDFN" data-link-type="dfn">data graph</a> is called a <dfn data-dfn-type="dfn" id="dfn-focus-node">focus node</dfn>.
                 </p>
                 <p><em>The remainder of this section is informative.</em></p>
                 <p>
@@ -776,7 +776,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 </p>
                 <ul>
                     <li>specified in a <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a> using <a href="#dfn-target-declarations" class="internalDFN" data-link-type="dfn">target declarations</a></li>
-                    <li>specified in any <a href="#dfn-constraint" class="internalDFN" data-link-type="dfn">constraint</a> that references a <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a> in parameters of <a href="#dfn-shape-expecting-constraint-parameters"
+                    <li>specified in any <a href="#dfn-constraint" class="internalDFN" data-link-type="dfn">constraint</a> that references a <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a> in parameters of <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-shape-expecting-constraint-parameters"
                             class="internalDFN" data-link-type="dfn">shape-expecting constraint parameters</a> (e.g. <code>sh:node</code>)</li>
                     <li>specified as explicit input to the SHACL processor for validating a specific RDF term against a shape</li>
                 </ul>
@@ -785,12 +785,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 <h4 id="x2.1.3-targets" resource="#x2.1.3-targets"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.3 </span>Targets</span>
                 </h4>
                 <p>
-                    <dfn data-dfn-type="dfn" id="dfn-target-declarations">Target declarations</dfn> of a <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a> in a <a href="#dfn-shapes-graph" class="internalDFN" data-link-type="dfn">shapes graph</a>                    are
+                    <dfn data-dfn-type="dfn" id="dfn-target-declarations">Target declarations</dfn> of a <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a> in a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-shapes-graph" class="internalDFN" data-link-type="dfn">shapes graph</a>                    are
                     <a href="#dfn-rdf-triple" class="internalDFN" data-link-type="dfn">triples</a> with the <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a> as the <a href="#dfn-subject" class="internalDFN" data-link-type="dfn">subject</a>                    and certain properties described in this document (e.g., <code>sh:targetClass</code>) as <a href="#dfn-predicate" class="internalDFN" data-link-type="dfn">predicates</a>. Target declarations can be used to produce <a href="#dfn-focus-node"
                         class="internalDFN" data-link-type="dfn">focus nodes</a> for a <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a>. The <dfn data-dfn-type="dfn" id="dfn-target">target</dfn> of a <a href="#dfn-target-declarations"
-                        class="internalDFN" data-link-type="dfn">target declaration</a> is the set of RDF terms produced by applying the rules described in the remainder of this section to the <a href="#dfn-data-graph" class="internalDFN" data-link-type="dfn">data graph</a>.
+                        class="internalDFN" data-link-type="dfn">target declaration</a> is the set of RDF terms produced by applying the rules described in the remainder of this section to the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-data-graph" class="internalDFN" data-link-type="dfn">data graph</a>.
                     The <dfn data-dfn-type="dfn" id="dfn-target-of-a-shape">target of a shape</dfn> is the union of all RDF terms produced by the individual
-                    <a href="#dfn-target" class="internalDFN" data-link-type="dfn">targets</a> that are declared by the <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a> in the <a href="#dfn-shapes-graph" class="internalDFN" data-link-type="dfn">shapes graph</a>.
+                    <a href="#dfn-target" class="internalDFN" data-link-type="dfn">targets</a> that are declared by the <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a> in the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-shapes-graph" class="internalDFN" data-link-type="dfn">shapes graph</a>.
                 </p>
                 <p>
                     SHACL Core includes the following kinds of targets:
@@ -801,9 +801,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 </p>
                 <p><em>The remainder of this introduction is informative.</em></p>
                 <p>
-                    RDF terms produced by targets are not required to exist as nodes in the <a href="#dfn-data-graph" class="internalDFN" data-link-type="dfn">data graph</a>. Targets of a shape are ignored whenever a focus node is provided directly as
+                    RDF terms produced by targets are not required to exist as nodes in the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-data-graph" class="internalDFN" data-link-type="dfn">data graph</a>. Targets of a shape are ignored whenever a focus node is provided directly as
                     input to the validation process for that shape. This includes the cases where the shape is a value of one of the
-                    <a href="#dfn-shape-expecting-constraint-parameters" class="internalDFN" data-link-type="dfn">shape-expecting constraint parameters</a> (such as <code>sh:node</code>) and a focus node is determined during the validation of the corresponding
+                    <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-shape-expecting-constraint-parameters" class="internalDFN" data-link-type="dfn">shape-expecting constraint parameters</a> (such as <code>sh:node</code>) and a focus node is determined during the validation of the corresponding
                     constraint component (such as <code>sh:NodeConstraintComponent</code>). In such cases, the provided focus node does not need to be in the <a href="#dfn-target-of-a-shape" class="internalDFN" data-link-type="dfn">target of the shape</a>.
                 </p>
 
@@ -816,7 +816,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     </p>
                     <div class="def">
                         <div class="def-header">TEXTUAL DEFINITION</div>
-                        If <code>s</code> is a <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a> in a <a href="#dfn-shapes-graph" class="internalDFN" data-link-type="dfn">shapes graph</a> <code>SG</code> and <code>s</code> has
+                        If <code>s</code> is a <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a> in a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-shapes-graph" class="internalDFN" data-link-type="dfn">shapes graph</a> <code>SG</code> and <code>s</code> has
                         <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> <code>t</code> for <code>sh:targetNode</code> in <code>SG</code> then <code>{ t }</code> is a <a href="#dfn-target" class="internalDFN" data-link-type="dfn">target</a>                        from any data graph for <code>s</code> in <code>SG</code>.
                     </div>
                     <p><em>The remainder of this section is informative.</em></p>
@@ -831,14 +831,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 ex:Bob a ex:Person .</pre>
 
                     <p class="def-sparql">
-                        The following query expresses a potential definition of node targets in SPARQL. The variable <code>targetNode</code> will be <a href="#pre-binding">pre-bound</a> to the given value of <code>sh:targetNode</code>. All <a href="#dfn-binding"
+                        The following query expresses a potential definition of node targets in SPARQL. The variable <code>targetNode</code> will be <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#pre-binding">pre-bound</a> to the given value of <code>sh:targetNode</code>. All <a href="#dfn-binding"
                             class="internalDFN" data-link-type="dfn">bindings</a> of the variable <code>this</code> from the <a href="#dfn-solution" class="internalDFN" data-link-type="dfn">solution</a> become focus nodes.
                     </p>
                     <div class="def def-sparql">
                         <div class="def-header">POTENTIAL DEFINITION IN SPARQL</div>
                         <pre class="def-sparql-body">SELECT DISTINCT ?this    <span class="triple-can-be-skipped"># ?this is the focus node</span>
 WHERE {
-	BIND ($targetNode AS ?this)    <span class="triple-can-be-skipped"># $targetNode is <a href="#pre-binding">pre-bound</a> to ex:Alice</span>
+	BIND ($targetNode AS ?this)    <span class="triple-can-be-skipped"># $targetNode is <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#pre-binding">pre-bound</a> to ex:Alice</span>
 }</pre>
                     </div>
                 
@@ -883,7 +883,7 @@ WHERE {
 <span class="focus-node-selected">ex:Bob</span> a ex:Person .
 ex:NewYork a ex:Place .</pre>
                     <p>
-                        In this example, only <code>ex:Alice</code> and <code>ex:Bob</code> are focus nodes. Note that, according to the <a href="#dfn-shacl-instance" class="internalDFN" data-link-type="dfn">SHACL instance</a> definition, all the <code>rdfs:subClassOf</code>                        declarations needed to walk the class hierarchy need to exist in the <a href="#dfn-data-graph" class="internalDFN" data-link-type="dfn">data graph</a>. However, the <code>ex:Person a rdfs:Class</code> triple is not required to
+                        In this example, only <code>ex:Alice</code> and <code>ex:Bob</code> are focus nodes. Note that, according to the <a href="#dfn-shacl-instance" class="internalDFN" data-link-type="dfn">SHACL instance</a> definition, all the <code>rdfs:subClassOf</code>                        declarations needed to walk the class hierarchy need to exist in the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-data-graph" class="internalDFN" data-link-type="dfn">data graph</a>. However, the <code>ex:Person a rdfs:Class</code> triple is not required to
                         exist in either graphs.
                     </p>
                     <p>
@@ -894,14 +894,14 @@ ex:NewYork a ex:Place .</pre>
 ex:House a ex:Nephrologist .</pre>
 
                     <p class="def-sparql">
-                        The following query expresses a potential definition of class targets in SPARQL. The variable <code>targetClass</code> will be <a href="#pre-binding">pre-bound</a> to the given value of <code>sh:targetClass</code>. All <a href="#dfn-binding"
+                        The following query expresses a potential definition of class targets in SPARQL. The variable <code>targetClass</code> will be <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#pre-binding">pre-bound</a> to the given value of <code>sh:targetClass</code>. All <a href="#dfn-binding"
                             class="internalDFN" data-link-type="dfn">bindings</a> of the variable <code>this</code> from the <a href="#dfn-solution" class="internalDFN" data-link-type="dfn">solutions</a> become focus nodes.
                     </p>
                     <div class="def def-sparql">
                         <div class="def-header">POTENTIAL DEFINITION IN SPARQL</div>
                         <pre class="def-sparql-body">SELECT DISTINCT ?this    <span class="triple-can-be-skipped"># ?this is the focus node</span>
 WHERE {
-	?this rdf:type/rdfs:subClassOf* $targetClass .    <span class="triple-can-be-skipped"># $targetClass is <a href="#pre-binding">pre-bound</a> to ex:Person</span>
+	?this rdf:type/rdfs:subClassOf* $targetClass .    <span class="triple-can-be-skipped"># $targetClass is <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#pre-binding">pre-bound</a> to ex:Person</span>
 }</pre>
                     </div>
 
@@ -928,24 +928,24 @@ WHERE {
                     <h5 id="x2.1.3.3-implicit-class-targets" resource="#x2.1.3.3-implicit-class-targets"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.3.3 </span>Implicit Class Targets</span>
                     </h5>
                     <p>
-                        Informally, if a <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a> is also declared to be a <a href="#dfn-shacl-class" class="internalDFN" data-link-type="dfn">class</a> in the <a href="#dfn-shapes-graph"
+                        Informally, if a <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a> is also declared to be a <a href="#dfn-shacl-class" class="internalDFN" data-link-type="dfn">class</a> in the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-shapes-graph"
                             class="internalDFN" data-link-type="dfn">shapes graph</a> then all <a href="#dfn-shacl-instance" class="internalDFN" data-link-type="dfn">SHACL instances</a> of this class are a target for the shape.
                     </p>
                     <p class="syntax" data-syntax-rule="implicit-targetClass-nodeKind" id="syntax-rule-implicit-targetClass-nodeKind">
                         If <code>s</code> is a <a href="#dfn-shacl-instance" class="internalDFN" data-link-type="dfn">SHACL instance</a> of <code>sh:NodeShape</code> or <code>sh:PropertyShape</code> in an RDF graph <code>G</code> and <code>s</code> is
                         also a <a href="#dfn-shacl-instance" class="internalDFN" data-link-type="dfn">SHACL instance</a> of
-                        <code>rdfs:Class</code> in <code>G</code> and <code>s</code> is not an <a href="#dfn-iri" class="internalDFN" data-link-type="dfn">IRI</a> then <code>s</code> is an <a href="#dfn-ill-formed" class="internalDFN" data-link-type="dfn">ill-formed</a>                        shape in <code>G</code>.
+                        <code>rdfs:Class</code> in <code>G</code> and <code>s</code> is not an <a href="#dfn-iri" class="internalDFN" data-link-type="dfn">IRI</a> then <code>s</code> is an <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-ill-formed" class="internalDFN" data-link-type="dfn">ill-formed</a>                        shape in <code>G</code>.
                     </p>
                     <div class="def">
                         <div class="def-header">TEXTUAL DEFINITION</div>
-                        If <code>s</code> is a <a href="#dfn-shacl-instance" class="internalDFN" data-link-type="dfn">SHACL instance</a> of <code>sh:NodeShape</code> or <code>sh:PropertyShape</code> in a <a href="#dfn-shapes-graph" class="internalDFN"
+                        If <code>s</code> is a <a href="#dfn-shacl-instance" class="internalDFN" data-link-type="dfn">SHACL instance</a> of <code>sh:NodeShape</code> or <code>sh:PropertyShape</code> in a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-shapes-graph" class="internalDFN"
                             data-link-type="dfn">shapes graph</a> <code>SG</code> and <code>s</code> is also a <a href="#dfn-shacl-instance" class="internalDFN" data-link-type="dfn">SHACL instance</a> of <code>rdfs:Class</code> in <code>SG</code> then the
                         set of <a href="#dfn-shacl-instance" class="internalDFN" data-link-type="dfn">SHACL instances</a> of <code>s</code> in a data graph <code>DG</code> is a <a href="#dfn-target" class="internalDFN" data-link-type="dfn">target</a>                        from <code>DG</code> for <code>s</code> in <code>SG</code>.
                     </div>
                     <p><em>The remainder of this section is informative.</em></p>
                     <p>
                         In the following example, <code>ex:Alice</code> is a focus node, because it is a <a href="#dfn-shacl-instance" class="internalDFN" data-link-type="dfn">SHACL instance</a> of
-                        <code>ex:Person</code> which is both a class and a shape in the <a href="#dfn-shapes-graph" class="internalDFN" data-link-type="dfn">shapes graph</a>.
+                        <code>ex:Person</code> which is both a class and a shape in the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-shapes-graph" class="internalDFN" data-link-type="dfn">shapes graph</a>.
                     </p>
                     <pre class="example-shapes">ex:Person
 	<b>a rdfs:Class</b>, sh:NodeShape .</pre>
@@ -981,14 +981,14 @@ ex:Bob ex:livesIn ex:NewYork .</pre>
                     </p>
 
                     <p class="def-sparql">
-                        The following query expresses a potential definition of subjects-of targets in SPARQL. The variable <code>targetSubjectsOf</code> will be <a href="#pre-binding">pre-bound</a> to the given value of <code>sh:targetSubjectsOf</code>.
+                        The following query expresses a potential definition of subjects-of targets in SPARQL. The variable <code>targetSubjectsOf</code> will be <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#pre-binding">pre-bound</a> to the given value of <code>sh:targetSubjectsOf</code>.
                         All <a href="#dfn-binding" class="internalDFN" data-link-type="dfn">bindings</a> of the variable <code>this</code> from the <a href="#dfn-solution" class="internalDFN" data-link-type="dfn">solutions</a> become focus nodes.
                     </p>
                     <div class="def def-sparql">
                         <div class="def-header">POTENTIAL DEFINITION IN SPARQL</div>
                         <pre class="def-sparql-body">SELECT DISTINCT ?this    <span class="triple-can-be-skipped"># ?this is the focus node</span>
 WHERE {
-	?this $targetSubjectsOf ?any .    <span class="triple-can-be-skipped"># $targetSubjectsOf is <a href="#pre-binding">pre-bound</a> to ex:knows</span>
+	?this $targetSubjectsOf ?any .    <span class="triple-can-be-skipped"># $targetSubjectsOf is <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#pre-binding">pre-bound</a> to ex:knows</span>
 }</pre>
                     </div>
                 
@@ -1036,14 +1036,14 @@ ex:Bob ex:livesIn ex:NewYork .</pre>
                     </p>
 
                     <p class="def-sparql">
-                        The following query expresses a potential definition of objects-of targets in SPARQL. The variable <code>targetObjectsOf</code> will be <a href="#pre-binding">pre-bound</a> to the given value of <code>sh:targetObjectsOf</code>.
+                        The following query expresses a potential definition of objects-of targets in SPARQL. The variable <code>targetObjectsOf</code> will be <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#pre-binding">pre-bound</a> to the given value of <code>sh:targetObjectsOf</code>.
                         All <a href="#dfn-binding" class="internalDFN" data-link-type="dfn">bindings</a> of the variable <code>this</code> from the <a href="#dfn-solution" class="internalDFN" data-link-type="dfn">solutions</a> become focus nodes.
                     </p>
                     <div class="def def-sparql">
                         <div class="def-header">POTENTIAL DEFINITION IN SPARQL</div>
                         <pre class="def-sparql-body">SELECT DISTINCT ?this    <span class="triple-can-be-skipped"># ?this is the focus node</span>
 WHERE {
-	?any $targetObjectsOf ?this .    <span class="triple-can-be-skipped"># $targetObjectsOf is <a href="#pre-binding">pre-bound</a> to ex:knows</span>
+	?any $targetObjectsOf ?this .    <span class="triple-can-be-skipped"># $targetObjectsOf is <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#pre-binding">pre-bound</a> to ex:knows</span>
 }</pre>
                     </div>
                 
@@ -1078,7 +1078,7 @@ WHERE {
             <h3 id="x2.2-node-shapes" resource="#x2.2-node-shapes"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.2 </span>Node Shapes</span>
             </h3>
             <p class="syntax">
-                A <dfn data-dfn-type="dfn" id="dfn-node-shape">node shape</dfn> is a <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a> in the <a href="#dfn-shapes-graph" class="internalDFN" data-link-type="dfn">shapes graph</a> that
+                A <dfn data-dfn-type="dfn" id="dfn-node-shape">node shape</dfn> is a <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a> in the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-shapes-graph" class="internalDFN" data-link-type="dfn">shapes graph</a> that
                 is not the <a href="#dfn-subject" class="internalDFN" data-link-type="dfn">subject</a> of a <a href="#dfn-rdf-triple" class="internalDFN" data-link-type="dfn">triple</a> with <code>sh:path</code> as its <a href="#dfn-predicate" class="internalDFN"
                     data-link-type="dfn">predicate</a>. It is recommended, but not required, for a <a href="#dfn-node-shape" class="internalDFN" data-link-type="dfn">node shape</a> to be declared as a <a href="#dfn-shacl-instance" class="internalDFN" data-link-type="dfn">SHACL instance</a>                of <code>sh:NodeShape</code>.
                 <span data-syntax-rule="NodeShape-path-maxCount" id="syntax-rule-NodeShape-path-maxCount"><a href="#dfn-shacl-instance" class="internalDFN" data-link-type="dfn">SHACL instances</a> of <code>sh:NodeShape</code> cannot have a <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> for the property <code>sh:path</code>.</span>
@@ -1101,10 +1101,10 @@ WHERE {
             <h3 id="x2.3-property-shapes" resource="#x2.3-property-shapes"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.3 </span>Property Shapes</span>
             </h3>
             <p class="syntax">
-                <span data-syntax-rule="PropertyShape" id="syntax-rule-PropertyShape">A <dfn data-dfn-type="dfn" id="dfn-property-shape">property shape</dfn> is a <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a> in the <a href="#dfn-shapes-graph" class="internalDFN" data-link-type="dfn">shapes graph</a>
+                <span data-syntax-rule="PropertyShape" id="syntax-rule-PropertyShape">A <dfn data-dfn-type="dfn" id="dfn-property-shape">property shape</dfn> is a <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a> in the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-shapes-graph" class="internalDFN" data-link-type="dfn">shapes graph</a>
 					that is the <a href="#dfn-subject" class="internalDFN" data-link-type="dfn">subject</a> of a <a href="#dfn-rdf-triple" class="internalDFN" data-link-type="dfn">triple</a> that has <code>sh:path</code> as its <a href="#dfn-predicate" class="internalDFN" data-link-type="dfn">predicate</a>.</span>
                 <span data-syntax-rule="path-maxCount" id="syntax-rule-path-maxCount">A shape has at most one <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> for <code>sh:path</code>.</span>
-                <span data-syntax-rule="path-node" id="syntax-rule-path-node">Each <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> of <code>sh:path</code> in a shape must be a <a href="#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> <a href="#dfn-shacl-property-path" class="internalDFN" data-link-type="dfn">SHACL property path</a>.</span>                It is recommended, but not required, for a <a href="#dfn-property-shape" class="internalDFN" data-link-type="dfn">property shape</a> to be declared as a <a href="#dfn-shacl-instance" class="internalDFN" data-link-type="dfn">SHACL instance</a>                of <code>sh:PropertyShape</code>.
+                <span data-syntax-rule="path-node" id="syntax-rule-path-node">Each <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> of <code>sh:path</code> in a shape must be a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> <a href="#dfn-shacl-property-path" class="internalDFN" data-link-type="dfn">SHACL property path</a>.</span>                It is recommended, but not required, for a <a href="#dfn-property-shape" class="internalDFN" data-link-type="dfn">property shape</a> to be declared as a <a href="#dfn-shacl-instance" class="internalDFN" data-link-type="dfn">SHACL instance</a>                of <code>sh:PropertyShape</code>.
                 <span data-syntax-rule="PropertyShape-path-minCount" id="syntax-rule-PropertyShape-path-minCount"><a href="#dfn-shacl-instance" class="internalDFN" data-link-type="dfn">SHACL instances</a> of <code>sh:PropertyShape</code> have one <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> for the property <code>sh:path</code>.</span>
             </p>
             <p>
@@ -1113,7 +1113,7 @@ WHERE {
                     class="internalDFN" data-link-type="dfn">SHACL property path</a>, specified using <code>sh:path</code>.
             </p>
             <p>
-                Note that the definitions of <a href="#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> <a href="#dfn-property-shape" class="internalDFN" data-link-type="dfn">property shapes</a> and <a href="#dfn-node-shape" class="internalDFN"
+                Note that the definitions of <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> <a href="#dfn-property-shape" class="internalDFN" data-link-type="dfn">property shapes</a> and <a href="#dfn-node-shape" class="internalDFN"
                     data-link-type="dfn">node shapes</a> make these two sets of nodes disjoint.
             </p>
             <p>
@@ -1159,12 +1159,12 @@ ex:ExamplePropertyShape
                     <code>ZeroOrMorePath</code>, <code>OneOrMorePath</code> and <code>ZeroOrOnePath</code>.
                 </p>
                 <p>
-                    The syntax rules for <a href="#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> <a href="#dfn-shacl-property-path" class="internalDFN" data-link-type="dfn">SHACL property paths</a> and their mapping to <a href="https://www.w3.org/TR/sparql11-query/#pp-language">SPARQL 1.1 property paths</a> are defined in the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#property-paths">SHACL 1.0 Recommendation</a>. These rules define the <dfn data-dfn-type="dfn" id="dfn-path-mapping">path mapping</dfn> <code>path(p,G)</code> in an RDF graph <code>G</code> of an RDF term <code>p</code> that is a SHACL property path in <code>G</code>. Two SHACL property paths are considered <dfn data-dfn-type="dfn" id="dfn-equivalent-paths">equivalent paths</dfn> when they
+                    The syntax rules for <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> <a href="#dfn-shacl-property-path" class="internalDFN" data-link-type="dfn">SHACL property paths</a> and their mapping to <a href="https://www.w3.org/TR/sparql11-query/#pp-language">SPARQL 1.1 property paths</a> are defined in the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#property-paths">SHACL 1.0 Recommendation</a>. These rules define the <dfn data-dfn-type="dfn" id="dfn-path-mapping">path mapping</dfn> <code>path(p,G)</code> in an RDF graph <code>G</code> of an RDF term <code>p</code> that is a SHACL property path in <code>G</code>. Two SHACL property paths are considered <dfn data-dfn-type="dfn" id="dfn-equivalent-paths">equivalent paths</dfn> when they
                     map to the exact same SPARQL property paths.
                 </p>
                 <p class="syntax">
-                    <span data-syntax-rule="path-metarule" id="syntax-rule-path-metarule">A node in an RDF graph is a <a href="#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> <dfn data-dfn-type="dfn" id="dfn-shacl-property-path">SHACL property path</dfn> <code>p</code> if it satisfies one of the property path syntax rules defined in <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#property-paths">SHACL 1.0</a>.</span>
-                    <span data-syntax-rule="path-non-recursive" id="syntax-rule-path-non-recursive">A node <code>p</code> is not a <a href="#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> SHACL property path if <code>p</code> is a blank node and any path mappings of <code>p</code> directly or transitively reference <code>p</code>.</span>
+                    <span data-syntax-rule="path-metarule" id="syntax-rule-path-metarule">A node in an RDF graph is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> <dfn data-dfn-type="dfn" id="dfn-shacl-property-path">SHACL property path</dfn> <code>p</code> if it satisfies one of the property path syntax rules defined in <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#property-paths">SHACL 1.0</a>.</span>
+                    <span data-syntax-rule="path-non-recursive" id="syntax-rule-path-non-recursive">A node <code>p</code> is not a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> SHACL property path if <code>p</code> is a blank node and any path mappings of <code>p</code> directly or transitively reference <code>p</code>.</span>
                 </p>
                 <p>
                     The following example illustrates some valid SHACL property paths, together with their SPARQL 1.1 equivalents.
@@ -1205,7 +1205,7 @@ SHACL Property path: [ sh:alternativePath ( ex:father ex:mother  ) ]</pre>
         <p>
             SHACL 1.0 defines the built-in SHACL Core <a href="#dfn-constraint-component" class="internalDFN" data-link-type="dfn">constraint components</a> that <em class="rfc2119" title="MUST">MUST</em> be supported by all SHACL Core processors.
             The definition of each constraint component contains its IRI as well as a table of its <a href="#dfn-parameters" class="internalDFN" data-link-type="dfn">parameters</a>. Unless stated otherwise, all these parameters are <a href="#dfn-mandatory-parameters"
-                class="internalDFN" data-link-type="dfn">mandatory parameters</a>. Shapes that violate any of the syntax rules enumerated in those parameter tables are <a href="#dfn-ill-formed" class="internalDFN" data-link-type="dfn">ill-formed</a>.
+                class="internalDFN" data-link-type="dfn">mandatory parameters</a>. Shapes that violate any of the syntax rules enumerated in those parameter tables are <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-ill-formed" class="internalDFN" data-link-type="dfn">ill-formed</a>.
         </p>
         <p>
             Each constraint component also includes a textual definition, which describes the <a href="#dfn-validators" class="internalDFN" data-link-type="dfn">validator</a> associated with the component. These textual definitions refer to the values
@@ -1216,17 +1216,17 @@ SHACL Property path: [ sh:alternativePath ( ex:father ex:mother  ) ]</pre>
         </p>
         <p><em>The remainder of this section is informative.</em></p>
         <p>
-            The choice of constraint components that were included into the SHACL Core was made based on the requirements collected by the [<cite><a class="bibref" href="#bib-shacl-ucr">shacl-ucr</a></cite>] document. Special attention was paid to the
+            The choice of constraint components that were included into the SHACL Core was made based on the requirements collected by the [<cite><a class="bibref" href="https://www.w3.org/TR/2017/REC-shacl-20170720/#bib-shacl-ucr">shacl-ucr</a></cite>] document. Special attention was paid to the
             balance between trying to cover as many common use cases as possible and keeping the size of the Core language manageable. Not all use cases can be expressed by the Core language alone. Instead, SHACL-SPARQL provides an extension mechanism for additional constraint components. It is expected that additional reusable libraries of <a href="#dfn-constraint-component" class="internalDFN" data-link-type="dfn">constraint components</a> will be maintained by third parties.
         </p>
         <p>
             Unless stated otherwise, the Core constraint components can be used both in <a href="#dfn-property-shape" class="internalDFN" data-link-type="dfn">property shapes</a> and <a href="#dfn-node-shape" class="internalDFN" data-link-type="dfn">node shapes</a>.
-            Some constraint parameters have syntax rules attached to them that would make <a href="#dfn-node-shape" class="internalDFN" data-link-type="dfn">node shapes</a> that use these parameters <a href="#dfn-ill-formed" class="internalDFN" data-link-type="dfn">ill-formed</a>.
+            Some constraint parameters have syntax rules attached to them that would make <a href="#dfn-node-shape" class="internalDFN" data-link-type="dfn">node shapes</a> that use these parameters <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-ill-formed" class="internalDFN" data-link-type="dfn">ill-formed</a>.
             Examples of this include <code>sh:minCount</code> which is only supported for <a href="#dfn-property-shape" class="internalDFN" data-link-type="dfn">property shapes</a>.
         </p>
         <p class="def-sparql">
             The SPARQL definitions in this section represent potential <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#constraint-components-validators">validators</a>. They are included for illustration purposes only and have no formal status otherwise. Many constraint components are written
-            as SPARQL ASK queries. These queries are interpreted against each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a>, bound to the variable <code>value</code>. If an ASK query does not evaluate to <code>true</code>            for a <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a>, then there is a <a href="#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> based on the rules outlined in the
+            as SPARQL ASK queries. These queries are interpreted against each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a>, bound to the variable <code>value</code>. If an ASK query does not evaluate to <code>true</code>            for a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a>, then there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> based on the rules outlined in the
             <a
                 href="https://www.w3.org/TR/2017/REC-shacl-20170720/#SPARQLAskValidator">section on ASK-based validators</a>. Constraint components that are described using a SELECT query are interpreted based on the rules outlined in the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#SPARQLSelectValidator">section on SELECT-based validators</a>. In particular, for
                 <a href="#dfn-property-shape" class="internalDFN" data-link-type="dfn">property shapes</a>, the variable <code>PATH</code> is <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-substitute" class="internalDFN" data-link-type="dfn">substituted</a> with a path expression based
@@ -1245,7 +1245,7 @@ SHACL Property path: [ sh:alternativePath ( ex:father ex:mother  ) ]</pre>
                 <h4 id="x4.1.1-sh:class" resource="#x4.1.1-sh:class"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1.1 </span>sh:class</span>
                 </h4>
                 <p>
-                    The condition specified by <code>sh:class</code> is that each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> is a <a href="#dfn-shacl-instance" class="internalDFN" data-link-type="dfn">SHACL instance</a>                    of a given type.
+                    The condition specified by <code>sh:class</code> is that each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> is a <a href="#dfn-shacl-instance" class="internalDFN" data-link-type="dfn">SHACL instance</a>                    of a given type.
                 </p>
                 <p>
                     <span class="component-class">Constraint Component IRI</span>: <code>sh:ClassConstraintComponent</code>
@@ -1270,9 +1270,9 @@ SHACL Property path: [ sh:alternativePath ( ex:father ex:mother  ) ]</pre>
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="Class" id="validator-ClassConstraintComponent">
-                        For each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> that is either a <a href="#dfn-literal" class="internalDFN" data-link-type="dfn">literal</a>, or a non-literal that is not a <a href="#dfn-shacl-instance"
-                            class="internalDFN" data-link-type="dfn">SHACL instance</a> of <code>$class</code> in the <a href="#dfn-data-graph" class="internalDFN" data-link-type="dfn">data graph</a>, there is a <a href="#dfn-validation-results" class="internalDFN"
-                            data-link-type="dfn">validation result</a> with the <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> as <code>sh:value</code>.
+                        For each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> that is either a <a href="#dfn-literal" class="internalDFN" data-link-type="dfn">literal</a>, or a non-literal that is not a <a href="#dfn-shacl-instance"
+                            class="internalDFN" data-link-type="dfn">SHACL instance</a> of <code>$class</code> in the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-data-graph" class="internalDFN" data-link-type="dfn">data graph</a>, there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results" class="internalDFN"
+                            data-link-type="dfn">validation result</a> with the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> as <code>sh:value</code>.
                     </div>
                 </div>
                 <p><em>The remainder of this section is informative.</em></p>
@@ -1320,7 +1320,7 @@ ex:Bob ex:address [ a ex:PostalAddress ; ex:city ex:Berlin ] .
                 <h4 id="x4.1.2-sh:datatype" resource="#x4.1.2-sh:datatype"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1.2 </span>sh:datatype</span>
                 </h4>
                 <p>
-                    <code>sh:datatype</code> specifies a condition to be satisfied with regards to the datatype of each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a>.
+                    <code>sh:datatype</code> specifies a condition to be satisfied with regards to the datatype of each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a>.
                 </p>
                 <p>
                     <span class="component-class">Constraint Component IRI</span>: <code>sh:DatatypeConstraintComponent</code>
@@ -1346,8 +1346,8 @@ ex:Bob ex:address [ a ex:PostalAddress ; ex:city ex:Berlin ] .
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="Datatype" id="validator-DatatypeConstraintComponent">
-                        For each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> that is not a <a href="#dfn-literal" class="internalDFN" data-link-type="dfn">literal</a>, or is a <a href="#dfn-literal" class="internalDFN"
-                            data-link-type="dfn">literal</a> with a datatype that does not match <code>$datatype</code>, there is a <a href="#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> with the <a href="#dfn-value-nodes"
+                        For each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> that is not a <a href="#dfn-literal" class="internalDFN" data-link-type="dfn">literal</a>, or is a <a href="#dfn-literal" class="internalDFN"
+                            data-link-type="dfn">literal</a> with a datatype that does not match <code>$datatype</code>, there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> with the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes"
                             class="internalDFN" data-link-type="dfn">value node</a> as <code>sh:value</code>. The datatype of a literal is determined following the <a href="https://www.w3.org/TR/sparql11-query/#func-datatype">datatype</a> function of SPARQL
                         1.1. A <a href="#dfn-literal" class="internalDFN" data-link-type="dfn">literal</a> matches a datatype if the <a href="#dfn-literal" class="internalDFN" data-link-type="dfn">literal</a>'s datatype has the same <a href="#dfn-iri"
                             class="internalDFN" data-link-type="dfn">IRI</a> and, for the datatypes supported by SPARQL 1.1, is not an <a href="https://www.w3.org/TR/rdf11-concepts#section-Graph-Literal">ill-typed</a> literal.
@@ -1392,7 +1392,7 @@ ex:Bob ex:address [ a ex:PostalAddress ; ex:city ex:Berlin ] .
                 <h4 id="x4.1.3-sh:nodekind" resource="#x4.1.3-sh:nodekind"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1.3 </span>sh:nodeKind</span>
                 </h4>
                 <p>
-                    <code>sh:nodeKind</code> specifies a condition to be satisfied by the RDF node kind of each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a>.
+                    <code>sh:nodeKind</code> specifies a condition to be satisfied by the RDF node kind of each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a>.
                 </p>
                 <p>
                     <span class="component-class">Constraint Component IRI</span>: <code>sh:NodeKindConstraintComponent</code>
@@ -1420,7 +1420,7 @@ ex:Bob ex:address [ a ex:PostalAddress ; ex:city ex:Berlin ] .
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="NodeKind" id="validator-NodeKindConstraintComponent">
-                        For each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> that does not match <code>$nodeKind</code>, there is a <a href="#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a>                        with the <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> as <code>sh:value</code>. Any <a href="#dfn-iri" class="internalDFN" data-link-type="dfn">IRI</a> matches only <code>sh:IRI</code>, <code>sh:BlankNodeOrIRI</code>                        and <code>sh:IRIOrLiteral</code>. Any <a href="#dfn-blank-node" class="internalDFN" data-link-type="dfn">blank node</a> matches only <code>sh:BlankNode</code>, <code>sh:BlankNodeOrIRI</code> and <code>sh:BlankNodeOrLiteral</code>.
+                        For each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> that does not match <code>$nodeKind</code>, there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a>                        with the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> as <code>sh:value</code>. Any <a href="#dfn-iri" class="internalDFN" data-link-type="dfn">IRI</a> matches only <code>sh:IRI</code>, <code>sh:BlankNodeOrIRI</code>                        and <code>sh:IRIOrLiteral</code>. Any <a href="#dfn-blank-node" class="internalDFN" data-link-type="dfn">blank node</a> matches only <code>sh:BlankNode</code>, <code>sh:BlankNodeOrIRI</code> and <code>sh:BlankNodeOrLiteral</code>.
                         Any <a href="#dfn-literal" class="internalDFN" data-link-type="dfn">literal</a> matches only <code>sh:Literal</code>, <code>sh:BlankNodeOrLiteral</code> and <code>sh:IRIOrLiteral</code>.
                     </div>
                 </div>
@@ -1468,13 +1468,13 @@ ex:Bob ex:address [ a ex:PostalAddress ; ex:city ex:Berlin ] .
             <h3 id="x4.2-cardinality-constraint-components" resource="#x4.2-cardinality-constraint-components"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2 </span>Cardinality Constraint Components</span>
             </h3>
             <p>
-                The following <a href="#dfn-constraint-component" class="internalDFN" data-link-type="dfn">constraint components</a> represent restrictions on the number of <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a>                for the given <a href="#dfn-focus-node" class="internalDFN" data-link-type="dfn">focus node</a>.
+                The following <a href="#dfn-constraint-component" class="internalDFN" data-link-type="dfn">constraint components</a> represent restrictions on the number of <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a>                for the given <a href="#dfn-focus-node" class="internalDFN" data-link-type="dfn">focus node</a>.
             </p>
             <section id="MinCountConstraintComponent" typeof="bibo:Chapter" resource="#MinCountConstraintComponent" property="bibo:hasPart">
                 <h4 id="x4.2.1-sh:mincount" resource="#x4.2.1-sh:mincount"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2.1 </span>sh:minCount</span>
                 </h4>
                 <p>
-                    <code>sh:minCount</code> specifies the minimum number of <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a> that satisfy the condition. If the minimum cardinality value is 0 then this constraint is
+                    <code>sh:minCount</code> specifies the minimum number of <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a> that satisfy the condition. If the minimum cardinality value is 0 then this constraint is
                     always satisfied and so may be omitted.
                 </p>
                 <p>
@@ -1502,7 +1502,7 @@ ex:Bob ex:address [ a ex:PostalAddress ; ex:city ex:Berlin ] .
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="MinCount" id="validator-MinCountConstraintComponent">
-                        If the number of <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a> is less than <code>$minCount</code>, there is a <a href="#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a>.
+                        If the number of <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a> is less than <code>$minCount</code>, there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a>.
                     </div>
                 </div>
                 <p><em>The remainder of this section is informative.</em></p>
@@ -1550,7 +1550,7 @@ HAVING (COUNT(DISTINCT ?value) &lt; $minCount)</pre>
                 <h4 id="x4.2.2-sh:maxcount" resource="#x4.2.2-sh:maxcount"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2.2 </span>sh:maxCount</span>
                 </h4>
                 <p>
-                    <code>sh:maxCount</code> specifies the maximum number of <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a> that satisfy the condition.
+                    <code>sh:maxCount</code> specifies the maximum number of <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a> that satisfy the condition.
                 </p>
                 <p>
                     <span class="component-class">Constraint Component IRI</span>: <code>sh:MaxCountConstraintComponent</code>
@@ -1577,7 +1577,7 @@ HAVING (COUNT(DISTINCT ?value) &lt; $minCount)</pre>
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="MaxCount" id="validator-MaxCountConstraintComponent">
-                        If the number of <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a> is greater than <code>$maxCount</code>, there is a <a href="#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a>.
+                        If the number of <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a> is greater than <code>$maxCount</code>, there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a>.
                     </div>
                 </div>
                 <p><em>The remainder of this section is informative.</em></p>
@@ -1667,7 +1667,7 @@ HAVING (COUNT(DISTINCT ?value) > $maxCount)</pre>
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="MinExclusive" id="validator-MinExclusiveConstraintComponent">
-                        For each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> <code>v</code> where the SPARQL expression <code>$minExclusive &lt; v</code> does not return <code>true</code>, there is a <a href="#dfn-validation-results"
+                        For each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> <code>v</code> where the SPARQL expression <code>$minExclusive &lt; v</code> does not return <code>true</code>, there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results"
                             class="internalDFN" data-link-type="dfn">validation result</a> with <code>v</code> as <code>sh:value</code>.
                     </div>
                 </div>
@@ -1728,7 +1728,7 @@ HAVING (COUNT(DISTINCT ?value) > $maxCount)</pre>
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="MinInclusive" id="validator-MinInclusiveConstraintComponent">
-                        For each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> <code>v</code> where the SPARQL expression <code>$minInclusive &lt;= v</code> does not return <code>true</code>, there is a <a href="#dfn-validation-results"
+                        For each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> <code>v</code> where the SPARQL expression <code>$minInclusive &lt;= v</code> does not return <code>true</code>, there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results"
                             class="internalDFN" data-link-type="dfn">validation result</a> with <code>v</code> as <code>sh:value</code>.
                     </div>
                 </div>
@@ -1785,7 +1785,7 @@ HAVING (COUNT(DISTINCT ?value) > $maxCount)</pre>
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="MaxExclusive" id="validator-MaxExclusiveConstraintComponent">
-                        For each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> <code>v</code> where the SPARQL expression <code>$maxExclusive &gt; v</code> does not return <code>true</code>, there is a <a href="#dfn-validation-results"
+                        For each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> <code>v</code> where the SPARQL expression <code>$maxExclusive &gt; v</code> does not return <code>true</code>, there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results"
                             class="internalDFN" data-link-type="dfn">validation result</a> with <code>v</code> as <code>sh:value</code>.
                     </div>
                 </div>
@@ -1842,7 +1842,7 @@ HAVING (COUNT(DISTINCT ?value) > $maxCount)</pre>
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="MaxInclusive" id="validator-MaxInclusiveConstraintComponent">
-                        For each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> <code>v</code> where the SPARQL expression <code>$maxInclusive &gt;= v</code> does not return <code>true</code>, there is a <a href="#dfn-validation-results"
+                        For each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> <code>v</code> where the SPARQL expression <code>$maxInclusive &gt;= v</code> does not return <code>true</code>, there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results"
                             class="internalDFN" data-link-type="dfn">validation result</a> with <code>v</code> as <code>sh:value</code>.
                     </div>
                 </div>
@@ -1878,13 +1878,13 @@ HAVING (COUNT(DISTINCT ?value) > $maxCount)</pre>
             <h3 id="x4.4-string-based-constraint-components" resource="#x4.4-string-based-constraint-components"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.4 </span>String-based Constraint Components</span>
             </h3>
             <p>
-                The constraint components in this section have in common that they specify conditions on the string representation of <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a>.
+                The constraint components in this section have in common that they specify conditions on the string representation of <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a>.
             </p>
             <section id="MinLengthConstraintComponent" typeof="bibo:Chapter" resource="#MinLengthConstraintComponent" property="bibo:hasPart">
                 <h4 id="x4.4.1-sh:minlength" resource="#x4.4.1-sh:minlength"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.4.1 </span>sh:minLength</span>
                 </h4>
                 <p>
-                    <code>sh:minLength</code> specifies the minimum string length of each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> that satisfies the condition. This can be applied to any <a href="#dfn-literal"
+                    <code>sh:minLength</code> specifies the minimum string length of each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> that satisfies the condition. This can be applied to any <a href="#dfn-literal"
                         class="internalDFN" data-link-type="dfn">literals</a> and <a href="#dfn-iri" class="internalDFN" data-link-type="dfn">IRIs</a>, but not to <a href="#dfn-blank-node" class="internalDFN" data-link-type="dfn">blank nodes</a>.
                 </p>
                 <p>
@@ -1911,9 +1911,9 @@ HAVING (COUNT(DISTINCT ?value) > $maxCount)</pre>
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="MinLength" id="validator-MinLengthConstraintComponent">
-                        For each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> <code>v</code> where the length (as defined by the <a href="https://www.w3.org/TR/sparql11-query/#func-strlen">SPARQL STRLEN function</a>)
+                        For each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> <code>v</code> where the length (as defined by the <a href="https://www.w3.org/TR/sparql11-query/#func-strlen">SPARQL STRLEN function</a>)
                         of the string representation of <code>v</code> (as defined by the <a href="https://www.w3.org/TR/sparql11-query/#func-str">SPARQL str function</a>) is less than <code>$minLength</code>, or where <code>v</code> is a <a href="#dfn-blank-node"
-                            class="internalDFN" data-link-type="dfn">blank node</a>, there is a <a href="#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> with <code>v</code> as <code>sh:value</code>.
+                            class="internalDFN" data-link-type="dfn">blank node</a>, there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> with <code>v</code> as <code>sh:value</code>.
                     </div>
                 </div>
                 <p><em>The remainder of this section is informative.</em></p>
@@ -1950,7 +1950,7 @@ HAVING (COUNT(DISTINCT ?value) > $maxCount)</pre>
                 <h4 id="x4.4.2-sh:maxlength" resource="#x4.4.2-sh:maxlength"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.4.2 </span>sh:maxLength</span>
                 </h4>
                 <p>
-                    <code>sh:maxLength</code> specifies the maximum string length of each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> that satisfies the condition. This can be applied to any <a href="#dfn-literal"
+                    <code>sh:maxLength</code> specifies the maximum string length of each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> that satisfies the condition. This can be applied to any <a href="#dfn-literal"
                         class="internalDFN" data-link-type="dfn">literals</a> and <a href="#dfn-iri" class="internalDFN" data-link-type="dfn">IRIs</a>, but not to <a href="#dfn-blank-node" class="internalDFN" data-link-type="dfn">blank nodes</a>.
                 </p>
                 <p>
@@ -1977,9 +1977,9 @@ HAVING (COUNT(DISTINCT ?value) > $maxCount)</pre>
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="MaxLength" id="validator-MaxLengthConstraintComponent">
-                        For each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> <code>v</code> where the length (as defined by the <a href="https://www.w3.org/TR/sparql11-query/#func-strlen">SPARQL STRLEN function</a>)
+                        For each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> <code>v</code> where the length (as defined by the <a href="https://www.w3.org/TR/sparql11-query/#func-strlen">SPARQL STRLEN function</a>)
                         of the string representation of <code>v</code> (as defined by the <a href="https://www.w3.org/TR/sparql11-query/#func-str">SPARQL str function</a>) is greater than <code>$maxLength</code>, or where <code>v</code> is a <a href="#dfn-blank-node"
-                            class="internalDFN" data-link-type="dfn">blank node</a>, there is a <a href="#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> with <code>v</code> as <code>sh:value</code>.
+                            class="internalDFN" data-link-type="dfn">blank node</a>, there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> with <code>v</code> as <code>sh:value</code>.
                     </div>
                 </div>
                 <p><em>The remainder of this section is informative.</em></p>
@@ -2024,7 +2024,7 @@ HAVING (COUNT(DISTINCT ?value) > $maxCount)</pre>
                 <h4 id="x4.4.3-sh:pattern" resource="#x4.4.3-sh:pattern"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.4.3 </span>sh:pattern</span>
                 </h4>
                 <p>
-                    <code>sh:pattern</code> specifies a regular expression that each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> matches to satisfy the condition.
+                    <code>sh:pattern</code> specifies a regular expression that each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> matches to satisfy the condition.
                 </p>
                 <p>
                     <span class="component-class">Constraint Component IRI</span>: <code>sh:PatternConstraintComponent</code>
@@ -2057,9 +2057,9 @@ HAVING (COUNT(DISTINCT ?value) > $maxCount)</pre>
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="Pattern" id="validator-PatternConstraintComponent">
-                        For each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> that is a blank node or where the string representation (as defined by the <a href="https://www.w3.org/TR/sparql11-query/#func-str">SPARQL str function</a>)
-                        does not match the regular expression <code>$pattern</code> (as defined by the <a href="https://www.w3.org/TR/sparql11-query/#func-regex">SPARQL REGEX function</a>), there is a <a href="#dfn-validation-results" class="internalDFN"
-                            data-link-type="dfn">validation result</a> with the <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> as <code>sh:value</code>. If <code>$flags</code> has a value then the matching <em class="rfc2119"
+                        For each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> that is a blank node or where the string representation (as defined by the <a href="https://www.w3.org/TR/sparql11-query/#func-str">SPARQL str function</a>)
+                        does not match the regular expression <code>$pattern</code> (as defined by the <a href="https://www.w3.org/TR/sparql11-query/#func-regex">SPARQL REGEX function</a>), there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results" class="internalDFN"
+                            data-link-type="dfn">validation result</a> with the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> as <code>sh:value</code>. If <code>$flags</code> has a value then the matching <em class="rfc2119"
                             title="MUST">MUST</em> follow the definition of the 3-argument variant of the SPARQL REGEX function, using <code>$flags</code> as third argument.
                     </div>
                 </div>
@@ -2117,7 +2117,7 @@ ex:Alice ex:bCode "B102" .
                 <h4 id="x4.4.4-sh:languagein" resource="#x4.4.4-sh:languagein"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.4.4 </span>sh:languageIn</span>
                 </h4>
                 <p>
-                    The condition specified by <code>sh:languageIn</code> is that the allowed language tags for each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> are limited by a given list of language tags.
+                    The condition specified by <code>sh:languageIn</code> is that the allowed language tags for each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> are limited by a given list of language tags.
                 </p>
                 <p>
                     <span class="component-class">Constraint Component IRI</span>: <code>sh:LanguageInConstraintComponent</code>
@@ -2133,7 +2133,7 @@ ex:Alice ex:bCode "B102" .
                         <tr>
                             <td><code>sh:languageIn</code></td>
                             <td>
-                                A list of basic language ranges as per [<cite><a class="bibref" href="#bib-BCP47">BCP47</a></cite>].
+                                A list of basic language ranges as per [<cite><a class="bibref" href="https://www.w3.org/TR/2017/REC-shacl-20170720/#bib-BCP47">BCP47</a></cite>].
                                 <span data-syntax-rule="languageIn-node" id="syntax-rule-languageIn-node">Each value of <code>sh:languageIn</code> in a shape is a <a href="#dfn-shacl-list" class="internalDFN" data-link-type="dfn">SHACL list</a>.</span>
                                 <span data-syntax-rule="languageIn-members-datatype" id="syntax-rule-languageIn-members-datatype">Each <a href="#dfn-members" class="internalDFN" data-link-type="dfn">member</a> of such a list is a literal with datatype <code>xsd:string</code>.</span>
                                 <span data-syntax-rule="languageIn-maxCount" id="syntax-rule-languageIn-maxCount">A shape has at most one value for <code>sh:languageIn</code>.</span>
@@ -2144,8 +2144,8 @@ ex:Alice ex:bCode "B102" .
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="LanguageIn" id="validator-LanguageInConstraintComponent">
-                        For each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> that is either not a <a href="#dfn-literal" class="internalDFN" data-link-type="dfn">literal</a> or that does not have a language tag matching
-                        any of the basic language ranges that are the <a href="#dfn-members" class="internalDFN" data-link-type="dfn">members</a> of <code>$languageIn</code> following the filtering schema defined by the <a href="https://www.w3.org/TR/sparql11-query/#func-langMatches">SPARQL langMatches</a>                        function, there is a <a href="#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> with the <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> as <code>sh:value</code>.
+                        For each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> that is either not a <a href="#dfn-literal" class="internalDFN" data-link-type="dfn">literal</a> or that does not have a language tag matching
+                        any of the basic language ranges that are the <a href="#dfn-members" class="internalDFN" data-link-type="dfn">members</a> of <code>$languageIn</code> following the filtering schema defined by the <a href="https://www.w3.org/TR/sparql11-query/#func-langMatches">SPARQL langMatches</a>                        function, there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> with the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> as <code>sh:value</code>.
                     </div>
                 </div>
                 <p><em>The remainder of this section is informative.</em></p>
@@ -2209,7 +2209,7 @@ ASK {
                 <h4 id="x4.4.5-sh:uniquelang" resource="#x4.4.5-sh:uniquelang"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.4.5 </span>sh:uniqueLang</span>
                 </h4>
                 <p>
-                    The property <code>sh:uniqueLang</code> can be set to <code>true</code> to specify that no pair of <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a> may use the same language tag.
+                    The property <code>sh:uniqueLang</code> can be set to <code>true</code> to specify that no pair of <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a> may use the same language tag.
                 </p>
                 <p>
                     <span class="component-class">Constraint Component IRI</span>: <code>sh:UniqueLangConstraintComponent</code>
@@ -2236,7 +2236,7 @@ ASK {
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="UniqueLang" id="validator-UniqueLangConstraintComponent">
-                        If <code>$uniqueLang</code> is <code>true</code> then for each non-empty language tag that is used by at least two <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a>, there is a <a href="#dfn-validation-results"
+                        If <code>$uniqueLang</code> is <code>true</code> then for each non-empty language tag that is used by at least two <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a>, there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results"
                             class="internalDFN" data-link-type="dfn">validation result</a>.
                     </div>
                 </div>
@@ -2300,7 +2300,7 @@ WHERE {
             <h3 id="x4.5-property-pair-constraint-components" resource="#x4.5-property-pair-constraint-components"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.5 </span>Property Pair Constraint Components</span>
             </h3>
             <p>
-                The constraint components in this section specify conditions on the sets of <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a> in relation to other properties. These constraint components can only be used
+                The constraint components in this section specify conditions on the sets of <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a> in relation to other properties. These constraint components can only be used
                 by <a href="#dfn-property-shape" class="internalDFN" data-link-type="dfn">property shapes</a>.
             </p>
 
@@ -2308,7 +2308,7 @@ WHERE {
                 <h4 id="x4.5.1-sh:equals" resource="#x4.5.1-sh:equals"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.5.1 </span>sh:equals</span>
                 </h4>
                 <p>
-                    <code>sh:equals</code> specifies the condition that the set of all <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a> is equal to the set of <a href="#dfn-object" class="internalDFN" data-link-type="dfn">objects</a>                    of the <a href="#dfn-rdf-triple" class="internalDFN" data-link-type="dfn">triples</a> that have the <a href="#dfn-focus-node" class="internalDFN" data-link-type="dfn">focus node</a> as <a href="#dfn-subject" class="internalDFN" data-link-type="dfn">subject</a>                    and the <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> of <code>sh:equals</code> as <a href="#dfn-predicate" class="internalDFN" data-link-type="dfn">predicate</a>.
+                    <code>sh:equals</code> specifies the condition that the set of all <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a> is equal to the set of <a href="#dfn-object" class="internalDFN" data-link-type="dfn">objects</a>                    of the <a href="#dfn-rdf-triple" class="internalDFN" data-link-type="dfn">triples</a> that have the <a href="#dfn-focus-node" class="internalDFN" data-link-type="dfn">focus node</a> as <a href="#dfn-subject" class="internalDFN" data-link-type="dfn">subject</a>                    and the <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> of <code>sh:equals</code> as <a href="#dfn-predicate" class="internalDFN" data-link-type="dfn">predicate</a>.
                 </p>
                 <p>
                     <span class="component-class">Constraint Component IRI</span>: <code>sh:EqualsConstraintComponent</code>
@@ -2333,10 +2333,10 @@ WHERE {
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="Equals" id="validator-EqualsConstraintComponent">
-                        For each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> that does not exist as a <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> of the property <code>$equals</code> at
-                        the <a href="#dfn-focus-node" class="internalDFN" data-link-type="dfn">focus node</a>, there is a <a href="#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> with the <a href="#dfn-value-nodes"
+                        For each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> that does not exist as a <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> of the property <code>$equals</code> at
+                        the <a href="#dfn-focus-node" class="internalDFN" data-link-type="dfn">focus node</a>, there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> with the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes"
                             class="internalDFN" data-link-type="dfn">value node</a> as <code>sh:value</code>. For each <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> of the property <code>$equals</code> at the <a href="#dfn-focus-node"
-                            class="internalDFN" data-link-type="dfn">focus node</a> that is not one of the <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a>, there is a <a href="#dfn-validation-results" class="internalDFN"
+                            class="internalDFN" data-link-type="dfn">focus node</a> that is not one of the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a>, there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results" class="internalDFN"
                             data-link-type="dfn">validation result</a> with the <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> as <code>sh:value</code>.
                     </div>
                 </div>
@@ -2378,7 +2378,7 @@ WHERE {
                 <h4 id="x4.5.2-sh:disjoint" resource="#x4.5.2-sh:disjoint"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.5.2 </span>sh:disjoint</span>
                 </h4>
                 <p>
-                    <code>sh:disjoint</code> specifies the condition that the set of <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a> is disjoint with the set of <a href="#dfn-object" class="internalDFN" data-link-type="dfn">objects</a>                    of the <a href="#dfn-rdf-triple" class="internalDFN" data-link-type="dfn">triples</a> that have the <a href="#dfn-focus-node" class="internalDFN" data-link-type="dfn">focus node</a> as <a href="#dfn-subject" class="internalDFN" data-link-type="dfn">subject</a>                    and the <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> of <code>sh:disjoint</code> as <a href="#dfn-predicate" class="internalDFN" data-link-type="dfn">predicate</a>.
+                    <code>sh:disjoint</code> specifies the condition that the set of <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a> is disjoint with the set of <a href="#dfn-object" class="internalDFN" data-link-type="dfn">objects</a>                    of the <a href="#dfn-rdf-triple" class="internalDFN" data-link-type="dfn">triples</a> that have the <a href="#dfn-focus-node" class="internalDFN" data-link-type="dfn">focus node</a> as <a href="#dfn-subject" class="internalDFN" data-link-type="dfn">subject</a>                    and the <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> of <code>sh:disjoint</code> as <a href="#dfn-predicate" class="internalDFN" data-link-type="dfn">predicate</a>.
                 </p>
                 <p>
                     <span class="component-class">Constraint Component IRI</span>: <code>sh:DisjointConstraintComponent</code>
@@ -2403,8 +2403,8 @@ WHERE {
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="Disjoint" id="validator-DisjointConstraintComponent">
-                        For each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> that also exists as a <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> of the property <code>$disjoint</code> at
-                        the <a href="#dfn-focus-node" class="internalDFN" data-link-type="dfn">focus node</a>, there is a <a href="#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> with the <a href="#dfn-value-nodes"
+                        For each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> that also exists as a <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> of the property <code>$disjoint</code> at
+                        the <a href="#dfn-focus-node" class="internalDFN" data-link-type="dfn">focus node</a>, there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> with the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes"
                             class="internalDFN" data-link-type="dfn">value node</a> as <code>sh:value</code>.
                     </div>
                 </div>
@@ -2458,7 +2458,7 @@ WHERE {
                 <h4 id="x4.5.3-sh:lessthan" resource="#x4.5.3-sh:lessthan"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.5.3 </span>sh:lessThan</span>
                 </h4>
                 <p>
-                    <code>sh:lessThan</code> specifies the condition that each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> is smaller than all the <a href="#dfn-object" class="internalDFN" data-link-type="dfn">objects</a>                    of the <a href="#dfn-rdf-triple" class="internalDFN" data-link-type="dfn">triples</a> that have the <a href="#dfn-focus-node" class="internalDFN" data-link-type="dfn">focus node</a> as <a href="#dfn-subject" class="internalDFN" data-link-type="dfn">subject</a>                    and the <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> of <code>sh:lessThan</code> as <a href="#dfn-predicate" class="internalDFN" data-link-type="dfn">predicate</a>.
+                    <code>sh:lessThan</code> specifies the condition that each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> is smaller than all the <a href="#dfn-object" class="internalDFN" data-link-type="dfn">objects</a>                    of the <a href="#dfn-rdf-triple" class="internalDFN" data-link-type="dfn">triples</a> that have the <a href="#dfn-focus-node" class="internalDFN" data-link-type="dfn">focus node</a> as <a href="#dfn-subject" class="internalDFN" data-link-type="dfn">subject</a>                    and the <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> of <code>sh:lessThan</code> as <a href="#dfn-predicate" class="internalDFN" data-link-type="dfn">predicate</a>.
                 </p>
                 <p>
                     <span class="component-class">Constraint Component IRI</span>: <code>sh:LessThanConstraintComponent</code>
@@ -2484,8 +2484,8 @@ WHERE {
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="LessThan" id="validator-LessThanConstraintComponent">
-                        For each pair of <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a> and the values of the property <code>$lessThan</code> at the given <a href="#dfn-focus-node" class="internalDFN" data-link-type="dfn">focus node</a>                        where the first <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> is not less than the second <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> (based on SPARQL's <code>&lt;</code> operator)
-                        or where the two values cannot be compared, there is a <a href="#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> with the <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a>                        as <code>sh:value</code>.
+                        For each pair of <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a> and the values of the property <code>$lessThan</code> at the given <a href="#dfn-focus-node" class="internalDFN" data-link-type="dfn">focus node</a>                        where the first <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> is not less than the second <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> (based on SPARQL's <code>&lt;</code> operator)
+                        or where the two values cannot be compared, there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> with the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a>                        as <code>sh:value</code>.
                     </div>
                 </div>
                 <p><em>The remainder of this section is informative.</em></p>
@@ -2532,7 +2532,7 @@ WHERE {
                 <h4 id="x4.5.4-sh:lessthanorequals" resource="#x4.5.4-sh:lessthanorequals"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.5.4 </span>sh:lessThanOrEquals</span>
                 </h4>
                 <p>
-                    <code>sh:lessThanOrEquals</code> specifies the condition that each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> is smaller than or equal to all the <a href="#dfn-object" class="internalDFN" data-link-type="dfn">objects</a>                    of the <a href="#dfn-rdf-triple" class="internalDFN" data-link-type="dfn">triples</a> that have the <a href="#dfn-focus-node" class="internalDFN" data-link-type="dfn">focus node</a> as <a href="#dfn-subject" class="internalDFN" data-link-type="dfn">subject</a>                    and the <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> of <code>sh:lessThanOrEquals</code> as <a href="#dfn-predicate" class="internalDFN" data-link-type="dfn">predicate</a>.
+                    <code>sh:lessThanOrEquals</code> specifies the condition that each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> is smaller than or equal to all the <a href="#dfn-object" class="internalDFN" data-link-type="dfn">objects</a>                    of the <a href="#dfn-rdf-triple" class="internalDFN" data-link-type="dfn">triples</a> that have the <a href="#dfn-focus-node" class="internalDFN" data-link-type="dfn">focus node</a> as <a href="#dfn-subject" class="internalDFN" data-link-type="dfn">subject</a>                    and the <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> of <code>sh:lessThanOrEquals</code> as <a href="#dfn-predicate" class="internalDFN" data-link-type="dfn">predicate</a>.
                 </p>
                 <p>
                     <span class="component-class">Constraint Component IRI</span>: <code>sh:LessThanOrEqualsConstraintComponent</code>
@@ -2558,7 +2558,7 @@ WHERE {
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="LessThanOrEquals" id="validator-LessThanOrEqualsConstraintComponent">
-                        For each pair of <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a> and the values of the property <code>$lessThanOrEquals</code> at the given <a href="#dfn-focus-node" class="internalDFN" data-link-type="dfn">focus node</a>                        where the first <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> is not less than or equal to the second <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> (based on SPARQL's <code>&lt;=</code>                        operator) or where the two values cannot be compared, there is a <a href="#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> with the <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a>                        as <code>sh:value</code>.
+                        For each pair of <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a> and the values of the property <code>$lessThanOrEquals</code> at the given <a href="#dfn-focus-node" class="internalDFN" data-link-type="dfn">focus node</a>                        where the first <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> is not less than or equal to the second <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> (based on SPARQL's <code>&lt;=</code>                        operator) or where the two values cannot be compared, there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> with the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a>                        as <code>sh:value</code>.
                     </div>
                 </div>
                 <p><em>The remainder of this section is informative.</em></p>
@@ -2604,7 +2604,7 @@ WHERE {
                 <h4 id="x4.6.1-sh:not" resource="#x4.6.1-sh:not"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.6.1 </span>sh:not</span>
                 </h4>
                 <p>
-                    <code>sh:not</code> specifies the condition that each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> cannot <a href="#dfn-conforms" class="internalDFN" data-link-type="dfn">conform</a> to a given
+                    <code>sh:not</code> specifies the condition that each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> cannot <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-conforms" class="internalDFN" data-link-type="dfn">conform</a> to a given
                     <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a>. This is comparable to negation and the logical "not" operator.
                 </p>
                 <p>
@@ -2622,7 +2622,7 @@ WHERE {
                             <td><code>sh:not</code></td>
                             <td>
                                 The shape to negate.
-                                <span data-syntax-rule="not-node" id="syntax-rule-not-node">The values of <code>sh:not</code> in a shape must be <a href="#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shapes</a>.</span>
+                                <span data-syntax-rule="not-node" id="syntax-rule-not-node">The values of <code>sh:not</code> in a shape must be <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shapes</a>.</span>
                             </td>
                         </tr>
                     </tbody>
@@ -2630,8 +2630,8 @@ WHERE {
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="Not" id="validator-NotConstraintComponent">
-                        For each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> <code>v</code>: A <a href="#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a> <em class="rfc2119" title="MUST">MUST</em>                        be reported if the <a href="#dfn-conformance-checking" class="internalDFN" data-link-type="dfn">conformance checking</a> of <code>v</code> against the shape <code>$not</code> produces a <a href="#dfn-failure" class="internalDFN"
-                            data-link-type="dfn">failure</a>. Otherwise, if <code>v</code> <a href="#dfn-conforms" class="internalDFN" data-link-type="dfn">conforms</a> to the shape <code>$not</code>, there is <a href="#dfn-validation-results" class="internalDFN"
+                        For each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> <code>v</code>: A <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a> <em class="rfc2119" title="MUST">MUST</em>                        be reported if the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-conformance-checking" class="internalDFN" data-link-type="dfn">conformance checking</a> of <code>v</code> against the shape <code>$not</code> produces a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-failure" class="internalDFN"
+                            data-link-type="dfn">failure</a>. Otherwise, if <code>v</code> <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-conforms" class="internalDFN" data-link-type="dfn">conforms</a> to the shape <code>$not</code>, there is <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results" class="internalDFN"
                             data-link-type="dfn">validation result</a> with <code>v</code> as <code>sh:value</code>.
                     </div>
                 </div>
@@ -2672,7 +2672,7 @@ WHERE {
                 <h4 id="x4.6.2-sh:and" resource="#x4.6.2-sh:and"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.6.2 </span>sh:and</span>
                 </h4>
                 <p>
-                    <code>sh:and</code> specifies the condition that each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> conforms to all provided shapes. This is comparable to conjunction and the logical "and" operator.
+                    <code>sh:and</code> specifies the condition that each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> conforms to all provided shapes. This is comparable to conjunction and the logical "and" operator.
                 </p>
                 <p>
                     <span class="component-class">Constraint Component IRI</span>: <code>sh:AndConstraintComponent</code>
@@ -2690,7 +2690,7 @@ WHERE {
                             <td>
                                 A <a href="#dfn-shacl-list" class="internalDFN" data-link-type="dfn">SHACL list</a> of shapes to validate the value nodes against.
                                 <span data-syntax-rule="and-node" id="syntax-rule-and-node">Each value of <code>sh:and</code> in a shape is a <a href="#dfn-shacl-list" class="internalDFN" data-link-type="dfn">SHACL list</a>.</span>
-                                <span data-syntax-rule="and-members-node" id="syntax-rule-and-members-node">Each <a href="#dfn-members" class="internalDFN" data-link-type="dfn">member</a> of such list must be a <a href="#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a>.</span>
+                                <span data-syntax-rule="and-members-node" id="syntax-rule-and-members-node">Each <a href="#dfn-members" class="internalDFN" data-link-type="dfn">member</a> of such list must be a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a>.</span>
                             </td>
                         </tr>
                     </tbody>
@@ -2698,8 +2698,8 @@ WHERE {
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="And" id="validator-AndConstraintComponent">
-                        For each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> <code>v</code>: A <a href="#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a> <em class="rfc2119" title="MUST">MUST</em>                        be produced if the <a href="#dfn-conformance-checking" class="internalDFN" data-link-type="dfn">conformance checking</a> of <code>v</code> against any of the <a href="#dfn-members" class="internalDFN" data-link-type="dfn">members</a>                        of <code>$and</code> produces a <a href="#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a>. Otherwise, if <code>v</code> does not <a href="#dfn-conforms" class="internalDFN" data-link-type="dfn">conform</a> to
-                        each <a href="#dfn-members" class="internalDFN" data-link-type="dfn">member</a> of <code>$and</code>, there is a <a href="#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> with <code>v</code>                        as <code>sh:value</code>.
+                        For each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> <code>v</code>: A <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a> <em class="rfc2119" title="MUST">MUST</em>                        be produced if the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-conformance-checking" class="internalDFN" data-link-type="dfn">conformance checking</a> of <code>v</code> against any of the <a href="#dfn-members" class="internalDFN" data-link-type="dfn">members</a>                        of <code>$and</code> produces a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a>. Otherwise, if <code>v</code> does not <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-conforms" class="internalDFN" data-link-type="dfn">conform</a> to
+                        each <a href="#dfn-members" class="internalDFN" data-link-type="dfn">member</a> of <code>$and</code>, there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> with <code>v</code>                        as <code>sh:value</code>.
                     </div>
                 </div>
                 <p><em>The remainder of this section is informative.</em></p>
@@ -2760,7 +2760,7 @@ ex:ExampleAndShape
                 <h4 id="x4.6.3-sh:or" resource="#x4.6.3-sh:or"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.6.3 </span>sh:or</span>
                 </h4>
                 <p>
-                    <code>sh:or</code> specifies the condition that each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> conforms to at least one of the provided shapes. This is comparable to disjunction and the logical
+                    <code>sh:or</code> specifies the condition that each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> conforms to at least one of the provided shapes. This is comparable to disjunction and the logical
                     "or" operator.
                 </p>
                 <p>
@@ -2779,7 +2779,7 @@ ex:ExampleAndShape
                             <td>
                                 A <a href="#dfn-shacl-list" class="internalDFN" data-link-type="dfn">SHACL list</a> of shapes to validate the value nodes against.
                                 <span data-syntax-rule="or-node" id="syntax-rule-or-node">Each value of <code>sh:or</code> in a shape is a <a href="#dfn-shacl-list" class="internalDFN" data-link-type="dfn">SHACL list</a>.</span>
-                                <span data-syntax-rule="or-members-node" id="syntax-rule-or-members-node">Each <a href="#dfn-members" class="internalDFN" data-link-type="dfn">member</a> of such list must be a <a href="#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a>.</span>
+                                <span data-syntax-rule="or-members-node" id="syntax-rule-or-members-node">Each <a href="#dfn-members" class="internalDFN" data-link-type="dfn">member</a> of such list must be a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a>.</span>
                             </td>
                         </tr>
                     </tbody>
@@ -2787,8 +2787,8 @@ ex:ExampleAndShape
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="Or" id="validator-OrConstraintComponent">
-                        For each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> <code>v</code>: A <a href="#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a> <em class="rfc2119" title="MUST">MUST</em>                        be produced if the <a href="#dfn-conformance-checking" class="internalDFN" data-link-type="dfn">conformance checking</a> of <code>v</code> against any of the <a href="#dfn-members" class="internalDFN" data-link-type="dfn">members</a>                        produces a <a href="#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a>. Otherwise, if <code>v</code> <a href="#dfn-conforms" class="internalDFN" data-link-type="dfn">conforms</a> to none of the <a href="#dfn-members"
-                            class="internalDFN" data-link-type="dfn">members</a> of <code>$or</code> there is a <a href="#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> with <code>v</code> as <code>sh:value</code>.
+                        For each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> <code>v</code>: A <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a> <em class="rfc2119" title="MUST">MUST</em>                        be produced if the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-conformance-checking" class="internalDFN" data-link-type="dfn">conformance checking</a> of <code>v</code> against any of the <a href="#dfn-members" class="internalDFN" data-link-type="dfn">members</a>                        produces a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a>. Otherwise, if <code>v</code> <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-conforms" class="internalDFN" data-link-type="dfn">conforms</a> to none of the <a href="#dfn-members"
+                            class="internalDFN" data-link-type="dfn">members</a> of <code>$or</code> there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> with <code>v</code> as <code>sh:value</code>.
                     </div>
                 </div>
                 <p><em>The remainder of this section is informative.</em></p>
@@ -2855,7 +2855,7 @@ ex:ExampleAndShape
                 <h4 id="x4.6.4-sh:xone" resource="#x4.6.4-sh:xone"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.6.4 </span>sh:xone</span>
                 </h4>
                 <p>
-                    <code>sh:xone</code> specifies the condition that each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> conforms to <em>exactly one</em> of the provided shapes.
+                    <code>sh:xone</code> specifies the condition that each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> conforms to <em>exactly one</em> of the provided shapes.
                 </p>
                 <p>
                     <span class="component-class">Constraint Component IRI</span>: <code>sh:XoneConstraintComponent</code>
@@ -2873,7 +2873,7 @@ ex:ExampleAndShape
                             <td>
                                 A <a href="#dfn-shacl-list" class="internalDFN" data-link-type="dfn">SHACL list</a> of shapes to validate the value nodes against.
                                 <span data-syntax-rule="xone-node" id="syntax-rule-xone-node">Each value of <code>sh:xone</code> in a shape is a <a href="#dfn-shacl-list" class="internalDFN" data-link-type="dfn">SHACL list</a>.</span>
-                                <span data-syntax-rule="xone-members-node" id="syntax-rule-xone-members-node">Each <a href="#dfn-members" class="internalDFN" data-link-type="dfn">member</a> of such list must be a <a href="#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a>.</span>
+                                <span data-syntax-rule="xone-members-node" id="syntax-rule-xone-members-node">Each <a href="#dfn-members" class="internalDFN" data-link-type="dfn">member</a> of such list must be a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a>.</span>
                             </td>
                         </tr>
                     </tbody>
@@ -2881,10 +2881,10 @@ ex:ExampleAndShape
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="Xone" id="validator-XoneConstraintComponent">
-                        For each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> <code>v</code> let <code>N</code> be the number of the <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shapes</a> that are
-                        <a href="#dfn-members" class="internalDFN" data-link-type="dfn">members</a> of <code>$xone</code> where <code>v</code> <a href="#dfn-conforms" class="internalDFN" data-link-type="dfn">conforms</a> to the shape. A <a href="#dfn-failure"
-                            class="internalDFN" data-link-type="dfn">failure</a> <em class="rfc2119" title="MUST">MUST</em> be produced if the <a href="#dfn-conformance-checking" class="internalDFN" data-link-type="dfn">conformance checking</a> of <code>v</code>                        against any of the <a href="#dfn-members" class="internalDFN" data-link-type="dfn">members</a> produces a <a href="#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a>. Otherwise, if <code>N</code> is not exactly
-                        <code>1</code>, there is a <a href="#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> with <code>v</code> as <code>sh:value</code>.
+                        For each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> <code>v</code> let <code>N</code> be the number of the <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shapes</a> that are
+                        <a href="#dfn-members" class="internalDFN" data-link-type="dfn">members</a> of <code>$xone</code> where <code>v</code> <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-conforms" class="internalDFN" data-link-type="dfn">conforms</a> to the shape. A <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-failure"
+                            class="internalDFN" data-link-type="dfn">failure</a> <em class="rfc2119" title="MUST">MUST</em> be produced if the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-conformance-checking" class="internalDFN" data-link-type="dfn">conformance checking</a> of <code>v</code>                        against any of the <a href="#dfn-members" class="internalDFN" data-link-type="dfn">members</a> produces a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a>. Otherwise, if <code>N</code> is not exactly
+                        <code>1</code>, there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> with <code>v</code> as <code>sh:value</code>.
                     </div>
                 </div>
                 <p><em>The remainder of this section is informative.</em></p>
@@ -2958,7 +2958,7 @@ ex:Carla a ex:Person ;
                 <h4 id="x4.7.1-sh:node" resource="#x4.7.1-sh:node"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.7.1 </span>sh:node</span>
                 </h4>
                 <p>
-                    <code>sh:node</code> specifies the condition that each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> conforms to the given <a href="#dfn-node-shape" class="internalDFN" data-link-type="dfn">node shape</a>.
+                    <code>sh:node</code> specifies the condition that each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> conforms to the given <a href="#dfn-node-shape" class="internalDFN" data-link-type="dfn">node shape</a>.
                 </p>
                 <p>
                     <span class="component-class">Constraint Component IRI</span>: <code>sh:NodeConstraintComponent</code>
@@ -2975,7 +2975,7 @@ ex:Carla a ex:Person ;
                             <td><code>sh:node</code></td>
                             <td>
                                 The <a href="#dfn-node-shape" class="internalDFN" data-link-type="dfn">node shape</a> that all value nodes need to conform to.
-                                <span data-syntax-rule="node-node" id="syntax-rule-node-node">The values of <code>sh:node</code> in a shape must be <a href="#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> <a href="#dfn-node-shape" class="internalDFN" data-link-type="dfn">node shapes</a>.</span>
+                                <span data-syntax-rule="node-node" id="syntax-rule-node-node">The values of <code>sh:node</code> in a shape must be <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> <a href="#dfn-node-shape" class="internalDFN" data-link-type="dfn">node shapes</a>.</span>
                             </td>
                         </tr>
                     </tbody>
@@ -2983,8 +2983,8 @@ ex:Carla a ex:Person ;
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="Node" id="validator-NodeConstraintComponent">
-                        For each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> <code>v</code>: A <a href="#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a> <em class="rfc2119" title="MUST">MUST</em>                        be produced if the <a href="#dfn-conformance-checking" class="internalDFN" data-link-type="dfn">conformance checking</a> of <code>v</code> against <code>$node</code> produces a <a href="#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a>.
-                        Otherwise, if <code>v</code> does not <a href="#dfn-conforms" class="internalDFN" data-link-type="dfn">conform</a> to <code>$node</code>, there is a <a href="#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a>                        with <code>v</code> as <code>sh:value</code>.
+                        For each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> <code>v</code>: A <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a> <em class="rfc2119" title="MUST">MUST</em>                        be produced if the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-conformance-checking" class="internalDFN" data-link-type="dfn">conformance checking</a> of <code>v</code> against <code>$node</code> produces a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a>.
+                        Otherwise, if <code>v</code> does not <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-conforms" class="internalDFN" data-link-type="dfn">conform</a> to <code>$node</code>, there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a>                        with <code>v</code> as <code>sh:value</code>.
                     </div>
                 </div>
                 <p><em>The remainder of this section is informative.</em></p>
@@ -3055,7 +3055,7 @@ ex:RetosAddress
                 <h4 id="x4.7.2-sh:property" resource="#x4.7.2-sh:property"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.7.2 </span>sh:property</span>
                 </h4>
                 <p>
-                    <code>sh:property</code> can be used to specify that each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> has a given <a href="#dfn-property-shape" class="internalDFN" data-link-type="dfn">property shape</a>.
+                    <code>sh:property</code> can be used to specify that each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> has a given <a href="#dfn-property-shape" class="internalDFN" data-link-type="dfn">property shape</a>.
                 </p>
                 <p>
                     <span class="component-class">Constraint Component IRI</span>: <code>sh:PropertyShapeComponent</code>
@@ -3072,7 +3072,7 @@ ex:RetosAddress
                             <td><code>sh:property</code></td>
                             <td>
                                 A <a href="#dfn-property-shape" class="internalDFN" data-link-type="dfn">property shape</a> that all value nodes need to have.
-                                <span data-syntax-rule="property-node" id="syntax-rule-property-node">Each value of <code>sh:property</code> in a shape must be a <a href="#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> <a href="#dfn-property-shape" class="internalDFN" data-link-type="dfn">property shape</a>.</span>
+                                <span data-syntax-rule="property-node" id="syntax-rule-property-node">Each value of <code>sh:property</code> in a shape must be a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> <a href="#dfn-property-shape" class="internalDFN" data-link-type="dfn">property shape</a>.</span>
                             </td>
                         </tr>
                     </tbody>
@@ -3080,8 +3080,8 @@ ex:RetosAddress
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="Property" id="validator-PropertyConstraintComponent">
-                        For each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> <code>v</code>: A <a href="#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a> <em class="rfc2119" title="MUST">MUST</em>                        be produced if the validation of <code>v</code> as <a href="#dfn-focus-node" class="internalDFN" data-link-type="dfn">focus node</a> against the property shape <code>$property</code> produces a <a href="#dfn-failure" class="internalDFN"
-                            data-link-type="dfn">failure</a>. Otherwise, the validation results are the results of <a href="#dfn-validation" class="internalDFN" data-link-type="dfn">validating</a> <code>v</code> as <a href="#dfn-focus-node" class="internalDFN"
+                        For each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> <code>v</code>: A <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a> <em class="rfc2119" title="MUST">MUST</em>                        be produced if the validation of <code>v</code> as <a href="#dfn-focus-node" class="internalDFN" data-link-type="dfn">focus node</a> against the property shape <code>$property</code> produces a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-failure" class="internalDFN"
+                            data-link-type="dfn">failure</a>. Otherwise, the validation results are the results of <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation" class="internalDFN" data-link-type="dfn">validating</a> <code>v</code> as <a href="#dfn-focus-node" class="internalDFN"
                             data-link-type="dfn">focus node</a> against the property shape <code>$property</code>.
                     </div>
                 </div>
@@ -3093,7 +3093,7 @@ ex:RetosAddress
                 </p>
                 <p>
                     Like with all other validation results, each time a <a href="#dfn-property-shape" class="internalDFN" data-link-type="dfn">property shape</a> is reached via <code>sh:property</code>, a validation engine <em class="rfc2119" title="MUST">MUST</em>                    produce <em>fresh</em> validation result nodes. This includes cases where the same <a href="#dfn-focus-node" class="internalDFN" data-link-type="dfn">focus node</a> is validated against the same <a href="#dfn-property-shape" class="internalDFN"
-                        data-link-type="dfn">property shape</a> although it is reached via different paths in the <a href="#dfn-shapes-graph" class="internalDFN" data-link-type="dfn">shapes graph</a>.
+                        data-link-type="dfn">property shape</a> although it is reached via different paths in the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-shapes-graph" class="internalDFN" data-link-type="dfn">shapes graph</a>.
                 </p>
             
                 <h5>Usage</h5>
@@ -3119,7 +3119,7 @@ ex:RetosAddress
                 <h4 id="x4.7.3-sh:qualifiedvalueshape,-sh:qualifiedmincount,-sh:qualifiedmaxcount" resource="#x4.7.3-sh:qualifiedvalueshape,-sh:qualifiedmincount,-sh:qualifiedmaxcount"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.7.3 </span>sh:qualifiedValueShape, sh:qualifiedMinCount, sh:qualifiedMaxCount</span>
                 </h4>
                 <p>
-                    <code>sh:qualifiedValueShape</code> specifies the condition that a specified number of <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a> conforms to the given shape. Each <code>sh:qualifiedValueShape</code>                    can have: one value for <code>sh:qualifiedMinCount</code>, one value for <code>sh:qualifiedMaxCount</code> or, one value for each, at the same <a href="#dfn-subject" class="internalDFN" data-link-type="dfn">subject</a>.
+                    <code>sh:qualifiedValueShape</code> specifies the condition that a specified number of <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a> conforms to the given shape. Each <code>sh:qualifiedValueShape</code>                    can have: one value for <code>sh:qualifiedMinCount</code>, one value for <code>sh:qualifiedMaxCount</code> or, one value for each, at the same <a href="#dfn-subject" class="internalDFN" data-link-type="dfn">subject</a>.
                 </p>
 
                 <div class="parameters">Parameters:</div>
@@ -3133,7 +3133,7 @@ ex:RetosAddress
                             <td><code>sh:qualifiedValueShape</code></td>
                             <td>
                                 The shape that the specified number of value nodes needs to conform to.
-                                <span data-syntax-rule="qualifiedValueShape-node" id="syntax-rule-qualifiedValueShape-node">The values of <code>sh:qualifiedValueShape</code> in a shape must be <a href="#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shapes</a>.</span>
+                                <span data-syntax-rule="qualifiedValueShape-node" id="syntax-rule-qualifiedValueShape-node">The values of <code>sh:qualifiedValueShape</code> in a shape must be <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-well-formed" class="internalDFN" data-link-type="dfn">well-formed</a> <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shapes</a>.</span>
                                 <span data-syntax-rule="qualifiedValueShape-scope" id="syntax-rule-qualifiedValueShape-scope"><a href="#dfn-node-shape" class="internalDFN" data-link-type="dfn">Node shapes</a> cannot have any value for <code>sh:qualifiedValueShape</code>.</span>                                This is a <a href="#dfn-mandatory-parameters" class="internalDFN" data-link-type="dfn">mandatory parameter</a> of <code>sh:QualifiedMinCountConstraintComponent</code> and <code>sh:QualifiedMaxCountConstraintComponent</code>.
                             </td>
                         </tr>
@@ -3167,7 +3167,7 @@ ex:RetosAddress
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION of Sibling Shapes</div>
                     <div class="def-text-body">
-                        Let <code>Q</code> be a <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a> in <a href="#dfn-shapes-graph" class="internalDFN" data-link-type="dfn">shapes graph</a> <code>G</code> that declares a qualified cardinality
+                        Let <code>Q</code> be a <a href="#dfn-shape" class="internalDFN" data-link-type="dfn">shape</a> in <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-shapes-graph" class="internalDFN" data-link-type="dfn">shapes graph</a> <code>G</code> that declares a qualified cardinality
                         constraint (by having values for <code>sh:qualifiedValueShape</code> and at least one of <code>sh:qualifiedMinCount</code> or <code>sh:qualifiedMaxCount</code>). Let <code>ps</code> be the set of <a href="#dfn-shape" class="internalDFN"
                             data-link-type="dfn">shapes</a> in <code>G</code> that have <code>Q</code> as a <a href="#dfn-value" class="internalDFN" data-link-type="dfn">value</a> of <code>sh:property</code>. If <code>Q</code> has <code>true</code> as a
                         <a
@@ -3180,9 +3180,9 @@ ex:RetosAddress
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION of sh:qualifiedMinCount</div>
                     <div class="def-text-body" data-validator="QualifiedMinCount" id="validator-QualifiedMinCountConstraintComponent">
-                        Let <code>C</code> be the number of <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a> <code>v</code> where
-                        <code>v</code> <a href="#dfn-conforms" class="internalDFN" data-link-type="dfn">conforms</a> to <code>$qualifiedValueShape</code> and where <code>v</code> does not <a href="#dfn-conforms" class="internalDFN" data-link-type="dfn">conform</a>                        to any of the <a href="#dfn-sibling-shapes" class="internalDFN" data-link-type="dfn">sibling shapes</a> for the <em>current</em> shape, i.e. the shape that <code>v</code> is validated against and which has <code>$qualifiedValueShape</code>                        as its value for <code>sh:qualifiedValueShape</code>. A <a href="#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a> <em class="rfc2119" title="MUST">MUST</em> be produced if any of the said conformance checks produces
-                        a <a href="#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a>. Otherwise, there is a <a href="#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> if <code>C</code> is less than
+                        Let <code>C</code> be the number of <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a> <code>v</code> where
+                        <code>v</code> <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-conforms" class="internalDFN" data-link-type="dfn">conforms</a> to <code>$qualifiedValueShape</code> and where <code>v</code> does not <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-conforms" class="internalDFN" data-link-type="dfn">conform</a>                        to any of the <a href="#dfn-sibling-shapes" class="internalDFN" data-link-type="dfn">sibling shapes</a> for the <em>current</em> shape, i.e. the shape that <code>v</code> is validated against and which has <code>$qualifiedValueShape</code>                        as its value for <code>sh:qualifiedValueShape</code>. A <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a> <em class="rfc2119" title="MUST">MUST</em> be produced if any of the said conformance checks produces
+                        a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a>. Otherwise, there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> if <code>C</code> is less than
                         <code>$qualifiedMinCount</code>. The <a href="#dfn-constraint-component" class="internalDFN" data-link-type="dfn">constraint component</a> for <code>sh:qualifiedMinCount</code> is <code>sh:QualifiedMinCountConstraintComponent</code>.
                     </div>
                 </div>
@@ -3190,8 +3190,8 @@ ex:RetosAddress
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION of sh:qualifiedMaxCount</div>
                     <div class="def-text-body" data-validator="QualifiedMaxCount" id="validator-QualifiedMaxCountConstraintComponent">
-                        Let <code>C</code> be as defined for <code>sh:qualifiedMinCount</code> above. A <a href="#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a> <em class="rfc2119" title="MUST">MUST</em> be produced if any of the said
-                        conformance checks produces a <a href="#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a>. Otherwise, there is a <a href="#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> if
+                        Let <code>C</code> be as defined for <code>sh:qualifiedMinCount</code> above. A <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a> <em class="rfc2119" title="MUST">MUST</em> be produced if any of the said
+                        conformance checks produces a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-failure" class="internalDFN" data-link-type="dfn">failure</a>. Otherwise, there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> if
                         <code>C</code> is greater than <code>$qualifiedMaxCount</code>. The <a href="#dfn-constraint-component" class="internalDFN" data-link-type="dfn">constraint component</a> for <code>sh:qualifiedMaxCount</code> is <code>sh:QualifiedMaxCountConstraintComponent</code>.
                     </div>
                 </div>
@@ -3373,10 +3373,10 @@ ex:Jane
                 <div id="def-ClosedShape-text" class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="Closed" id="validator-ClosedConstraintComponent">
-                        If <code>$closed</code> is <code>true</code> then there is a <a href="#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> for each <a href="#dfn-rdf-triple" class="internalDFN" data-link-type="dfn">triple</a>                        that has a <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> as its
+                        If <code>$closed</code> is <code>true</code> then there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> for each <a href="#dfn-rdf-triple" class="internalDFN" data-link-type="dfn">triple</a>                        that has a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> as its
                         <a href="#dfn-subject" class="internalDFN" data-link-type="dfn">subject</a> and a <a href="#dfn-predicate" class="internalDFN" data-link-type="dfn">predicate</a> that is not explicitly enumerated as a <a href="#dfn-value" class="internalDFN"
                             data-link-type="dfn">value</a> of <code>sh:path</code> in any of the <a href="#dfn-property-shape" class="internalDFN" data-link-type="dfn">property shapes</a> declared via <code>sh:property</code> at the current shape. If <code>$ignoredProperties</code>                        has a value then the properties enumerated as <a href="#dfn-members" class="internalDFN" data-link-type="dfn">members</a> of this <a href="#dfn-shacl-list" class="internalDFN" data-link-type="dfn">SHACL list</a> are also permitted
-                        for the <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a>. The <a href="#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> <em class="rfc2119" title="MUST">MUST</em>                        have the <a href="#dfn-predicate" class="internalDFN" data-link-type="dfn">predicate</a> of the triple as its <code>sh:resultPath</code>, and the <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a> of the
+                        for the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a>. The <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a> <em class="rfc2119" title="MUST">MUST</em>                        have the <a href="#dfn-predicate" class="internalDFN" data-link-type="dfn">predicate</a> of the triple as its <code>sh:resultPath</code>, and the <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a> of the
                         triple as its <code>sh:value</code>.
                     </div>
                 </div>
@@ -3467,7 +3467,7 @@ WHERE {
                 <h4 id="x4.8.2-sh:hasvalue" resource="#x4.8.2-sh:hasvalue"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.8.2 </span>sh:hasValue</span>
                 </h4>
                 <p>
-                    <code>sh:hasValue</code> specifies the condition that at least one <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> is equal to the given RDF term.
+                    <code>sh:hasValue</code> specifies the condition that at least one <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> is equal to the given RDF term.
                 </p>
                 <p>
                     <span class="component-class">Constraint Component IRI</span>: <code>sh:HasValueConstraintComponent</code>
@@ -3491,7 +3491,7 @@ WHERE {
                 <div id="def-hasValue-text" class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="HasValue" id="validator-HasValueConstraintComponent">
-                        If the RDF term <code>$hasValue</code> is not among the <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a>, there is a <a href="#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a>.
+                        If the RDF term <code>$hasValue</code> is not among the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value nodes</a>, there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results" class="internalDFN" data-link-type="dfn">validation result</a>.
                     </div>
                 </div>
                 <p><em>The remainder of this section is informative.</em></p>
@@ -3539,7 +3539,7 @@ WHERE {
                 <h4 id="x4.8.3-sh:in" resource="#x4.8.3-sh:in"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.8.3 </span>sh:in</span>
                 </h4>
                 <p>
-                    <code>sh:in</code> specifies the condition that each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> is a <a href="#dfn-members" class="internalDFN" data-link-type="dfn">member</a> of a provided
+                    <code>sh:in</code> specifies the condition that each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> is a <a href="#dfn-members" class="internalDFN" data-link-type="dfn">member</a> of a provided
                     <a
                         href="#dfn-shacl-list" class="internalDFN" data-link-type="dfn">SHACL list</a>.
                 </p>
@@ -3567,8 +3567,8 @@ WHERE {
                 <div class="def def-text">
                     <div class="def-header">TEXTUAL DEFINITION</div>
                     <div class="def-text-body" data-validator="In" id="validator-InConstraintComponent">
-                        For each <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> that is not a <a href="#dfn-members" class="internalDFN" data-link-type="dfn">member</a> of <code>$in</code>, there is a <a href="#dfn-validation-results"
-                            class="internalDFN" data-link-type="dfn">validation result</a> with the <a href="#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> as <code>sh:value</code>.
+                        For each <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> that is not a <a href="#dfn-members" class="internalDFN" data-link-type="dfn">member</a> of <code>$in</code>, there is a <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-validation-results"
+                            class="internalDFN" data-link-type="dfn">validation result</a> with the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/#dfn-value-nodes" class="internalDFN" data-link-type="dfn">value node</a> as <code>sh:value</code>.
                     </div>
                 </div>
                 <p><em>The remainder of this section is informative.</em></p>
