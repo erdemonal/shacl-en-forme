@@ -86,7 +86,7 @@
     "AnalysisResults"
   ],
   "name": "SHACL en Forme — corpus analysis results",
-  "description": "Usage statistics for SHACL 1.0 shapes, targets, Core constraint parameters, and SPARQL-based constraints across public GitHub repositories.",
+  "description": "Usage statistics for SHACL 1.0 shapes, targets, Core constraint parameters, property-path forms, and SPARQL-based constraints across public GitHub repositories.",
   "url": "https://w3id.org/shacl-en-forme/",
   "datePublished": "2026",
   "author": {
@@ -602,6 +602,58 @@
     "sparql_only_content_trees": 11,
     "sparql_only_verification_trees": 3,
     "repositories_note": "Repository counts are not multiplied into sparql_links or shape totals."
+  },
+  "property_paths": {
+    "denominator_extracted_trees": 6336,
+    "path_declarations": 4234791,
+    "classified": 4232514,
+    "unclassified": 2277,
+    "classifier_coverage_percent": 99.95,
+    "occurrences_note": "Form occurrence totals can exceed path_declarations because nested path forms are counted separately.",
+    "forms": [
+      {
+        "form": "PredicatePath",
+        "occurrences": 4568036,
+        "unique_trees": 6108,
+        "percent_of_extracted_trees": 96.4
+      },
+      {
+        "form": "SequencePath",
+        "occurrences": 180487,
+        "unique_trees": 1245,
+        "percent_of_extracted_trees": 19.65
+      },
+      {
+        "form": "AlternativePath",
+        "occurrences": 16243,
+        "unique_trees": 1057,
+        "percent_of_extracted_trees": 16.68
+      },
+      {
+        "form": "InversePath",
+        "occurrences": 34461,
+        "unique_trees": 1298,
+        "percent_of_extracted_trees": 20.49
+      },
+      {
+        "form": "ZeroOrMorePath",
+        "occurrences": 49261,
+        "unique_trees": 853,
+        "percent_of_extracted_trees": 13.46
+      },
+      {
+        "form": "OneOrMorePath",
+        "occurrences": 2155,
+        "unique_trees": 703,
+        "percent_of_extracted_trees": 11.1
+      },
+      {
+        "form": "ZeroOrOnePath",
+        "occurrences": 754,
+        "unique_trees": 443,
+        "percent_of_extracted_trees": 6.99
+      }
+    ]
   },
   "repository_view": {
     "verified_repositories": 7569,
