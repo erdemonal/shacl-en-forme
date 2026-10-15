@@ -120,7 +120,7 @@
       "@type": "xsd:decimal"
     }
   },
-  "@id": "https://w3id.org/shacl-en-forme/data/summary",
+  "@id": "https://w3id.org/shacl-en-forme/data/stats.jsonld",
   "@type": [
     "schema:Dataset",
     "AnalysisResults"

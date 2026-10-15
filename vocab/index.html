@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SHACL en Forme Vocabulary</title>
+  <link rel="alternate" type="text/turtle" href="index.ttl" title="Turtle">
+  <link rel="canonical" href="https://w3id.org/shacl-en-forme/vocab/">
+  <style>
+    :root {
+      --bg: #fafafa;
+      --fg: #222;
+      --muted: #555;
+      --line: #ddd;
+      --code: #111;
+    }
+    body {
+      margin: 0;
+      font: 16px/1.5 Georgia, "Times New Roman", serif;
+      color: var(--fg);
+      background: var(--bg);
+    }
+    main {
+      max-width: 52rem;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 0.35rem;
+    }
+    h2 {
+      font-size: 1.2rem;
+      margin: 2rem 0 0.75rem;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 0.25rem;
+    }
+    p, li { color: var(--fg); }
+    .muted { color: var(--muted); }
+    code, .iri {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+      color: var(--code);
+    }
+    dl {
+      margin: 0;
+    }
+    dt {
+      margin-top: 1.1rem;
+      font-weight: 700;
+    }
+    dd {
+      margin: 0.25rem 0 0 0;
+    }
+    dd .iri {
+      display: block;
+      margin: 0.15rem 0 0.35rem;
+      word-break: break-all;
+    }
+    a { color: #0b57d0; }
+    header p { margin: 0.25rem 0; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>SHACL en Forme Vocabulary</h1>
+      <p class="muted">Namespace: <code>https://w3id.org/shacl-en-forme/vocab#</code></p>
+      <p class="muted">Preferred prefix: <code>sef</code></p>
+      <p>
+        Machine-readable: <a href="index.ttl">index.ttl</a> ·
+        Dataset: <a href="https://w3id.org/shacl-en-forme/data/stats.jsonld">stats.jsonld</a> ·
+        Project: <a href="https://w3id.org/shacl-en-forme/">SHACL en Forme</a>
+      </p>
+      <p>
+        Terms used by the SHACL en Forme usage-statistics dataset.
+        Based on <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/">SHACL 1.0</a>.
+      </p>
+    </header>
+
+    <h2>Classes</h2>
+    <dl>
+      <dt id="AnalysisResults">AnalysisResults</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#AnalysisResults</span>
+        A dataset of measured SHACL 1.0 usage statistics over a corpus of Git trees.
+      </dd>
+    </dl>
+
+    <h2>Corpus size</h2>
+    <dl>
+      <dt id="intended_unique_verified_trees">intended_unique_verified_trees</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#intended_unique_verified_trees</span>
+        Number of distinct verified Git trees in the intended corpus.
+      </dd>
+      <dt id="extracted_unique_trees">extracted_unique_trees</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#extracted_unique_trees</span>
+        Number of distinct Git trees successfully extracted for analysis.
+      </dd>
+      <dt id="lower_bound">lower_bound</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#lower_bound</span>
+        True when reported counts are conservative lower bounds due to incomplete extraction or parsing.
+      </dd>
+    </dl>
+
+    <h2>Counting primitives</h2>
+    <dl>
+      <dt id="predicate">predicate</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#predicate</span>
+        The SHACL predicate or IRI whose usage is counted.
+      </dd>
+      <dt id="occurrences">occurrences</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#occurrences</span>
+        Number of observed occurrences of a counted phenomenon in extracted trees.
+      </dd>
+      <dt id="unique_trees">unique_trees</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#unique_trees</span>
+        Number of distinct extracted Git trees in which a phenomenon was observed.
+      </dd>
+      <dt id="percent_of_extracted_trees">percent_of_extracted_trees</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#percent_of_extracted_trees</span>
+        <code>unique_trees</code> as a percentage of <code>extracted_unique_trees</code>.
+      </dd>
+      <dt id="verified_repositories">verified_repositories</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#verified_repositories</span>
+        Number of verified GitHub repositories associated with trees that exhibited a phenomenon.
+      </dd>
+      <dt id="percent_of_verified_repositories">percent_of_verified_repositories</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#percent_of_verified_repositories</span>
+        <code>verified_repositories</code> as a percentage of all verified repositories in the corpus.
+      </dd>
+      <dt id="denominator_extracted_trees">denominator_extracted_trees</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#denominator_extracted_trees</span>
+        Tree population used as denominator for tree-based rates.
+      </dd>
+      <dt id="denominator_verified_repositories">denominator_verified_repositories</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#denominator_verified_repositories</span>
+        Repository population used as denominator for repository-based rates.
+      </dd>
+      <dt id="total_occurrences">total_occurrences</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#total_occurrences</span>
+        Sum of occurrences across a result group.
+      </dd>
+      <dt id="numerator">numerator</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#numerator</span>
+        Numerator of a rate.
+      </dd>
+      <dt id="denominator">denominator</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#denominator</span>
+        Denominator of a rate.
+      </dd>
+      <dt id="micro_rate">micro_rate</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#micro_rate</span>
+        Micro-averaged rate equal to numerator divided by denominator.
+      </dd>
+      <dt id="rate">rate</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#rate</span>
+        Proportion of labelled items within a stated population.
+      </dd>
+      <dt id="n_with_label">n_with_label</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#n_with_label</span>
+        Number of items carrying a given classification label.
+      </dd>
+    </dl>
+
+    <h2>Shapes</h2>
+    <dl>
+      <dt id="node_shapes">node_shapes</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#node_shapes</span>
+        Count of resources typed as <code>sh:NodeShape</code>.
+      </dd>
+      <dt id="property_shapes">property_shapes</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#property_shapes</span>
+        Count of resources typed as <code>sh:PropertyShape</code>.
+      </dd>
+      <dt id="distinct_shapes">distinct_shapes</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#distinct_shapes</span>
+        Count of distinct resources typed as <code>sh:NodeShape</code> and/or <code>sh:PropertyShape</code>.
+      </dd>
+      <dt id="shape_documents">shape_documents</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#shape_documents</span>
+        Number of RDF documents that contain SHACL shapes.
+      </dd>
+      <dt id="trees_with_shape_documents">trees_with_shape_documents</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#trees_with_shape_documents</span>
+        Number of extracted Git trees that contain at least one shape document.
+      </dd>
+      <dt id="content_sha256_groups">content_sha256_groups</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#content_sha256_groups</span>
+        Number of distinct document contents after SHA-256 deduplication.
+      </dd>
+    </dl>
+
+    <h2>SPARQL</h2>
+    <dl>
+      <dt id="trees_with_structural_constraints">trees_with_structural_constraints</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#trees_with_structural_constraints</span>
+        Number of extracted Git trees containing SHACL-SPARQL structural constraint usage.
+      </dd>
+      <dt id="sparql_links">sparql_links</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#sparql_links</span>
+        Number of <code>sh:sparql</code> links observed in extracted trees.
+      </dd>
+      <dt id="sparql_constraint_nodes">sparql_constraint_nodes</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#sparql_constraint_nodes</span>
+        Number of SPARQL constraint nodes observed in extracted trees.
+      </dd>
+      <dt id="sparql_target_trees">sparql_target_trees</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#sparql_target_trees</span>
+        Number of extracted Git trees with SPARQL-based targets.
+      </dd>
+    </dl>
+
+    <h2>Property paths</h2>
+    <dl>
+      <dt id="nested_forms_counted_separately">nested_forms_counted_separately</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#nested_forms_counted_separately</span>
+        True when nested SHACL property-path forms contribute separate occurrence counts, so form occurrence totals may exceed path declaration totals.
+      </dd>
+      <dt id="form">form</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#form</span>
+        Name of a SHACL 1.0 property-path form, such as PredicatePath or SequencePath.
+      </dd>
+      <dt id="path_declarations">path_declarations</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#path_declarations</span>
+        Number of <code>sh:path</code> declarations observed in extracted trees.
+      </dd>
+      <dt id="classified">classified</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#classified</span>
+        Number of path declarations classified into one of the seven SHACL 1.0 property-path forms.
+      </dd>
+      <dt id="unclassified">unclassified</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#unclassified</span>
+        Number of path declarations not classified into a SHACL 1.0 property-path form.
+      </dd>
+    </dl>
+
+    <h2>Ontology alignment</h2>
+    <dl>
+      <dt id="both_stream_trees">both_stream_trees</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#both_stream_trees</span>
+        Number of extracted Git trees that contribute both shapes-stream and ontology-stream evidence used by alignment rates.
+      </dd>
+    </dl>
+
+    <h2>Constraint consistency</h2>
+    <dl>
+      <dt id="shapes_graph_policy">shapes_graph_policy</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#shapes_graph_policy</span>
+        Policy describing which RDF graphs were treated as shapes graphs for consistency analysis.
+      </dd>
+      <dt id="primary_records">primary_records</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#primary_records</span>
+        Number of primary constraint-consistency records.
+      </dd>
+      <dt id="primary_logic05_confirmed">primary_logic05_confirmed</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#primary_logic05_confirmed</span>
+        Number of primary records confirmed under the Logic05 criterion.
+      </dd>
+      <dt id="primary_closed02_confirmed">primary_closed02_confirmed</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#primary_closed02_confirmed</span>
+        Number of primary records confirmed under the Closed02 criterion.
+      </dd>
+    </dl>
+
+    <h2>Classification</h2>
+    <dl>
+      <dt id="multi_label">multi_label</dt>
+      <dd>
+        <span class="iri">https://w3id.org/shacl-en-forme/vocab#multi_label</span>
+        True when classification labels may overlap on the same item.
+      </dd>
+    </dl>
+  </main>
+</body>
+</html>
