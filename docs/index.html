@@ -3756,14 +3756,14 @@ WHERE {
         <h2 id="x5.-usage-in-practice" resource="#x5.-usage-in-practice"><span property="xhv:role" resource="xhv:heading"><span class="secno">5 </span>Usage in Practice</span>
         </h2>
         <p>
-            This section reports coverage, shape concentration, ontology alignment, constraint-consistency findings, and document classifications for SHACL shapes collected from public GitHub repositories.
+            This section presents further results from the analysis of SHACL shapes found in public GitHub repositories.
         </p>
 
         <section id="dataset-and-coverage" typeof="bibo:Chapter" resource="#dataset-and-coverage" property="bibo:hasPart">
             <h3 id="x5.1-dataset-and-coverage" resource="#x5.1-dataset-and-coverage"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.1 </span>Dataset and Coverage</span>
             </h3>
             <p>
-                A Git tree is a distinct content snapshot identified by its Git object hash. A GitHub repository is a project that may reference such a tree. Several repositories can share one tree. Tree-based rates in this document use extracted trees. Repository counts use verified repositories and are not multiplied into occurrence totals. Counts are lower bounds over successfully parsed evidence.
+                A Git tree is a distinct content snapshot identified by its Git object hash. A GitHub repository is a project that may reference such a tree. Several repositories can share one tree. Tree-based rates in this document use extracted trees. Repository counts use verified repositories and are not multiplied into occurrence totals. Counts are lower bounds over successfully parsed evidence. Two of the 6,343 verified Git trees were unavailable for extraction.
             </p>
             <p>Git trees and repositories:</p>
             <table class="data">
@@ -3777,20 +3777,12 @@ WHERE {
                     <td>6,341</td>
                 </tr>
                 <tr>
-                    <th scope="row">Unavailable Git trees</th>
-                    <td>2</td>
-                </tr>
-                <tr>
                     <th scope="row">Verified repositories</th>
                     <td>7,569</td>
                 </tr>
                 <tr>
                     <th scope="row">Repositories with an extracted tree</th>
                     <td>7,567</td>
-                </tr>
-                <tr>
-                    <th scope="row">Repositories without an extracted tree</th>
-                    <td>2</td>
                 </tr>
             </tbody>
         </table>
@@ -3863,28 +3855,8 @@ WHERE {
             <h3 id="x5.3-ontology-alignment" resource="#x5.3-ontology-alignment"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.3 </span>Ontology Alignment</span>
             </h3>
             <p>
-                The analysis compares ontology declarations and SHACL references within the same Git tree. A match requires the same IRI to occur in both. The first two measurements report the proportion of declared project classes and properties referenced by SHACL. Project terms exclude IRIs under the well-known RDF, RDFS, OWL, XSD, SHACL, DC, and FOAF vocabularies. The last two measurements report the proportion of all SHACL class and property references in each tree that also have an in-tree ontology declaration. Unmatched references are not treated as undefined terms. Each IRI is counted once per tree. The rates are computed over the 5,134 trees containing both SHACL shapes and ontology terms. Each rate is calculated by dividing the sum of the matching IRIs by the sum of the corresponding IRIs across the 5,134 trees. IRIs are counted separately in each tree.
+                The analysis compares ontology declarations and SHACL references within the same Git tree. A match requires the same IRI to occur in both. The first two measurements report the proportion of declared project classes and properties referenced by SHACL. Project terms exclude IRIs under the well-known RDF, RDFS, OWL, XSD, SHACL, DC, and FOAF vocabularies. The last two measurements report the proportion of all SHACL class and property references in each tree that also have an in-tree ontology declaration. Unmatched references are not treated as undefined terms. Each IRI is counted once per tree. Of the 6,341 extracted Git trees, 5,134 contain both SHACL shapes and ontology terms, 1,206 contain only SHACL shapes, and one contains neither. Each rate is calculated by dividing the sum of the matching IRIs by the sum of the corresponding IRIs across the 5,134 trees.
             </p>
-            <table class="data">
-            <tbody>
-                <tr>
-                    <th scope="row">Trees with shapes and ontology terms</th>
-                    <td>5,134</td>
-                </tr>
-                <tr>
-                    <th scope="row">Trees with shapes only</th>
-                    <td>1,206</td>
-                </tr>
-                <tr>
-                    <th scope="row">Trees with ontology terms only</th>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <th scope="row">Trees with neither</th>
-                    <td>1</td>
-                </tr>
-            </tbody>
-        </table>
             <table class="data">
             <thead>
                 <tr>
@@ -3957,7 +3929,16 @@ WHERE {
                 <h4 id="x5.5.1-functional-usage" resource="#x5.5.1-functional-usage"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.5.1 </span>Functional Usage</span>
                 </h4>
                 <p>
-                    The classification identifies document characteristics such as structural constraints, SPARQL extensions, test fixtures, and generated shapes. Counts are reported for documents, distinct document contents, and Git trees. Application use labels documents that encode application- or policy-specific validation requirements, such as value lists, cross-property relations, or qualified policies, for a domain application rather than normative vocabulary or application-profile packaging alone. Assignment requires packaging outside fixtures, engine suites, and profile or application-profile paths, together with relational predicate evidence that meets the U5 thresholds. Ontology and vocabulary specifications labels documents packaged as a normative companion to a vocabulary, profile, or application profile. That label requires ontology terms in the same file or tree stream together with profile, vocabulary, or application-profile path or packaging cues. Mere co-location of ontology triples and shapes is not sufficient. Provenance only counts documents that have a provenance label for test fixtures and conformance or for generated or transformed shapes, and that have no functional label.
+                    The classification distinguishes structural schemas, SPARQL extensions, test fixtures, generated shapes, and related categories. Counts are reported for documents, distinct document contents, and Git trees.
+                </p>
+                <p>
+                    The Application use category covers documents that encode application- or policy-specific validation requirements, such as value lists, cross-property relations, or qualified policies, for a domain application. It excludes documents whose role is normative vocabulary or application-profile packaging alone. Assignment requires packaging outside fixtures, engine suites, and profile or application-profile paths, together with relational predicate evidence that meets the U5 thresholds.
+                </p>
+                <p>
+                    The Ontology and vocabulary specifications category covers documents packaged as a normative companion to a vocabulary, profile, or application profile. Assignment requires ontology terms in the same file or tree stream together with profile, vocabulary, or application-profile path or packaging cues. Mere co-location of ontology triples and shapes is not sufficient.
+                </p>
+                <p>
+                    Provenance only counts documents that carry a provenance label for test fixtures and conformance or for generated or transformed shapes, and that carry no functional label.
                 </p>
                 <table class="data">
             <thead>
@@ -3971,39 +3952,39 @@ WHERE {
             <tbody>
                 <tr>
                     <th scope="row">Test fixtures and conformance</th>
-                    <td>108,332 (67.66%)</td>
-                    <td>14,436 (33.49%)</td>
-                    <td>1,600 (25.24%)</td>
+                    <td>108,332<br><span style="font-size:smaller">67.66%</span></td>
+                    <td>14,436<br><span style="font-size:smaller">33.49%</span></td>
+                    <td>1,600<br><span style="font-size:smaller">25.24%</span></td>
                 </tr>
                 <tr>
                     <th scope="row">Structural schemas</th>
-                    <td>57,373 (35.83%)</td>
-                    <td>24,673 (57.25%)</td>
-                    <td>5,775 (91.09%)</td>
+                    <td>57,373<br><span style="font-size:smaller">35.83%</span></td>
+                    <td>24,673<br><span style="font-size:smaller">57.25%</span></td>
+                    <td>5,775<br><span style="font-size:smaller">91.09%</span></td>
                 </tr>
                 <tr>
                     <th scope="row">SPARQL rules and extensions</th>
-                    <td>19,908 (12.43%)</td>
-                    <td>7,908 (18.35%)</td>
-                    <td>2,395 (37.78%)</td>
+                    <td>19,908<br><span style="font-size:smaller">12.43%</span></td>
+                    <td>7,908<br><span style="font-size:smaller">18.35%</span></td>
+                    <td>2,395<br><span style="font-size:smaller">37.78%</span></td>
                 </tr>
                 <tr>
                     <th scope="row">Generated or transformed shapes</th>
-                    <td>1,955 (1.22%)</td>
-                    <td>1,526 (3.54%)</td>
-                    <td>55 (0.87%)</td>
+                    <td>1,955<br><span style="font-size:smaller">1.22%</span></td>
+                    <td>1,526<br><span style="font-size:smaller">3.54%</span></td>
+                    <td>55<br><span style="font-size:smaller">0.87%</span></td>
                 </tr>
                 <tr>
                     <th scope="row">Application use</th>
-                    <td>192 (0.12%)</td>
-                    <td>58 (0.13%)</td>
-                    <td>27 (0.43%)</td>
+                    <td>192<br><span style="font-size:smaller">0.12%</span></td>
+                    <td>58<br><span style="font-size:smaller">0.13%</span></td>
+                    <td>27<br><span style="font-size:smaller">0.43%</span></td>
                 </tr>
                 <tr>
                     <th scope="row">Ontology and vocabulary specifications</th>
-                    <td>4,922 (3.07%)</td>
-                    <td>1,540 (3.57%)</td>
-                    <td>204 (3.22%)</td>
+                    <td>4,922<br><span style="font-size:smaller">3.07%</span></td>
+                    <td>1,540<br><span style="font-size:smaller">3.57%</span></td>
+                    <td>204<br><span style="font-size:smaller">3.22%</span></td>
                 </tr>
             </tbody>
         </table>
@@ -4011,11 +3992,11 @@ WHERE {
             <tbody>
                 <tr>
                     <th scope="row">Unknown labels only</th>
-                    <td>10,926 (6.82%)</td>
+                    <td>10,926<br><span style="font-size:smaller">6.82%</span></td>
                 </tr>
                 <tr>
                     <th scope="row">Provenance only</th>
-                    <td>74,367 (46.44%)</td>
+                    <td>74,367<br><span style="font-size:smaller">46.44%</span></td>
                 </tr>
             </tbody>
         </table>
@@ -4142,19 +4123,19 @@ WHERE {
             <tbody>
                 <tr>
                     <th scope="row">Unknown domain only</th>
-                    <td>78,736 (49.17%)</td>
+                    <td>78,736<br><span style="font-size:smaller">49.17%</span></td>
                 </tr>
                 <tr>
                     <th scope="row">Infrastructure</th>
-                    <td>59,952 (37.44%)</td>
+                    <td>59,952<br><span style="font-size:smaller">37.44%</span></td>
                 </tr>
                 <tr>
                     <th scope="row">Multiple application domains</th>
-                    <td>1,913 (1.19%)</td>
+                    <td>1,913<br><span style="font-size:smaller">1.19%</span></td>
                 </tr>
                 <tr>
                     <th scope="row">Fixture-path documents</th>
-                    <td>101,884 (63.63%)</td>
+                    <td>101,884<br><span style="font-size:smaller">63.63%</span></td>
                 </tr>
             </tbody>
         </table>
