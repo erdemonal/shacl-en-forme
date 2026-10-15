@@ -25,20 +25,18 @@
 #
 # Classes
 #
-
 :AnalysisResults
     a rdfs:Class ;
     rdfs:label "Analysis results"@en ;
-    rdfs:comment "SHACL 1.0 usage statistics over a corpus of Git trees."@en .
+    rdfs:comment "SHACL 1.0 usage statistics over extracted Git trees."@en .
 
 #
-# Corpus size
+# Tree counts
 #
-
 :intended_unique_verified_trees
     a rdf:Property ;
     rdfs:label "intended unique verified trees"@en ;
-    rdfs:comment "Number of distinct verified Git trees in the intended corpus."@en ;
+    rdfs:comment "Number of distinct verified Git trees intended for analysis."@en ;
     rdfs:range xsd:integer .
 
 :extracted_unique_trees
@@ -56,7 +54,6 @@
 #
 # Counting
 #
-
 :predicate
     a rdf:Property ;
     rdfs:label "predicate"@en ;
@@ -144,7 +141,6 @@
 #
 # Shapes
 #
-
 :node_shapes
     a rdf:Property ;
     rdfs:label "node shapes"@en ;
@@ -184,7 +180,6 @@
 #
 # SPARQL
 #
-
 :trees_with_structural_constraints
     a rdf:Property ;
     rdfs:label "trees with structural constraints"@en ;
@@ -212,7 +207,6 @@
 #
 # Property paths
 #
-
 :nested_forms_counted_separately
     a rdf:Property ;
     rdfs:label "nested forms counted separately"@en ;
@@ -246,7 +240,6 @@
 #
 # Ontology alignment
 #
-
 :both_stream_trees
     a rdf:Property ;
     rdfs:label "trees with shapes and ontology terms"@en ;
@@ -256,7 +249,6 @@
 #
 # Constraint consistency
 #
-
 :shapes_graph_policy
     a rdf:Property ;
     rdfs:label "shapes graph policy"@en ;
@@ -272,7 +264,6 @@
 #
 # Classification
 #
-
 :multi_label
     a rdf:Property ;
     rdfs:label "multi-label"@en ;
