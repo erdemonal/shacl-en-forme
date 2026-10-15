@@ -832,8 +832,6 @@
   "constraint_consistency": {
     "shapes_graph_policy": "rdf_source_document",
     "primary_records": 670,
-    "primary_logic05_confirmed": 657,
-    "primary_closed02_confirmed": 13,
     "denominator_extracted_trees": 6336
   },
   "usage_classification": {

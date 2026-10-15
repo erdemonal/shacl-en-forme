@@ -1,35 +1,39 @@
-@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+#
+# Prefixes
+#
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl:  <http://www.w3.org/2002/07/owl#> .
-@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
-@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@prefix :     <https://w3id.org/shacl-en-forme/vocab#> .
+@prefix erdemonal: <https://w3id.org/people/erdemonal/> .
+@prefix : <https://w3id.org/shacl-en-forme/vocab#> .
 
 <https://w3id.org/shacl-en-forme/vocab>
     a owl:Ontology ;
-    dct:title "SHACL en Forme vocabulary"@en ;
-    dct:description "Terms used in the SHACL en Forme machine-readable usage statistics."@en ;
-    dct:creator <https://w3id.org/people/erdemonal> ;
+    rdfs:label "SHACL en Forme vocabulary"@en ;
+    rdfs:comment "Vocabulary for SHACL en Forme usage statistics."@en ;
     dct:created "2026"^^xsd:gYear ;
+    dct:creator erdemonal:me ;
     vann:preferredNamespaceUri "https://w3id.org/shacl-en-forme/vocab#" ;
     vann:preferredNamespacePrefix "sef" ;
     rdfs:seeAlso <https://w3id.org/shacl-en-forme/> ,
                  <https://w3id.org/shacl-en-forme/data/stats.jsonld> ,
                  <https://www.w3.org/TR/2017/REC-shacl-20170720/> .
 
-#################################################################
+#
 # Classes
-#################################################################
+#
 
 :AnalysisResults
     a rdfs:Class ;
     rdfs:label "Analysis results"@en ;
-    rdfs:comment "A dataset of measured SHACL 1.0 usage statistics over a corpus of Git trees."@en .
+    rdfs:comment "SHACL 1.0 usage statistics over a corpus of Git trees."@en .
 
-#################################################################
+#
 # Corpus size
-#################################################################
+#
 
 :intended_unique_verified_trees
     a rdf:Property ;
@@ -49,9 +53,9 @@
     rdfs:comment "True when reported counts are conservative lower bounds due to incomplete extraction or parsing."@en ;
     rdfs:range xsd:boolean .
 
-#################################################################
-# Counting primitives
-#################################################################
+#
+# Counting
+#
 
 :predicate
     a rdf:Property ;
@@ -62,7 +66,7 @@
 :occurrences
     a rdf:Property ;
     rdfs:label "occurrences"@en ;
-    rdfs:comment "Number of observed occurrences of a counted phenomenon in extracted trees."@en ;
+    rdfs:comment "Number of observed occurrences in extracted trees."@en ;
     rdfs:range xsd:integer .
 
 :unique_trees
@@ -86,19 +90,19 @@
 :percent_of_verified_repositories
     a rdf:Property ;
     rdfs:label "percent of verified repositories"@en ;
-    rdfs:comment "verified_repositories as a percentage of all verified repositories in the corpus."@en ;
+    rdfs:comment "verified_repositories as a percentage of all verified repositories."@en ;
     rdfs:range xsd:decimal .
 
 :denominator_extracted_trees
     a rdf:Property ;
-    rdfs:label "denominator extracted trees"@en ;
-    rdfs:comment "Tree population used as denominator for tree-based rates."@en ;
+    rdfs:label "extracted tree count used as denominator"@en ;
+    rdfs:comment "Number of extracted trees used as the denominator for tree-based rates."@en ;
     rdfs:range xsd:integer .
 
 :denominator_verified_repositories
     a rdf:Property ;
-    rdfs:label "denominator verified repositories"@en ;
-    rdfs:comment "Repository population used as denominator for repository-based rates."@en ;
+    rdfs:label "verified repository count used as denominator"@en ;
+    rdfs:comment "Number of verified repositories used as the denominator for repository-based rates."@en ;
     rdfs:range xsd:integer .
 
 :total_occurrences
@@ -137,9 +141,9 @@
     rdfs:comment "Number of items carrying a given classification label."@en ;
     rdfs:range xsd:integer .
 
-#################################################################
+#
 # Shapes
-#################################################################
+#
 
 :node_shapes
     a rdf:Property ;
@@ -177,9 +181,9 @@
     rdfs:comment "Number of distinct document contents after SHA-256 deduplication."@en ;
     rdfs:range xsd:integer .
 
-#################################################################
+#
 # SPARQL
-#################################################################
+#
 
 :trees_with_structural_constraints
     a rdf:Property ;
@@ -205,14 +209,14 @@
     rdfs:comment "Number of extracted Git trees with SPARQL-based targets."@en ;
     rdfs:range xsd:integer .
 
-#################################################################
+#
 # Property paths
-#################################################################
+#
 
 :nested_forms_counted_separately
     a rdf:Property ;
     rdfs:label "nested forms counted separately"@en ;
-    rdfs:comment "True when nested SHACL property-path forms contribute separate occurrence counts, so form occurrence totals may exceed path declaration totals."@en ;
+    rdfs:comment "True when nested SHACL property-path forms are counted separately, so form occurrence totals may exceed path declaration totals."@en ;
     rdfs:range xsd:boolean .
 
 :form
@@ -239,47 +243,35 @@
     rdfs:comment "Number of path declarations not classified into a SHACL 1.0 property-path form."@en ;
     rdfs:range xsd:integer .
 
-#################################################################
+#
 # Ontology alignment
-#################################################################
+#
 
 :both_stream_trees
     a rdf:Property ;
-    rdfs:label "both-stream trees"@en ;
-    rdfs:comment "Number of extracted Git trees that contribute both shapes-stream and ontology-stream evidence used by alignment rates."@en ;
+    rdfs:label "trees with shapes and ontology terms"@en ;
+    rdfs:comment "Number of extracted Git trees that contain both SHACL shapes and ontology terms used by alignment rates."@en ;
     rdfs:range xsd:integer .
 
-#################################################################
+#
 # Constraint consistency
-#################################################################
+#
 
 :shapes_graph_policy
     a rdf:Property ;
     rdfs:label "shapes graph policy"@en ;
-    rdfs:comment "Policy describing which RDF graphs were treated as shapes graphs for consistency analysis."@en ;
+    rdfs:comment "Which RDF graphs were treated as shapes graphs for consistency analysis."@en ;
     rdfs:range xsd:string .
 
 :primary_records
     a rdf:Property ;
-    rdfs:label "primary records"@en ;
-    rdfs:comment "Number of primary constraint-consistency records."@en ;
+    rdfs:label "confirmed consistency findings"@en ;
+    rdfs:comment "Number of confirmed constraint-consistency findings."@en ;
     rdfs:range xsd:integer .
 
-:primary_logic05_confirmed
-    a rdf:Property ;
-    rdfs:label "primary Logic05 confirmed"@en ;
-    rdfs:comment "Number of primary records confirmed under the Logic05 criterion."@en ;
-    rdfs:range xsd:integer .
-
-:primary_closed02_confirmed
-    a rdf:Property ;
-    rdfs:label "primary Closed02 confirmed"@en ;
-    rdfs:comment "Number of primary records confirmed under the Closed02 criterion."@en ;
-    rdfs:range xsd:integer .
-
-#################################################################
+#
 # Classification
-#################################################################
+#
 
 :multi_label
     a rdf:Property ;
