@@ -14,7 +14,8 @@
     a owl:Ontology ;
     rdfs:label "SHACL en Forme vocabulary"@en ;
     rdfs:comment "Vocabulary for SHACL en Forme usage statistics."@en ;
-    dct:created "2026"^^xsd:gYear ;
+    dct:created "2026-10-12"^^xsd:date ;
+    dct:modified "2026-10-15"^^xsd:date ;
     dct:creator erdemonal:me ;
     vann:preferredNamespaceUri "https://w3id.org/shacl-en-forme/vocab#" ;
     vann:preferredNamespacePrefix "sef" ;
