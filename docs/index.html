@@ -3863,7 +3863,7 @@ WHERE {
             <h3 id="x5.3-ontology-alignment" resource="#x5.3-ontology-alignment"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.3 </span>Ontology Alignment</span>
             </h3>
             <p>
-                The analysis compares ontology declarations and SHACL references within the same Git tree. A match requires the same IRI to occur in both. The first two measurements report the proportion of declared ontology classes and properties referenced by SHACL. The last two report the proportion of class and property IRIs referenced by SHACL that are also declared in the ontology. Each IRI is counted once per tree. The rates are computed over the 5,134 trees containing both SHACL shapes and ontology terms.
+                The analysis compares ontology declarations and SHACL references within the same Git tree. A match requires the same IRI to occur in both. The first two measurements report the proportion of declared project classes and properties referenced by SHACL. Project terms exclude IRIs under the well-known RDF, RDFS, OWL, XSD, SHACL, DC, and FOAF vocabularies. The last two measurements report the proportion of all SHACL class and property references in each tree that also have an in-tree ontology declaration. Unmatched references are not treated as undefined terms. Each IRI is counted once per tree. The rates are computed over the 5,134 trees containing both SHACL shapes and ontology terms. Each rate is calculated by dividing the sum of the matching IRIs by the sum of the corresponding IRIs across the 5,134 trees. IRIs are counted separately in each tree.
             </p>
             <table class="data">
             <tbody>
@@ -3927,7 +3927,7 @@ WHERE {
             <h3 id="x5.4-constraint-consistency" resource="#x5.4-constraint-consistency"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.4 </span>Constraint Consistency</span>
             </h3>
             <p>
-                The analysis identified 670 confirmed constraint-consistency findings across 6,336 Git trees. Of these, 657 concern contradictions in nested shape constraints, while 13 concern conflicts between closed shapes and property paths. Each shapes graph was constructed from a single RDF source document. RDF imports were not assembled.
+                The analysis identified 670 confirmed consistency findings across 6,336 Git trees. Of these, 657 involve unsatisfiable combinations of nested shape constraints, while 13 involve conflicts between closed shapes and property paths that require values. The consistency analysis used the earlier U1 corpus of 6,336 trees. The later U1/U2 recovery added five trees, bringing the corpus reported elsewhere to 6,341. Each shapes graph consists of a single RDF source document. Imported graphs were not assembled.
             </p>
             <table class="data">
             <tbody>
@@ -3957,7 +3957,7 @@ WHERE {
                 <h4 id="x5.5.1-functional-usage" resource="#x5.5.1-functional-usage"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.5.1 </span>Functional Usage</span>
                 </h4>
                 <p>
-                    The classification identifies document characteristics such as structural constraints, SPARQL extensions, test fixtures, and generated shapes. Counts are reported for documents, distinct document contents, and Git trees.
+                    The classification identifies document characteristics such as structural constraints, SPARQL extensions, test fixtures, and generated shapes. Counts are reported for documents, distinct document contents, and Git trees. Application use labels documents that encode application- or policy-specific validation requirements, such as value lists, cross-property relations, or qualified policies, for a domain application rather than normative vocabulary or application-profile packaging alone. Assignment requires packaging outside fixtures, engine suites, and profile or application-profile paths, together with relational predicate evidence that meets the U5 thresholds. Ontology and vocabulary specifications labels documents packaged as a normative companion to a vocabulary, profile, or application profile. That label requires ontology terms in the same file or tree stream together with profile, vocabulary, or application-profile path or packaging cues. Mere co-location of ontology triples and shapes is not sufficient. Provenance only counts documents that have a provenance label for test fixtures and conformance or for generated or transformed shapes, and that have no functional label.
                 </p>
                 <table class="data">
             <thead>
