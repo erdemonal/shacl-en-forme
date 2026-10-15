@@ -365,7 +365,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             Section 4 covers SPARQL-based constraints.
         </p>
         <p>
-            Section 5 reports additional usage measurements from the same Git trees.
+            Section 5 covers additional usage measurements from the collected Git trees.
         </p>
         <p>
             The syntax of SHACL is RDF. Examples use Turtle [<cite><a class="bibref" href="https://www.w3.org/TR/2017/REC-shacl-20170720/#bib-turtle">turtle</a></cite>]. Other RDF serializations
@@ -3907,7 +3907,7 @@ WHERE {
             <h3 id="x5.4-constraint-consistency" resource="#x5.4-constraint-consistency"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.4 </span>Constraint Consistency</span>
             </h3>
             <p>
-                The analysis identified 670 cases of constraint inconsistency across 6,336 Git trees. A total of 657 cases involve combinations of nested shape constraints that cannot be satisfied. The other 13 involve conflicts between closed shapes and property paths that require values. Each shapes graph was constructed from a single RDF source document. Definitions from other documents were not combined into the shapes graph. Five additional Git trees were recovered after the analysis, bringing the total to 6,341.
+                The analysis identified 670 cases of constraint inconsistency across 6,336 Git trees. A total of 657 cases involve combinations of nested shape constraints that cannot be satisfied. The other 13 involve conflicts between closed shapes and property paths that require values. Each shapes graph was constructed from a single RDF source document. Definitions from other documents were not combined into the shapes graph. Five additional Git trees were recovered after the analysis, bringing the total to 6,341. The analysis does not cover all possible combinations of SHACL Core constraints.
             </p>
             <table class="data">
             <tbody>
@@ -3934,7 +3934,7 @@ WHERE {
                 <h4 id="x5.5.1-functional-usage" resource="#x5.5.1-functional-usage"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.5.1 </span>Functional Usage</span>
                 </h4>
                 <p>
-                    Functional usage is classified using SHACL constraint predicates, document paths, and packaging information. Structural schemas and SPARQL extensions are identified through their constraint patterns. Test fixtures and generated shapes are identified from their paths or names. Application use requires relational constraints associated with a particular application. Ontology and vocabulary specifications require ontology terms and vocabulary or profile packaging. Documents may belong to more than one category. Documents identified as test fixtures or generated artifacts without a functional classification are counted as provenance only.
+                    Functional usage is classified using SHACL constraint predicates, document paths, and packaging information. Structural schemas and SPARQL extensions are identified through their constraint patterns. Test fixtures and generated shapes are identified from their paths or names. The Application use label requires relational constraints associated with a particular application. The Ontology and vocabulary specifications label requires ontology terms and vocabulary or profile packaging. Documents may belong to more than one category. Documents identified as test fixtures or generated artifacts without a functional classification are counted as provenance only.
                 </p>
                 <table class="data">
             <thead>
