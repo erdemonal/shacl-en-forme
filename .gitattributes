@@ -1,0 +1,11 @@
+docs/stylesheets/** linguist-vendored
+
+docs/index.html linguist-documentation
+docs/shacl.css linguist-documentation
+docs/images/** linguist-documentation
+
+docs/data/** linguist-documentation
+docs/vocab/** linguist-documentation
+
+*.ttl linguist-language=Turtle
+*.jsonld linguist-language=JSON
