@@ -1070,15 +1070,6 @@
         "denominator": 50872,
         "rate": 0.000688
       }
-    },
-    "validation": {
-      "design": "stratified_SRSWOR_holdout",
-      "n": 80,
-      "seed": 20261015,
-      "application_domain_agreement": "80/80",
-      "false_positive_label_instances": 0,
-      "false_negative_label_instances": 0,
-      "ambiguous_application_label_instances": 7
     }
   }
 }

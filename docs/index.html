@@ -3763,7 +3763,7 @@ WHERE {
             <h3 id="x5.1-dataset-and-coverage" resource="#x5.1-dataset-and-coverage"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.1 </span>Dataset and Coverage</span>
             </h3>
             <p>
-                A Git tree represents a snapshot of repository contents. Multiple GitHub repositories may reference the same tree. Distinct Git trees are the primary unit of analysis so that identical content is not counted more than once. Of the 3,659 verified trees, 3,658 were successfully extracted. Repository counts use verified repositories and are not multiplied into occurrence totals.
+                A Git tree represents a snapshot of repository contents. Multiple GitHub repositories may reference the same tree. Distinct Git trees are the primary unit of analysis so that identical content is not counted more than once. Of the 3,659 verified trees, 3,658 were successfully extracted. Repository counts use verified repositories and are not multiplied into occurrence totals. GitHub fork repositories were excluded from the analysis. Git trees referenced by at least one repository that was not a fork were retained.
             </p>
             <p>Git trees and repositories</p>
             <table class="data coverage-counts" style="table-layout:fixed;width:100%">
@@ -4030,7 +4030,7 @@ WHERE {
                     <td>1.64%</td>
                 </tr>
                 <tr>
-                    <th scope="row">Insufficient evidence or neither</th>
+                    <th scope="row">Insufficient information or neither</th>
                     <td>45,112</td>
                     <td>88.68%</td>
                 </tr>
@@ -4042,7 +4042,7 @@ WHERE {
                 <h4 id="x5.5.3-application-domains" resource="#x5.5.3-application-domains"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.5.3 </span>Application Domains</span>
                 </h4>
                 <p>
-                    Application domains are identified from selected namespace IRIs referenced by SHACL constraints. These references may occur in classes, datatypes, values, or property paths. A document may be assigned to more than one domain. Repository names alone do not establish an application domain. Documents without sufficient evidence remain unclassified.
+                    Application domains are identified from selected namespace IRIs referenced by SHACL constraints. These references may occur in classes, datatypes, values, or property paths. A document may be assigned to more than one domain. Repository names alone do not establish an application domain. Documents that cannot be assigned to a domain using these references remain unclassified.
                 </p>
                 <table class="data">
             <thead>
