@@ -3763,7 +3763,7 @@ WHERE {
             <h3 id="x5.1-dataset-and-coverage" resource="#x5.1-dataset-and-coverage"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.1 </span>Dataset and Coverage</span>
             </h3>
             <p>
-                A Git tree represents a snapshot of repository contents. Multiple GitHub repositories may reference the same tree. Distinct Git trees are the primary unit of analysis so that identical content is not counted more than once. Of the 3,659 verified trees, 3,658 were successfully extracted. Repository counts use verified repositories and are not multiplied into occurrence totals. GitHub fork repositories were excluded from the analysis. Git trees referenced by at least one repository that was not a fork were retained.
+                A Git tree represents a snapshot of repository contents. Multiple GitHub repositories may reference the same tree. Distinct Git trees are the primary unit of analysis so that identical content is not counted more than once. A repository was considered verified if at least one parsed RDF graph contained a SHACL Core shape declaration, target or constraint predicate, or a structurally attached SHACL-SPARQL constraint. Verified repositories were subsequently grouped by Git tree for extraction and analysis. Of the 3,659 verified trees, 3,658 were successfully extracted. Repository counts use verified repositories and are not multiplied into occurrence totals. GitHub fork repositories were excluded from the analysis. Git trees referenced by at least one repository that was not a fork were retained.
             </p>
             <p>Git trees and repositories</p>
             <table class="data coverage-counts" style="table-layout:fixed;width:100%">
@@ -3907,7 +3907,7 @@ WHERE {
             <h3 id="x5.4-constraint-consistency" resource="#x5.4-constraint-consistency"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.4 </span>Constraint Consistency</span>
             </h3>
             <p>
-                The analysis identified 345 cases of constraint inconsistency across 3,658 Git trees. A total of 338 cases involve combinations of nested shape constraints that cannot be satisfied. The other 7 involve conflicts between closed shapes and property paths that require values. Each shapes graph was constructed from a single RDF source document. Definitions from other documents were not combined into the shapes graph. 0 additional Git trees were recovered after the analysis, bringing the total to 3,658. The analysis does not cover all possible combinations of SHACL Core constraints.
+                The analysis identified 345 cases of constraint inconsistency across 3,658 Git trees. A total of 338 cases involve combinations of nested shape constraints that cannot be satisfied. The other 7 involve conflicts between closed shapes and property paths that require values. Each shapes graph was constructed from a single RDF source document. Definitions from other documents were not combined into the shapes graph. The analysis does not cover all possible combinations of SHACL Core constraints.
             </p>
             <table class="data">
             <tbody>
