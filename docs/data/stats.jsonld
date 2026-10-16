@@ -136,467 +136,467 @@
   },
   "isBasedOn": "https://www.w3.org/TR/2017/REC-shacl-20170720/",
   "lower_bound": true,
-  "intended_unique_verified_trees": 6343,
-  "extracted_unique_trees": 6341,
+  "intended_unique_verified_trees": 3659,
+  "extracted_unique_trees": 3658,
   "reconciliation": {
-    "verified_distinct_git_trees": 6343,
-    "extracted_distinct_git_trees": 6341,
-    "unavailable_distinct_git_trees": 2
+    "verified_distinct_git_trees": 3659,
+    "extracted_distinct_git_trees": 3658,
+    "unavailable_distinct_git_trees": 1
   },
   "coverage": {
-    "intended_unique_verified_trees": 6343,
-    "extracted_trees": 6341,
-    "inventory_files": 1386769,
-    "parsed_files": 1383911,
-    "jsonld_context_unresolved_files": 58,
-    "sniff_rejected_files": 2261,
-    "parse_error_files": 539,
-    "shape_documents": 160123,
-    "trees_with_shape_documents": 6340,
-    "content_sha256_groups": 43099,
+    "intended_unique_verified_trees": 3659,
+    "extracted_trees": 3658,
+    "inventory_files": 550508,
+    "parsed_files": 548135,
+    "jsonld_context_unresolved_files": 41,
+    "sniff_rejected_files": 2069,
+    "parse_error_files": 263,
+    "shape_documents": 50872,
+    "trees_with_shape_documents": 3657,
+    "content_sha256_groups": 33440,
     "parsed_rdf_row_totals": {
       "files": 1386769,
-      "shapes": 7637172,
-      "constraints": 29516814,
-      "ontology_terms": 8878457,
-      "path_declarations": 4238065
+      "shapes": 4019975,
+      "constraints": 14599701,
+      "ontology_terms": 3905456,
+      "path_declarations": 2212575
     }
   },
   "shapes": {
-    "denominator_trees": 6341,
-    "node_shapes": 920988,
-    "property_shapes": 1431639,
-    "distinct_shapes": 2350450,
+    "denominator_trees": 3658,
+    "node_shapes": 424580,
+    "property_shapes": 759570,
+    "distinct_shapes": 1183518,
     "per_tree": {
       "node_shapes": {
-        "n": 6341,
+        "n": 3658,
         "min": 0,
         "q1": 4,
-        "median": 16,
-        "mean": 145.243,
-        "q3": 49,
+        "median": 10.0,
+        "mean": 116.069,
+        "q3": 32.0,
         "max": 35486,
-        "stdev": 813.919,
-        "p95": 565
+        "stdev": 848.588,
+        "p95": 357.14999999999964
       },
       "property_shapes": {
-        "n": 6341,
+        "n": 3658,
         "min": 0,
         "q1": 0,
         "median": 0,
-        "mean": 225.775,
-        "q3": 9,
+        "mean": 207.646,
+        "q3": 1.0,
         "max": 80500,
-        "stdev": 1840.883,
-        "p95": 520
+        "stdev": 2079.8,
+        "p95": 289.4499999999989
       },
       "distinct_shapes": {
-        "n": 6341,
+        "n": 3658,
         "min": 0,
-        "q1": 5,
-        "median": 16,
-        "mean": 370.675,
-        "q3": 69,
+        "q1": 4.0,
+        "median": 12.0,
+        "mean": 323.542,
+        "q3": 42.0,
         "max": 84974,
-        "stdev": 2376.263,
-        "p95": 1123
+        "stdev": 2584.719,
+        "p95": 779.9999999999927
       }
     }
   },
   "constraints": {
-    "denominator_extracted_trees": 6341,
-    "denominator_verified_repositories": 7569,
-    "total_occurrences": 13976002,
+    "denominator_extracted_trees": 3658,
+    "denominator_verified_repositories": 3677,
+    "total_occurrences": 6954178,
     "parameters": [
       {
         "predicate": "http://www.w3.org/ns/shacl#and",
-        "occurrences": 65709,
-        "unique_trees": 939,
-        "percent_of_extracted_trees": 14.81,
-        "verified_repositories": 1229,
-        "percent_of_verified_repositories": 16.24
+        "occurrences": 7520,
+        "unique_trees": 382,
+        "percent_of_extracted_trees": 10.44,
+        "verified_repositories": 385,
+        "percent_of_verified_repositories": 10.47
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#class",
-        "occurrences": 1756355,
-        "unique_trees": 4638,
-        "percent_of_extracted_trees": 73.14,
-        "verified_repositories": 5567,
-        "percent_of_verified_repositories": 73.55
+        "occurrences": 29249,
+        "unique_trees": 471,
+        "percent_of_extracted_trees": 12.88,
+        "verified_repositories": 477,
+        "percent_of_verified_repositories": 12.97
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#closed",
-        "occurrences": 156997,
-        "unique_trees": 1728,
-        "percent_of_extracted_trees": 27.25,
-        "verified_repositories": 2178,
-        "percent_of_verified_repositories": 28.78
+        "occurrences": 537481,
+        "unique_trees": 3206,
+        "percent_of_extracted_trees": 87.64,
+        "verified_repositories": 3222,
+        "percent_of_verified_repositories": 87.63
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#datatype",
-        "occurrences": 1475941,
-        "unique_trees": 5354,
-        "percent_of_extracted_trees": 84.43,
-        "verified_repositories": 6424,
-        "percent_of_verified_repositories": 84.87
+        "occurrences": 22370,
+        "unique_trees": 311,
+        "percent_of_extracted_trees": 8.5,
+        "verified_repositories": 311,
+        "percent_of_verified_repositories": 8.46
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#disjoint",
-        "occurrences": 3629,
-        "unique_trees": 620,
-        "percent_of_extracted_trees": 9.78,
-        "verified_repositories": 834,
-        "percent_of_verified_repositories": 11.02
+        "occurrences": 1570,
+        "unique_trees": 170,
+        "percent_of_extracted_trees": 4.65,
+        "verified_repositories": 171,
+        "percent_of_verified_repositories": 4.65
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#equals",
-        "occurrences": 10991,
-        "unique_trees": 550,
-        "percent_of_extracted_trees": 8.67,
-        "verified_repositories": 694,
-        "percent_of_verified_repositories": 9.17
+        "occurrences": 94905,
+        "unique_trees": 1295,
+        "percent_of_extracted_trees": 35.4,
+        "verified_repositories": 1303,
+        "percent_of_verified_repositories": 35.44
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#flags",
-        "occurrences": 21580,
-        "unique_trees": 566,
-        "percent_of_extracted_trees": 8.93,
-        "verified_repositories": 722,
-        "percent_of_verified_repositories": 9.54
+        "occurrences": 74648,
+        "unique_trees": 1578,
+        "percent_of_extracted_trees": 43.14,
+        "verified_repositories": 1585,
+        "percent_of_verified_repositories": 43.11
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#hasValue",
-        "occurrences": 138876,
-        "unique_trees": 2155,
-        "percent_of_extracted_trees": 33.99,
-        "verified_repositories": 2668,
-        "percent_of_verified_repositories": 35.25
+        "occurrences": 57824,
+        "unique_trees": 637,
+        "percent_of_extracted_trees": 17.41,
+        "verified_repositories": 638,
+        "percent_of_verified_repositories": 17.35
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#ignoredProperties",
-        "occurrences": 86470,
-        "unique_trees": 1204,
-        "percent_of_extracted_trees": 18.99,
-        "verified_repositories": 1542,
-        "percent_of_verified_repositories": 20.37
+        "occurrences": 2312,
+        "unique_trees": 136,
+        "percent_of_extracted_trees": 3.72,
+        "verified_repositories": 136,
+        "percent_of_verified_repositories": 3.7
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#in",
-        "occurrences": 141824,
-        "unique_trees": 3275,
-        "percent_of_extracted_trees": 51.65,
-        "verified_repositories": 4029,
-        "percent_of_verified_repositories": 53.23
+        "occurrences": 58521,
+        "unique_trees": 764,
+        "percent_of_extracted_trees": 20.89,
+        "verified_repositories": 770,
+        "percent_of_verified_repositories": 20.94
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#languageIn",
-        "occurrences": 6189,
-        "unique_trees": 734,
-        "percent_of_extracted_trees": 11.58,
-        "verified_repositories": 902,
-        "percent_of_verified_repositories": 11.92
+        "occurrences": 71003,
+        "unique_trees": 496,
+        "percent_of_extracted_trees": 13.56,
+        "verified_repositories": 497,
+        "percent_of_verified_repositories": 13.52
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#lessThan",
-        "occurrences": 6237,
-        "unique_trees": 589,
-        "percent_of_extracted_trees": 9.29,
-        "verified_repositories": 776,
-        "percent_of_verified_repositories": 10.25
+        "occurrences": 16102,
+        "unique_trees": 917,
+        "percent_of_extracted_trees": 25.07,
+        "verified_repositories": 920,
+        "percent_of_verified_repositories": 25.02
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#lessThanOrEquals",
-        "occurrences": 1698,
-        "unique_trees": 534,
-        "percent_of_extracted_trees": 8.42,
-        "verified_repositories": 686,
-        "percent_of_verified_repositories": 9.06
+        "occurrences": 57403,
+        "unique_trees": 358,
+        "percent_of_extracted_trees": 9.79,
+        "verified_repositories": 362,
+        "percent_of_verified_repositories": 9.84
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#maxCount",
-        "occurrences": 1606216,
-        "unique_trees": 5224,
-        "percent_of_extracted_trees": 82.38,
-        "verified_repositories": 6235,
-        "percent_of_verified_repositories": 82.38
+        "occurrences": 77437,
+        "unique_trees": 1105,
+        "percent_of_extracted_trees": 30.21,
+        "verified_repositories": 1106,
+        "percent_of_verified_repositories": 30.08
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#maxExclusive",
-        "occurrences": 5109,
-        "unique_trees": 622,
-        "percent_of_extracted_trees": 9.81,
-        "verified_repositories": 865,
-        "percent_of_verified_repositories": 11.43
+        "occurrences": 1172259,
+        "unique_trees": 2436,
+        "percent_of_extracted_trees": 66.59,
+        "verified_repositories": 2450,
+        "percent_of_verified_repositories": 66.63
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#maxInclusive",
-        "occurrences": 25753,
-        "unique_trees": 2172,
-        "percent_of_extracted_trees": 34.25,
-        "verified_repositories": 2707,
-        "percent_of_verified_repositories": 35.76
+        "occurrences": 8794,
+        "unique_trees": 668,
+        "percent_of_extracted_trees": 18.26,
+        "verified_repositories": 669,
+        "percent_of_verified_repositories": 18.19
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#maxLength",
-        "occurrences": 18041,
-        "unique_trees": 939,
-        "percent_of_extracted_trees": 14.81,
-        "verified_repositories": 1222,
-        "percent_of_verified_repositories": 16.14
+        "occurrences": 654821,
+        "unique_trees": 2989,
+        "percent_of_extracted_trees": 81.71,
+        "verified_repositories": 3001,
+        "percent_of_verified_repositories": 81.62
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#minCount",
-        "occurrences": 1268659,
-        "unique_trees": 5667,
-        "percent_of_extracted_trees": 89.37,
-        "verified_repositories": 6786,
-        "percent_of_verified_repositories": 89.66
+        "occurrences": 2957,
+        "unique_trees": 273,
+        "percent_of_extracted_trees": 7.46,
+        "verified_repositories": 274,
+        "percent_of_verified_repositories": 7.45
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#minExclusive",
-        "occurrences": 18095,
-        "unique_trees": 883,
-        "percent_of_extracted_trees": 13.93,
-        "verified_repositories": 1219,
-        "percent_of_verified_repositories": 16.11
+        "occurrences": 5565,
+        "unique_trees": 336,
+        "percent_of_extracted_trees": 9.19,
+        "verified_repositories": 337,
+        "percent_of_verified_repositories": 9.17
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#minInclusive",
-        "occurrences": 64759,
-        "unique_trees": 2414,
-        "percent_of_extracted_trees": 38.07,
-        "verified_repositories": 2936,
-        "percent_of_verified_repositories": 38.79
+        "occurrences": 1737,
+        "unique_trees": 199,
+        "percent_of_extracted_trees": 5.44,
+        "verified_repositories": 203,
+        "percent_of_verified_repositories": 5.52
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#minLength",
-        "occurrences": 15743,
-        "unique_trees": 1399,
-        "percent_of_extracted_trees": 22.06,
-        "verified_repositories": 1661,
-        "percent_of_verified_repositories": 21.94
+        "occurrences": 31455,
+        "unique_trees": 1122,
+        "percent_of_extracted_trees": 30.67,
+        "verified_repositories": 1126,
+        "percent_of_verified_repositories": 30.62
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#node",
-        "occurrences": 258676,
-        "unique_trees": 2259,
-        "percent_of_extracted_trees": 35.63,
-        "verified_repositories": 2751,
-        "percent_of_verified_repositories": 36.35
+        "occurrences": 754832,
+        "unique_trees": 1913,
+        "percent_of_extracted_trees": 52.3,
+        "verified_repositories": 1927,
+        "percent_of_verified_repositories": 52.41
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#nodeKind",
-        "occurrences": 1398517,
-        "unique_trees": 3520,
-        "percent_of_extracted_trees": 55.51,
-        "verified_repositories": 4232,
-        "percent_of_verified_repositories": 55.91
+        "occurrences": 9324,
+        "unique_trees": 413,
+        "percent_of_extracted_trees": 11.29,
+        "verified_repositories": 414,
+        "percent_of_verified_repositories": 11.26
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#not",
-        "occurrences": 76976,
-        "unique_trees": 1407,
-        "percent_of_extracted_trees": 22.19,
-        "verified_repositories": 1730,
-        "percent_of_verified_repositories": 22.86
+        "occurrences": 2110844,
+        "unique_trees": 3477,
+        "percent_of_extracted_trees": 95.05,
+        "verified_repositories": 3495,
+        "percent_of_verified_repositories": 95.05
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#or",
-        "occurrences": 255802,
-        "unique_trees": 2997,
-        "percent_of_extracted_trees": 47.26,
-        "verified_repositories": 3596,
-        "percent_of_verified_repositories": 47.51
+        "occurrences": 662881,
+        "unique_trees": 2862,
+        "percent_of_extracted_trees": 78.24,
+        "verified_repositories": 2878,
+        "percent_of_verified_repositories": 78.27
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#pattern",
-        "occurrences": 185869,
-        "unique_trees": 2934,
-        "percent_of_extracted_trees": 46.27,
-        "verified_repositories": 3605,
-        "percent_of_verified_repositories": 47.63
+        "occurrences": 1883,
+        "unique_trees": 178,
+        "percent_of_extracted_trees": 4.87,
+        "verified_repositories": 179,
+        "percent_of_verified_repositories": 4.87
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#property",
-        "occurrences": 4587608,
-        "unique_trees": 6073,
-        "percent_of_extracted_trees": 95.77,
-        "verified_repositories": 7236,
-        "percent_of_verified_repositories": 95.6
+        "occurrences": 19997,
+        "unique_trees": 185,
+        "percent_of_extracted_trees": 5.06,
+        "verified_repositories": 186,
+        "percent_of_verified_repositories": 5.06
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#qualifiedMaxCount",
-        "occurrences": 38846,
-        "unique_trees": 833,
-        "percent_of_extracted_trees": 13.14,
-        "verified_repositories": 1062,
-        "percent_of_verified_repositories": 14.03
+        "occurrences": 650,
+        "unique_trees": 164,
+        "percent_of_extracted_trees": 4.48,
+        "verified_repositories": 165,
+        "percent_of_verified_repositories": 4.49
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#qualifiedMinCount",
-        "occurrences": 98265,
-        "unique_trees": 1136,
-        "percent_of_extracted_trees": 17.92,
-        "verified_repositories": 1381,
-        "percent_of_verified_repositories": 18.25
+        "occurrences": 157240,
+        "unique_trees": 1388,
+        "percent_of_extracted_trees": 37.94,
+        "verified_repositories": 1395,
+        "percent_of_verified_repositories": 37.94
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#qualifiedValueShape",
-        "occurrences": 124571,
-        "unique_trees": 1178,
-        "percent_of_extracted_trees": 18.58,
-        "verified_repositories": 1430,
-        "percent_of_verified_repositories": 18.89
+        "occurrences": 141080,
+        "unique_trees": 1121,
+        "percent_of_extracted_trees": 30.65,
+        "verified_repositories": 1131,
+        "percent_of_verified_repositories": 30.76
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#qualifiedValueShapesDisjoint",
-        "occurrences": 4953,
-        "unique_trees": 522,
-        "percent_of_extracted_trees": 8.23,
-        "verified_repositories": 699,
-        "percent_of_verified_repositories": 9.24
+        "occurrences": 86924,
+        "unique_trees": 520,
+        "percent_of_extracted_trees": 14.22,
+        "verified_repositories": 521,
+        "percent_of_verified_repositories": 14.17
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#uniqueLang",
-        "occurrences": 10884,
-        "unique_trees": 941,
-        "percent_of_extracted_trees": 14.84,
-        "verified_repositories": 1180,
-        "percent_of_verified_repositories": 15.59
+        "occurrences": 9358,
+        "unique_trees": 168,
+        "percent_of_extracted_trees": 4.59,
+        "verified_repositories": 169,
+        "percent_of_verified_repositories": 4.6
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#xone",
-        "occurrences": 40164,
-        "unique_trees": 1100,
-        "percent_of_extracted_trees": 17.35,
-        "verified_repositories": 1366,
-        "percent_of_verified_repositories": 18.05
+        "occurrences": 13232,
+        "unique_trees": 364,
+        "percent_of_extracted_trees": 9.95,
+        "verified_repositories": 365,
+        "percent_of_verified_repositories": 9.93
       }
     ]
   },
   "targets": {
-    "denominator_extracted_trees": 6341,
-    "denominator_verified_repositories": 7569,
-    "total_occurrences": 1543332,
+    "denominator_extracted_trees": 3658,
+    "denominator_verified_repositories": 3677,
+    "total_occurrences": 909073,
     "predicates": [
       {
         "predicate": "http://www.w3.org/ns/shacl#targetClass",
-        "occurrences": 1298102,
-        "unique_trees": 5854,
-        "percent_of_extracted_trees": 92.32,
-        "verified_repositories": 6963,
-        "percent_of_verified_repositories": 91.99
+        "occurrences": 838272,
+        "unique_trees": 3374,
+        "percent_of_extracted_trees": 92.24,
+        "verified_repositories": 3389,
+        "percent_of_verified_repositories": 92.17
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#targetNode",
-        "occurrences": 133407,
-        "unique_trees": 887,
-        "percent_of_extracted_trees": 13.99,
-        "verified_repositories": 1172,
-        "percent_of_verified_repositories": 15.48
+        "occurrences": 29889,
+        "unique_trees": 366,
+        "percent_of_extracted_trees": 10.01,
+        "verified_repositories": 366,
+        "percent_of_verified_repositories": 9.95
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#targetObjectsOf",
-        "occurrences": 32404,
-        "unique_trees": 1299,
-        "percent_of_extracted_trees": 20.49,
-        "verified_repositories": 1581,
-        "percent_of_verified_repositories": 20.89
+        "occurrences": 13725,
+        "unique_trees": 570,
+        "percent_of_extracted_trees": 15.58,
+        "verified_repositories": 570,
+        "percent_of_verified_repositories": 15.5
       },
       {
         "predicate": "http://www.w3.org/ns/shacl#targetSubjectsOf",
-        "occurrences": 79419,
-        "unique_trees": 1540,
-        "percent_of_extracted_trees": 24.29,
-        "verified_repositories": 1837,
-        "percent_of_verified_repositories": 24.27
+        "occurrences": 27187,
+        "unique_trees": 805,
+        "percent_of_extracted_trees": 22.01,
+        "verified_repositories": 808,
+        "percent_of_verified_repositories": 21.97
       }
     ]
   },
   "sparql": {
-    "denominator_extracted_trees": 6341,
-    "trees_with_structural_constraints": 2259,
-    "percent_of_extracted_trees": 35.63,
-    "sparql_links": 145252,
-    "sparql_constraint_nodes": 41467,
-    "sparql_target_trees": 726,
-    "sparql_only_content_trees": 11,
+    "denominator_extracted_trees": 3658,
+    "trees_with_structural_constraints": 1065,
+    "percent_of_extracted_trees": 29.11,
+    "sparql_links": 85496,
+    "sparql_constraint_nodes": 25073,
+    "sparql_target_trees": 302,
+    "sparql_only_content_trees": 1,
     "sparql_only_verification_trees": 3
   },
   "property_paths": {
-    "denominator_extracted_trees": 6341,
-    "path_declarations": 4238065,
-    "classified": 4235783,
-    "unclassified": 2282,
+    "denominator_extracted_trees": 3658,
+    "path_declarations": 2212575,
+    "classified": 2211409,
+    "unclassified": 1166,
     "classifier_coverage_percent": 99.95,
     "forms": [
       {
         "form": "PredicatePath",
-        "occurrences": 4571348,
-        "unique_trees": 6113,
-        "percent_of_extracted_trees": 96.4
+        "occurrences": 2432119,
+        "unique_trees": 3508,
+        "percent_of_extracted_trees": 95.9
       },
       {
         "form": "SequencePath",
-        "occurrences": 180510,
-        "unique_trees": 1246,
-        "percent_of_extracted_trees": 19.65
+        "occurrences": 117295,
+        "unique_trees": 538,
+        "percent_of_extracted_trees": 14.71
       },
       {
         "form": "AlternativePath",
-        "occurrences": 16247,
-        "unique_trees": 1058,
-        "percent_of_extracted_trees": 16.69
+        "occurrences": 9813,
+        "unique_trees": 385,
+        "percent_of_extracted_trees": 10.52
       },
       {
         "form": "InversePath",
-        "occurrences": 34491,
-        "unique_trees": 1300,
-        "percent_of_extracted_trees": 20.5
+        "occurrences": 15869,
+        "unique_trees": 568,
+        "percent_of_extracted_trees": 15.53
       },
       {
         "form": "ZeroOrMorePath",
-        "occurrences": 49280,
-        "unique_trees": 854,
-        "percent_of_extracted_trees": 13.47
+        "occurrences": 9096,
+        "unique_trees": 275,
+        "percent_of_extracted_trees": 7.52
       },
       {
         "form": "OneOrMorePath",
-        "occurrences": 2159,
-        "unique_trees": 704,
-        "percent_of_extracted_trees": 11.1
+        "occurrences": 571,
+        "unique_trees": 211,
+        "percent_of_extracted_trees": 5.77
       },
       {
         "form": "ZeroOrOnePath",
-        "occurrences": 756,
-        "unique_trees": 444,
-        "percent_of_extracted_trees": 7.0
+        "occurrences": 169,
+        "unique_trees": 93,
+        "percent_of_extracted_trees": 2.54
       }
     ],
     "nested_forms_counted_separately": true
   },
   "repository_view": {
-    "verified_repositories": 7569,
-    "repositories_whose_tree_was_extracted": 7567,
-    "repositories_whose_tree_was_not_extracted": 2
+    "verified_repositories": 3677,
+    "repositories_whose_tree_was_extracted": 3676,
+    "repositories_whose_tree_was_not_extracted": 1
   },
   "concentration": {
     "population": "extracted unique trees",
-    "distinct_shape_total": 2350450,
+    "distinct_shape_total": 1183518,
     "top_1_percent": {
-      "trees": 64,
-      "distinct_shapes": 1165488,
-      "share": 0.4959
+      "trees": 37,
+      "distinct_shapes": 690425,
+      "share": 0.5834
     },
     "top_5_percent": {
-      "trees": 318,
-      "distinct_shapes": 1906451,
-      "share": 0.8111
+      "trees": 183,
+      "distinct_shapes": 1037474,
+      "share": 0.8766
     },
     "top_10_percent": {
-      "trees": 635,
-      "distinct_shapes": 2122312,
-      "share": 0.9029
+      "trees": 366,
+      "distinct_shapes": 1104828,
+      "share": 0.9335
     },
     "top_20_trees": [
       {
@@ -622,16 +622,6 @@
       {
         "donor": "matejkratochvil/entsoe-application-profiles-library",
         "tree_sha": "48d49e6f67800fdf8d3299bdda03dc15de6d1511",
-        "distinct_shapes": 34273,
-        "node_shapes": 10121,
-        "property_shapes": 24210,
-        "repository_count": 1,
-        "counts_partial": false,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "niubisile-wq/pcc-power-grid-transformation",
-        "tree_sha": "992e7ec2f902a8fdfee3a0c137f0070ff755c58c",
         "distinct_shapes": 34272,
         "node_shapes": 10117,
         "property_shapes": 24213,
@@ -640,38 +630,8 @@
         "enumeration_complete": true
       },
       {
-        "donor": "sogno-platform/cgmes-application-profiles-library",
-        "tree_sha": "b299ec4dd54c102e41528335c971057a205aa472",
-        "distinct_shapes": 34272,
-        "node_shapes": 10117,
-        "property_shapes": 24213,
-        "repository_count": 1,
-        "counts_partial": false,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "ADam-LVA/application-profiles-library",
-        "tree_sha": "df4c310f079c4880b32a4d367335d1551198b52f",
-        "distinct_shapes": 34270,
-        "node_shapes": 10116,
-        "property_shapes": 24212,
-        "repository_count": 1,
-        "counts_partial": false,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "nikolatulechki/application-profiles-library",
-        "tree_sha": "40a5bddc2acee1d0d72b489daadb14e167c80bdd",
-        "distinct_shapes": 34266,
-        "node_shapes": 10122,
-        "property_shapes": 24202,
-        "repository_count": 1,
-        "counts_partial": false,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "Stichting-CROW/imbor-development",
-        "tree_sha": "2d35541c0fd0b955ce44f24bcc3ae552d4044d04",
+        "donor": "niubisile-wq/pcc-power-grid-transformation",
+        "tree_sha": "992e7ec2f902a8fdfee3a0c137f0070ff755c58c",
         "distinct_shapes": 31813,
         "node_shapes": 6497,
         "property_shapes": 25316,
@@ -680,8 +640,8 @@
         "enumeration_complete": true
       },
       {
-        "donor": "meaningfy-ws/tda-mapping-artefacts",
-        "tree_sha": "b9b208327c0bb7b2c5802a076e0e64d14d419b88",
+        "donor": "sogno-platform/cgmes-application-profiles-library",
+        "tree_sha": "b299ec4dd54c102e41528335c971057a205aa472",
         "distinct_shapes": 31769,
         "node_shapes": 353,
         "property_shapes": 31416,
@@ -690,8 +650,8 @@
         "enumeration_complete": true
       },
       {
-        "donor": "dkw-aau/KG2PG",
-        "tree_sha": "23f8d2ec56101da29c24ce9c25e2bb855c66e9bf",
+        "donor": "ADam-LVA/application-profiles-library",
+        "tree_sha": "df4c310f079c4880b32a4d367335d1551198b52f",
         "distinct_shapes": 25595,
         "node_shapes": 863,
         "property_shapes": 24732,
@@ -700,8 +660,8 @@
         "enumeration_complete": true
       },
       {
-        "donor": "kworkr/s3pg",
-        "tree_sha": "8c22020766b60027cc717c2524e6dad046712a3d",
+        "donor": "nikolatulechki/application-profiles-library",
+        "tree_sha": "40a5bddc2acee1d0d72b489daadb14e167c80bdd",
         "distinct_shapes": 25594,
         "node_shapes": 863,
         "property_shapes": 24731,
@@ -710,8 +670,8 @@
         "enumeration_complete": true
       },
       {
-        "donor": "tecnomod-um/cfihos",
-        "tree_sha": "eba6ed052101c5f2d5ca2218b2e0aac67afeceec",
+        "donor": "Stichting-CROW/imbor-development",
+        "tree_sha": "2d35541c0fd0b955ce44f24bcc3ae552d4044d04",
         "distinct_shapes": 24307,
         "node_shapes": 6782,
         "property_shapes": 17525,
@@ -720,8 +680,8 @@
         "enumeration_complete": true
       },
       {
-        "donor": "Salva5297/shacl_integration",
-        "tree_sha": "da0dabd6368bfdf736caf9f227b911f2983e1d1e",
+        "donor": "meaningfy-ws/tda-mapping-artefacts",
+        "tree_sha": "b9b208327c0bb7b2c5802a076e0e64d14d419b88",
         "distinct_shapes": 23059,
         "node_shapes": 17372,
         "property_shapes": 5797,
@@ -730,48 +690,8 @@
         "enumeration_complete": true
       },
       {
-        "donor": "oeg-upm/shacl_integration",
-        "tree_sha": "fcf0c9d05f541abe82279a4d77253ba3fcafcd7b",
-        "distinct_shapes": 23059,
-        "node_shapes": 17372,
-        "property_shapes": 5797,
-        "repository_count": 1,
-        "counts_partial": false,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "aivliev/amf-oas3-fork",
-        "tree_sha": "a3b45691501998347f8f9b3c6f5433a29293de26",
-        "distinct_shapes": 21927,
-        "node_shapes": 7557,
-        "property_shapes": 14384,
-        "repository_count": 1,
-        "counts_partial": true,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "Akarsh-2004/amf_byme",
-        "tree_sha": "1a03747570b37011334ddc8dd6243faa93101b81",
-        "distinct_shapes": 21921,
-        "node_shapes": 7554,
-        "property_shapes": 14381,
-        "repository_count": 1,
-        "counts_partial": true,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "f-schnabel/amf",
-        "tree_sha": "7cc73460520fcd7db20534560d2cd8293afa5939",
-        "distinct_shapes": 21314,
-        "node_shapes": 7255,
-        "property_shapes": 14064,
-        "repository_count": 1,
-        "counts_partial": true,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "tecnomod-um/CBAM",
-        "tree_sha": "93b3bb55ebc43be9abcb893156b14c8f09a25fee",
+        "donor": "dkw-aau/KG2PG",
+        "tree_sha": "23f8d2ec56101da29c24ce9c25e2bb855c66e9bf",
         "distinct_shapes": 18626,
         "node_shapes": 16053,
         "property_shapes": 2574,
@@ -780,8 +700,8 @@
         "enumeration_complete": true
       },
       {
-        "donor": "diogo-olpereira/KGSwitch",
-        "tree_sha": "d96d4a0ca7641acdff24576d23c971afc8e3a93a",
+        "donor": "kworkr/s3pg",
+        "tree_sha": "8c22020766b60027cc717c2524e6dad046712a3d",
         "distinct_shapes": 18099,
         "node_shapes": 1600,
         "property_shapes": 16499,
@@ -790,11 +710,91 @@
         "enumeration_complete": true
       },
       {
-        "donor": "ar-chad/application-profiles-library",
-        "tree_sha": "8747882da5c410dcbc7d320bb4c723032469c98e",
+        "donor": "tecnomod-um/cfihos",
+        "tree_sha": "eba6ed052101c5f2d5ca2218b2e0aac67afeceec",
         "distinct_shapes": 16776,
         "node_shapes": 3329,
         "property_shapes": 13505,
+        "repository_count": 1,
+        "counts_partial": true,
+        "enumeration_complete": true
+      },
+      {
+        "donor": "Salva5297/shacl_integration",
+        "tree_sha": "da0dabd6368bfdf736caf9f227b911f2983e1d1e",
+        "distinct_shapes": 16061,
+        "node_shapes": 353,
+        "property_shapes": 15708,
+        "repository_count": 1,
+        "counts_partial": false,
+        "enumeration_complete": true
+      },
+      {
+        "donor": "oeg-upm/shacl_integration",
+        "tree_sha": "fcf0c9d05f541abe82279a4d77253ba3fcafcd7b",
+        "distinct_shapes": 14665,
+        "node_shapes": 1339,
+        "property_shapes": 13326,
+        "repository_count": 1,
+        "counts_partial": true,
+        "enumeration_complete": true
+      },
+      {
+        "donor": "aivliev/amf-oas3-fork",
+        "tree_sha": "a3b45691501998347f8f9b3c6f5433a29293de26",
+        "distinct_shapes": 14340,
+        "node_shapes": 1983,
+        "property_shapes": 12357,
+        "repository_count": 1,
+        "counts_partial": false,
+        "enumeration_complete": true
+      },
+      {
+        "donor": "Akarsh-2004/amf_byme",
+        "tree_sha": "1a03747570b37011334ddc8dd6243faa93101b81",
+        "distinct_shapes": 14236,
+        "node_shapes": 421,
+        "property_shapes": 13815,
+        "repository_count": 1,
+        "counts_partial": true,
+        "enumeration_complete": true
+      },
+      {
+        "donor": "f-schnabel/amf",
+        "tree_sha": "7cc73460520fcd7db20534560d2cd8293afa5939",
+        "distinct_shapes": 14236,
+        "node_shapes": 421,
+        "property_shapes": 13815,
+        "repository_count": 1,
+        "counts_partial": true,
+        "enumeration_complete": true
+      },
+      {
+        "donor": "tecnomod-um/CBAM",
+        "tree_sha": "93b3bb55ebc43be9abcb893156b14c8f09a25fee",
+        "distinct_shapes": 13828,
+        "node_shapes": 1778,
+        "property_shapes": 12108,
+        "repository_count": 1,
+        "counts_partial": true,
+        "enumeration_complete": true
+      },
+      {
+        "donor": "diogo-olpereira/KGSwitch",
+        "tree_sha": "d96d4a0ca7641acdff24576d23c971afc8e3a93a",
+        "distinct_shapes": 12980,
+        "node_shapes": 462,
+        "property_shapes": 12518,
+        "repository_count": 1,
+        "counts_partial": false,
+        "enumeration_complete": true
+      },
+      {
+        "donor": "ar-chad/application-profiles-library",
+        "tree_sha": "8747882da5c410dcbc7d320bb4c723032469c98e",
+        "distinct_shapes": 12794,
+        "node_shapes": 440,
+        "property_shapes": 12354,
         "repository_count": 1,
         "counts_partial": true,
         "enumeration_complete": true
@@ -803,270 +803,272 @@
   },
   "ontology_alignment": {
     "counting_unit": "distinct_iri_within_tree",
-    "denominator_extracted_trees": 6341,
-    "both_stream_trees": 5134,
-    "shapes_without_ontology_terms": 1206,
+    "denominator_extracted_trees": 3658,
+    "both_stream_trees": 2805,
+    "shapes_without_ontology_terms": 852,
     "ontology_without_shapes": 0,
     "neither_stream": 1,
     "ontology_to_shacl_project_classes": {
-      "numerator": 253748,
-      "denominator": 2065392,
-      "micro_rate": 0.122857
+      "numerator": 114250,
+      "denominator": 927141,
+      "micro_rate": 0.123228
     },
     "ontology_to_shacl_project_properties": {
-      "numerator": 431562,
-      "denominator": 1634698,
-      "micro_rate": 0.264001
+      "numerator": 184738,
+      "denominator": 761931,
+      "micro_rate": 0.24246
     },
     "shacl_to_ontology_class_refs": {
-      "numerator": 282211,
-      "denominator": 369156,
-      "micro_rate": 0.764476
+      "numerator": 124737,
+      "denominator": 171932,
+      "micro_rate": 0.725502
     },
     "shacl_to_ontology_property_refs": {
-      "numerator": 481607,
-      "denominator": 827745,
-      "micro_rate": 0.58183
+      "numerator": 208379,
+      "denominator": 342394,
+      "micro_rate": 0.608594
     }
   },
   "constraint_consistency": {
     "shapes_graph_policy": "rdf_source_document",
-    "primary_records": 670,
-    "denominator_extracted_trees": 6336
+    "primary_records": 345,
+    "denominator_extracted_trees": 3658,
+    "primary_logic05_confirmed": 338,
+    "primary_closed02_confirmed": 7
   },
   "usage_classification": {
-    "shape_documents": 160123,
-    "trees_with_shape_documents": 6340,
-    "content_sha256_groups": 43099,
+    "shape_documents": 50872,
+    "trees_with_shape_documents": 3657,
+    "content_sha256_groups": 33440,
     "multi_label": true,
     "supportable_presence": {
       "test_fixture_conformance": {
         "document": {
-          "n_with_label": 108332,
-          "denominator": 160123,
-          "rate": 0.6766
+          "n_with_label": 19477,
+          "denominator": 50872,
+          "rate": 0.3829
         },
         "content_dedup": {
-          "n_with_label": 14436,
-          "denominator": 43099,
-          "rate": 0.3349
+          "n_with_label": 9042,
+          "denominator": 33440,
+          "rate": 0.2704
         },
         "tree": {
-          "n_with_label": 1600,
-          "denominator": 6340,
-          "rate": 0.2524
+          "n_with_label": 667,
+          "denominator": 3657,
+          "rate": 0.1824
         }
       },
       "schema_structural": {
         "document": {
-          "n_with_label": 57373,
-          "denominator": 160123,
-          "rate": 0.3583
+          "n_with_label": 25797,
+          "denominator": 50872,
+          "rate": 0.5071
         },
         "content_dedup": {
-          "n_with_label": 24673,
-          "denominator": 43099,
-          "rate": 0.5725
+          "n_with_label": 18982,
+          "denominator": 33440,
+          "rate": 0.5676
         },
         "tree": {
-          "n_with_label": 5775,
-          "denominator": 6340,
-          "rate": 0.9109
+          "n_with_label": 3275,
+          "denominator": 3657,
+          "rate": 0.8955
         }
       },
       "rules_sparql_extension": {
         "document": {
-          "n_with_label": 19908,
-          "denominator": 160123,
-          "rate": 0.1243
+          "n_with_label": 9015,
+          "denominator": 50872,
+          "rate": 0.1772
         },
         "content_dedup": {
-          "n_with_label": 7908,
-          "denominator": 43099,
-          "rate": 0.1835
+          "n_with_label": 6640,
+          "denominator": 33440,
+          "rate": 0.1986
         },
         "tree": {
-          "n_with_label": 2395,
-          "denominator": 6340,
-          "rate": 0.3778
+          "n_with_label": 1129,
+          "denominator": 3657,
+          "rate": 0.3087
         }
       },
       "generated_transform_workflow": {
         "document": {
-          "n_with_label": 1955,
-          "denominator": 160123,
-          "rate": 0.0122
+          "n_with_label": 338,
+          "denominator": 50872,
+          "rate": 0.0066
         },
         "content_dedup": {
-          "n_with_label": 1526,
-          "denominator": 43099,
-          "rate": 0.0354
+          "n_with_label": 332,
+          "denominator": 33440,
+          "rate": 0.0099
         },
         "tree": {
-          "n_with_label": 55,
-          "denominator": 6340,
-          "rate": 0.0087
+          "n_with_label": 37,
+          "denominator": 3657,
+          "rate": 0.0101
         }
       },
       "application_business": {
         "document": {
-          "n_with_label": 192,
-          "denominator": 160123,
-          "rate": 0.0012
+          "n_with_label": 55,
+          "denominator": 50872,
+          "rate": 0.0011
         },
         "content_dedup": {
-          "n_with_label": 58,
-          "denominator": 43099,
-          "rate": 0.0013
+          "n_with_label": 53,
+          "denominator": 33440,
+          "rate": 0.0016
         },
         "tree": {
-          "n_with_label": 27,
-          "denominator": 6340,
-          "rate": 0.0043
+          "n_with_label": 10,
+          "denominator": 3657,
+          "rate": 0.0027
         }
       },
       "ontology_vocabulary_spec": {
         "document": {
-          "n_with_label": 4922,
-          "denominator": 160123,
-          "rate": 0.0307
+          "n_with_label": 1478,
+          "denominator": 50872,
+          "rate": 0.0291
         },
         "content_dedup": {
-          "n_with_label": 1540,
-          "denominator": 43099,
-          "rate": 0.0357
+          "n_with_label": 1125,
+          "denominator": 33440,
+          "rate": 0.0336
         },
         "tree": {
-          "n_with_label": 204,
-          "denominator": 6340,
-          "rate": 0.0322
+          "n_with_label": 101,
+          "denominator": 3657,
+          "rate": 0.0276
         }
       }
     },
     "documents_unknown_only": {
-      "n_with_label": 10926,
-      "denominator": 160123,
-      "rate": 0.0682
+      "n_with_label": 7102,
+      "denominator": 50872,
+      "rate": 0.1396
     },
     "documents_provenance_only_no_functional": {
-      "n_with_label": 74367,
-      "denominator": 160123,
-      "rate": 0.4644
+      "n_with_label": 11009,
+      "denominator": 50872,
+      "rate": 0.2164
     }
   },
   "usage_purpose": {
-    "shape_documents": 160123,
-    "content_sha256_groups": 43099,
-    "git_trees": 6340,
-    "donor_families": 6198,
+    "shape_documents": 50872,
+    "content_sha256_groups": 33440,
+    "git_trees": 3657,
+    "donor_families": 3646,
     "operational_document_purpose_presence": {
       "schema_like": {
-        "n_with_label": 12087,
-        "denominator": 160123,
-        "rate": 0.075486
+        "n_with_label": 4809,
+        "denominator": 50872,
+        "rate": 0.094531
       },
       "application_specific": {
-        "n_with_label": 3411,
-        "denominator": 160123,
-        "rate": 0.021302
+        "n_with_label": 1786,
+        "denominator": 50872,
+        "rate": 0.035108
       },
       "purpose_overlap": {
-        "n_with_label": 1680,
-        "denominator": 160123,
-        "rate": 0.010492
+        "n_with_label": 835,
+        "denominator": 50872,
+        "rate": 0.016414
       },
       "purpose_insufficient_or_none": {
-        "n_with_label": 146305,
-        "denominator": 160123,
-        "rate": 0.913704
+        "n_with_label": 45112,
+        "denominator": 50872,
+        "rate": 0.886775
       }
     }
   },
   "domain_classification": {
-    "shape_documents": 160123,
-    "content_sha256_groups": 43099,
-    "git_trees": 6340,
-    "donor_families": 6198,
+    "shape_documents": 50872,
+    "content_sha256_groups": 33440,
+    "git_trees": 3657,
+    "donor_families": 3646,
     "unknown_only_documents": {
-      "n_with_label": 78736,
-      "denominator": 160123,
-      "rate": 0.491722
+      "n_with_label": 34644,
+      "denominator": 50872,
+      "rate": 0.681003
     },
     "infrastructure_documents": {
-      "n_with_label": 59952,
-      "denominator": 160123,
-      "rate": 0.374412
+      "n_with_label": 5625,
+      "denominator": 50872,
+      "rate": 0.110572
     },
     "multi_application_domain_documents": {
-      "n_with_label": 1913,
-      "denominator": 160123,
-      "rate": 0.011947
+      "n_with_label": 1035,
+      "denominator": 50872,
+      "rate": 0.020345
     },
     "fixture_path_documents": {
-      "n_with_label": 101884,
-      "denominator": 160123,
-      "rate": 0.636286
+      "n_with_label": 17875,
+      "denominator": 50872,
+      "rate": 0.351372
     },
     "document_application_domain_presence": {
       "energy_power_systems": {
-        "n_with_label": 4025,
-        "denominator": 160123,
-        "rate": 0.025137
+        "n_with_label": 1136,
+        "denominator": 50872,
+        "rate": 0.022331
       },
       "geospatial": {
-        "n_with_label": 3233,
-        "denominator": 160123,
-        "rate": 0.020191
+        "n_with_label": 1836,
+        "denominator": 50872,
+        "rate": 0.036091
       },
       "public_sector_open_data": {
-        "n_with_label": 3220,
-        "denominator": 160123,
-        "rate": 0.02011
+        "n_with_label": 1868,
+        "denominator": 50872,
+        "rate": 0.03672
       },
       "life_sciences_biomedicine": {
-        "n_with_label": 2150,
-        "denominator": 160123,
-        "rate": 0.013427
+        "n_with_label": 559,
+        "denominator": 50872,
+        "rate": 0.010988
       },
       "iot_sensing": {
-        "n_with_label": 2131,
-        "denominator": 160123,
-        "rate": 0.013309
+        "n_with_label": 1141,
+        "denominator": 50872,
+        "rate": 0.022429
       },
       "built_environment_energy": {
-        "n_with_label": 1549,
-        "denominator": 160123,
-        "rate": 0.009674
+        "n_with_label": 710,
+        "denominator": 50872,
+        "rate": 0.013957
       },
       "cultural_heritage": {
-        "n_with_label": 768,
-        "denominator": 160123,
-        "rate": 0.004796
+        "n_with_label": 389,
+        "denominator": 50872,
+        "rate": 0.007647
       },
       "cybersecurity": {
-        "n_with_label": 618,
-        "denominator": 160123,
-        "rate": 0.00386
+        "n_with_label": 394,
+        "denominator": 50872,
+        "rate": 0.007745
       },
       "data_protection_privacy": {
-        "n_with_label": 361,
-        "denominator": 160123,
-        "rate": 0.002255
+        "n_with_label": 348,
+        "denominator": 50872,
+        "rate": 0.006841
       },
       "mobility_transport": {
-        "n_with_label": 127,
-        "denominator": 160123,
-        "rate": 0.000793
+        "n_with_label": 89,
+        "denominator": 50872,
+        "rate": 0.001749
       },
       "software_supply_chain": {
-        "n_with_label": 123,
-        "denominator": 160123,
-        "rate": 0.000768
+        "n_with_label": 36,
+        "denominator": 50872,
+        "rate": 0.000708
       },
       "finance": {
-        "n_with_label": 36,
-        "denominator": 160123,
-        "rate": 0.000225
+        "n_with_label": 35,
+        "denominator": 50872,
+        "rate": 0.000688
       }
     },
     "validation": {
@@ -1076,7 +1078,7 @@
       "application_domain_agreement": "80/80",
       "false_positive_label_instances": 0,
       "false_negative_label_instances": 0,
-      "ambiguous_application_label_instances": 9
+      "ambiguous_application_label_instances": 7
     }
   }
 }
