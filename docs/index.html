@@ -273,7 +273,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             <dt>Project:</dt>
             <dd><a href="https://github.com/erdemonal/shacl-en-forme">GitHub</a></dd>
             <dt>Permanent identifier:</dt>
-            <dd><a class="u-url" href="https://w3id.org/shacl-en-forme/">https://w3id.org/shacl-en-forme/</a></dd>
+            <dd><a class="u-url" href="https://w3id.org/shacl-en-forme">https://w3id.org/shacl-en-forme</a></dd>
             <dt>Dataset:</dt>
             <dd><a href="https://w3id.org/shacl-en-forme/data/stats.jsonld">Statistics (JSON-LD)</a></dd>
             <dt>Vocabulary:</dt>
@@ -378,6 +378,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <!--OddPage-->
         <h2 id="x1.-introduction" resource="#x1.-introduction"><span property="xhv:role" resource="xhv:heading"><span class="secno">1 </span>Introduction</span>
         </h2>
+        <p>
+            SHACL (Shapes Constraint Language) is a W3C standard for describing and validating RDF graphs. It serves as a <a href="https://en.wikipedia.org/wiki/Lingua_franca">lingua franca</a> for RDF validation.
+        </p>
         <p>
             SHACL en Forme presents how SHACL is used across public GitHub repositories. It follows the structure and terminology of SHACL 1.0 and adds usage statistics to the relevant sections.
         </p>
@@ -3756,14 +3759,20 @@ WHERE {
         <h2 id="x5.-usage-in-practice" resource="#x5.-usage-in-practice"><span property="xhv:role" resource="xhv:heading"><span class="secno">5 </span>Usage in Practice</span>
         </h2>
         <p>
-            This section presents further results from the analysis of SHACL shapes found in public GitHub repositories.
+            This section presents the results of an analysis of SHACL usage in public GitHub repositories.
         </p>
 
         <section id="dataset-and-coverage" typeof="bibo:Chapter" resource="#dataset-and-coverage" property="bibo:hasPart">
             <h3 id="x5.1-dataset-and-coverage" resource="#x5.1-dataset-and-coverage"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.1 </span>Dataset and Coverage</span>
             </h3>
             <p>
-                A Git tree represents a snapshot of repository contents. Multiple GitHub repositories may reference the same tree. Distinct Git trees are the primary unit of analysis so that identical content is not counted more than once. A repository was considered verified if at least one parsed RDF graph contained a SHACL Core shape declaration, target or constraint predicate, or a structurally attached SHACL-SPARQL constraint. Verified repositories were subsequently grouped by Git tree for extraction and analysis. Of the 3,659 verified trees, 3,658 were successfully extracted. Repository counts use verified repositories and are not multiplied into occurrence totals. GitHub fork repositories were excluded from the analysis. Git trees referenced by at least one repository that was not a fork were retained.
+                A Git tree represents a snapshot of repository contents. Multiple GitHub repositories may reference the same tree. The analysis uses distinct Git trees to avoid counting identical repository snapshots more than once.
+            </p>
+            <p>
+                A repository was considered verified if at least one parsed RDF graph contained a SHACL Core shape declaration, target or constraint predicate, or a structurally attached SHACL-SPARQL constraint. Verified repositories were grouped by Git tree for extraction and analysis. In total, 3,659 distinct Git trees were verified, and 3,658 were successfully extracted.
+            </p>
+            <p>
+                Fork repositories were excluded from the analysis. Git trees were included only if they were referenced by at least one non-fork repository. Repository counts are reported separately and do not affect the occurrence counts.
             </p>
             <p>Git trees and repositories</p>
             <table class="data coverage-counts" style="table-layout:fixed;width:100%">
@@ -3825,7 +3834,7 @@ WHERE {
             <h3 id="x5.2-shape-distribution" resource="#x5.2-shape-distribution"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.2 </span>Shape Distribution</span>
             </h3>
             <p>
-                The 3,658 extracted Git trees contain 1,183,518 distinct explicitly typed shapes.
+                The analysis identified 1,183,518 distinct SHACL shapes across 3,658 Git trees.
             </p>
             <table class="data">
             <thead>
@@ -3863,7 +3872,16 @@ WHERE {
             <h3 id="x5.3-ontology-alignment" resource="#x5.3-ontology-alignment"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.3 </span>Ontology Alignment</span>
             </h3>
             <p>
-                Ontology declarations are compared with the class and property IRIs referenced by SHACL shapes in the same Git tree. The first two measurements consider declared project terms, excluding the RDF, RDFS, OWL, XSD, SHACL, DC, and FOAF vocabularies. They measure how many of these terms are referenced by SHACL. The other two measurements consider all class and property IRIs referenced by SHACL and measure how many are declared in an ontology within the same tree. Matching requires identical IRIs and does not imply semantic equivalence. Unmatched references are not treated as undefined terms. Each IRI is counted once per tree. Among the 3,658 extracted Git trees, 2,805 contain both SHACL shapes and ontology terms, 852 contain only SHACL shapes, and one contains neither. Each rate is calculated by dividing the total number of matching IRIs by the total number of corresponding IRIs across the 2,805 trees.
+                Ontology alignment is measured using four measurements that compare ontology declarations with the class and property IRIs referenced by SHACL shapes in the same Git tree.
+            </p>
+            <p>
+                The first two measurements calculate the proportion of declared ontology classes and properties referenced by SHACL, excluding terms from RDF, RDFS, OWL, XSD, SHACL, DC, and FOAF. The other two calculate the proportion of SHACL class and property references that have ontology declarations in the same tree.
+            </p>
+            <p>
+                The comparison uses exact IRI matches, counting each IRI once per tree. An IRI match does not imply semantic equivalence. An unmatched reference is not considered an undefined term.
+            </p>
+            <p>
+                The analysis covers 3,658 extracted Git trees. A total of 2,805 trees contain both SHACL shapes and ontology terms, 852 contain only SHACL shapes, and one contains neither. Each rate is calculated by dividing the total number of matching IRIs by the corresponding total across the 2,805 trees.
             </p>
             <table class="data">
             <thead>
@@ -3907,7 +3925,10 @@ WHERE {
             <h3 id="x5.4-constraint-consistency" resource="#x5.4-constraint-consistency"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.4 </span>Constraint Consistency</span>
             </h3>
             <p>
-                The analysis identified 345 cases of constraint inconsistency across 3,658 Git trees. A total of 338 cases involve combinations of nested shape constraints that cannot be satisfied. The other 7 involve conflicts between closed shapes and property paths that require values. Each shapes graph was constructed from a single RDF source document. Definitions from other documents were not combined into the shapes graph. The analysis does not cover all possible combinations of SHACL Core constraints.
+                The analysis identified 345 cases of constraint inconsistency across 3,658 Git trees. These include 338 cases involving combinations of nested shape constraints that cannot be satisfied and 7 cases involving conflicts between closed shapes and property paths that require values.
+            </p>
+            <p>
+                Each shapes graph was constructed from a single RDF source document. Shape definitions from different documents were not combined. The analysis does not cover all possible combinations of SHACL Core constraints.
             </p>
             <table class="data">
             <tbody>
@@ -3927,14 +3948,23 @@ WHERE {
             <h3 id="x5.5-usage-contexts" resource="#x5.5-usage-contexts"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.5 </span>Usage Contexts</span>
             </h3>
             <p>
-                Shape documents are classified according to their functional characteristics, document purpose, and application domain using information extracted from the collected files. A document may belong to more than one category. The classifications cover 50,872 shape documents with 33,440 distinct contents, distributed across 3,657 Git trees.
+                Shape documents are classified by functional usage, document purpose, and application domain using information from the collected files. A document may belong to multiple categories.
+            </p>
+            <p>
+                The analysis covers 50,872 shape documents with 33,440 distinct contents across 3,657 Git trees.
             </p>
 
             <section id="functional-usage" typeof="bibo:Chapter" resource="#functional-usage" property="bibo:hasPart">
                 <h4 id="x5.5.1-functional-usage" resource="#x5.5.1-functional-usage"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.5.1 </span>Functional Usage</span>
                 </h4>
                 <p>
-                    Functional usage is classified using SHACL constraint predicates, document paths, and packaging information. Structural schemas and SPARQL extensions are identified through their constraint patterns. Test fixtures and generated shapes are identified from their paths or names. The Application use label requires relational constraints associated with a particular application. The Ontology and vocabulary specifications label requires ontology terms and vocabulary or profile packaging. Documents may belong to more than one category. Documents identified as test fixtures or generated artifacts without a functional classification are counted as provenance only.
+                    Functional usage is classified using SHACL constraint predicates, document paths, and packaging information. Constraint patterns are used to identify structural schemas and SPARQL extensions. File paths and names are used to identify test fixtures and generated shapes.
+                </p>
+                <p>
+                    Application use requires relational constraints associated with a specific application. Ontology and vocabulary specifications require ontology terms and vocabulary or profile packaging.
+                </p>
+                <p>
+                    A document may belong to multiple categories. Test fixtures and generated artifacts without a functional classification are counted as unclassified test or generated documents.
                 </p>
                 <table class="data">
             <thead>
@@ -3991,7 +4021,7 @@ WHERE {
                     <td>7,102<br><span style="font-size:smaller">13.96%</span></td>
                 </tr>
                 <tr>
-                    <th scope="row">Provenance only</th>
+                    <th scope="row">Unclassified test or generated documents</th>
                     <td>11,009<br><span style="font-size:smaller">21.64%</span></td>
                 </tr>
             </tbody>
@@ -4002,7 +4032,10 @@ WHERE {
                 <h4 id="x5.5.2-document-purpose" resource="#x5.5.2-document-purpose"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.5.2 </span>Document Purpose</span>
                 </h4>
                 <p>
-                    Document purpose is classified using vocabulary and profile definitions or information about the application in which SHACL is used. Schema-like documents are identified through vocabulary, schema, or application profile information. Application-specific documents require a connection to a particular application, service, or validator. Both categories may apply to the same document. The classification has not been independently validated against author intent.
+                    Document purpose is classified using vocabulary, schema, and application profile information, as well as references to specific applications. Schema-like documents contain vocabulary, schema, or application profile information. Application-specific documents are associated with a particular application, service, or validator.
+                </p>
+                <p>
+                    A document may belong to both categories. The classification has not been independently validated against the authors' intended purposes.
                 </p>
 
                 <table class="data">
@@ -4042,7 +4075,10 @@ WHERE {
                 <h4 id="x5.5.3-application-domains" resource="#x5.5.3-application-domains"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.5.3 </span>Application Domains</span>
                 </h4>
                 <p>
-                    Application domains are identified from selected namespace IRIs referenced by SHACL constraints. These references may occur in classes, datatypes, values, or property paths. A document may be assigned to more than one domain. Repository names alone do not establish an application domain. Documents that cannot be assigned to a domain using these references remain unclassified.
+                    Application domains are identified using selected namespace IRIs referenced by SHACL constraints. These IRIs may occur in class references, datatypes, values, or property paths. Repository names are not sufficient to determine an application domain.
+                </p>
+                <p>
+                    A document may belong to multiple domains. Documents without matching namespace references remain unclassified.
                 </p>
                 <table class="data">
             <thead>

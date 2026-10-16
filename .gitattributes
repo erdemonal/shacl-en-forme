@@ -4,8 +4,8 @@ docs/index.html linguist-documentation
 docs/shacl.css linguist-documentation
 docs/images/** linguist-documentation
 
-docs/data/** linguist-documentation
-docs/vocab/** linguist-documentation
+docs/vocab/** -linguist-documentation
+docs/data/** -linguist-documentation
 
-*.ttl linguist-language=Turtle
-*.jsonld linguist-language=JSON
+*.ttl linguist-language=Turtle linguist-detectable
+*.jsonld linguist-language=JSON linguist-detectable

@@ -1834,7 +1834,7 @@
           },
           {
             "@type": "ClassificationResult",
-            "category": "sef:documents_provenance_only_no_functional",
+            "category": "sef:unclassified_test_or_generated_documents",
             "counting_unit": "sef:unit_document",
             "n_with_label": 11009,
             "denominator": 50872,
@@ -2366,10 +2366,10 @@
       "inScheme": "sef:FunctionalUsageSummaryScheme"
     },
     {
-      "@id": "sef:documents_provenance_only_no_functional",
+      "@id": "sef:unclassified_test_or_generated_documents",
       "@type": "Concept",
       "prefLabel": {
-        "@value": "Provenance only, no functional label",
+        "@value": "Unclassified test or generated documents",
         "@language": "en"
       },
       "inScheme": "sef:FunctionalUsageSummaryScheme"

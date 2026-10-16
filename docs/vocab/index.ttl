@@ -1,21 +1,19 @@
-#
-# Prefixes
-#
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix erdemonal: <https://w3id.org/people/erdemonal/> .
-@prefix : <https://w3id.org/shacl-en-forme/vocab#> .
+@prefix :     <https://w3id.org/shacl-en-forme/vocab#> .
 
 <https://w3id.org/shacl-en-forme/vocab>
     a owl:Ontology ;
     rdfs:label "SHACL en Forme vocabulary"@en ;
-    rdfs:comment "Vocabulary for SHACL en Forme usage statistics."@en ;
+    rdfs:comment "Vocabulary for SHACL usage statistics collected from GitHub repositories."@en ;
     dct:created "2026-10-12"^^xsd:date ;
-    dct:modified "2026-10-15"^^xsd:date ;
+    dct:modified "2026-10-16"^^xsd:date ;
     dct:creator erdemonal:me ;
     vann:preferredNamespaceUri "https://w3id.org/shacl-en-forme/vocab#" ;
     vann:preferredNamespacePrefix "sef" ;
@@ -26,247 +24,516 @@
 #
 # Classes
 #
-:AnalysisResults
-    a rdfs:Class ;
-    rdfs:label "Analysis results"@en ;
-    rdfs:comment "SHACL 1.0 usage statistics over extracted Git trees."@en .
+:AnalysisResults a rdfs:Class ;
+    rdfs:label "Analysis results"@en .
+
+:DatasetCoverage a rdfs:Class ;
+    rdfs:label "Dataset coverage"@en ;
+    rdfs:comment "Counts of collected, parsed, and extracted files and Git trees."@en .
+
+:ShapeInventory a rdfs:Class ;
+    rdfs:label "Shape inventory"@en ;
+    rdfs:comment "Counts of SHACL node and property shapes."@en .
+
+:DistributionSummary a rdfs:Class ;
+    rdfs:label "Distribution summary"@en ;
+    rdfs:comment "Descriptive statistics for a numeric measure."@en .
+
+:FeatureFrequencyAnalysis a rdfs:Class ;
+    rdfs:label "Feature frequency analysis"@en ;
+    rdfs:comment "Frequency of SHACL features."@en .
+
+:FeatureFrequency a rdfs:Class ;
+    rdfs:label "Feature frequency"@en ;
+    rdfs:comment "Frequency of a SHACL feature or property path form."@en .
+
+:SparqlAnalysis a rdfs:Class ;
+    rdfs:label "SPARQL analysis"@en ;
+    rdfs:comment "Counts of SHACL-SPARQL constraints and targets."@en .
+
+:PropertyPathAnalysis a rdfs:Class ;
+    rdfs:label "Property path analysis"@en ;
+    rdfs:comment "Counts of SHACL property path forms."@en .
+
+:RepositoryView a rdfs:Class ;
+    rdfs:label "Repository view"@en ;
+    rdfs:comment "Repository counts by Git tree extraction status."@en .
+
+:ConcentrationAnalysis a rdfs:Class ;
+    rdfs:label "Concentration analysis"@en ;
+    rdfs:comment "Distribution of SHACL shapes across Git trees."@en .
+
+:ConcentrationSlice a rdfs:Class ;
+    rdfs:label "Concentration slice"@en ;
+    rdfs:comment "Share of shapes within a specified percentile of Git trees."@en .
+
+:TreeConcentrationRecord a rdfs:Class ;
+    rdfs:label "Tree concentration record"@en ;
+    rdfs:comment "Shape counts for an individual Git tree."@en .
+
+:AlignmentAnalysis a rdfs:Class ;
+    rdfs:label "Alignment analysis"@en ;
+    rdfs:comment "IRI correspondence between SHACL shapes and ontology terms."@en .
+
+:AlignmentRate a rdfs:Class ;
+    rdfs:label "Alignment rate"@en ;
+    rdfs:comment "Micro-averaged alignment rate."@en .
+
+:ConsistencyAnalysis a rdfs:Class ;
+    rdfs:label "Consistency analysis"@en ;
+    rdfs:comment "Inconsistencies among SHACL constraints."@en .
+
+:FindingCount a rdfs:Class ;
+    rdfs:label "Finding count"@en ;
+    rdfs:comment "Number of findings by inconsistency type."@en .
+
+:ClassificationResult a rdfs:Class ;
+    rdfs:label "Classification result"@en ;
+    rdfs:comment "Count and proportion of items assigned to a category."@en .
+
+:FunctionalUsageAnalysis a rdfs:Class ;
+    rdfs:label "Functional usage analysis"@en ;
+    rdfs:comment "Classification of SHACL documents by functional usage."@en .
+
+:PurposeClassificationAnalysis a rdfs:Class ;
+    rdfs:label "Purpose classification analysis"@en ;
+    rdfs:comment "Classification of SHACL documents by purpose."@en .
+
+:DomainClassificationAnalysis a rdfs:Class ;
+    rdfs:label "Domain classification analysis"@en ;
+    rdfs:comment "Classification of SHACL documents by application domain."@en .
+
 
 #
-# Tree counts
+# Linking Properties
 #
-:intended_unique_verified_trees
-    a rdf:Property ;
-    rdfs:label "intended unique verified trees"@en ;
-    rdfs:comment "Number of distinct verified Git trees intended for analysis."@en ;
-    rdfs:range xsd:integer .
 
-:extracted_unique_trees
-    a rdf:Property ;
-    rdfs:label "extracted unique trees"@en ;
-    rdfs:comment "Number of distinct Git trees successfully extracted for analysis."@en ;
-    rdfs:range xsd:integer .
+:has_coverage a rdf:Property ; rdfs:range :DatasetCoverage .
+:has_shape_inventory a rdf:Property ; rdfs:range :ShapeInventory .
+:has_constraint_frequencies a rdf:Property ; rdfs:range :FeatureFrequencyAnalysis .
+:has_target_frequencies a rdf:Property ; rdfs:range :FeatureFrequencyAnalysis .
+:has_sparql_analysis a rdf:Property ; rdfs:range :SparqlAnalysis .
+:has_property_path_analysis a rdf:Property ; rdfs:range :PropertyPathAnalysis .
+:has_repository_view a rdf:Property ; rdfs:range :RepositoryView .
+:has_concentration a rdf:Property ; rdfs:range :ConcentrationAnalysis .
+:has_alignment a rdf:Property ; rdfs:range :AlignmentAnalysis .
+:has_consistency a rdf:Property ; rdfs:range :ConsistencyAnalysis .
+:has_functional_usage a rdf:Property ; rdfs:range :FunctionalUsageAnalysis .
+:has_purpose_classification a rdf:Property ; rdfs:range :PurposeClassificationAnalysis .
+:has_domain_classification a rdf:Property ; rdfs:range :DomainClassificationAnalysis .
+:has_distribution a rdf:Property ; rdfs:range :DistributionSummary .
+:feature_frequency a rdf:Property ; rdfs:range :FeatureFrequency .
+:classification_result a rdf:Property ; rdfs:range :ClassificationResult .
+:alignment_rate a rdf:Property ; rdfs:range :AlignmentRate .
+:finding_count a rdf:Property ; rdfs:range :FindingCount .
+:percentile_slice a rdf:Property ; rdfs:range :ConcentrationSlice .
+:heavy_tree a rdf:Property ; rdfs:range :TreeConcentrationRecord .
 
-:lower_bound
-    a rdf:Property ;
-    rdfs:label "lower bound"@en ;
-    rdfs:comment "True when reported counts are conservative lower bounds due to incomplete extraction or parsing."@en ;
-    rdfs:range xsd:boolean .
+:category a rdf:Property ;
+    rdfs:label "category"@en ;
+    rdfs:comment "Classification category represented by a SKOS concept."@en ;
+    rdfs:range skos:Concept .
 
-#
-# Counting
-#
-:predicate
-    a rdf:Property ;
-    rdfs:label "predicate"@en ;
-    rdfs:comment "The SHACL predicate or IRI whose usage is counted."@en ;
+:counting_unit a rdf:Property ;
+    rdfs:label "counting unit"@en ;
+    rdfs:comment "Unit used for counting classified items."@en ;
+    rdfs:range skos:Concept .
+
+:feature a rdf:Property ;
+    rdfs:label "feature"@en ;
+    rdfs:comment "SHACL feature or property path form being counted."@en ;
     rdfs:range rdfs:Resource .
 
-:occurrences
-    a rdf:Property ;
-    rdfs:label "occurrences"@en ;
-    rdfs:comment "Number of observed occurrences in extracted trees."@en ;
-    rdfs:range xsd:integer .
-
-:unique_trees
-    a rdf:Property ;
-    rdfs:label "unique trees"@en ;
-    rdfs:comment "Number of distinct extracted Git trees in which a phenomenon was observed."@en ;
-    rdfs:range xsd:integer .
-
-:percent_of_extracted_trees
-    a rdf:Property ;
-    rdfs:label "percent of extracted trees"@en ;
-    rdfs:comment "unique_trees as a percentage of extracted_unique_trees."@en ;
-    rdfs:range xsd:decimal .
-
-:verified_repositories
-    a rdf:Property ;
-    rdfs:label "verified repositories"@en ;
-    rdfs:comment "Number of verified GitHub repositories associated with trees that exhibited a phenomenon."@en ;
-    rdfs:range xsd:integer .
-
-:percent_of_verified_repositories
-    a rdf:Property ;
-    rdfs:label "percent of verified repositories"@en ;
-    rdfs:comment "verified_repositories as a percentage of all verified repositories."@en ;
-    rdfs:range xsd:decimal .
-
-:denominator_extracted_trees
-    a rdf:Property ;
-    rdfs:label "extracted tree count used as denominator"@en ;
-    rdfs:comment "Number of extracted trees used as the denominator for tree-based rates."@en ;
-    rdfs:range xsd:integer .
-
-:denominator_verified_repositories
-    a rdf:Property ;
-    rdfs:label "verified repository count used as denominator"@en ;
-    rdfs:comment "Number of verified repositories used as the denominator for repository-based rates."@en ;
-    rdfs:range xsd:integer .
-
-:total_occurrences
-    a rdf:Property ;
-    rdfs:label "total occurrences"@en ;
-    rdfs:comment "Sum of occurrences across a result group."@en ;
-    rdfs:range xsd:integer .
-
-:numerator
-    a rdf:Property ;
-    rdfs:label "numerator"@en ;
-    rdfs:comment "Numerator of a rate."@en ;
-    rdfs:range xsd:integer .
-
-:denominator
-    a rdf:Property ;
-    rdfs:label "denominator"@en ;
-    rdfs:comment "Denominator of a rate."@en ;
-    rdfs:range xsd:integer .
-
-:micro_rate
-    a rdf:Property ;
-    rdfs:label "micro rate"@en ;
-    rdfs:comment "Micro-averaged rate equal to numerator divided by denominator."@en ;
-    rdfs:range xsd:decimal .
-
-:rate
-    a rdf:Property ;
-    rdfs:label "rate"@en ;
-    rdfs:comment "Proportion of labelled items within a stated population."@en ;
-    rdfs:range xsd:decimal .
-
-:n_with_label
-    a rdf:Property ;
-    rdfs:label "n with label"@en ;
-    rdfs:comment "Number of items carrying a given classification label."@en ;
-    rdfs:range xsd:integer .
-
-#
-# Shapes
-#
-:node_shapes
-    a rdf:Property ;
-    rdfs:label "node shapes"@en ;
-    rdfs:comment "Count of resources typed as sh:NodeShape."@en ;
-    rdfs:range xsd:integer .
-
-:property_shapes
-    a rdf:Property ;
-    rdfs:label "property shapes"@en ;
-    rdfs:comment "Count of resources typed as sh:PropertyShape."@en ;
-    rdfs:range xsd:integer .
-
-:distinct_shapes
-    a rdf:Property ;
-    rdfs:label "distinct shapes"@en ;
-    rdfs:comment "Count of distinct resources typed as sh:NodeShape and/or sh:PropertyShape."@en ;
-    rdfs:range xsd:integer .
-
-:shape_documents
-    a rdf:Property ;
-    rdfs:label "shape documents"@en ;
-    rdfs:comment "Number of RDF documents that contain SHACL shapes."@en ;
-    rdfs:range xsd:integer .
-
-:trees_with_shape_documents
-    a rdf:Property ;
-    rdfs:label "trees with shape documents"@en ;
-    rdfs:comment "Number of extracted Git trees that contain at least one shape document."@en ;
-    rdfs:range xsd:integer .
-
-:content_sha256_groups
-    a rdf:Property ;
-    rdfs:label "content SHA-256 groups"@en ;
-    rdfs:comment "Number of distinct document contents after SHA-256 deduplication."@en ;
-    rdfs:range xsd:integer .
-
-#
-# SPARQL
-#
-:trees_with_structural_constraints
-    a rdf:Property ;
-    rdfs:label "trees with structural constraints"@en ;
-    rdfs:comment "Number of extracted Git trees containing SHACL-SPARQL structural constraint usage."@en ;
-    rdfs:range xsd:integer .
-
-:sparql_links
-    a rdf:Property ;
-    rdfs:label "SPARQL links"@en ;
-    rdfs:comment "Number of sh:sparql links observed in extracted trees."@en ;
-    rdfs:range xsd:integer .
-
-:sparql_constraint_nodes
-    a rdf:Property ;
-    rdfs:label "SPARQL constraint nodes"@en ;
-    rdfs:comment "Number of SPARQL constraint nodes observed in extracted trees."@en ;
-    rdfs:range xsd:integer .
-
-:sparql_target_trees
-    a rdf:Property ;
-    rdfs:label "SPARQL target trees"@en ;
-    rdfs:comment "Number of extracted Git trees with SPARQL-based targets."@en ;
-    rdfs:range xsd:integer .
-
-#
-# Property paths
-#
-:nested_forms_counted_separately
-    a rdf:Property ;
-    rdfs:label "nested forms counted separately"@en ;
-    rdfs:comment "True when nested SHACL property-path forms are counted separately, so form occurrence totals may exceed path declaration totals."@en ;
-    rdfs:range xsd:boolean .
-
-:form
-    a rdf:Property ;
+:path_form a rdf:Property ;
     rdfs:label "path form"@en ;
-    rdfs:comment "Name of a SHACL 1.0 property-path form, such as PredicatePath or SequencePath."@en ;
-    rdfs:range xsd:string .
+    rdfs:comment "SHACL property path form."@en ;
+    rdfs:range skos:Concept .
 
-:path_declarations
-    a rdf:Property ;
-    rdfs:label "path declarations"@en ;
-    rdfs:comment "Number of sh:path declarations observed in extracted trees."@en ;
-    rdfs:range xsd:integer .
+:alignment_measure a rdf:Property ;
+    rdfs:label "alignment measure"@en ;
+    rdfs:range skos:Concept .
 
-:classified
-    a rdf:Property ;
-    rdfs:label "classified"@en ;
-    rdfs:comment "Number of path declarations classified into one of the seven SHACL 1.0 property-path forms."@en ;
-    rdfs:range xsd:integer .
+:finding_type a rdf:Property ;
+    rdfs:label "finding type"@en ;
+    rdfs:range skos:Concept .
 
-:unclassified
-    a rdf:Property ;
-    rdfs:label "unclassified"@en ;
-    rdfs:comment "Number of path declarations not classified into a SHACL 1.0 property-path form."@en ;
-    rdfs:range xsd:integer .
+:of_measure a rdf:Property ;
+    rdfs:label "of measure"@en ;
+    rdfs:comment "Measure described by a distribution summary."@en ;
+    rdfs:range rdf:Property .
 
-#
-# Ontology alignment
-#
-:both_stream_trees
-    a rdf:Property ;
-    rdfs:label "trees with shapes and ontology terms"@en ;
-    rdfs:comment "Number of extracted Git trees that contain both SHACL shapes and ontology terms used by alignment rates."@en ;
-    rdfs:range xsd:integer .
-
-#
-# Constraint consistency
-#
-:shapes_graph_policy
-    a rdf:Property ;
+:shapes_graph_policy a rdf:Property ;
     rdfs:label "shapes graph policy"@en ;
-    rdfs:comment "Which RDF graphs were treated as shapes graphs for consistency analysis."@en ;
-    rdfs:range xsd:string .
+    rdfs:comment "RDF graphs used for consistency analysis."@en ;
+    rdfs:range skos:Concept .
 
-:primary_records
-    a rdf:Property ;
+
+#
+# Measurement Properties
+#
+:lower_bound a rdf:Property ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "True if extraction or parsing may have missed occurrences."@en .
+
+:intended_unique_verified_trees a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of distinct verified Git trees selected for analysis."@en .
+
+:extracted_unique_trees a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of distinct Git trees extracted."@en .
+
+:unavailable_distinct_git_trees a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of verified Git trees unavailable for extraction."@en .
+
+:inventory_files a rdf:Property ; rdfs:range xsd:integer .
+:parsed_files a rdf:Property ; rdfs:range xsd:integer .
+:jsonld_context_unresolved_files a rdf:Property ; rdfs:range xsd:integer .
+:sniff_rejected_files a rdf:Property ; rdfs:range xsd:integer .
+:parse_error_files a rdf:Property ; rdfs:range xsd:integer .
+
+:shape_documents a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of RDF documents containing SHACL shapes."@en .
+
+:trees_with_shape_documents a rdf:Property ; rdfs:range xsd:integer .
+
+:content_sha256_groups a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of distinct document contents identified by SHA-256."@en .
+
+:parsed_file_rows a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of parsed file records in the extraction tables."@en .
+
+:parsed_shape_rows a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of parsed shape records in the extraction tables."@en .
+
+:parsed_constraint_rows a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of parsed constraint records in the extraction tables."@en .
+
+:parsed_ontology_term_rows a rdf:Property ; rdfs:range xsd:integer .
+:parsed_path_declaration_rows a rdf:Property ; rdfs:range xsd:integer .
+
+:node_shapes a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of explicitly typed SHACL node shapes per Git tree."@en .
+
+:property_shapes a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of explicitly typed SHACL property shapes per Git tree."@en .
+
+:distinct_shapes a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of distinct explicitly typed shapes per Git tree."@en .
+
+:occurrences a rdf:Property ; rdfs:range xsd:integer .
+:unique_trees a rdf:Property ; rdfs:range xsd:integer .
+:percent_of_extracted_trees a rdf:Property ; rdfs:range xsd:decimal .
+
+:verified_repositories a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of verified GitHub repositories associated with matching Git trees."@en .
+
+:percent_of_verified_repositories a rdf:Property ; rdfs:range xsd:decimal .
+:denominator_extracted_trees a rdf:Property ; rdfs:range xsd:integer .
+:denominator_verified_repositories a rdf:Property ; rdfs:range xsd:integer .
+:total_occurrences a rdf:Property ; rdfs:range xsd:integer .
+
+:trees_with_structural_constraints a rdf:Property ; rdfs:range xsd:integer .
+:sparql_links a rdf:Property ; rdfs:range xsd:integer .
+:sparql_constraint_nodes a rdf:Property ; rdfs:range xsd:integer .
+:sparql_target_trees a rdf:Property ; rdfs:range xsd:integer .
+:sparql_only_content_trees a rdf:Property ; rdfs:range xsd:integer .
+:sparql_only_verification_trees a rdf:Property ; rdfs:range xsd:integer .
+
+:path_declarations a rdf:Property ; rdfs:range xsd:integer .
+
+:classified_path_declarations a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of declarations assigned a SHACL property path form."@en .
+
+:unclassified_path_declarations a rdf:Property ; rdfs:range xsd:integer .
+:classifier_coverage_percent a rdf:Property ; rdfs:range xsd:decimal .
+:nested_forms_counted_separately a rdf:Property ; rdfs:range xsd:boolean .
+
+:repositories_whose_tree_was_extracted a rdf:Property ; rdfs:range xsd:integer .
+:repositories_whose_tree_was_not_extracted a rdf:Property ; rdfs:range xsd:integer .
+
+:population_label a rdf:Property ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Label of the population used in concentration analysis."@en .
+
+:distinct_shape_total a rdf:Property ; rdfs:range xsd:integer .
+:percentile_threshold a rdf:Property ; rdfs:range xsd:decimal .
+:tree_count a rdf:Property ; rdfs:range xsd:integer .
+:share_of_total a rdf:Property ; rdfs:range xsd:decimal .
+:donor a rdf:Property ; rdfs:range xsd:string .
+:tree_sha a rdf:Property ; rdfs:range xsd:string .
+:repository_count a rdf:Property ; rdfs:range xsd:integer .
+:counts_partial a rdf:Property ; rdfs:range xsd:boolean .
+:enumeration_complete a rdf:Property ; rdfs:range xsd:boolean .
+
+:both_stream_trees a rdf:Property ; rdfs:range xsd:integer .
+:shapes_without_ontology_terms a rdf:Property ; rdfs:range xsd:integer .
+:ontology_without_shapes a rdf:Property ; rdfs:range xsd:integer .
+
+:neither_stream_trees a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of extracted Git trees containing neither SHACL shapes nor ontology terms."@en .
+
+:numerator a rdf:Property ; rdfs:range xsd:integer .
+:denominator a rdf:Property ; rdfs:range xsd:integer .
+:micro_rate a rdf:Property ; rdfs:range xsd:decimal .
+
+:confirmed_consistency_findings a rdf:Property ;
     rdfs:label "confirmed consistency findings"@en ;
-    rdfs:comment "Number of confirmed constraint-consistency findings."@en ;
+    rdfs:comment "Number of constraint inconsistencies confirmed by the analysis."@en ;
     rdfs:range xsd:integer .
 
+:count a rdf:Property ; rdfs:range xsd:integer .
+
+:n_with_label a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of items assigned to a classification category."@en .
+
+:rate a rdf:Property ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "Proportion of classified items within a specified population."@en .
+
+:multi_label a rdf:Property ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "True if an item can belong to multiple categories."@en .
+
+:git_trees a rdf:Property ; rdfs:range xsd:integer .
+:donor_families a rdf:Property ; rdfs:range xsd:integer .
+
+:sample_size a rdf:Property ; rdfs:range xsd:integer .
+:minimum a rdf:Property ; rdfs:range xsd:decimal .
+:maximum a rdf:Property ; rdfs:range xsd:decimal .
+:mean a rdf:Property ; rdfs:range xsd:decimal .
+:median a rdf:Property ; rdfs:range xsd:decimal .
+:percentile_25 a rdf:Property ; rdfs:range xsd:decimal .
+:percentile_75 a rdf:Property ; rdfs:range xsd:decimal .
+:percentile_95 a rdf:Property ; rdfs:range xsd:decimal .
+:standard_deviation a rdf:Property ; rdfs:range xsd:decimal .
+
+
 #
-# Classification
+# SKOS Concepts
 #
-:multi_label
-    a rdf:Property ;
-    rdfs:label "multi-label"@en ;
-    rdfs:comment "True when classification labels may overlap on the same item."@en ;
-    rdfs:range xsd:boolean .
+:CountingUnitScheme a skos:ConceptScheme ;
+    skos:prefLabel "Counting unit scheme"@en .
+
+:unit_document a skos:Concept ;
+    skos:inScheme :CountingUnitScheme ;
+    skos:prefLabel "Document"@en .
+
+:unit_content a skos:Concept ;
+    skos:inScheme :CountingUnitScheme ;
+    skos:prefLabel "Distinct document content"@en .
+
+:unit_git_tree a skos:Concept ;
+    skos:inScheme :CountingUnitScheme ;
+    skos:prefLabel "Git tree"@en .
+
+:distinct_iri_within_tree a skos:Concept ;
+    skos:inScheme :CountingUnitScheme ;
+    skos:prefLabel "Distinct IRI within Git tree"@en .
+
+
+:PathFormScheme a skos:ConceptScheme ;
+    skos:prefLabel "SHACL property path form scheme"@en .
+
+:PredicatePath a skos:Concept ;
+    skos:inScheme :PathFormScheme ;
+    skos:prefLabel "PredicatePath"@en .
+
+:SequencePath a skos:Concept ;
+    skos:inScheme :PathFormScheme ;
+    skos:prefLabel "SequencePath"@en .
+
+:AlternativePath a skos:Concept ;
+    skos:inScheme :PathFormScheme ;
+    skos:prefLabel "AlternativePath"@en .
+
+:InversePath a skos:Concept ;
+    skos:inScheme :PathFormScheme ;
+    skos:prefLabel "InversePath"@en .
+
+:ZeroOrMorePath a skos:Concept ;
+    skos:inScheme :PathFormScheme ;
+    skos:prefLabel "ZeroOrMorePath"@en .
+
+:OneOrMorePath a skos:Concept ;
+    skos:inScheme :PathFormScheme ;
+    skos:prefLabel "OneOrMorePath"@en .
+
+:ZeroOrOnePath a skos:Concept ;
+    skos:inScheme :PathFormScheme ;
+    skos:prefLabel "ZeroOrOnePath"@en .
+
+:AlignmentMeasureScheme a skos:ConceptScheme ;
+    skos:prefLabel "Ontology alignment measure scheme"@en .
+
+:ontology_to_shacl_project_classes a skos:Concept ;
+    skos:inScheme :AlignmentMeasureScheme .
+
+:ontology_to_shacl_project_properties a skos:Concept ;
+    skos:inScheme :AlignmentMeasureScheme .
+
+:shacl_to_ontology_class_refs a skos:Concept ;
+    skos:inScheme :AlignmentMeasureScheme .
+
+:shacl_to_ontology_property_refs a skos:Concept ;
+    skos:inScheme :AlignmentMeasureScheme .
+
+:FindingTypeScheme a skos:ConceptScheme ;
+    skos:prefLabel "Constraint consistency finding type scheme"@en .
+
+:nested_shape_unsatisfiable a skos:Concept ;
+    skos:inScheme :FindingTypeScheme ;
+    skos:prefLabel "Nested shape constraints that cannot be satisfied"@en .
+
+:closed_shape_path_conflict a skos:Concept ;
+    skos:inScheme :FindingTypeScheme ;
+    skos:prefLabel "Closed shape conflicting with required property paths"@en .
+
+:ShapesGraphPolicyScheme a skos:ConceptScheme ;
+    skos:prefLabel "Shapes graph policy scheme"@en .
+
+:rdf_source_document a skos:Concept ;
+    skos:inScheme :ShapesGraphPolicyScheme ;
+    skos:prefLabel "Single RDF source document"@en .
+
+:FunctionalUsageScheme a skos:ConceptScheme ;
+    skos:prefLabel "Functional usage scheme"@en ;
+    rdfs:comment "Functional usage categories may overlap."@en .
+
+:FunctionalUsageSummaryScheme a skos:ConceptScheme ;
+    skos:prefLabel "Functional usage summary scheme"@en .
+
+:test_fixture_conformance a skos:Concept ;
+    skos:inScheme :FunctionalUsageScheme ;
+    skos:prefLabel "Test fixtures and conformance"@en .
+
+:schema_structural a skos:Concept ;
+    skos:inScheme :FunctionalUsageScheme ;
+    skos:prefLabel "Structural schemas"@en .
+
+:rules_sparql_extension a skos:Concept ;
+    skos:inScheme :FunctionalUsageScheme ;
+    skos:prefLabel "SPARQL rules and extensions"@en .
+
+:generated_transform_workflow a skos:Concept ;
+    skos:inScheme :FunctionalUsageScheme ;
+    skos:prefLabel "Generated transforms and workflows"@en .
+
+:application_business a skos:Concept ;
+    skos:inScheme :FunctionalUsageScheme ;
+    skos:prefLabel "Application use"@en .
+
+:ontology_vocabulary_spec a skos:Concept ;
+    skos:inScheme :FunctionalUsageScheme ;
+    skos:prefLabel "Ontology and vocabulary specifications"@en .
+
+:documents_unknown_only a skos:Concept ;
+    skos:inScheme :FunctionalUsageSummaryScheme ;
+    skos:prefLabel "Documents classified only as unknown"@en .
+
+:unclassified_test_or_generated_documents a skos:Concept ;
+    skos:inScheme :FunctionalUsageSummaryScheme ;
+    skos:prefLabel "Unclassified test or generated documents"@en ;
+    rdfs:comment "Test fixtures or generated artifacts that do not receive a functional usage category."@en .
+
+:DocumentPurposeScheme a skos:ConceptScheme ;
+    skos:prefLabel "Document purpose scheme"@en .
+
+:schema_like a skos:Concept ;
+    skos:inScheme :DocumentPurposeScheme ;
+    skos:prefLabel "Schema-like"@en .
+
+:application_specific a skos:Concept ;
+    skos:inScheme :DocumentPurposeScheme ;
+    skos:prefLabel "Application-specific"@en .
+
+:purpose_overlap a skos:Concept ;
+    skos:inScheme :DocumentPurposeScheme ;
+    skos:prefLabel "Purpose overlap"@en .
+
+:purpose_insufficient_or_none a skos:Concept ;
+    skos:inScheme :DocumentPurposeScheme ;
+    skos:prefLabel "Insufficient information or neither"@en .
+
+:ApplicationDomainScheme a skos:ConceptScheme ;
+    skos:prefLabel "Application domain scheme"@en .
+
+:DomainSummaryScheme a skos:ConceptScheme ;
+    skos:prefLabel "Domain classification summary scheme"@en .
+
+:energy_power_systems a skos:Concept ;
+    skos:inScheme :ApplicationDomainScheme ;
+    skos:prefLabel "Energy and power systems"@en .
+
+:geospatial a skos:Concept ;
+    skos:inScheme :ApplicationDomainScheme ;
+    skos:prefLabel "Geospatial"@en .
+
+:public_sector_open_data a skos:Concept ;
+    skos:inScheme :ApplicationDomainScheme ;
+    skos:prefLabel "Public sector and open data"@en .
+
+:life_sciences_biomedicine a skos:Concept ;
+    skos:inScheme :ApplicationDomainScheme ;
+    skos:prefLabel "Life sciences and biomedicine"@en .
+
+:iot_sensing a skos:Concept ;
+    skos:inScheme :ApplicationDomainScheme ;
+    skos:prefLabel "IoT and sensing"@en .
+
+:built_environment_energy a skos:Concept ;
+    skos:inScheme :ApplicationDomainScheme ;
+    skos:prefLabel "Built environment and energy"@en .
+
+:cultural_heritage a skos:Concept ;
+    skos:inScheme :ApplicationDomainScheme ;
+    skos:prefLabel "Cultural heritage"@en .
+
+:cybersecurity a skos:Concept ;
+    skos:inScheme :ApplicationDomainScheme ;
+    skos:prefLabel "Cybersecurity"@en .
+
+:data_protection_privacy a skos:Concept ;
+    skos:inScheme :ApplicationDomainScheme ;
+    skos:prefLabel "Data protection and privacy"@en .
+
+:mobility_transport a skos:Concept ;
+    skos:inScheme :ApplicationDomainScheme ;
+    skos:prefLabel "Mobility and transport"@en .
+
+:software_supply_chain a skos:Concept ;
+    skos:inScheme :ApplicationDomainScheme ;
+    skos:prefLabel "Software supply chain"@en .
+
+:finance a skos:Concept ;
+    skos:inScheme :ApplicationDomainScheme ;
+    skos:prefLabel "Finance"@en .
+
+:unknown_only_documents a skos:Concept ;
+    skos:inScheme :DomainSummaryScheme ;
+    skos:prefLabel "Documents classified only as unknown"@en .
+
+:infrastructure_documents a skos:Concept ;
+    skos:inScheme :DomainSummaryScheme ;
+    skos:prefLabel "Infrastructure documents"@en .
+
+:multi_application_domain_documents a skos:Concept ;
+    skos:inScheme :DomainSummaryScheme ;
+    skos:prefLabel "Multi-application domain documents"@en .
+
+:fixture_path_documents a skos:Concept ;
+    skos:inScheme :DomainSummaryScheme ;
+    skos:prefLabel "Fixture path documents"@en .
