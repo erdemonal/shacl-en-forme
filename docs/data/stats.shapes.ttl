@@ -1,0 +1,101 @@
+#
+# SHACL shapes for the SHACL en Forme.
+#
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sef:  <https://w3id.org/shacl-en-forme/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+sef:AnalysisResultsShape
+    a sh:NodeShape ;
+    sh:targetClass sef:AnalysisResults ;
+    sh:property [
+        sh:path sef:extracted_unique_trees ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:has_coverage ;
+        sh:class sef:DatasetCoverage ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:has_consistency ;
+        sh:class sef:ConsistencyAnalysis ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:has_functional_usage ;
+        sh:class sef:FunctionalUsageAnalysis ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:has_purpose_classification ;
+        sh:class sef:PurposeClassificationAnalysis ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:has_domain_classification ;
+        sh:class sef:DomainClassificationAnalysis ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] .
+
+sef:ClassificationResultShape
+    a sh:NodeShape ;
+    sh:targetClass sef:ClassificationResult ;
+    sh:property [
+        sh:path sef:category ;
+        sh:class skos:Concept ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:counting_unit ;
+        sh:class skos:Concept ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:n_with_label ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:denominator ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:rate ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] .
+
+sef:ConsistencyAnalysisShape
+    a sh:NodeShape ;
+    sh:targetClass sef:ConsistencyAnalysis ;
+    sh:property [
+        sh:path sef:confirmed_consistency_findings ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:finding_count ;
+        sh:class sef:FindingCount ;
+        sh:minCount 2 ; sh:maxCount 2 ;
+    ] .
+
+sef:AlignmentAnalysisShape
+    a sh:NodeShape ;
+    sh:targetClass sef:AlignmentAnalysis ;
+    sh:property [
+        sh:path sef:both_stream_trees ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:alignment_rate ;
+        sh:class sef:AlignmentRate ;
+        sh:minCount 4 ; sh:maxCount 4 ;
+    ] .

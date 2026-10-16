@@ -1,1075 +1,2582 @@
 {
   "@context": {
-    "@vocab": "https://w3id.org/shacl-en-forme/vocab#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "schema": "https://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "dct": "http://purl.org/dc/terms/",
     "sh": "http://www.w3.org/ns/shacl#",
+    "sef": "https://w3id.org/shacl-en-forme/vocab#",
     "id": "@id",
     "type": "@type",
     "name": "schema:name",
     "description": "schema:description",
-    "author": "schema:author",
     "url": "schema:url",
     "datePublished": {
       "@id": "schema:datePublished",
       "@type": "xsd:gYear"
     },
-    "isBasedOn": "schema:isBasedOn",
-    "predicate": {
-      "@id": "predicate",
+    "author": "schema:author",
+    "isBasedOn": {
+      "@id": "schema:isBasedOn",
       "@type": "@id"
     },
-    "occurrences": {
-      "@id": "occurrences",
+    "AnalysisResults": "sef:AnalysisResults",
+    "DatasetCoverage": "sef:DatasetCoverage",
+    "ShapeInventory": "sef:ShapeInventory",
+    "DistributionSummary": "sef:DistributionSummary",
+    "FeatureFrequencyAnalysis": "sef:FeatureFrequencyAnalysis",
+    "FeatureFrequency": "sef:FeatureFrequency",
+    "SparqlAnalysis": "sef:SparqlAnalysis",
+    "PropertyPathAnalysis": "sef:PropertyPathAnalysis",
+    "RepositoryView": "sef:RepositoryView",
+    "ConcentrationAnalysis": "sef:ConcentrationAnalysis",
+    "ConcentrationSlice": "sef:ConcentrationSlice",
+    "TreeConcentrationRecord": "sef:TreeConcentrationRecord",
+    "AlignmentAnalysis": "sef:AlignmentAnalysis",
+    "AlignmentRate": "sef:AlignmentRate",
+    "ConsistencyAnalysis": "sef:ConsistencyAnalysis",
+    "FindingCount": "sef:FindingCount",
+    "ClassificationResult": "sef:ClassificationResult",
+    "FunctionalUsageAnalysis": "sef:FunctionalUsageAnalysis",
+    "PurposeClassificationAnalysis": "sef:PurposeClassificationAnalysis",
+    "DomainClassificationAnalysis": "sef:DomainClassificationAnalysis",
+    "Concept": "skos:Concept",
+    "ConceptScheme": "skos:ConceptScheme",
+    "prefLabel": "skos:prefLabel",
+    "inScheme": {
+      "@id": "skos:inScheme",
+      "@type": "@id"
+    },
+    "has_coverage": {
+      "@id": "sef:has_coverage"
+    },
+    "has_shape_inventory": {
+      "@id": "sef:has_shape_inventory"
+    },
+    "has_constraint_frequencies": {
+      "@id": "sef:has_constraint_frequencies"
+    },
+    "has_target_frequencies": {
+      "@id": "sef:has_target_frequencies"
+    },
+    "has_sparql_analysis": {
+      "@id": "sef:has_sparql_analysis"
+    },
+    "has_property_path_analysis": {
+      "@id": "sef:has_property_path_analysis"
+    },
+    "has_repository_view": {
+      "@id": "sef:has_repository_view"
+    },
+    "has_concentration": {
+      "@id": "sef:has_concentration"
+    },
+    "has_alignment": {
+      "@id": "sef:has_alignment"
+    },
+    "has_consistency": {
+      "@id": "sef:has_consistency"
+    },
+    "has_functional_usage": {
+      "@id": "sef:has_functional_usage"
+    },
+    "has_purpose_classification": {
+      "@id": "sef:has_purpose_classification"
+    },
+    "has_domain_classification": {
+      "@id": "sef:has_domain_classification"
+    },
+    "feature_frequency": {
+      "@id": "sef:feature_frequency",
+      "@container": "@set"
+    },
+    "classification_result": {
+      "@id": "sef:classification_result",
+      "@container": "@set"
+    },
+    "alignment_rate": {
+      "@id": "sef:alignment_rate",
+      "@container": "@set"
+    },
+    "finding_count": {
+      "@id": "sef:finding_count",
+      "@container": "@set"
+    },
+    "percentile_slice": {
+      "@id": "sef:percentile_slice",
+      "@container": "@set"
+    },
+    "heavy_tree": {
+      "@id": "sef:heavy_tree",
+      "@container": "@set"
+    },
+    "has_distribution": {
+      "@id": "sef:has_distribution",
+      "@container": "@set"
+    },
+    "category": {
+      "@id": "sef:category",
+      "@type": "@id"
+    },
+    "counting_unit": {
+      "@id": "sef:counting_unit",
+      "@type": "@id"
+    },
+    "feature": {
+      "@id": "sef:feature",
+      "@type": "@id"
+    },
+    "path_form": {
+      "@id": "sef:path_form",
+      "@type": "@id"
+    },
+    "alignment_measure": {
+      "@id": "sef:alignment_measure",
+      "@type": "@id"
+    },
+    "finding_type": {
+      "@id": "sef:finding_type",
+      "@type": "@id"
+    },
+    "of_measure": {
+      "@id": "sef:of_measure",
+      "@type": "@id"
+    },
+    "shapes_graph_policy": {
+      "@id": "sef:shapes_graph_policy",
+      "@type": "@id"
+    },
+    "counting_unit_concept": {
+      "@id": "sef:counting_unit",
+      "@type": "@id"
+    },
+    "lower_bound": {
+      "@id": "sef:lower_bound",
+      "@type": "xsd:boolean"
+    },
+    "intended_unique_verified_trees": {
+      "@id": "sef:intended_unique_verified_trees",
       "@type": "xsd:integer"
     },
-    "unique_trees": {
-      "@id": "unique_trees",
+    "extracted_unique_trees": {
+      "@id": "sef:extracted_unique_trees",
       "@type": "xsd:integer"
     },
-    "percent_of_extracted_trees": {
-      "@id": "percent_of_extracted_trees",
-      "@type": "xsd:decimal"
-    },
-    "verified_repositories": {
-      "@id": "verified_repositories",
+    "unavailable_distinct_git_trees": {
+      "@id": "sef:unavailable_distinct_git_trees",
       "@type": "xsd:integer"
     },
-    "percent_of_verified_repositories": {
-      "@id": "percent_of_verified_repositories",
-      "@type": "xsd:decimal"
-    },
-    "denominator_extracted_trees": {
-      "@id": "denominator_extracted_trees",
+    "inventory_files": {
+      "@id": "sef:inventory_files",
       "@type": "xsd:integer"
     },
-    "denominator_verified_repositories": {
-      "@id": "denominator_verified_repositories",
+    "parsed_files": {
+      "@id": "sef:parsed_files",
       "@type": "xsd:integer"
     },
-    "total_occurrences": {
-      "@id": "total_occurrences",
+    "jsonld_context_unresolved_files": {
+      "@id": "sef:jsonld_context_unresolved_files",
       "@type": "xsd:integer"
     },
-    "node_shapes": {
-      "@id": "node_shapes",
+    "sniff_rejected_files": {
+      "@id": "sef:sniff_rejected_files",
       "@type": "xsd:integer"
     },
-    "property_shapes": {
-      "@id": "property_shapes",
-      "@type": "xsd:integer"
-    },
-    "distinct_shapes": {
-      "@id": "distinct_shapes",
-      "@type": "xsd:integer"
-    },
-    "trees_with_structural_constraints": {
-      "@id": "trees_with_structural_constraints",
-      "@type": "xsd:integer"
-    },
-    "sparql_links": {
-      "@id": "sparql_links",
-      "@type": "xsd:integer"
-    },
-    "sparql_constraint_nodes": {
-      "@id": "sparql_constraint_nodes",
-      "@type": "xsd:integer"
-    },
-    "sparql_target_trees": {
-      "@id": "sparql_target_trees",
+    "parse_error_files": {
+      "@id": "sef:parse_error_files",
       "@type": "xsd:integer"
     },
     "shape_documents": {
-      "@id": "shape_documents",
+      "@id": "sef:shape_documents",
       "@type": "xsd:integer"
     },
     "trees_with_shape_documents": {
-      "@id": "trees_with_shape_documents",
+      "@id": "sef:trees_with_shape_documents",
       "@type": "xsd:integer"
     },
     "content_sha256_groups": {
-      "@id": "content_sha256_groups",
+      "@id": "sef:content_sha256_groups",
       "@type": "xsd:integer"
     },
+    "parsed_file_rows": {
+      "@id": "sef:parsed_file_rows",
+      "@type": "xsd:integer"
+    },
+    "parsed_shape_rows": {
+      "@id": "sef:parsed_shape_rows",
+      "@type": "xsd:integer"
+    },
+    "parsed_constraint_rows": {
+      "@id": "sef:parsed_constraint_rows",
+      "@type": "xsd:integer"
+    },
+    "parsed_ontology_term_rows": {
+      "@id": "sef:parsed_ontology_term_rows",
+      "@type": "xsd:integer"
+    },
+    "parsed_path_declaration_rows": {
+      "@id": "sef:parsed_path_declaration_rows",
+      "@type": "xsd:integer"
+    },
+    "node_shapes": {
+      "@id": "sef:node_shapes",
+      "@type": "xsd:integer"
+    },
+    "property_shapes": {
+      "@id": "sef:property_shapes",
+      "@type": "xsd:integer"
+    },
+    "distinct_shapes": {
+      "@id": "sef:distinct_shapes",
+      "@type": "xsd:integer"
+    },
+    "denominator_extracted_trees": {
+      "@id": "sef:denominator_extracted_trees",
+      "@type": "xsd:integer"
+    },
+    "denominator_verified_repositories": {
+      "@id": "sef:denominator_verified_repositories",
+      "@type": "xsd:integer"
+    },
+    "total_occurrences": {
+      "@id": "sef:total_occurrences",
+      "@type": "xsd:integer"
+    },
+    "occurrences": {
+      "@id": "sef:occurrences",
+      "@type": "xsd:integer"
+    },
+    "unique_trees": {
+      "@id": "sef:unique_trees",
+      "@type": "xsd:integer"
+    },
+    "percent_of_extracted_trees": {
+      "@id": "sef:percent_of_extracted_trees",
+      "@type": "xsd:decimal"
+    },
+    "verified_repositories": {
+      "@id": "sef:verified_repositories",
+      "@type": "xsd:integer"
+    },
+    "percent_of_verified_repositories": {
+      "@id": "sef:percent_of_verified_repositories",
+      "@type": "xsd:decimal"
+    },
+    "trees_with_structural_constraints": {
+      "@id": "sef:trees_with_structural_constraints",
+      "@type": "xsd:integer"
+    },
+    "sparql_links": {
+      "@id": "sef:sparql_links",
+      "@type": "xsd:integer"
+    },
+    "sparql_constraint_nodes": {
+      "@id": "sef:sparql_constraint_nodes",
+      "@type": "xsd:integer"
+    },
+    "sparql_target_trees": {
+      "@id": "sef:sparql_target_trees",
+      "@type": "xsd:integer"
+    },
+    "sparql_only_content_trees": {
+      "@id": "sef:sparql_only_content_trees",
+      "@type": "xsd:integer"
+    },
+    "sparql_only_verification_trees": {
+      "@id": "sef:sparql_only_verification_trees",
+      "@type": "xsd:integer"
+    },
+    "path_declarations": {
+      "@id": "sef:path_declarations",
+      "@type": "xsd:integer"
+    },
+    "classified_path_declarations": {
+      "@id": "sef:classified_path_declarations",
+      "@type": "xsd:integer"
+    },
+    "unclassified_path_declarations": {
+      "@id": "sef:unclassified_path_declarations",
+      "@type": "xsd:integer"
+    },
+    "classifier_coverage_percent": {
+      "@id": "sef:classifier_coverage_percent",
+      "@type": "xsd:decimal"
+    },
+    "nested_forms_counted_separately": {
+      "@id": "sef:nested_forms_counted_separately",
+      "@type": "xsd:boolean"
+    },
+    "repositories_whose_tree_was_extracted": {
+      "@id": "sef:repositories_whose_tree_was_extracted",
+      "@type": "xsd:integer"
+    },
+    "repositories_whose_tree_was_not_extracted": {
+      "@id": "sef:repositories_whose_tree_was_not_extracted",
+      "@type": "xsd:integer"
+    },
+    "population_label": "sef:population_label",
+    "distinct_shape_total": {
+      "@id": "sef:distinct_shape_total",
+      "@type": "xsd:integer"
+    },
+    "percentile_threshold": {
+      "@id": "sef:percentile_threshold",
+      "@type": "xsd:decimal"
+    },
+    "tree_count": {
+      "@id": "sef:tree_count",
+      "@type": "xsd:integer"
+    },
+    "share_of_total": {
+      "@id": "sef:share_of_total",
+      "@type": "xsd:decimal"
+    },
+    "donor": "sef:donor",
+    "tree_sha": "sef:tree_sha",
+    "repository_count": {
+      "@id": "sef:repository_count",
+      "@type": "xsd:integer"
+    },
+    "counts_partial": {
+      "@id": "sef:counts_partial",
+      "@type": "xsd:boolean"
+    },
+    "enumeration_complete": {
+      "@id": "sef:enumeration_complete",
+      "@type": "xsd:boolean"
+    },
     "both_stream_trees": {
-      "@id": "both_stream_trees",
+      "@id": "sef:both_stream_trees",
+      "@type": "xsd:integer"
+    },
+    "shapes_without_ontology_terms": {
+      "@id": "sef:shapes_without_ontology_terms",
+      "@type": "xsd:integer"
+    },
+    "ontology_without_shapes": {
+      "@id": "sef:ontology_without_shapes",
+      "@type": "xsd:integer"
+    },
+    "neither_stream_trees": {
+      "@id": "sef:neither_stream_trees",
       "@type": "xsd:integer"
     },
     "numerator": {
-      "@id": "numerator",
+      "@id": "sef:numerator",
       "@type": "xsd:integer"
     },
     "denominator": {
-      "@id": "denominator",
+      "@id": "sef:denominator",
       "@type": "xsd:integer"
     },
     "micro_rate": {
-      "@id": "micro_rate",
+      "@id": "sef:micro_rate",
       "@type": "xsd:decimal"
     },
-    "primary_records": {
-      "@id": "primary_records",
+    "confirmed_consistency_findings": {
+      "@id": "sef:confirmed_consistency_findings",
+      "@type": "xsd:integer"
+    },
+    "count": {
+      "@id": "sef:count",
       "@type": "xsd:integer"
     },
     "n_with_label": {
-      "@id": "n_with_label",
+      "@id": "sef:n_with_label",
       "@type": "xsd:integer"
     },
     "rate": {
-      "@id": "rate",
+      "@id": "sef:rate",
+      "@type": "xsd:decimal"
+    },
+    "multi_label": {
+      "@id": "sef:multi_label",
+      "@type": "xsd:boolean"
+    },
+    "git_trees": {
+      "@id": "sef:git_trees",
+      "@type": "xsd:integer"
+    },
+    "donor_families": {
+      "@id": "sef:donor_families",
+      "@type": "xsd:integer"
+    },
+    "sample_size": {
+      "@id": "sef:sample_size",
+      "@type": "xsd:integer"
+    },
+    "minimum": {
+      "@id": "sef:minimum",
+      "@type": "xsd:decimal"
+    },
+    "maximum": {
+      "@id": "sef:maximum",
+      "@type": "xsd:decimal"
+    },
+    "mean": {
+      "@id": "sef:mean",
+      "@type": "xsd:decimal"
+    },
+    "median": {
+      "@id": "sef:median",
+      "@type": "xsd:decimal"
+    },
+    "percentile_25": {
+      "@id": "sef:percentile_25",
+      "@type": "xsd:decimal"
+    },
+    "percentile_75": {
+      "@id": "sef:percentile_75",
+      "@type": "xsd:decimal"
+    },
+    "percentile_95": {
+      "@id": "sef:percentile_95",
+      "@type": "xsd:decimal"
+    },
+    "standard_deviation": {
+      "@id": "sef:standard_deviation",
       "@type": "xsd:decimal"
     }
   },
-  "@id": "https://w3id.org/shacl-en-forme/data/stats.jsonld",
-  "@type": [
-    "schema:Dataset",
-    "AnalysisResults"
-  ],
-  "name": "SHACL en Forme",
-  "description": "SHACL 1.0 usage statistics from public GitHub repositories.",
-  "url": "https://w3id.org/shacl-en-forme/",
-  "datePublished": "2026",
-  "author": {
-    "@id": "https://w3id.org/people/erdemonal",
-    "@type": "schema:Person",
-    "name": "Erdem Önal"
-  },
-  "isBasedOn": "https://www.w3.org/TR/2017/REC-shacl-20170720/",
-  "lower_bound": true,
-  "intended_unique_verified_trees": 3659,
-  "extracted_unique_trees": 3658,
-  "reconciliation": {
-    "verified_distinct_git_trees": 3659,
-    "extracted_distinct_git_trees": 3658,
-    "unavailable_distinct_git_trees": 1
-  },
-  "coverage": {
-    "intended_unique_verified_trees": 3659,
-    "extracted_trees": 3658,
-    "inventory_files": 550508,
-    "parsed_files": 548135,
-    "jsonld_context_unresolved_files": 41,
-    "sniff_rejected_files": 2069,
-    "parse_error_files": 263,
-    "shape_documents": 50872,
-    "trees_with_shape_documents": 3657,
-    "content_sha256_groups": 33440,
-    "parsed_rdf_row_totals": {
-      "files": 1386769,
-      "shapes": 4019975,
-      "constraints": 14599701,
-      "ontology_terms": 3905456,
-      "path_declarations": 2212575
+  "@graph": [
+    {
+      "@id": "https://w3id.org/shacl-en-forme/data/stats.jsonld",
+      "@type": [
+        "schema:Dataset",
+        "AnalysisResults"
+      ],
+      "name": "SHACL en Forme",
+      "description": "SHACL 1.0 usage statistics from public GitHub repositories.",
+      "url": "https://w3id.org/shacl-en-forme/",
+      "datePublished": "2026",
+      "author": {
+        "@id": "https://w3id.org/people/erdemonal",
+        "@type": "schema:Person",
+        "name": "Erdem Önal"
+      },
+      "isBasedOn": "https://www.w3.org/TR/2017/REC-shacl-20170720/",
+      "lower_bound": true,
+      "intended_unique_verified_trees": 3659,
+      "extracted_unique_trees": 3658,
+      "unavailable_distinct_git_trees": 1,
+      "has_coverage": {
+        "@type": "DatasetCoverage",
+        "intended_unique_verified_trees": 3659,
+        "extracted_unique_trees": 3658,
+        "inventory_files": 550508,
+        "parsed_files": 548135,
+        "jsonld_context_unresolved_files": 41,
+        "sniff_rejected_files": 2069,
+        "parse_error_files": 263,
+        "shape_documents": 50872,
+        "trees_with_shape_documents": 3657,
+        "content_sha256_groups": 33440,
+        "parsed_file_rows": 1386769,
+        "parsed_shape_rows": 4019975,
+        "parsed_constraint_rows": 14599701,
+        "parsed_ontology_term_rows": 3905456,
+        "parsed_path_declaration_rows": 2212575
+      },
+      "has_shape_inventory": {
+        "@type": "ShapeInventory",
+        "denominator_extracted_trees": 3658,
+        "node_shapes": 424580,
+        "property_shapes": 759570,
+        "distinct_shapes": 1183518,
+        "has_distribution": [
+          {
+            "@type": "DistributionSummary",
+            "of_measure": "sef:node_shapes",
+            "sample_size": 3658,
+            "minimum": {
+              "@value": "0",
+              "@type": "xsd:decimal"
+            },
+            "percentile_25": {
+              "@value": "4",
+              "@type": "xsd:decimal"
+            },
+            "median": {
+              "@value": "10.0",
+              "@type": "xsd:decimal"
+            },
+            "mean": {
+              "@value": "116.069",
+              "@type": "xsd:decimal"
+            },
+            "percentile_75": {
+              "@value": "32.0",
+              "@type": "xsd:decimal"
+            },
+            "maximum": {
+              "@value": "35486",
+              "@type": "xsd:decimal"
+            },
+            "standard_deviation": {
+              "@value": "848.588",
+              "@type": "xsd:decimal"
+            },
+            "percentile_95": {
+              "@value": "357.14999999999964",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "DistributionSummary",
+            "of_measure": "sef:property_shapes",
+            "sample_size": 3658,
+            "minimum": {
+              "@value": "0",
+              "@type": "xsd:decimal"
+            },
+            "percentile_25": {
+              "@value": "0",
+              "@type": "xsd:decimal"
+            },
+            "median": {
+              "@value": "0",
+              "@type": "xsd:decimal"
+            },
+            "mean": {
+              "@value": "207.646",
+              "@type": "xsd:decimal"
+            },
+            "percentile_75": {
+              "@value": "1.0",
+              "@type": "xsd:decimal"
+            },
+            "maximum": {
+              "@value": "80500",
+              "@type": "xsd:decimal"
+            },
+            "standard_deviation": {
+              "@value": "2079.8",
+              "@type": "xsd:decimal"
+            },
+            "percentile_95": {
+              "@value": "289.4499999999989",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "DistributionSummary",
+            "of_measure": "sef:distinct_shapes",
+            "sample_size": 3658,
+            "minimum": {
+              "@value": "0",
+              "@type": "xsd:decimal"
+            },
+            "percentile_25": {
+              "@value": "4.0",
+              "@type": "xsd:decimal"
+            },
+            "median": {
+              "@value": "12.0",
+              "@type": "xsd:decimal"
+            },
+            "mean": {
+              "@value": "323.542",
+              "@type": "xsd:decimal"
+            },
+            "percentile_75": {
+              "@value": "42.0",
+              "@type": "xsd:decimal"
+            },
+            "maximum": {
+              "@value": "84974",
+              "@type": "xsd:decimal"
+            },
+            "standard_deviation": {
+              "@value": "2584.719",
+              "@type": "xsd:decimal"
+            },
+            "percentile_95": {
+              "@value": "779.9999999999927",
+              "@type": "xsd:decimal"
+            }
+          }
+        ]
+      },
+      "has_constraint_frequencies": {
+        "@type": "FeatureFrequencyAnalysis",
+        "denominator_extracted_trees": 3658,
+        "denominator_verified_repositories": 3677,
+        "total_occurrences": 6954178,
+        "feature_frequency": [
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#and",
+            "occurrences": 7520,
+            "unique_trees": 382,
+            "percent_of_extracted_trees": {
+              "@value": "10.44",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 385,
+            "percent_of_verified_repositories": {
+              "@value": "10.47",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#class",
+            "occurrences": 29249,
+            "unique_trees": 471,
+            "percent_of_extracted_trees": {
+              "@value": "12.88",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 477,
+            "percent_of_verified_repositories": {
+              "@value": "12.97",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#closed",
+            "occurrences": 537481,
+            "unique_trees": 3206,
+            "percent_of_extracted_trees": {
+              "@value": "87.64",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 3222,
+            "percent_of_verified_repositories": {
+              "@value": "87.63",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#datatype",
+            "occurrences": 22370,
+            "unique_trees": 311,
+            "percent_of_extracted_trees": {
+              "@value": "8.5",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 311,
+            "percent_of_verified_repositories": {
+              "@value": "8.46",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#disjoint",
+            "occurrences": 1570,
+            "unique_trees": 170,
+            "percent_of_extracted_trees": {
+              "@value": "4.65",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 171,
+            "percent_of_verified_repositories": {
+              "@value": "4.65",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#equals",
+            "occurrences": 94905,
+            "unique_trees": 1295,
+            "percent_of_extracted_trees": {
+              "@value": "35.4",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 1303,
+            "percent_of_verified_repositories": {
+              "@value": "35.44",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#flags",
+            "occurrences": 74648,
+            "unique_trees": 1578,
+            "percent_of_extracted_trees": {
+              "@value": "43.14",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 1585,
+            "percent_of_verified_repositories": {
+              "@value": "43.11",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#hasValue",
+            "occurrences": 57824,
+            "unique_trees": 637,
+            "percent_of_extracted_trees": {
+              "@value": "17.41",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 638,
+            "percent_of_verified_repositories": {
+              "@value": "17.35",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#ignoredProperties",
+            "occurrences": 2312,
+            "unique_trees": 136,
+            "percent_of_extracted_trees": {
+              "@value": "3.72",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 136,
+            "percent_of_verified_repositories": {
+              "@value": "3.7",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#in",
+            "occurrences": 58521,
+            "unique_trees": 764,
+            "percent_of_extracted_trees": {
+              "@value": "20.89",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 770,
+            "percent_of_verified_repositories": {
+              "@value": "20.94",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#languageIn",
+            "occurrences": 71003,
+            "unique_trees": 496,
+            "percent_of_extracted_trees": {
+              "@value": "13.56",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 497,
+            "percent_of_verified_repositories": {
+              "@value": "13.52",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#lessThan",
+            "occurrences": 16102,
+            "unique_trees": 917,
+            "percent_of_extracted_trees": {
+              "@value": "25.07",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 920,
+            "percent_of_verified_repositories": {
+              "@value": "25.02",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#lessThanOrEquals",
+            "occurrences": 57403,
+            "unique_trees": 358,
+            "percent_of_extracted_trees": {
+              "@value": "9.79",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 362,
+            "percent_of_verified_repositories": {
+              "@value": "9.84",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#maxCount",
+            "occurrences": 77437,
+            "unique_trees": 1105,
+            "percent_of_extracted_trees": {
+              "@value": "30.21",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 1106,
+            "percent_of_verified_repositories": {
+              "@value": "30.08",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#maxExclusive",
+            "occurrences": 1172259,
+            "unique_trees": 2436,
+            "percent_of_extracted_trees": {
+              "@value": "66.59",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 2450,
+            "percent_of_verified_repositories": {
+              "@value": "66.63",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#maxInclusive",
+            "occurrences": 8794,
+            "unique_trees": 668,
+            "percent_of_extracted_trees": {
+              "@value": "18.26",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 669,
+            "percent_of_verified_repositories": {
+              "@value": "18.19",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#maxLength",
+            "occurrences": 654821,
+            "unique_trees": 2989,
+            "percent_of_extracted_trees": {
+              "@value": "81.71",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 3001,
+            "percent_of_verified_repositories": {
+              "@value": "81.62",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#minCount",
+            "occurrences": 2957,
+            "unique_trees": 273,
+            "percent_of_extracted_trees": {
+              "@value": "7.46",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 274,
+            "percent_of_verified_repositories": {
+              "@value": "7.45",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#minExclusive",
+            "occurrences": 5565,
+            "unique_trees": 336,
+            "percent_of_extracted_trees": {
+              "@value": "9.19",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 337,
+            "percent_of_verified_repositories": {
+              "@value": "9.17",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#minInclusive",
+            "occurrences": 1737,
+            "unique_trees": 199,
+            "percent_of_extracted_trees": {
+              "@value": "5.44",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 203,
+            "percent_of_verified_repositories": {
+              "@value": "5.52",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#minLength",
+            "occurrences": 31455,
+            "unique_trees": 1122,
+            "percent_of_extracted_trees": {
+              "@value": "30.67",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 1126,
+            "percent_of_verified_repositories": {
+              "@value": "30.62",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#node",
+            "occurrences": 754832,
+            "unique_trees": 1913,
+            "percent_of_extracted_trees": {
+              "@value": "52.3",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 1927,
+            "percent_of_verified_repositories": {
+              "@value": "52.41",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#nodeKind",
+            "occurrences": 9324,
+            "unique_trees": 413,
+            "percent_of_extracted_trees": {
+              "@value": "11.29",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 414,
+            "percent_of_verified_repositories": {
+              "@value": "11.26",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#not",
+            "occurrences": 2110844,
+            "unique_trees": 3477,
+            "percent_of_extracted_trees": {
+              "@value": "95.05",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 3495,
+            "percent_of_verified_repositories": {
+              "@value": "95.05",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#or",
+            "occurrences": 662881,
+            "unique_trees": 2862,
+            "percent_of_extracted_trees": {
+              "@value": "78.24",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 2878,
+            "percent_of_verified_repositories": {
+              "@value": "78.27",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#pattern",
+            "occurrences": 1883,
+            "unique_trees": 178,
+            "percent_of_extracted_trees": {
+              "@value": "4.87",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 179,
+            "percent_of_verified_repositories": {
+              "@value": "4.87",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#property",
+            "occurrences": 19997,
+            "unique_trees": 185,
+            "percent_of_extracted_trees": {
+              "@value": "5.06",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 186,
+            "percent_of_verified_repositories": {
+              "@value": "5.06",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#qualifiedMaxCount",
+            "occurrences": 650,
+            "unique_trees": 164,
+            "percent_of_extracted_trees": {
+              "@value": "4.48",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 165,
+            "percent_of_verified_repositories": {
+              "@value": "4.49",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#qualifiedMinCount",
+            "occurrences": 157240,
+            "unique_trees": 1388,
+            "percent_of_extracted_trees": {
+              "@value": "37.94",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 1395,
+            "percent_of_verified_repositories": {
+              "@value": "37.94",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#qualifiedValueShape",
+            "occurrences": 141080,
+            "unique_trees": 1121,
+            "percent_of_extracted_trees": {
+              "@value": "30.65",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 1131,
+            "percent_of_verified_repositories": {
+              "@value": "30.76",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#qualifiedValueShapesDisjoint",
+            "occurrences": 86924,
+            "unique_trees": 520,
+            "percent_of_extracted_trees": {
+              "@value": "14.22",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 521,
+            "percent_of_verified_repositories": {
+              "@value": "14.17",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#uniqueLang",
+            "occurrences": 9358,
+            "unique_trees": 168,
+            "percent_of_extracted_trees": {
+              "@value": "4.59",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 169,
+            "percent_of_verified_repositories": {
+              "@value": "4.6",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#xone",
+            "occurrences": 13232,
+            "unique_trees": 364,
+            "percent_of_extracted_trees": {
+              "@value": "9.95",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 365,
+            "percent_of_verified_repositories": {
+              "@value": "9.93",
+              "@type": "xsd:decimal"
+            }
+          }
+        ]
+      },
+      "has_target_frequencies": {
+        "@type": "FeatureFrequencyAnalysis",
+        "denominator_extracted_trees": 3658,
+        "denominator_verified_repositories": 3677,
+        "total_occurrences": 909073,
+        "feature_frequency": [
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#targetClass",
+            "occurrences": 838272,
+            "unique_trees": 3374,
+            "percent_of_extracted_trees": {
+              "@value": "92.24",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 3389,
+            "percent_of_verified_repositories": {
+              "@value": "92.17",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#targetNode",
+            "occurrences": 29889,
+            "unique_trees": 366,
+            "percent_of_extracted_trees": {
+              "@value": "10.01",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 366,
+            "percent_of_verified_repositories": {
+              "@value": "9.95",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#targetObjectsOf",
+            "occurrences": 13725,
+            "unique_trees": 570,
+            "percent_of_extracted_trees": {
+              "@value": "15.58",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 570,
+            "percent_of_verified_repositories": {
+              "@value": "15.5",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#targetSubjectsOf",
+            "occurrences": 27187,
+            "unique_trees": 805,
+            "percent_of_extracted_trees": {
+              "@value": "22.01",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 808,
+            "percent_of_verified_repositories": {
+              "@value": "21.97",
+              "@type": "xsd:decimal"
+            }
+          }
+        ]
+      },
+      "has_sparql_analysis": {
+        "@type": "SparqlAnalysis",
+        "denominator_extracted_trees": 3658,
+        "trees_with_structural_constraints": 1065,
+        "percent_of_extracted_trees": {
+          "@value": "29.11",
+          "@type": "xsd:decimal"
+        },
+        "sparql_links": 85496,
+        "sparql_constraint_nodes": 25073,
+        "sparql_target_trees": 302,
+        "sparql_only_content_trees": 1,
+        "sparql_only_verification_trees": 3
+      },
+      "has_property_path_analysis": {
+        "@type": "PropertyPathAnalysis",
+        "denominator_extracted_trees": 3658,
+        "path_declarations": 2212575,
+        "classified_path_declarations": 2211409,
+        "unclassified_path_declarations": 1166,
+        "classifier_coverage_percent": {
+          "@value": "99.95",
+          "@type": "xsd:decimal"
+        },
+        "nested_forms_counted_separately": true,
+        "feature_frequency": [
+          {
+            "@type": "FeatureFrequency",
+            "feature": "sef:PredicatePath",
+            "path_form": "sef:PredicatePath",
+            "occurrences": 2432119,
+            "unique_trees": 3508,
+            "percent_of_extracted_trees": {
+              "@value": "95.9",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "sef:SequencePath",
+            "path_form": "sef:SequencePath",
+            "occurrences": 117295,
+            "unique_trees": 538,
+            "percent_of_extracted_trees": {
+              "@value": "14.71",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "sef:AlternativePath",
+            "path_form": "sef:AlternativePath",
+            "occurrences": 9813,
+            "unique_trees": 385,
+            "percent_of_extracted_trees": {
+              "@value": "10.52",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "sef:InversePath",
+            "path_form": "sef:InversePath",
+            "occurrences": 15869,
+            "unique_trees": 568,
+            "percent_of_extracted_trees": {
+              "@value": "15.53",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "sef:ZeroOrMorePath",
+            "path_form": "sef:ZeroOrMorePath",
+            "occurrences": 9096,
+            "unique_trees": 275,
+            "percent_of_extracted_trees": {
+              "@value": "7.52",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "sef:OneOrMorePath",
+            "path_form": "sef:OneOrMorePath",
+            "occurrences": 571,
+            "unique_trees": 211,
+            "percent_of_extracted_trees": {
+              "@value": "5.77",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "sef:ZeroOrOnePath",
+            "path_form": "sef:ZeroOrOnePath",
+            "occurrences": 169,
+            "unique_trees": 93,
+            "percent_of_extracted_trees": {
+              "@value": "2.54",
+              "@type": "xsd:decimal"
+            }
+          }
+        ]
+      },
+      "has_repository_view": {
+        "@type": "RepositoryView",
+        "verified_repositories": 3677,
+        "repositories_whose_tree_was_extracted": 3676,
+        "repositories_whose_tree_was_not_extracted": 1
+      },
+      "has_concentration": {
+        "@type": "ConcentrationAnalysis",
+        "population_label": "extracted unique trees",
+        "distinct_shape_total": 1183518,
+        "percentile_slice": [
+          {
+            "@type": "ConcentrationSlice",
+            "percentile_threshold": {
+              "@value": "0.01",
+              "@type": "xsd:decimal"
+            },
+            "tree_count": 37,
+            "distinct_shapes": 690425,
+            "share_of_total": {
+              "@value": "0.5834",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ConcentrationSlice",
+            "percentile_threshold": {
+              "@value": "0.05",
+              "@type": "xsd:decimal"
+            },
+            "tree_count": 183,
+            "distinct_shapes": 1037474,
+            "share_of_total": {
+              "@value": "0.8766",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ConcentrationSlice",
+            "percentile_threshold": {
+              "@value": "0.1",
+              "@type": "xsd:decimal"
+            },
+            "tree_count": 366,
+            "distinct_shapes": 1104828,
+            "share_of_total": {
+              "@value": "0.9335",
+              "@type": "xsd:decimal"
+            }
+          }
+        ],
+        "heavy_tree": [
+          {
+            "@type": "TreeConcentrationRecord",
+            "donor": "oeg-upm/AstreaRun",
+            "tree_sha": "e764ed61eba147c719ce8c2fe803ce36e9803b8c",
+            "distinct_shapes": 84974,
+            "node_shapes": 35486,
+            "property_shapes": 49507,
+            "repository_count": 1,
+            "counts_partial": true,
+            "enumeration_complete": true
+          },
+          {
+            "@type": "TreeConcentrationRecord",
+            "donor": "meaningfy-ws/shacl-driven-consistency-validation",
+            "tree_sha": "d6dab5899ca90d976644687a7cccc108bc95f81e",
+            "distinct_shapes": 81687,
+            "node_shapes": 1187,
+            "property_shapes": 80500,
+            "repository_count": 1,
+            "counts_partial": true,
+            "enumeration_complete": true
+          },
+          {
+            "@type": "TreeConcentrationRecord",
+            "donor": "matejkratochvil/entsoe-application-profiles-library",
+            "tree_sha": "48d49e6f67800fdf8d3299bdda03dc15de6d1511",
+            "distinct_shapes": 34272,
+            "node_shapes": 10117,
+            "property_shapes": 24213,
+            "repository_count": 1,
+            "counts_partial": true,
+            "enumeration_complete": true
+          },
+          {
+            "@type": "TreeConcentrationRecord",
+            "donor": "niubisile-wq/pcc-power-grid-transformation",
+            "tree_sha": "992e7ec2f902a8fdfee3a0c137f0070ff755c58c",
+            "distinct_shapes": 31813,
+            "node_shapes": 6497,
+            "property_shapes": 25316,
+            "repository_count": 1,
+            "counts_partial": true,
+            "enumeration_complete": true
+          },
+          {
+            "@type": "TreeConcentrationRecord",
+            "donor": "sogno-platform/cgmes-application-profiles-library",
+            "tree_sha": "b299ec4dd54c102e41528335c971057a205aa472",
+            "distinct_shapes": 31769,
+            "node_shapes": 353,
+            "property_shapes": 31416,
+            "repository_count": 1,
+            "counts_partial": false,
+            "enumeration_complete": true
+          },
+          {
+            "@type": "TreeConcentrationRecord",
+            "donor": "ADam-LVA/application-profiles-library",
+            "tree_sha": "df4c310f079c4880b32a4d367335d1551198b52f",
+            "distinct_shapes": 25595,
+            "node_shapes": 863,
+            "property_shapes": 24732,
+            "repository_count": 1,
+            "counts_partial": true,
+            "enumeration_complete": true
+          },
+          {
+            "@type": "TreeConcentrationRecord",
+            "donor": "nikolatulechki/application-profiles-library",
+            "tree_sha": "40a5bddc2acee1d0d72b489daadb14e167c80bdd",
+            "distinct_shapes": 25594,
+            "node_shapes": 863,
+            "property_shapes": 24731,
+            "repository_count": 1,
+            "counts_partial": true,
+            "enumeration_complete": true
+          },
+          {
+            "@type": "TreeConcentrationRecord",
+            "donor": "Stichting-CROW/imbor-development",
+            "tree_sha": "2d35541c0fd0b955ce44f24bcc3ae552d4044d04",
+            "distinct_shapes": 24307,
+            "node_shapes": 6782,
+            "property_shapes": 17525,
+            "repository_count": 1,
+            "counts_partial": true,
+            "enumeration_complete": true
+          },
+          {
+            "@type": "TreeConcentrationRecord",
+            "donor": "meaningfy-ws/tda-mapping-artefacts",
+            "tree_sha": "b9b208327c0bb7b2c5802a076e0e64d14d419b88",
+            "distinct_shapes": 23059,
+            "node_shapes": 17372,
+            "property_shapes": 5797,
+            "repository_count": 1,
+            "counts_partial": false,
+            "enumeration_complete": true
+          },
+          {
+            "@type": "TreeConcentrationRecord",
+            "donor": "dkw-aau/KG2PG",
+            "tree_sha": "23f8d2ec56101da29c24ce9c25e2bb855c66e9bf",
+            "distinct_shapes": 18626,
+            "node_shapes": 16053,
+            "property_shapes": 2574,
+            "repository_count": 1,
+            "counts_partial": true,
+            "enumeration_complete": true
+          },
+          {
+            "@type": "TreeConcentrationRecord",
+            "donor": "kworkr/s3pg",
+            "tree_sha": "8c22020766b60027cc717c2524e6dad046712a3d",
+            "distinct_shapes": 18099,
+            "node_shapes": 1600,
+            "property_shapes": 16499,
+            "repository_count": 1,
+            "counts_partial": false,
+            "enumeration_complete": true
+          },
+          {
+            "@type": "TreeConcentrationRecord",
+            "donor": "tecnomod-um/cfihos",
+            "tree_sha": "eba6ed052101c5f2d5ca2218b2e0aac67afeceec",
+            "distinct_shapes": 16776,
+            "node_shapes": 3329,
+            "property_shapes": 13505,
+            "repository_count": 1,
+            "counts_partial": true,
+            "enumeration_complete": true
+          },
+          {
+            "@type": "TreeConcentrationRecord",
+            "donor": "Salva5297/shacl_integration",
+            "tree_sha": "da0dabd6368bfdf736caf9f227b911f2983e1d1e",
+            "distinct_shapes": 16061,
+            "node_shapes": 353,
+            "property_shapes": 15708,
+            "repository_count": 1,
+            "counts_partial": false,
+            "enumeration_complete": true
+          },
+          {
+            "@type": "TreeConcentrationRecord",
+            "donor": "oeg-upm/shacl_integration",
+            "tree_sha": "fcf0c9d05f541abe82279a4d77253ba3fcafcd7b",
+            "distinct_shapes": 14665,
+            "node_shapes": 1339,
+            "property_shapes": 13326,
+            "repository_count": 1,
+            "counts_partial": true,
+            "enumeration_complete": true
+          },
+          {
+            "@type": "TreeConcentrationRecord",
+            "donor": "aivliev/amf-oas3-fork",
+            "tree_sha": "a3b45691501998347f8f9b3c6f5433a29293de26",
+            "distinct_shapes": 14340,
+            "node_shapes": 1983,
+            "property_shapes": 12357,
+            "repository_count": 1,
+            "counts_partial": false,
+            "enumeration_complete": true
+          },
+          {
+            "@type": "TreeConcentrationRecord",
+            "donor": "Akarsh-2004/amf_byme",
+            "tree_sha": "1a03747570b37011334ddc8dd6243faa93101b81",
+            "distinct_shapes": 14236,
+            "node_shapes": 421,
+            "property_shapes": 13815,
+            "repository_count": 1,
+            "counts_partial": true,
+            "enumeration_complete": true
+          },
+          {
+            "@type": "TreeConcentrationRecord",
+            "donor": "f-schnabel/amf",
+            "tree_sha": "7cc73460520fcd7db20534560d2cd8293afa5939",
+            "distinct_shapes": 14236,
+            "node_shapes": 421,
+            "property_shapes": 13815,
+            "repository_count": 1,
+            "counts_partial": true,
+            "enumeration_complete": true
+          },
+          {
+            "@type": "TreeConcentrationRecord",
+            "donor": "tecnomod-um/CBAM",
+            "tree_sha": "93b3bb55ebc43be9abcb893156b14c8f09a25fee",
+            "distinct_shapes": 13828,
+            "node_shapes": 1778,
+            "property_shapes": 12108,
+            "repository_count": 1,
+            "counts_partial": true,
+            "enumeration_complete": true
+          },
+          {
+            "@type": "TreeConcentrationRecord",
+            "donor": "diogo-olpereira/KGSwitch",
+            "tree_sha": "d96d4a0ca7641acdff24576d23c971afc8e3a93a",
+            "distinct_shapes": 12980,
+            "node_shapes": 462,
+            "property_shapes": 12518,
+            "repository_count": 1,
+            "counts_partial": false,
+            "enumeration_complete": true
+          },
+          {
+            "@type": "TreeConcentrationRecord",
+            "donor": "ar-chad/application-profiles-library",
+            "tree_sha": "8747882da5c410dcbc7d320bb4c723032469c98e",
+            "distinct_shapes": 12794,
+            "node_shapes": 440,
+            "property_shapes": 12354,
+            "repository_count": 1,
+            "counts_partial": true,
+            "enumeration_complete": true
+          }
+        ]
+      },
+      "has_alignment": {
+        "@type": "AlignmentAnalysis",
+        "counting_unit": "sef:distinct_iri_within_tree",
+        "denominator_extracted_trees": 3658,
+        "both_stream_trees": 2805,
+        "shapes_without_ontology_terms": 852,
+        "ontology_without_shapes": 0,
+        "neither_stream_trees": 1,
+        "alignment_rate": [
+          {
+            "@type": "AlignmentRate",
+            "alignment_measure": "sef:ontology_to_shacl_project_classes",
+            "numerator": 114250,
+            "denominator": 927141,
+            "micro_rate": {
+              "@value": "0.123228",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "AlignmentRate",
+            "alignment_measure": "sef:ontology_to_shacl_project_properties",
+            "numerator": 184738,
+            "denominator": 761931,
+            "micro_rate": {
+              "@value": "0.24246",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "AlignmentRate",
+            "alignment_measure": "sef:shacl_to_ontology_class_refs",
+            "numerator": 124737,
+            "denominator": 171932,
+            "micro_rate": {
+              "@value": "0.725502",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "AlignmentRate",
+            "alignment_measure": "sef:shacl_to_ontology_property_refs",
+            "numerator": 208379,
+            "denominator": 342394,
+            "micro_rate": {
+              "@value": "0.608594",
+              "@type": "xsd:decimal"
+            }
+          }
+        ]
+      },
+      "has_consistency": {
+        "@type": "ConsistencyAnalysis",
+        "shapes_graph_policy": "sef:rdf_source_document",
+        "confirmed_consistency_findings": 345,
+        "denominator_extracted_trees": 3658,
+        "finding_count": [
+          {
+            "@type": "FindingCount",
+            "finding_type": "sef:nested_shape_unsatisfiable",
+            "count": 338
+          },
+          {
+            "@type": "FindingCount",
+            "finding_type": "sef:closed_shape_path_conflict",
+            "count": 7
+          }
+        ]
+      },
+      "has_functional_usage": {
+        "@type": "FunctionalUsageAnalysis",
+        "shape_documents": 50872,
+        "trees_with_shape_documents": 3657,
+        "content_sha256_groups": 33440,
+        "multi_label": true,
+        "classification_result": [
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:test_fixture_conformance",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 19477,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.3829",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:test_fixture_conformance",
+            "counting_unit": "sef:unit_content",
+            "n_with_label": 9042,
+            "denominator": 33440,
+            "rate": {
+              "@value": "0.2704",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:test_fixture_conformance",
+            "counting_unit": "sef:unit_git_tree",
+            "n_with_label": 667,
+            "denominator": 3657,
+            "rate": {
+              "@value": "0.1824",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:schema_structural",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 25797,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.5071",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:schema_structural",
+            "counting_unit": "sef:unit_content",
+            "n_with_label": 18982,
+            "denominator": 33440,
+            "rate": {
+              "@value": "0.5676",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:schema_structural",
+            "counting_unit": "sef:unit_git_tree",
+            "n_with_label": 3275,
+            "denominator": 3657,
+            "rate": {
+              "@value": "0.8955",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:rules_sparql_extension",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 9015,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.1772",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:rules_sparql_extension",
+            "counting_unit": "sef:unit_content",
+            "n_with_label": 6640,
+            "denominator": 33440,
+            "rate": {
+              "@value": "0.1986",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:rules_sparql_extension",
+            "counting_unit": "sef:unit_git_tree",
+            "n_with_label": 1129,
+            "denominator": 3657,
+            "rate": {
+              "@value": "0.3087",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:generated_transform_workflow",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 338,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.0066",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:generated_transform_workflow",
+            "counting_unit": "sef:unit_content",
+            "n_with_label": 332,
+            "denominator": 33440,
+            "rate": {
+              "@value": "0.0099",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:generated_transform_workflow",
+            "counting_unit": "sef:unit_git_tree",
+            "n_with_label": 37,
+            "denominator": 3657,
+            "rate": {
+              "@value": "0.0101",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:application_business",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 55,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.0011",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:application_business",
+            "counting_unit": "sef:unit_content",
+            "n_with_label": 53,
+            "denominator": 33440,
+            "rate": {
+              "@value": "0.0016",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:application_business",
+            "counting_unit": "sef:unit_git_tree",
+            "n_with_label": 10,
+            "denominator": 3657,
+            "rate": {
+              "@value": "0.0027",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:ontology_vocabulary_spec",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 1478,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.0291",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:ontology_vocabulary_spec",
+            "counting_unit": "sef:unit_content",
+            "n_with_label": 1125,
+            "denominator": 33440,
+            "rate": {
+              "@value": "0.0336",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:ontology_vocabulary_spec",
+            "counting_unit": "sef:unit_git_tree",
+            "n_with_label": 101,
+            "denominator": 3657,
+            "rate": {
+              "@value": "0.0276",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:documents_unknown_only",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 7102,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.1396",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:documents_provenance_only_no_functional",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 11009,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.2164",
+              "@type": "xsd:decimal"
+            }
+          }
+        ]
+      },
+      "has_purpose_classification": {
+        "@type": "PurposeClassificationAnalysis",
+        "shape_documents": 50872,
+        "content_sha256_groups": 33440,
+        "git_trees": 3657,
+        "donor_families": 3646,
+        "classification_result": [
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:schema_like",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 4809,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.094531",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:application_specific",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 1786,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.035108",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:purpose_overlap",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 835,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.016414",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:purpose_insufficient_or_none",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 45112,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.886775",
+              "@type": "xsd:decimal"
+            }
+          }
+        ]
+      },
+      "has_domain_classification": {
+        "@type": "DomainClassificationAnalysis",
+        "shape_documents": 50872,
+        "content_sha256_groups": 33440,
+        "git_trees": 3657,
+        "donor_families": 3646,
+        "classification_result": [
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:energy_power_systems",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 1136,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.022331",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:geospatial",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 1836,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.036091",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:public_sector_open_data",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 1868,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.03672",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:life_sciences_biomedicine",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 559,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.010988",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:iot_sensing",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 1141,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.022429",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:built_environment_energy",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 710,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.013957",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:cultural_heritage",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 389,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.007647",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:cybersecurity",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 394,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.007745",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:data_protection_privacy",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 348,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.006841",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:mobility_transport",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 89,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.001749",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:software_supply_chain",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 36,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.000708",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:finance",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 35,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.000688",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:unknown_only_documents",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 34644,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.681003",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:infrastructure_documents",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 5625,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.110572",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:multi_application_domain_documents",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 1035,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.020345",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ClassificationResult",
+            "category": "sef:fixture_path_documents",
+            "counting_unit": "sef:unit_document",
+            "n_with_label": 17875,
+            "denominator": 50872,
+            "rate": {
+              "@value": "0.351372",
+              "@type": "xsd:decimal"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@id": "sef:CountingUnitScheme",
+      "@type": "ConceptScheme",
+      "prefLabel": {
+        "@value": "Counting unit scheme",
+        "@language": "en"
+      }
+    },
+    {
+      "@id": "sef:unit_document",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Document",
+        "@language": "en"
+      },
+      "inScheme": "sef:CountingUnitScheme"
+    },
+    {
+      "@id": "sef:unit_content",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Distinct content (SHA-256)",
+        "@language": "en"
+      },
+      "inScheme": "sef:CountingUnitScheme"
+    },
+    {
+      "@id": "sef:unit_git_tree",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Git tree",
+        "@language": "en"
+      },
+      "inScheme": "sef:CountingUnitScheme"
+    },
+    {
+      "@id": "sef:distinct_iri_within_tree",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Distinct IRI within Git tree",
+        "@language": "en"
+      },
+      "inScheme": "sef:CountingUnitScheme"
+    },
+    {
+      "@id": "sef:PathFormScheme",
+      "@type": "ConceptScheme",
+      "prefLabel": {
+        "@value": "SHACL property path form scheme",
+        "@language": "en"
+      }
+    },
+    {
+      "@id": "sef:PredicatePath",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "PredicatePath",
+        "@language": "en"
+      },
+      "inScheme": "sef:PathFormScheme"
+    },
+    {
+      "@id": "sef:SequencePath",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "SequencePath",
+        "@language": "en"
+      },
+      "inScheme": "sef:PathFormScheme"
+    },
+    {
+      "@id": "sef:AlternativePath",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "AlternativePath",
+        "@language": "en"
+      },
+      "inScheme": "sef:PathFormScheme"
+    },
+    {
+      "@id": "sef:InversePath",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "InversePath",
+        "@language": "en"
+      },
+      "inScheme": "sef:PathFormScheme"
+    },
+    {
+      "@id": "sef:ZeroOrMorePath",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "ZeroOrMorePath",
+        "@language": "en"
+      },
+      "inScheme": "sef:PathFormScheme"
+    },
+    {
+      "@id": "sef:OneOrMorePath",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "OneOrMorePath",
+        "@language": "en"
+      },
+      "inScheme": "sef:PathFormScheme"
+    },
+    {
+      "@id": "sef:ZeroOrOnePath",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "ZeroOrOnePath",
+        "@language": "en"
+      },
+      "inScheme": "sef:PathFormScheme"
+    },
+    {
+      "@id": "sef:AlignmentMeasureScheme",
+      "@type": "ConceptScheme",
+      "prefLabel": {
+        "@value": "Ontology alignment measure scheme",
+        "@language": "en"
+      }
+    },
+    {
+      "@id": "sef:ontology_to_shacl_project_classes",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "ontology to shacl project classes",
+        "@language": "en"
+      },
+      "inScheme": "sef:AlignmentMeasureScheme"
+    },
+    {
+      "@id": "sef:ontology_to_shacl_project_properties",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "ontology to shacl project properties",
+        "@language": "en"
+      },
+      "inScheme": "sef:AlignmentMeasureScheme"
+    },
+    {
+      "@id": "sef:shacl_to_ontology_class_refs",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "shacl to ontology class refs",
+        "@language": "en"
+      },
+      "inScheme": "sef:AlignmentMeasureScheme"
+    },
+    {
+      "@id": "sef:shacl_to_ontology_property_refs",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "shacl to ontology property refs",
+        "@language": "en"
+      },
+      "inScheme": "sef:AlignmentMeasureScheme"
+    },
+    {
+      "@id": "sef:FindingTypeScheme",
+      "@type": "ConceptScheme",
+      "prefLabel": {
+        "@value": "Constraint consistency finding type scheme",
+        "@language": "en"
+      }
+    },
+    {
+      "@id": "sef:nested_shape_unsatisfiable",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Nested shape constraints that cannot be satisfied",
+        "@language": "en"
+      },
+      "inScheme": "sef:FindingTypeScheme"
+    },
+    {
+      "@id": "sef:closed_shape_path_conflict",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Closed shape conflicting with required property paths",
+        "@language": "en"
+      },
+      "inScheme": "sef:FindingTypeScheme"
+    },
+    {
+      "@id": "sef:ShapesGraphPolicyScheme",
+      "@type": "ConceptScheme",
+      "prefLabel": {
+        "@value": "Shapes graph policy scheme",
+        "@language": "en"
+      }
+    },
+    {
+      "@id": "sef:rdf_source_document",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Single RDF source document",
+        "@language": "en"
+      },
+      "inScheme": "sef:ShapesGraphPolicyScheme"
+    },
+    {
+      "@id": "sef:FunctionalUsageScheme",
+      "@type": "ConceptScheme",
+      "prefLabel": {
+        "@value": "Functional usage scheme",
+        "@language": "en"
+      }
+    },
+    {
+      "@id": "sef:FunctionalUsageSummaryScheme",
+      "@type": "ConceptScheme",
+      "prefLabel": {
+        "@value": "Functional usage summary scheme",
+        "@language": "en"
+      }
+    },
+    {
+      "@id": "sef:test_fixture_conformance",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Test fixtures and conformance",
+        "@language": "en"
+      },
+      "inScheme": "sef:FunctionalUsageScheme"
+    },
+    {
+      "@id": "sef:schema_structural",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Structural schemas",
+        "@language": "en"
+      },
+      "inScheme": "sef:FunctionalUsageScheme"
+    },
+    {
+      "@id": "sef:rules_sparql_extension",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "SPARQL rules and extensions",
+        "@language": "en"
+      },
+      "inScheme": "sef:FunctionalUsageScheme"
+    },
+    {
+      "@id": "sef:generated_transform_workflow",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Generated transforms and workflows",
+        "@language": "en"
+      },
+      "inScheme": "sef:FunctionalUsageScheme"
+    },
+    {
+      "@id": "sef:application_business",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Application use",
+        "@language": "en"
+      },
+      "inScheme": "sef:FunctionalUsageScheme"
+    },
+    {
+      "@id": "sef:ontology_vocabulary_spec",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Ontology and vocabulary specifications",
+        "@language": "en"
+      },
+      "inScheme": "sef:FunctionalUsageScheme"
+    },
+    {
+      "@id": "sef:documents_unknown_only",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Unknown labels only",
+        "@language": "en"
+      },
+      "inScheme": "sef:FunctionalUsageSummaryScheme"
+    },
+    {
+      "@id": "sef:documents_provenance_only_no_functional",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Provenance only, no functional label",
+        "@language": "en"
+      },
+      "inScheme": "sef:FunctionalUsageSummaryScheme"
+    },
+    {
+      "@id": "sef:DocumentPurposeScheme",
+      "@type": "ConceptScheme",
+      "prefLabel": {
+        "@value": "Document purpose scheme",
+        "@language": "en"
+      }
+    },
+    {
+      "@id": "sef:schema_like",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Schema-like",
+        "@language": "en"
+      },
+      "inScheme": "sef:DocumentPurposeScheme"
+    },
+    {
+      "@id": "sef:application_specific",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Application-specific",
+        "@language": "en"
+      },
+      "inScheme": "sef:DocumentPurposeScheme"
+    },
+    {
+      "@id": "sef:purpose_overlap",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Purpose overlap",
+        "@language": "en"
+      },
+      "inScheme": "sef:DocumentPurposeScheme"
+    },
+    {
+      "@id": "sef:purpose_insufficient_or_none",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Insufficient information or neither",
+        "@language": "en"
+      },
+      "inScheme": "sef:DocumentPurposeScheme"
+    },
+    {
+      "@id": "sef:ApplicationDomainScheme",
+      "@type": "ConceptScheme",
+      "prefLabel": {
+        "@value": "Application domain scheme",
+        "@language": "en"
+      }
+    },
+    {
+      "@id": "sef:DomainSummaryScheme",
+      "@type": "ConceptScheme",
+      "prefLabel": {
+        "@value": "Domain classification summary scheme",
+        "@language": "en"
+      }
+    },
+    {
+      "@id": "sef:energy_power_systems",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Energy and power systems",
+        "@language": "en"
+      },
+      "inScheme": "sef:ApplicationDomainScheme"
+    },
+    {
+      "@id": "sef:geospatial",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Geospatial",
+        "@language": "en"
+      },
+      "inScheme": "sef:ApplicationDomainScheme"
+    },
+    {
+      "@id": "sef:public_sector_open_data",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Public sector and open data",
+        "@language": "en"
+      },
+      "inScheme": "sef:ApplicationDomainScheme"
+    },
+    {
+      "@id": "sef:life_sciences_biomedicine",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Life sciences and biomedicine",
+        "@language": "en"
+      },
+      "inScheme": "sef:ApplicationDomainScheme"
+    },
+    {
+      "@id": "sef:iot_sensing",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "IoT and sensing",
+        "@language": "en"
+      },
+      "inScheme": "sef:ApplicationDomainScheme"
+    },
+    {
+      "@id": "sef:built_environment_energy",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Built environment and energy",
+        "@language": "en"
+      },
+      "inScheme": "sef:ApplicationDomainScheme"
+    },
+    {
+      "@id": "sef:cultural_heritage",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Cultural heritage",
+        "@language": "en"
+      },
+      "inScheme": "sef:ApplicationDomainScheme"
+    },
+    {
+      "@id": "sef:cybersecurity",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Cybersecurity",
+        "@language": "en"
+      },
+      "inScheme": "sef:ApplicationDomainScheme"
+    },
+    {
+      "@id": "sef:data_protection_privacy",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Data protection and privacy",
+        "@language": "en"
+      },
+      "inScheme": "sef:ApplicationDomainScheme"
+    },
+    {
+      "@id": "sef:mobility_transport",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Mobility and transport",
+        "@language": "en"
+      },
+      "inScheme": "sef:ApplicationDomainScheme"
+    },
+    {
+      "@id": "sef:software_supply_chain",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Software supply chain",
+        "@language": "en"
+      },
+      "inScheme": "sef:ApplicationDomainScheme"
+    },
+    {
+      "@id": "sef:finance",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Finance",
+        "@language": "en"
+      },
+      "inScheme": "sef:ApplicationDomainScheme"
+    },
+    {
+      "@id": "sef:unknown_only_documents",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Unknown only",
+        "@language": "en"
+      },
+      "inScheme": "sef:DomainSummaryScheme"
+    },
+    {
+      "@id": "sef:infrastructure_documents",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Infrastructure documents",
+        "@language": "en"
+      },
+      "inScheme": "sef:DomainSummaryScheme"
+    },
+    {
+      "@id": "sef:multi_application_domain_documents",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Multi-application domain documents",
+        "@language": "en"
+      },
+      "inScheme": "sef:DomainSummaryScheme"
+    },
+    {
+      "@id": "sef:fixture_path_documents",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Fixture path documents",
+        "@language": "en"
+      },
+      "inScheme": "sef:DomainSummaryScheme"
     }
-  },
-  "shapes": {
-    "denominator_trees": 3658,
-    "node_shapes": 424580,
-    "property_shapes": 759570,
-    "distinct_shapes": 1183518,
-    "per_tree": {
-      "node_shapes": {
-        "n": 3658,
-        "min": 0,
-        "q1": 4,
-        "median": 10.0,
-        "mean": 116.069,
-        "q3": 32.0,
-        "max": 35486,
-        "stdev": 848.588,
-        "p95": 357.14999999999964
-      },
-      "property_shapes": {
-        "n": 3658,
-        "min": 0,
-        "q1": 0,
-        "median": 0,
-        "mean": 207.646,
-        "q3": 1.0,
-        "max": 80500,
-        "stdev": 2079.8,
-        "p95": 289.4499999999989
-      },
-      "distinct_shapes": {
-        "n": 3658,
-        "min": 0,
-        "q1": 4.0,
-        "median": 12.0,
-        "mean": 323.542,
-        "q3": 42.0,
-        "max": 84974,
-        "stdev": 2584.719,
-        "p95": 779.9999999999927
-      }
-    }
-  },
-  "constraints": {
-    "denominator_extracted_trees": 3658,
-    "denominator_verified_repositories": 3677,
-    "total_occurrences": 6954178,
-    "parameters": [
-      {
-        "predicate": "http://www.w3.org/ns/shacl#and",
-        "occurrences": 7520,
-        "unique_trees": 382,
-        "percent_of_extracted_trees": 10.44,
-        "verified_repositories": 385,
-        "percent_of_verified_repositories": 10.47
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#class",
-        "occurrences": 29249,
-        "unique_trees": 471,
-        "percent_of_extracted_trees": 12.88,
-        "verified_repositories": 477,
-        "percent_of_verified_repositories": 12.97
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#closed",
-        "occurrences": 537481,
-        "unique_trees": 3206,
-        "percent_of_extracted_trees": 87.64,
-        "verified_repositories": 3222,
-        "percent_of_verified_repositories": 87.63
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#datatype",
-        "occurrences": 22370,
-        "unique_trees": 311,
-        "percent_of_extracted_trees": 8.5,
-        "verified_repositories": 311,
-        "percent_of_verified_repositories": 8.46
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#disjoint",
-        "occurrences": 1570,
-        "unique_trees": 170,
-        "percent_of_extracted_trees": 4.65,
-        "verified_repositories": 171,
-        "percent_of_verified_repositories": 4.65
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#equals",
-        "occurrences": 94905,
-        "unique_trees": 1295,
-        "percent_of_extracted_trees": 35.4,
-        "verified_repositories": 1303,
-        "percent_of_verified_repositories": 35.44
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#flags",
-        "occurrences": 74648,
-        "unique_trees": 1578,
-        "percent_of_extracted_trees": 43.14,
-        "verified_repositories": 1585,
-        "percent_of_verified_repositories": 43.11
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#hasValue",
-        "occurrences": 57824,
-        "unique_trees": 637,
-        "percent_of_extracted_trees": 17.41,
-        "verified_repositories": 638,
-        "percent_of_verified_repositories": 17.35
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#ignoredProperties",
-        "occurrences": 2312,
-        "unique_trees": 136,
-        "percent_of_extracted_trees": 3.72,
-        "verified_repositories": 136,
-        "percent_of_verified_repositories": 3.7
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#in",
-        "occurrences": 58521,
-        "unique_trees": 764,
-        "percent_of_extracted_trees": 20.89,
-        "verified_repositories": 770,
-        "percent_of_verified_repositories": 20.94
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#languageIn",
-        "occurrences": 71003,
-        "unique_trees": 496,
-        "percent_of_extracted_trees": 13.56,
-        "verified_repositories": 497,
-        "percent_of_verified_repositories": 13.52
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#lessThan",
-        "occurrences": 16102,
-        "unique_trees": 917,
-        "percent_of_extracted_trees": 25.07,
-        "verified_repositories": 920,
-        "percent_of_verified_repositories": 25.02
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#lessThanOrEquals",
-        "occurrences": 57403,
-        "unique_trees": 358,
-        "percent_of_extracted_trees": 9.79,
-        "verified_repositories": 362,
-        "percent_of_verified_repositories": 9.84
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#maxCount",
-        "occurrences": 77437,
-        "unique_trees": 1105,
-        "percent_of_extracted_trees": 30.21,
-        "verified_repositories": 1106,
-        "percent_of_verified_repositories": 30.08
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#maxExclusive",
-        "occurrences": 1172259,
-        "unique_trees": 2436,
-        "percent_of_extracted_trees": 66.59,
-        "verified_repositories": 2450,
-        "percent_of_verified_repositories": 66.63
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#maxInclusive",
-        "occurrences": 8794,
-        "unique_trees": 668,
-        "percent_of_extracted_trees": 18.26,
-        "verified_repositories": 669,
-        "percent_of_verified_repositories": 18.19
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#maxLength",
-        "occurrences": 654821,
-        "unique_trees": 2989,
-        "percent_of_extracted_trees": 81.71,
-        "verified_repositories": 3001,
-        "percent_of_verified_repositories": 81.62
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#minCount",
-        "occurrences": 2957,
-        "unique_trees": 273,
-        "percent_of_extracted_trees": 7.46,
-        "verified_repositories": 274,
-        "percent_of_verified_repositories": 7.45
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#minExclusive",
-        "occurrences": 5565,
-        "unique_trees": 336,
-        "percent_of_extracted_trees": 9.19,
-        "verified_repositories": 337,
-        "percent_of_verified_repositories": 9.17
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#minInclusive",
-        "occurrences": 1737,
-        "unique_trees": 199,
-        "percent_of_extracted_trees": 5.44,
-        "verified_repositories": 203,
-        "percent_of_verified_repositories": 5.52
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#minLength",
-        "occurrences": 31455,
-        "unique_trees": 1122,
-        "percent_of_extracted_trees": 30.67,
-        "verified_repositories": 1126,
-        "percent_of_verified_repositories": 30.62
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#node",
-        "occurrences": 754832,
-        "unique_trees": 1913,
-        "percent_of_extracted_trees": 52.3,
-        "verified_repositories": 1927,
-        "percent_of_verified_repositories": 52.41
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#nodeKind",
-        "occurrences": 9324,
-        "unique_trees": 413,
-        "percent_of_extracted_trees": 11.29,
-        "verified_repositories": 414,
-        "percent_of_verified_repositories": 11.26
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#not",
-        "occurrences": 2110844,
-        "unique_trees": 3477,
-        "percent_of_extracted_trees": 95.05,
-        "verified_repositories": 3495,
-        "percent_of_verified_repositories": 95.05
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#or",
-        "occurrences": 662881,
-        "unique_trees": 2862,
-        "percent_of_extracted_trees": 78.24,
-        "verified_repositories": 2878,
-        "percent_of_verified_repositories": 78.27
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#pattern",
-        "occurrences": 1883,
-        "unique_trees": 178,
-        "percent_of_extracted_trees": 4.87,
-        "verified_repositories": 179,
-        "percent_of_verified_repositories": 4.87
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#property",
-        "occurrences": 19997,
-        "unique_trees": 185,
-        "percent_of_extracted_trees": 5.06,
-        "verified_repositories": 186,
-        "percent_of_verified_repositories": 5.06
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#qualifiedMaxCount",
-        "occurrences": 650,
-        "unique_trees": 164,
-        "percent_of_extracted_trees": 4.48,
-        "verified_repositories": 165,
-        "percent_of_verified_repositories": 4.49
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#qualifiedMinCount",
-        "occurrences": 157240,
-        "unique_trees": 1388,
-        "percent_of_extracted_trees": 37.94,
-        "verified_repositories": 1395,
-        "percent_of_verified_repositories": 37.94
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#qualifiedValueShape",
-        "occurrences": 141080,
-        "unique_trees": 1121,
-        "percent_of_extracted_trees": 30.65,
-        "verified_repositories": 1131,
-        "percent_of_verified_repositories": 30.76
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#qualifiedValueShapesDisjoint",
-        "occurrences": 86924,
-        "unique_trees": 520,
-        "percent_of_extracted_trees": 14.22,
-        "verified_repositories": 521,
-        "percent_of_verified_repositories": 14.17
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#uniqueLang",
-        "occurrences": 9358,
-        "unique_trees": 168,
-        "percent_of_extracted_trees": 4.59,
-        "verified_repositories": 169,
-        "percent_of_verified_repositories": 4.6
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#xone",
-        "occurrences": 13232,
-        "unique_trees": 364,
-        "percent_of_extracted_trees": 9.95,
-        "verified_repositories": 365,
-        "percent_of_verified_repositories": 9.93
-      }
-    ]
-  },
-  "targets": {
-    "denominator_extracted_trees": 3658,
-    "denominator_verified_repositories": 3677,
-    "total_occurrences": 909073,
-    "predicates": [
-      {
-        "predicate": "http://www.w3.org/ns/shacl#targetClass",
-        "occurrences": 838272,
-        "unique_trees": 3374,
-        "percent_of_extracted_trees": 92.24,
-        "verified_repositories": 3389,
-        "percent_of_verified_repositories": 92.17
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#targetNode",
-        "occurrences": 29889,
-        "unique_trees": 366,
-        "percent_of_extracted_trees": 10.01,
-        "verified_repositories": 366,
-        "percent_of_verified_repositories": 9.95
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#targetObjectsOf",
-        "occurrences": 13725,
-        "unique_trees": 570,
-        "percent_of_extracted_trees": 15.58,
-        "verified_repositories": 570,
-        "percent_of_verified_repositories": 15.5
-      },
-      {
-        "predicate": "http://www.w3.org/ns/shacl#targetSubjectsOf",
-        "occurrences": 27187,
-        "unique_trees": 805,
-        "percent_of_extracted_trees": 22.01,
-        "verified_repositories": 808,
-        "percent_of_verified_repositories": 21.97
-      }
-    ]
-  },
-  "sparql": {
-    "denominator_extracted_trees": 3658,
-    "trees_with_structural_constraints": 1065,
-    "percent_of_extracted_trees": 29.11,
-    "sparql_links": 85496,
-    "sparql_constraint_nodes": 25073,
-    "sparql_target_trees": 302,
-    "sparql_only_content_trees": 1,
-    "sparql_only_verification_trees": 3
-  },
-  "property_paths": {
-    "denominator_extracted_trees": 3658,
-    "path_declarations": 2212575,
-    "classified": 2211409,
-    "unclassified": 1166,
-    "classifier_coverage_percent": 99.95,
-    "forms": [
-      {
-        "form": "PredicatePath",
-        "occurrences": 2432119,
-        "unique_trees": 3508,
-        "percent_of_extracted_trees": 95.9
-      },
-      {
-        "form": "SequencePath",
-        "occurrences": 117295,
-        "unique_trees": 538,
-        "percent_of_extracted_trees": 14.71
-      },
-      {
-        "form": "AlternativePath",
-        "occurrences": 9813,
-        "unique_trees": 385,
-        "percent_of_extracted_trees": 10.52
-      },
-      {
-        "form": "InversePath",
-        "occurrences": 15869,
-        "unique_trees": 568,
-        "percent_of_extracted_trees": 15.53
-      },
-      {
-        "form": "ZeroOrMorePath",
-        "occurrences": 9096,
-        "unique_trees": 275,
-        "percent_of_extracted_trees": 7.52
-      },
-      {
-        "form": "OneOrMorePath",
-        "occurrences": 571,
-        "unique_trees": 211,
-        "percent_of_extracted_trees": 5.77
-      },
-      {
-        "form": "ZeroOrOnePath",
-        "occurrences": 169,
-        "unique_trees": 93,
-        "percent_of_extracted_trees": 2.54
-      }
-    ],
-    "nested_forms_counted_separately": true
-  },
-  "repository_view": {
-    "verified_repositories": 3677,
-    "repositories_whose_tree_was_extracted": 3676,
-    "repositories_whose_tree_was_not_extracted": 1
-  },
-  "concentration": {
-    "population": "extracted unique trees",
-    "distinct_shape_total": 1183518,
-    "top_1_percent": {
-      "trees": 37,
-      "distinct_shapes": 690425,
-      "share": 0.5834
-    },
-    "top_5_percent": {
-      "trees": 183,
-      "distinct_shapes": 1037474,
-      "share": 0.8766
-    },
-    "top_10_percent": {
-      "trees": 366,
-      "distinct_shapes": 1104828,
-      "share": 0.9335
-    },
-    "top_20_trees": [
-      {
-        "donor": "oeg-upm/AstreaRun",
-        "tree_sha": "e764ed61eba147c719ce8c2fe803ce36e9803b8c",
-        "distinct_shapes": 84974,
-        "node_shapes": 35486,
-        "property_shapes": 49507,
-        "repository_count": 1,
-        "counts_partial": true,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "meaningfy-ws/shacl-driven-consistency-validation",
-        "tree_sha": "d6dab5899ca90d976644687a7cccc108bc95f81e",
-        "distinct_shapes": 81687,
-        "node_shapes": 1187,
-        "property_shapes": 80500,
-        "repository_count": 1,
-        "counts_partial": true,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "matejkratochvil/entsoe-application-profiles-library",
-        "tree_sha": "48d49e6f67800fdf8d3299bdda03dc15de6d1511",
-        "distinct_shapes": 34272,
-        "node_shapes": 10117,
-        "property_shapes": 24213,
-        "repository_count": 1,
-        "counts_partial": true,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "niubisile-wq/pcc-power-grid-transformation",
-        "tree_sha": "992e7ec2f902a8fdfee3a0c137f0070ff755c58c",
-        "distinct_shapes": 31813,
-        "node_shapes": 6497,
-        "property_shapes": 25316,
-        "repository_count": 1,
-        "counts_partial": true,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "sogno-platform/cgmes-application-profiles-library",
-        "tree_sha": "b299ec4dd54c102e41528335c971057a205aa472",
-        "distinct_shapes": 31769,
-        "node_shapes": 353,
-        "property_shapes": 31416,
-        "repository_count": 1,
-        "counts_partial": false,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "ADam-LVA/application-profiles-library",
-        "tree_sha": "df4c310f079c4880b32a4d367335d1551198b52f",
-        "distinct_shapes": 25595,
-        "node_shapes": 863,
-        "property_shapes": 24732,
-        "repository_count": 1,
-        "counts_partial": true,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "nikolatulechki/application-profiles-library",
-        "tree_sha": "40a5bddc2acee1d0d72b489daadb14e167c80bdd",
-        "distinct_shapes": 25594,
-        "node_shapes": 863,
-        "property_shapes": 24731,
-        "repository_count": 1,
-        "counts_partial": true,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "Stichting-CROW/imbor-development",
-        "tree_sha": "2d35541c0fd0b955ce44f24bcc3ae552d4044d04",
-        "distinct_shapes": 24307,
-        "node_shapes": 6782,
-        "property_shapes": 17525,
-        "repository_count": 1,
-        "counts_partial": true,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "meaningfy-ws/tda-mapping-artefacts",
-        "tree_sha": "b9b208327c0bb7b2c5802a076e0e64d14d419b88",
-        "distinct_shapes": 23059,
-        "node_shapes": 17372,
-        "property_shapes": 5797,
-        "repository_count": 1,
-        "counts_partial": false,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "dkw-aau/KG2PG",
-        "tree_sha": "23f8d2ec56101da29c24ce9c25e2bb855c66e9bf",
-        "distinct_shapes": 18626,
-        "node_shapes": 16053,
-        "property_shapes": 2574,
-        "repository_count": 1,
-        "counts_partial": true,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "kworkr/s3pg",
-        "tree_sha": "8c22020766b60027cc717c2524e6dad046712a3d",
-        "distinct_shapes": 18099,
-        "node_shapes": 1600,
-        "property_shapes": 16499,
-        "repository_count": 1,
-        "counts_partial": false,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "tecnomod-um/cfihos",
-        "tree_sha": "eba6ed052101c5f2d5ca2218b2e0aac67afeceec",
-        "distinct_shapes": 16776,
-        "node_shapes": 3329,
-        "property_shapes": 13505,
-        "repository_count": 1,
-        "counts_partial": true,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "Salva5297/shacl_integration",
-        "tree_sha": "da0dabd6368bfdf736caf9f227b911f2983e1d1e",
-        "distinct_shapes": 16061,
-        "node_shapes": 353,
-        "property_shapes": 15708,
-        "repository_count": 1,
-        "counts_partial": false,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "oeg-upm/shacl_integration",
-        "tree_sha": "fcf0c9d05f541abe82279a4d77253ba3fcafcd7b",
-        "distinct_shapes": 14665,
-        "node_shapes": 1339,
-        "property_shapes": 13326,
-        "repository_count": 1,
-        "counts_partial": true,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "aivliev/amf-oas3-fork",
-        "tree_sha": "a3b45691501998347f8f9b3c6f5433a29293de26",
-        "distinct_shapes": 14340,
-        "node_shapes": 1983,
-        "property_shapes": 12357,
-        "repository_count": 1,
-        "counts_partial": false,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "Akarsh-2004/amf_byme",
-        "tree_sha": "1a03747570b37011334ddc8dd6243faa93101b81",
-        "distinct_shapes": 14236,
-        "node_shapes": 421,
-        "property_shapes": 13815,
-        "repository_count": 1,
-        "counts_partial": true,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "f-schnabel/amf",
-        "tree_sha": "7cc73460520fcd7db20534560d2cd8293afa5939",
-        "distinct_shapes": 14236,
-        "node_shapes": 421,
-        "property_shapes": 13815,
-        "repository_count": 1,
-        "counts_partial": true,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "tecnomod-um/CBAM",
-        "tree_sha": "93b3bb55ebc43be9abcb893156b14c8f09a25fee",
-        "distinct_shapes": 13828,
-        "node_shapes": 1778,
-        "property_shapes": 12108,
-        "repository_count": 1,
-        "counts_partial": true,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "diogo-olpereira/KGSwitch",
-        "tree_sha": "d96d4a0ca7641acdff24576d23c971afc8e3a93a",
-        "distinct_shapes": 12980,
-        "node_shapes": 462,
-        "property_shapes": 12518,
-        "repository_count": 1,
-        "counts_partial": false,
-        "enumeration_complete": true
-      },
-      {
-        "donor": "ar-chad/application-profiles-library",
-        "tree_sha": "8747882da5c410dcbc7d320bb4c723032469c98e",
-        "distinct_shapes": 12794,
-        "node_shapes": 440,
-        "property_shapes": 12354,
-        "repository_count": 1,
-        "counts_partial": true,
-        "enumeration_complete": true
-      }
-    ]
-  },
-  "ontology_alignment": {
-    "counting_unit": "distinct_iri_within_tree",
-    "denominator_extracted_trees": 3658,
-    "both_stream_trees": 2805,
-    "shapes_without_ontology_terms": 852,
-    "ontology_without_shapes": 0,
-    "neither_stream": 1,
-    "ontology_to_shacl_project_classes": {
-      "numerator": 114250,
-      "denominator": 927141,
-      "micro_rate": 0.123228
-    },
-    "ontology_to_shacl_project_properties": {
-      "numerator": 184738,
-      "denominator": 761931,
-      "micro_rate": 0.24246
-    },
-    "shacl_to_ontology_class_refs": {
-      "numerator": 124737,
-      "denominator": 171932,
-      "micro_rate": 0.725502
-    },
-    "shacl_to_ontology_property_refs": {
-      "numerator": 208379,
-      "denominator": 342394,
-      "micro_rate": 0.608594
-    }
-  },
-  "constraint_consistency": {
-    "shapes_graph_policy": "rdf_source_document",
-    "primary_records": 345,
-    "denominator_extracted_trees": 3658,
-    "primary_logic05_confirmed": 338,
-    "primary_closed02_confirmed": 7
-  },
-  "usage_classification": {
-    "shape_documents": 50872,
-    "trees_with_shape_documents": 3657,
-    "content_sha256_groups": 33440,
-    "multi_label": true,
-    "supportable_presence": {
-      "test_fixture_conformance": {
-        "document": {
-          "n_with_label": 19477,
-          "denominator": 50872,
-          "rate": 0.3829
-        },
-        "content_dedup": {
-          "n_with_label": 9042,
-          "denominator": 33440,
-          "rate": 0.2704
-        },
-        "tree": {
-          "n_with_label": 667,
-          "denominator": 3657,
-          "rate": 0.1824
-        }
-      },
-      "schema_structural": {
-        "document": {
-          "n_with_label": 25797,
-          "denominator": 50872,
-          "rate": 0.5071
-        },
-        "content_dedup": {
-          "n_with_label": 18982,
-          "denominator": 33440,
-          "rate": 0.5676
-        },
-        "tree": {
-          "n_with_label": 3275,
-          "denominator": 3657,
-          "rate": 0.8955
-        }
-      },
-      "rules_sparql_extension": {
-        "document": {
-          "n_with_label": 9015,
-          "denominator": 50872,
-          "rate": 0.1772
-        },
-        "content_dedup": {
-          "n_with_label": 6640,
-          "denominator": 33440,
-          "rate": 0.1986
-        },
-        "tree": {
-          "n_with_label": 1129,
-          "denominator": 3657,
-          "rate": 0.3087
-        }
-      },
-      "generated_transform_workflow": {
-        "document": {
-          "n_with_label": 338,
-          "denominator": 50872,
-          "rate": 0.0066
-        },
-        "content_dedup": {
-          "n_with_label": 332,
-          "denominator": 33440,
-          "rate": 0.0099
-        },
-        "tree": {
-          "n_with_label": 37,
-          "denominator": 3657,
-          "rate": 0.0101
-        }
-      },
-      "application_business": {
-        "document": {
-          "n_with_label": 55,
-          "denominator": 50872,
-          "rate": 0.0011
-        },
-        "content_dedup": {
-          "n_with_label": 53,
-          "denominator": 33440,
-          "rate": 0.0016
-        },
-        "tree": {
-          "n_with_label": 10,
-          "denominator": 3657,
-          "rate": 0.0027
-        }
-      },
-      "ontology_vocabulary_spec": {
-        "document": {
-          "n_with_label": 1478,
-          "denominator": 50872,
-          "rate": 0.0291
-        },
-        "content_dedup": {
-          "n_with_label": 1125,
-          "denominator": 33440,
-          "rate": 0.0336
-        },
-        "tree": {
-          "n_with_label": 101,
-          "denominator": 3657,
-          "rate": 0.0276
-        }
-      }
-    },
-    "documents_unknown_only": {
-      "n_with_label": 7102,
-      "denominator": 50872,
-      "rate": 0.1396
-    },
-    "documents_provenance_only_no_functional": {
-      "n_with_label": 11009,
-      "denominator": 50872,
-      "rate": 0.2164
-    }
-  },
-  "usage_purpose": {
-    "shape_documents": 50872,
-    "content_sha256_groups": 33440,
-    "git_trees": 3657,
-    "donor_families": 3646,
-    "operational_document_purpose_presence": {
-      "schema_like": {
-        "n_with_label": 4809,
-        "denominator": 50872,
-        "rate": 0.094531
-      },
-      "application_specific": {
-        "n_with_label": 1786,
-        "denominator": 50872,
-        "rate": 0.035108
-      },
-      "purpose_overlap": {
-        "n_with_label": 835,
-        "denominator": 50872,
-        "rate": 0.016414
-      },
-      "purpose_insufficient_or_none": {
-        "n_with_label": 45112,
-        "denominator": 50872,
-        "rate": 0.886775
-      }
-    }
-  },
-  "domain_classification": {
-    "shape_documents": 50872,
-    "content_sha256_groups": 33440,
-    "git_trees": 3657,
-    "donor_families": 3646,
-    "unknown_only_documents": {
-      "n_with_label": 34644,
-      "denominator": 50872,
-      "rate": 0.681003
-    },
-    "infrastructure_documents": {
-      "n_with_label": 5625,
-      "denominator": 50872,
-      "rate": 0.110572
-    },
-    "multi_application_domain_documents": {
-      "n_with_label": 1035,
-      "denominator": 50872,
-      "rate": 0.020345
-    },
-    "fixture_path_documents": {
-      "n_with_label": 17875,
-      "denominator": 50872,
-      "rate": 0.351372
-    },
-    "document_application_domain_presence": {
-      "energy_power_systems": {
-        "n_with_label": 1136,
-        "denominator": 50872,
-        "rate": 0.022331
-      },
-      "geospatial": {
-        "n_with_label": 1836,
-        "denominator": 50872,
-        "rate": 0.036091
-      },
-      "public_sector_open_data": {
-        "n_with_label": 1868,
-        "denominator": 50872,
-        "rate": 0.03672
-      },
-      "life_sciences_biomedicine": {
-        "n_with_label": 559,
-        "denominator": 50872,
-        "rate": 0.010988
-      },
-      "iot_sensing": {
-        "n_with_label": 1141,
-        "denominator": 50872,
-        "rate": 0.022429
-      },
-      "built_environment_energy": {
-        "n_with_label": 710,
-        "denominator": 50872,
-        "rate": 0.013957
-      },
-      "cultural_heritage": {
-        "n_with_label": 389,
-        "denominator": 50872,
-        "rate": 0.007647
-      },
-      "cybersecurity": {
-        "n_with_label": 394,
-        "denominator": 50872,
-        "rate": 0.007745
-      },
-      "data_protection_privacy": {
-        "n_with_label": 348,
-        "denominator": 50872,
-        "rate": 0.006841
-      },
-      "mobility_transport": {
-        "n_with_label": 89,
-        "denominator": 50872,
-        "rate": 0.001749
-      },
-      "software_supply_chain": {
-        "n_with_label": 36,
-        "denominator": 50872,
-        "rate": 0.000708
-      },
-      "finance": {
-        "n_with_label": 35,
-        "denominator": 50872,
-        "rate": 0.000688
-      }
-    }
-  }
+  ]
 }
