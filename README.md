@@ -1,5 +1,4 @@
-# SHACL en Forme
-<img src="docs/images/shacl.svg" align="right" width="120" height="120" alt="SHACL">
+# SHACL en Forme <a href="https://www.w3.org/TR/shacl/"><img src="docs/images/shacl.svg" align="right" width="120" height="120" alt="SHACL"></a>
 
 **SHACL Usage in the Wild**
 
