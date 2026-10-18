@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Erdem Önal">
     <title>SHACL en Forme</title>
-
-
+    <link rel="icon" href="images/shacl.svg" type="image/svg+xml">
 
     <link rel="stylesheet" href="shacl.css">
 
@@ -3872,7 +3871,7 @@ WHERE {
             <h3 id="x5.3-ontology-alignment" resource="#x5.3-ontology-alignment"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.3 </span>Ontology Alignment</span>
             </h3>
             <p>
-                Ontology alignment is measured using four measurements that compare ontology declarations with the class and property IRIs referenced by SHACL shapes in the same Git tree.
+                Ontology alignment is assessed using four measurements that compare ontology declarations with the class and property IRIs referenced by SHACL shapes in the same Git tree.
             </p>
             <p>
                 The first two measurements calculate the proportion of declared ontology classes and properties referenced by SHACL, excluding terms from RDF, RDFS, OWL, XSD, SHACL, DC, and FOAF. The other two calculate the proportion of SHACL class and property references that have ontology declarations in the same tree.
@@ -4152,22 +4151,33 @@ WHERE {
             </tbody>
         </table>
                 <table class="data">
+            <thead>
+                <tr>
+                    <th>Classification detail</th>
+                    <th>Documents</th>
+                    <th>Document rate</th>
+                </tr>
+            </thead>
             <tbody>
                 <tr>
-                    <th scope="row">Unknown domain only</th>
-                    <td>34,644<br><span style="font-size:smaller">68.10%</span></td>
+                    <th scope="row">Unclassified</th>
+                    <td>34,644</td>
+                    <td>68.10%</td>
                 </tr>
                 <tr>
                     <th scope="row">Infrastructure</th>
-                    <td>5,625<br><span style="font-size:smaller">11.06%</span></td>
+                    <td>5,625</td>
+                    <td>11.06%</td>
                 </tr>
                 <tr>
                     <th scope="row">Multiple application domains</th>
-                    <td>1,035<br><span style="font-size:smaller">2.03%</span></td>
+                    <td>1,035</td>
+                    <td>2.03%</td>
                 </tr>
                 <tr>
                     <th scope="row">Fixture-path documents</th>
-                    <td>17,875<br><span style="font-size:smaller">35.14%</span></td>
+                    <td>17,875</td>
+                    <td>35.14%</td>
                 </tr>
             </tbody>
         </table>

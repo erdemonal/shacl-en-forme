@@ -2546,7 +2546,7 @@
       "@id": "sef:unknown_only_documents",
       "@type": "Concept",
       "prefLabel": {
-        "@value": "Unknown only",
+        "@value": "Unclassified",
         "@language": "en"
       },
       "inScheme": "sef:DomainSummaryScheme"

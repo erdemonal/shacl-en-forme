@@ -524,7 +524,8 @@
 
 :unknown_only_documents a skos:Concept ;
     skos:inScheme :DomainSummaryScheme ;
-    skos:prefLabel "Documents classified only as unknown"@en .
+    skos:prefLabel "Unclassified"@en ;
+    rdfs:comment "No selected application-domain namespace IRI matched; does not imply absence of a domain outside this classification."@en .
 
 :infrastructure_documents a skos:Concept ;
     skos:inScheme :DomainSummaryScheme ;
