@@ -1,8 +1,8 @@
-# SHACL en Forme <a href="https://www.w3.org/TR/shacl/"><img src="docs/images/shacl.svg" align="right" width="120" height="120" alt="SHACL"></a>
+# SHACL en Forme
 
 **SHACL Usage in the Wild**
 
-SHACL en Forme presents statistics on the use of the Shapes Constraint Language (SHACL) in public GitHub repositories. It follows the structure and terminology of SHACL 1.0 and adds usage statistics to the relevant sections.
+SHACL en Forme presents statistics on the use of the Shapes Constraint Language (SHACL) in public GitHub repositories.
 
 ## Dataset and Methodology
 
@@ -10,7 +10,7 @@ Public GitHub repositories were identified through code search and repository se
 
 RDF files were retrieved from the recorded repository revisions and parsed using RDFLib. Extraction was successful for 3,658 Git trees. Among 550,508 files identified for RDF processing, 548,135 were successfully parsed. The analysis identified 50,872 documents containing SHACL shapes, representing 33,440 distinct document contents.
 
-The analysis measures SHACL shapes, Core constraint parameters, targets, property paths, and SHACL-SPARQL usage. It also examines ontology alignment through exact IRI matches, selected constraint inconsistencies, and usage contexts classified by functional usage, document purpose, and application domain.
+The analysis measures the use of SHACL shapes, Core constraint parameters, targets, property paths, and SHACL-SPARQL. It also covers ontology alignment through exact IRI matches, inconsistencies involving nested shape constraints and conflicts between closed shapes and required property paths, and usage contexts classified by functional usage, document purpose, and application domain.
 
 ## Resources
 
