@@ -302,11 +302,6 @@ h6.usage {
   margin: 1em 0 0.3em 0;
 }
 
-#fig-shape-concentration img {
-  width: 515px; /* 355 × 1.45 */
-  max-width: 100%;
-  height: auto;
-}
 #fig-functional-usage img {
   width: 708px; /* 488 × 1.45 */
   max-width: 100%;
