@@ -314,19 +314,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <section class="introductory" typeof="bibo:Chapter" resource="#document-outline" property="bibo:hasPart">
         <h2 id="document-outline" resource="#document-outline"><span property="xhv:role" resource="xhv:heading">Document Outline</span></h2>
         <p>
-            Section 1 presents the results of the SHACL usage analysis across public GitHub repositories, including dataset coverage, shape distribution, ontology alignment, constraint consistency, and usage contexts.
+            Section 1 covers dataset coverage, shape distribution, ontology alignment, constraint consistency, and usage contexts.
         </p>
         <p>
-            Sections 2 and 3 report occurrence counts and Git tree prevalence for SHACL shapes, targets, property paths, and Core constraint parameters.
+            Sections 2 and 3 provide occurrence counts and Git tree prevalence for SHACL shapes, targets, property paths, and Core constraint parameters.
         </p>
         <p>
-            Section 4 reports corresponding measurements for SPARQL-based constraints.
-        </p>
-        <p>
-            Feature names follow <a href="https://www.w3.org/TR/shacl/">SHACL 1.0</a>. Normative definitions remain in the W3C Recommendation; this document does not reproduce them.
-        </p>
-        <p>
-            Machine-readable statistics are published as <a href="https://w3id.org/shacl-en-forme/data/stats.jsonld">JSON-LD</a>.
+            Section 4 provides usage statistics for SPARQL-based constraints.
         </p>
     </section>
 
@@ -335,13 +329,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <h2 id="x-introduction" resource="#x-introduction"><span property="xhv:role" resource="xhv:heading">Introduction</span>
         </h2>
         <p>
-            SHACL en Forme is an independent research resource that analyzes how the Shapes Constraint Language (SHACL) is used in public GitHub repositories. It is not a W3C publication and is not endorsed by the W3C.
+            SHACL en Forme presents statistics on how the Shapes Constraint Language (SHACL) is used in public GitHub repositories. It is an independent research resource and is not endorsed by the W3C.
         </p>
         <p>
-            The site reports measured usage statistics—occurrence counts, Git tree prevalence, and related coverage figures—for SHACL shapes, targets, property paths, Core constraint parameters, and SHACL-SPARQL features. The measurements are derived from verified, non-fork repository snapshots collected from GitHub.
+            The analysis covers SHACL shapes, targets, property paths, Core constraint parameters, and SHACL-SPARQL. It provides occurrence counts and Git tree prevalence using data collected from verified GitHub repositories, excluding forks.
         </p>
         <p>
-            SHACL terminology and parameter names are used to identify the measured features. For normative definitions, syntax rules, and validation behavior, see the <a href="https://www.w3.org/TR/shacl/">SHACL 1.0 Recommendation</a>.
+            SHACL terminology and parameter names identify the features analyzed in this resource. Definitions, syntax rules, and validation procedures are available in the <a href="https://www.w3.org/TR/shacl/">SHACL 1.0 Recommendation</a>.
         </p>
     </section>
 
@@ -349,10 +343,6 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <!--OddPage-->
         <h2 id="x1.-usage-in-practice" resource="#x1.-usage-in-practice"><span property="xhv:role" resource="xhv:heading"><span class="secno">1 </span>Usage in Practice</span>
         </h2>
-
-        <p>
-            This section presents the results of an analysis of SHACL usage in public GitHub repositories.
-        </p>
 
         <section id="dataset-and-coverage" typeof="bibo:Chapter" resource="#dataset-and-coverage" property="bibo:hasPart">
             <h3 id="x1.1-dataset-and-coverage" resource="#x1.1-dataset-and-coverage"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.1 </span>Dataset and Coverage</span>
@@ -364,7 +354,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 A repository was considered verified if at least one parsed RDF graph contained a SHACL Core shape declaration, target or constraint predicate, or a structurally attached SHACL-SPARQL constraint. Verified repositories were grouped by Git tree for extraction and analysis. In total, 3,659 distinct Git trees were verified, and 3,658 were successfully extracted.
             </p>
             <p>
-                Fork repositories were excluded from the analysis. Git trees were included only if they were referenced by at least one non-fork repository. Repository counts are reported separately and do not affect the occurrence counts.
+                Fork repositories were excluded from the analysis. Git trees were included only if they were referenced by at least one non-fork repository. Repository counts are separate from the occurrence counts calculated from the extracted Git trees.
             </p>
             <p>Git trees and repositories</p>
             <table class="data coverage-counts" style="table-layout:fixed;width:100%">
@@ -467,7 +457,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 Ontology alignment is assessed using four measurements that compare ontology declarations with the class and property IRIs referenced by SHACL shapes in the same Git tree.
             </p>
             <p>
-                The first two measurements calculate the proportion of declared ontology classes and properties referenced by SHACL, excluding terms from RDF, RDFS, OWL, XSD, SHACL, DC, and FOAF. The other two calculate the proportion of SHACL class and property references that have ontology declarations in the same tree.
+                The first two measurements calculate the proportion of declared ontology classes and properties referenced by SHACL, excluding terms from RDF, RDFS, OWL, XSD, SHACL, Dublin Core, FOAF, and the XML namespace. The other two calculate the proportion of SHACL class and property references that have ontology declarations in the same tree.
             </p>
             <p>
                 The comparison uses exact IRI matches, counting each IRI once per tree. An IRI match does not imply semantic equivalence. An unmatched reference is not considered an undefined term.
@@ -525,7 +515,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             <table class="data">
             <tbody>
                 <tr>
-                    <th scope="row">Confirmed consistency findings</th>
+                    <th scope="row">Identified constraint inconsistencies</th>
                     <td>345</td>
                 </tr>
                 <tr>
@@ -556,7 +546,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     Application use requires relational constraints associated with a specific application. Ontology and vocabulary specifications require ontology terms and vocabulary or profile packaging.
                 </p>
                 <p>
-                    A document may belong to multiple categories. Test fixtures and generated artifacts without a functional classification are counted as unclassified test or generated documents.
+                    A document may belong to multiple categories. Test fixtures and generated artifacts without a functional classification are counted as unclassified test or generated documents. Documents with no functional or provenance classification are counted as unknown labels only.
                 </p>
                 <table class="data">
             <thead>
@@ -627,7 +617,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     Document purpose is classified using vocabulary, schema, and application profile information, as well as references to specific applications. Schema-like documents contain vocabulary, schema, or application profile information. Application-specific documents are associated with a particular application, service, or validator.
                 </p>
                 <p>
-                    A document may belong to both categories. The classification has not been independently validated against the authors' intended purposes.
+                    A document may belong to both categories. The classification has not been independently validated against the authors' intended purposes. The counts for schema-like and application-specific documents include documents assigned to both categories.
                 </p>
 
                 <table class="data">
@@ -783,7 +773,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <h2 id="x2.-shapes-and-constraints" resource="#x2.-shapes-and-constraints"><span property="xhv:role" resource="xhv:heading"><span class="secno">2 </span>Shapes and Constraints</span>
         </h2>
         <p>
-            This section reports how SHACL shapes, targets, and property paths appear in the extracted Git trees. Terminology follows <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/">SHACL 1.0</a>.
+            This section presents usage statistics for SHACL shapes, targets, and property paths across the extracted Git trees.
         </p>
 
         <section id="shapes" typeof="bibo:Chapter" resource="#shapes" property="bibo:hasPart">
@@ -798,28 +788,19 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             <div id="targetSubjectsOf"></div>
             <div id="targetObjectsOf"></div>
             <p>
-                The analysis counts resources explicitly typed as <code>sh:NodeShape</code> or <code>sh:PropertyShape</code> in the extracted Git trees. See <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/shapes">SHACL 1.0, Shapes</a> for the normative shape model.
+                The analysis counts resources explicitly typed as <code>sh:NodeShape</code> or <code>sh:PropertyShape</code>.
             </p>
-            <h4 class="usage">Usage</h4>
-                <table class="data">
-                    <tbody>
-                        <tr>
-                            <th scope="row">Distinct explicitly typed shapes</th>
-                            <td>1,183,518</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Explicit NodeShapes</th>
-                            <td>424,580</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Explicit PropertyShapes</th>
-                            <td>759,570</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <table class="data">
+                <tbody>
+                    <tr>
+                        <th scope="row">Distinct explicitly typed shapes</th>
+                        <td>1,183,518</td>
+                    </tr>
+                </tbody>
+            </table>
             <p>632 resources are typed as both <code>sh:NodeShape</code> and <code>sh:PropertyShape</code>.</p>
             <p>
-                Target declarations associate shapes with nodes in a data graph. The following table reports prevalence for the four explicit target predicates. Implicit class targets (a shape that is also an <code>rdfs:Class</code>) are defined in SHACL 1.0 but were not counted separately in this analysis.
+                The following table provides occurrence counts and Git tree prevalence for the four explicit target predicates. Implicit class targets were not counted separately.
             </p>
             <table class="data">
                 <thead>
@@ -857,18 +838,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     </tr>
                 </tbody>
             </table>
-            <p>
-                See <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/targets">SHACL 1.0, Targets</a> for normative target definitions.
-            </p>
         </section>
 
         <section id="node-shapes" typeof="bibo:Chapter" resource="#node-shapes" property="bibo:hasPart">
             <h3 id="x2.2-node-shapes" resource="#x2.2-node-shapes"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.2 </span>Node Shapes</span>
             </h3>
-            <p>
-                Explicit <code>sh:NodeShape</code> instances in the extracted Git trees. See <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/node-shapes">SHACL 1.0, Node Shapes</a>.
-            </p>
-            <h4 class="usage">Usage</h4>
             <table class="data">
                 <tbody>
                     <tr>
@@ -883,10 +857,6 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             <h3 id="x2.3-property-shapes" resource="#x2.3-property-shapes"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.3 </span>Property Shapes</span>
             </h3>
             <div id="property-paths"></div>
-            <p>
-                Explicit <code>sh:PropertyShape</code> instances and SHACL property path forms in the extracted Git trees. See <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/property-shapes">SHACL 1.0, Property Shapes</a> and <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/property-paths">SHACL Property Paths</a>.
-            </p>
-            <h4 class="usage">Usage</h4>
             <table class="data">
                 <tbody>
                     <tr>
@@ -895,61 +865,63 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     </tr>
                 </tbody>
             </table>
-            <p>Property path forms:</p>
-                <table class="data">
-                    <thead>
-                        <tr>
-                            <th>Path form</th>
-                            <th>Unique Git trees</th>
-                            <th>Tree prevalence</th>
-                            <th>Occurrences</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row"><code>PredicatePath</code></th>
-                            <td>3,508 / 3,658</td>
-                            <td>95.90%</td>
-                            <td>2,432,119</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><code>SequencePath</code></th>
-                            <td>538 / 3,658</td>
-                            <td>14.71%</td>
-                            <td>117,295</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><code>AlternativePath</code></th>
-                            <td>385 / 3,658</td>
-                            <td>10.52%</td>
-                            <td>9,813</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><code>InversePath</code></th>
-                            <td>568 / 3,658</td>
-                            <td>15.53%</td>
-                            <td>15,869</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><code>ZeroOrMorePath</code></th>
-                            <td>275 / 3,658</td>
-                            <td>7.52%</td>
-                            <td>9,096</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><code>OneOrMorePath</code></th>
-                            <td>211 / 3,658</td>
-                            <td>5.77%</td>
-                            <td>571</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><code>ZeroOrOnePath</code></th>
-                            <td>93 / 3,658</td>
-                            <td>2.54%</td>
-                            <td>169</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <p>
+                The following table shows occurrence counts and Git tree prevalence for seven SHACL property path forms.
+            </p>
+            <table class="data">
+                <thead>
+                    <tr>
+                        <th>Path form</th>
+                        <th>Unique Git trees</th>
+                        <th>Tree prevalence</th>
+                        <th>Occurrences</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row"><code>PredicatePath</code></th>
+                        <td>3,508 / 3,658</td>
+                        <td>95.90%</td>
+                        <td>2,432,119</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><code>SequencePath</code></th>
+                        <td>538 / 3,658</td>
+                        <td>14.71%</td>
+                        <td>117,295</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><code>AlternativePath</code></th>
+                        <td>385 / 3,658</td>
+                        <td>10.52%</td>
+                        <td>9,813</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><code>InversePath</code></th>
+                        <td>568 / 3,658</td>
+                        <td>15.53%</td>
+                        <td>15,869</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><code>ZeroOrMorePath</code></th>
+                        <td>275 / 3,658</td>
+                        <td>7.52%</td>
+                        <td>9,096</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><code>OneOrMorePath</code></th>
+                        <td>211 / 3,658</td>
+                        <td>5.77%</td>
+                        <td>571</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><code>ZeroOrOnePath</code></th>
+                        <td>93 / 3,658</td>
+                        <td>2.54%</td>
+                        <td>169</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
     </section>
 
@@ -958,15 +930,15 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <h2 id="x3.-core-constraint-components" resource="#x3.-core-constraint-components"><span property="xhv:role" resource="xhv:heading"><span class="secno">3 </span>Core Constraint Components</span>
         </h2>
         <p>
-            This section reports occurrence counts and Git tree prevalence for SHACL Core constraint parameters in the extracted Git trees. Parameter names identify the measured features; normative definitions are in the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/core-components">SHACL 1.0 Recommendation</a>.
+            This section presents occurrence counts and Git tree prevalence for SHACL Core constraint parameters across 3,658 extracted Git trees.
+        </p>
+        <p>
+            Occurrences count RDF triples containing each constraint parameter as a predicate. Git tree prevalence measures the proportion of extracted Git trees containing that parameter.
         </p>
 
         <section id="core-components-value-type" typeof="bibo:Chapter" resource="#core-components-value-type" property="bibo:hasPart">
             <h3 id="x3.1-value-type" resource="#x3.1-value-type"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1 </span>Value Type Constraint Components</span>
             </h3>
-            <p>
-                Parameters that restrict the type or kind of value nodes.
-            </p>
             <div id="ClassConstraintComponent"></div>
             <div id="DatatypeConstraintComponent"></div>
             <div id="NodeKindConstraintComponent"></div>
@@ -1000,17 +972,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     </tr>
                 </tbody>
             </table>
-            <p>
-                See the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/core-components-value-type">SHACL 1.0 Recommendation</a> for the normative definitions of these parameters.
-            </p>
         </section>
 
         <section id="core-components-count" typeof="bibo:Chapter" resource="#core-components-count" property="bibo:hasPart">
             <h3 id="x3.2-cardinality" resource="#x3.2-cardinality"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2 </span>Cardinality Constraint Components</span>
             </h3>
-            <p>
-                Parameters that restrict the number of value nodes.
-            </p>
             <div id="MinCountConstraintComponent"></div>
             <div id="MaxCountConstraintComponent"></div>
             <table class="data">
@@ -1037,17 +1003,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     </tr>
                 </tbody>
             </table>
-            <p>
-                See the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/core-components-count">SHACL 1.0 Recommendation</a> for the normative definitions of these parameters.
-            </p>
         </section>
 
         <section id="core-components-range" typeof="bibo:Chapter" resource="#core-components-range" property="bibo:hasPart">
             <h3 id="x3.3-value-range" resource="#x3.3-value-range"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.3 </span>Value Range Constraint Components</span>
             </h3>
-            <p>
-                Parameters that restrict the range of value nodes.
-            </p>
             <div id="MinExclusiveConstraintComponent"></div>
             <div id="MinInclusiveConstraintComponent"></div>
             <div id="MaxExclusiveConstraintComponent"></div>
@@ -1088,17 +1048,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     </tr>
                 </tbody>
             </table>
-            <p>
-                See the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/core-components-range">SHACL 1.0 Recommendation</a> for the normative definitions of these parameters.
-            </p>
         </section>
 
         <section id="core-components-string" typeof="bibo:Chapter" resource="#core-components-string" property="bibo:hasPart">
             <h3 id="x3.4-string" resource="#x3.4-string"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.4 </span>String-based Constraint Components</span>
             </h3>
-            <p>
-                Parameters that restrict string values, including regular expressions and language tags.
-            </p>
             <div id="MinLengthConstraintComponent"></div>
             <div id="MaxLengthConstraintComponent"></div>
             <div id="PatternConstraintComponent"></div>
@@ -1152,17 +1106,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     </tr>
                 </tbody>
             </table>
-            <p>
-                See the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/core-components-string">SHACL 1.0 Recommendation</a> for the normative definitions of these parameters.
-            </p>
         </section>
 
         <section id="core-components-property-pairs" typeof="bibo:Chapter" resource="#core-components-property-pairs" property="bibo:hasPart">
             <h3 id="x3.5-property-pairs" resource="#x3.5-property-pairs"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.5 </span>Property Pair Constraint Components</span>
             </h3>
-            <p>
-                Parameters that compare value nodes with the values of another property.
-            </p>
             <div id="EqualsConstraintComponent"></div>
             <div id="DisjointConstraintComponent"></div>
             <div id="LessThanConstraintComponent"></div>
@@ -1203,17 +1151,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     </tr>
                 </tbody>
             </table>
-            <p>
-                See the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/core-components-property-pairs">SHACL 1.0 Recommendation</a> for the normative definitions of these parameters.
-            </p>
         </section>
 
         <section id="core-components-logical" typeof="bibo:Chapter" resource="#core-components-logical" property="bibo:hasPart">
             <h3 id="x3.6-logical" resource="#x3.6-logical"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.6 </span>Logical Constraint Components</span>
             </h3>
-            <p>
-                Parameters that combine shapes using logical operators.
-            </p>
             <div id="NotConstraintComponent"></div>
             <div id="AndConstraintComponent"></div>
             <div id="OrConstraintComponent"></div>
@@ -1254,17 +1196,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     </tr>
                 </tbody>
             </table>
-            <p>
-                See the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/core-components-logical">SHACL 1.0 Recommendation</a> for the normative definitions of these parameters.
-            </p>
         </section>
 
         <section id="core-components-shape" typeof="bibo:Chapter" resource="#core-components-shape" property="bibo:hasPart">
             <h3 id="x3.7-shape-based" resource="#x3.7-shape-based"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.7 </span>Shape-based Constraint Components</span>
             </h3>
-            <p>
-                Parameters that apply nested shapes to value nodes, including qualified value shapes.
-            </p>
             <div id="NodeConstraintComponent"></div>
             <div id="PropertyConstraintComponent"></div>
             <div id="QualifiedValueShapeConstraintComponent"></div>
@@ -1316,17 +1252,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     </tr>
                 </tbody>
             </table>
-            <p>
-                See the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/core-components-shape">SHACL 1.0 Recommendation</a> for the normative definitions of these parameters.
-            </p>
         </section>
 
         <section id="core-components-others" typeof="bibo:Chapter" resource="#core-components-others" property="bibo:hasPart">
             <h3 id="x3.8-other" resource="#x3.8-other"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.8 </span>Other Constraint Components</span>
             </h3>
-            <p>
-                Parameters for closed shapes, fixed values, and enumeration of allowed values.
-            </p>
             <div id="ClosedConstraintComponent"></div>
             <div id="HasValueConstraintComponent"></div>
             <div id="InConstraintComponent"></div>
@@ -1366,9 +1296,6 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     </tr>
                 </tbody>
             </table>
-            <p>
-                See the <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/core-components-others">SHACL 1.0 Recommendation</a> for the normative definitions of these parameters.
-            </p>
         </section>
 
     </section>
@@ -1378,9 +1305,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <h2 id="x4.-sparql-based-constraints" resource="#x4.-sparql-based-constraints"><span property="xhv:role" resource="xhv:heading"><span class="secno">4 </span>SPARQL-based Constraints</span>
         </h2>
         <p>
-            SHACL-SPARQL constraints attach SPARQL SELECT queries to shapes via <code>sh:sparql</code>. See <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/sparql-constraints">SHACL 1.0, SPARQL-based Constraints</a>.
+            SHACL-SPARQL usage is measured through <code>sh:sparql</code> links and explicitly typed SPARQL constraint nodes.
         </p>
-        <h3 class="usage">Usage</h3>
+        <p>
+            Each structurally valid <code>sh:sparql</code> triple is counted as one link. SPARQL constraint nodes are counted as distinct resources typed as <code>sh:SPARQLConstraint</code> or one of its subclasses. These measurements count different structures.
+        </p>
         <table class="data">
             <tbody>
                 <tr>
