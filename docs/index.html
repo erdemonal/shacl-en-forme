@@ -418,6 +418,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             <p>
                 The analysis identified 1,183,518 distinct SHACL shapes across 3,658 Git trees.
             </p>
+            <figure id="fig-shape-concentration">
+                <img src="images/shape-concentration.svg" alt="Cumulative share of distinct SHACL shapes in the top 1%, 5%, and 10% of Git trees ranked by shape count">
+                <figcaption>Figure 1. Cumulative share of distinct SHACL shapes in the top 1%, 5%, and 10% of Git trees ranked by shape count.</figcaption>
+            </figure>
             <table class="data">
             <thead>
                 <tr>
@@ -548,6 +552,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 <p>
                     A document may belong to multiple categories. Test fixtures and generated artifacts without a functional classification are counted as unclassified test or generated documents. Documents with no functional or provenance classification are counted as unknown labels only.
                 </p>
+                <figure id="fig-functional-usage">
+                    <img src="images/functional-usage.svg" alt="Functional usage prevalence across SHACL documents and Git trees">
+                    <figcaption>Figure 2. Functional usage prevalence across SHACL documents and Git trees.</figcaption>
+                </figure>
                 <table class="data">
             <thead>
                 <tr>
@@ -935,6 +943,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <p>
             Occurrences count RDF triples containing each constraint parameter as a predicate. Git tree prevalence measures the proportion of extracted Git trees containing that parameter.
         </p>
+        <figure id="fig-core-constraints">
+            <img src="images/core-constraints.svg" alt="Occurrence counts and Git tree prevalence of the ten SHACL Core constraint parameters with the highest occurrence counts">
+            <figcaption>Figure 3. Occurrence counts and Git tree prevalence of the ten SHACL Core constraint parameters with the highest occurrence counts.</figcaption>
+        </figure>
 
         <section id="core-components-value-type" typeof="bibo:Chapter" resource="#core-components-value-type" property="bibo:hasPart">
             <h3 id="x3.1-value-type" resource="#x3.1-value-type"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1 </span>Value Type Constraint Components</span>
