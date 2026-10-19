@@ -17,3 +17,33 @@ The analysis measures the use of SHACL shapes, Core constraint parameters, targe
 - [Website](https://w3id.org/shacl-en-forme/)
 - [Statistics (JSON-LD)](https://w3id.org/shacl-en-forme/data/stats.jsonld)
 - [RDF Vocabulary (Turtle)](https://w3id.org/shacl-en-forme/vocab/index.ttl)
+
+## Query Example
+
+The statistics are published as JSON-LD and can be queried using SPARQL.
+
+Example: retrieve occurrence counts and Git tree prevalence for `sh:closed` and `sh:maxExclusive`.
+
+```sparql
+PREFIX sef: <https://w3id.org/shacl-en-forme/vocab#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+
+SELECT ?parameter ?occurrences ?trees ?prevalence
+WHERE {
+  ?record a sef:FeatureFrequency ;
+          sef:feature ?parameter ;
+          sef:occurrences ?occurrences ;
+          sef:unique_trees ?trees ;
+          sef:percent_of_extracted_trees ?prevalence .
+
+  VALUES ?parameter { sh:closed sh:maxExclusive }
+}
+ORDER BY DESC(?occurrences)
+```
+
+Load [stats.jsonld](https://w3id.org/shacl-en-forme/data/stats.jsonld) into a JSON-LD–capable SPARQL environment (for example [Comunica](https://comunica.dev/)) and run the query. Results:
+
+| parameter | occurrences | trees | prevalence |
+| --- | ---: | ---: | ---: |
+| `sh:maxExclusive` | 1,172,259 | 2,436 | 66.59% |
+| `sh:closed` | 537,481 | 3,206 | 87.64% |
