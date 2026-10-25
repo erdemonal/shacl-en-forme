@@ -606,186 +606,6 @@
           {
             "@type": "FeatureFrequency",
             "feature": "http://www.w3.org/ns/shacl#and",
-            "occurrences": 7520,
-            "unique_trees": 382,
-            "percent_of_extracted_trees": {
-              "@value": "10.44",
-              "@type": "xsd:decimal"
-            },
-            "verified_repositories": 385,
-            "percent_of_verified_repositories": {
-              "@value": "10.47",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#class",
-            "occurrences": 29249,
-            "unique_trees": 471,
-            "percent_of_extracted_trees": {
-              "@value": "12.88",
-              "@type": "xsd:decimal"
-            },
-            "verified_repositories": 477,
-            "percent_of_verified_repositories": {
-              "@value": "12.97",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#closed",
-            "occurrences": 537481,
-            "unique_trees": 3206,
-            "percent_of_extracted_trees": {
-              "@value": "87.64",
-              "@type": "xsd:decimal"
-            },
-            "verified_repositories": 3222,
-            "percent_of_verified_repositories": {
-              "@value": "87.63",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#datatype",
-            "occurrences": 22370,
-            "unique_trees": 311,
-            "percent_of_extracted_trees": {
-              "@value": "8.5",
-              "@type": "xsd:decimal"
-            },
-            "verified_repositories": 311,
-            "percent_of_verified_repositories": {
-              "@value": "8.46",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#disjoint",
-            "occurrences": 1570,
-            "unique_trees": 170,
-            "percent_of_extracted_trees": {
-              "@value": "4.65",
-              "@type": "xsd:decimal"
-            },
-            "verified_repositories": 171,
-            "percent_of_verified_repositories": {
-              "@value": "4.65",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#equals",
-            "occurrences": 94905,
-            "unique_trees": 1295,
-            "percent_of_extracted_trees": {
-              "@value": "35.4",
-              "@type": "xsd:decimal"
-            },
-            "verified_repositories": 1303,
-            "percent_of_verified_repositories": {
-              "@value": "35.44",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#flags",
-            "occurrences": 74648,
-            "unique_trees": 1578,
-            "percent_of_extracted_trees": {
-              "@value": "43.14",
-              "@type": "xsd:decimal"
-            },
-            "verified_repositories": 1585,
-            "percent_of_verified_repositories": {
-              "@value": "43.11",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#hasValue",
-            "occurrences": 57824,
-            "unique_trees": 637,
-            "percent_of_extracted_trees": {
-              "@value": "17.41",
-              "@type": "xsd:decimal"
-            },
-            "verified_repositories": 638,
-            "percent_of_verified_repositories": {
-              "@value": "17.35",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#ignoredProperties",
-            "occurrences": 2312,
-            "unique_trees": 136,
-            "percent_of_extracted_trees": {
-              "@value": "3.72",
-              "@type": "xsd:decimal"
-            },
-            "verified_repositories": 136,
-            "percent_of_verified_repositories": {
-              "@value": "3.7",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#in",
-            "occurrences": 58521,
-            "unique_trees": 764,
-            "percent_of_extracted_trees": {
-              "@value": "20.89",
-              "@type": "xsd:decimal"
-            },
-            "verified_repositories": 770,
-            "percent_of_verified_repositories": {
-              "@value": "20.94",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#languageIn",
-            "occurrences": 71003,
-            "unique_trees": 496,
-            "percent_of_extracted_trees": {
-              "@value": "13.56",
-              "@type": "xsd:decimal"
-            },
-            "verified_repositories": 497,
-            "percent_of_verified_repositories": {
-              "@value": "13.52",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#lessThan",
-            "occurrences": 16102,
-            "unique_trees": 917,
-            "percent_of_extracted_trees": {
-              "@value": "25.07",
-              "@type": "xsd:decimal"
-            },
-            "verified_repositories": 920,
-            "percent_of_verified_repositories": {
-              "@value": "25.02",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#lessThanOrEquals",
             "occurrences": 57403,
             "unique_trees": 358,
             "percent_of_extracted_trees": {
@@ -800,22 +620,7 @@
           },
           {
             "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#maxCount",
-            "occurrences": 77437,
-            "unique_trees": 1105,
-            "percent_of_extracted_trees": {
-              "@value": "30.21",
-              "@type": "xsd:decimal"
-            },
-            "verified_repositories": 1106,
-            "percent_of_verified_repositories": {
-              "@value": "30.08",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#maxExclusive",
+            "feature": "http://www.w3.org/ns/shacl#class",
             "occurrences": 1172259,
             "unique_trees": 2436,
             "percent_of_extracted_trees": {
@@ -830,22 +635,22 @@
           },
           {
             "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#maxInclusive",
-            "occurrences": 8794,
-            "unique_trees": 668,
+            "feature": "http://www.w3.org/ns/shacl#closed",
+            "occurrences": 58521,
+            "unique_trees": 764,
             "percent_of_extracted_trees": {
-              "@value": "18.26",
+              "@value": "20.89",
               "@type": "xsd:decimal"
             },
-            "verified_repositories": 669,
+            "verified_repositories": 770,
             "percent_of_verified_repositories": {
-              "@value": "18.19",
+              "@value": "20.94",
               "@type": "xsd:decimal"
             }
           },
           {
             "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#maxLength",
+            "feature": "http://www.w3.org/ns/shacl#datatype",
             "occurrences": 654821,
             "unique_trees": 2989,
             "percent_of_extracted_trees": {
@@ -860,7 +665,97 @@
           },
           {
             "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#minCount",
+            "feature": "http://www.w3.org/ns/shacl#disjoint",
+            "occurrences": 1737,
+            "unique_trees": 199,
+            "percent_of_extracted_trees": {
+              "@value": "5.44",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 203,
+            "percent_of_verified_repositories": {
+              "@value": "5.52",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#equals",
+            "occurrences": 9358,
+            "unique_trees": 168,
+            "percent_of_extracted_trees": {
+              "@value": "4.59",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 169,
+            "percent_of_verified_repositories": {
+              "@value": "4.6",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#flags",
+            "occurrences": 19997,
+            "unique_trees": 185,
+            "percent_of_extracted_trees": {
+              "@value": "5.06",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 186,
+            "percent_of_verified_repositories": {
+              "@value": "5.06",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#hasValue",
+            "occurrences": 77437,
+            "unique_trees": 1105,
+            "percent_of_extracted_trees": {
+              "@value": "30.21",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 1106,
+            "percent_of_verified_repositories": {
+              "@value": "30.08",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#ignoredProperties",
+            "occurrences": 29249,
+            "unique_trees": 471,
+            "percent_of_extracted_trees": {
+              "@value": "12.88",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 477,
+            "percent_of_verified_repositories": {
+              "@value": "12.97",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#in",
+            "occurrences": 74648,
+            "unique_trees": 1578,
+            "percent_of_extracted_trees": {
+              "@value": "43.14",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 1585,
+            "percent_of_verified_repositories": {
+              "@value": "43.11",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#languageIn",
             "occurrences": 2957,
             "unique_trees": 273,
             "percent_of_extracted_trees": {
@@ -870,6 +765,111 @@
             "verified_repositories": 274,
             "percent_of_verified_repositories": {
               "@value": "7.45",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#lessThan",
+            "occurrences": 1883,
+            "unique_trees": 178,
+            "percent_of_extracted_trees": {
+              "@value": "4.87",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 179,
+            "percent_of_verified_repositories": {
+              "@value": "4.87",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#lessThanOrEquals",
+            "occurrences": 650,
+            "unique_trees": 164,
+            "percent_of_extracted_trees": {
+              "@value": "4.48",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 165,
+            "percent_of_verified_repositories": {
+              "@value": "4.49",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#maxCount",
+            "occurrences": 662881,
+            "unique_trees": 2862,
+            "percent_of_extracted_trees": {
+              "@value": "78.24",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 2878,
+            "percent_of_verified_repositories": {
+              "@value": "78.27",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#maxExclusive",
+            "occurrences": 1570,
+            "unique_trees": 170,
+            "percent_of_extracted_trees": {
+              "@value": "4.65",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 171,
+            "percent_of_verified_repositories": {
+              "@value": "4.65",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#maxInclusive",
+            "occurrences": 16102,
+            "unique_trees": 917,
+            "percent_of_extracted_trees": {
+              "@value": "25.07",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 920,
+            "percent_of_verified_repositories": {
+              "@value": "25.02",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#maxLength",
+            "occurrences": 13232,
+            "unique_trees": 364,
+            "percent_of_extracted_trees": {
+              "@value": "9.95",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 365,
+            "percent_of_verified_repositories": {
+              "@value": "9.93",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#minCount",
+            "occurrences": 537481,
+            "unique_trees": 3206,
+            "percent_of_extracted_trees": {
+              "@value": "87.64",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 3222,
+            "percent_of_verified_repositories": {
+              "@value": "87.63",
               "@type": "xsd:decimal"
             }
           },
@@ -891,21 +891,6 @@
           {
             "@type": "FeatureFrequency",
             "feature": "http://www.w3.org/ns/shacl#minInclusive",
-            "occurrences": 1737,
-            "unique_trees": 199,
-            "percent_of_extracted_trees": {
-              "@value": "5.44",
-              "@type": "xsd:decimal"
-            },
-            "verified_repositories": 203,
-            "percent_of_verified_repositories": {
-              "@value": "5.52",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#minLength",
             "occurrences": 31455,
             "unique_trees": 1122,
             "percent_of_extracted_trees": {
@@ -920,127 +905,22 @@
           },
           {
             "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#minLength",
+            "occurrences": 8794,
+            "unique_trees": 668,
+            "percent_of_extracted_trees": {
+              "@value": "18.26",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 669,
+            "percent_of_verified_repositories": {
+              "@value": "18.19",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
             "feature": "http://www.w3.org/ns/shacl#node",
-            "occurrences": 754832,
-            "unique_trees": 1913,
-            "percent_of_extracted_trees": {
-              "@value": "52.3",
-              "@type": "xsd:decimal"
-            },
-            "verified_repositories": 1927,
-            "percent_of_verified_repositories": {
-              "@value": "52.41",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#nodeKind",
-            "occurrences": 9324,
-            "unique_trees": 413,
-            "percent_of_extracted_trees": {
-              "@value": "11.29",
-              "@type": "xsd:decimal"
-            },
-            "verified_repositories": 414,
-            "percent_of_verified_repositories": {
-              "@value": "11.26",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#not",
-            "occurrences": 2110844,
-            "unique_trees": 3477,
-            "percent_of_extracted_trees": {
-              "@value": "95.05",
-              "@type": "xsd:decimal"
-            },
-            "verified_repositories": 3495,
-            "percent_of_verified_repositories": {
-              "@value": "95.05",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#or",
-            "occurrences": 662881,
-            "unique_trees": 2862,
-            "percent_of_extracted_trees": {
-              "@value": "78.24",
-              "@type": "xsd:decimal"
-            },
-            "verified_repositories": 2878,
-            "percent_of_verified_repositories": {
-              "@value": "78.27",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#pattern",
-            "occurrences": 1883,
-            "unique_trees": 178,
-            "percent_of_extracted_trees": {
-              "@value": "4.87",
-              "@type": "xsd:decimal"
-            },
-            "verified_repositories": 179,
-            "percent_of_verified_repositories": {
-              "@value": "4.87",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#property",
-            "occurrences": 19997,
-            "unique_trees": 185,
-            "percent_of_extracted_trees": {
-              "@value": "5.06",
-              "@type": "xsd:decimal"
-            },
-            "verified_repositories": 186,
-            "percent_of_verified_repositories": {
-              "@value": "5.06",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#qualifiedMaxCount",
-            "occurrences": 650,
-            "unique_trees": 164,
-            "percent_of_extracted_trees": {
-              "@value": "4.48",
-              "@type": "xsd:decimal"
-            },
-            "verified_repositories": 165,
-            "percent_of_verified_repositories": {
-              "@value": "4.49",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#qualifiedMinCount",
-            "occurrences": 157240,
-            "unique_trees": 1388,
-            "percent_of_extracted_trees": {
-              "@value": "37.94",
-              "@type": "xsd:decimal"
-            },
-            "verified_repositories": 1395,
-            "percent_of_verified_repositories": {
-              "@value": "37.94",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#qualifiedValueShape",
             "occurrences": 141080,
             "unique_trees": 1121,
             "percent_of_extracted_trees": {
@@ -1055,7 +935,112 @@
           },
           {
             "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#qualifiedValueShapesDisjoint",
+            "feature": "http://www.w3.org/ns/shacl#nodeKind",
+            "occurrences": 754832,
+            "unique_trees": 1913,
+            "percent_of_extracted_trees": {
+              "@value": "52.3",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 1927,
+            "percent_of_verified_repositories": {
+              "@value": "52.41",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#not",
+            "occurrences": 57824,
+            "unique_trees": 637,
+            "percent_of_extracted_trees": {
+              "@value": "17.41",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 638,
+            "percent_of_verified_repositories": {
+              "@value": "17.35",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#or",
+            "occurrences": 157240,
+            "unique_trees": 1388,
+            "percent_of_extracted_trees": {
+              "@value": "37.94",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 1395,
+            "percent_of_verified_repositories": {
+              "@value": "37.94",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#pattern",
+            "occurrences": 94905,
+            "unique_trees": 1295,
+            "percent_of_extracted_trees": {
+              "@value": "35.4",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 1303,
+            "percent_of_verified_repositories": {
+              "@value": "35.44",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#property",
+            "occurrences": 2110844,
+            "unique_trees": 3477,
+            "percent_of_extracted_trees": {
+              "@value": "95.05",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 3495,
+            "percent_of_verified_repositories": {
+              "@value": "95.05",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#qualifiedMaxCount",
+            "occurrences": 22370,
+            "unique_trees": 311,
+            "percent_of_extracted_trees": {
+              "@value": "8.5",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 311,
+            "percent_of_verified_repositories": {
+              "@value": "8.46",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#qualifiedMinCount",
+            "occurrences": 71003,
+            "unique_trees": 496,
+            "percent_of_extracted_trees": {
+              "@value": "13.56",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 497,
+            "percent_of_verified_repositories": {
+              "@value": "13.52",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#qualifiedValueShape",
             "occurrences": 86924,
             "unique_trees": 520,
             "percent_of_extracted_trees": {
@@ -1070,31 +1055,46 @@
           },
           {
             "@type": "FeatureFrequency",
-            "feature": "http://www.w3.org/ns/shacl#uniqueLang",
-            "occurrences": 9358,
-            "unique_trees": 168,
+            "feature": "http://www.w3.org/ns/shacl#qualifiedValueShapesDisjoint",
+            "occurrences": 2312,
+            "unique_trees": 136,
             "percent_of_extracted_trees": {
-              "@value": "4.59",
+              "@value": "3.72",
               "@type": "xsd:decimal"
             },
-            "verified_repositories": 169,
+            "verified_repositories": 136,
             "percent_of_verified_repositories": {
-              "@value": "4.6",
+              "@value": "3.7",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#uniqueLang",
+            "occurrences": 7520,
+            "unique_trees": 382,
+            "percent_of_extracted_trees": {
+              "@value": "10.44",
+              "@type": "xsd:decimal"
+            },
+            "verified_repositories": 385,
+            "percent_of_verified_repositories": {
+              "@value": "10.47",
               "@type": "xsd:decimal"
             }
           },
           {
             "@type": "FeatureFrequency",
             "feature": "http://www.w3.org/ns/shacl#xone",
-            "occurrences": 13232,
-            "unique_trees": 364,
+            "occurrences": 9324,
+            "unique_trees": 413,
             "percent_of_extracted_trees": {
-              "@value": "9.95",
+              "@value": "11.29",
               "@type": "xsd:decimal"
             },
-            "verified_repositories": 365,
+            "verified_repositories": 414,
             "percent_of_verified_repositories": {
-              "@value": "9.93",
+              "@value": "11.26",
               "@type": "xsd:decimal"
             }
           }

@@ -45,5 +45,5 @@ Load [stats.jsonld](https://w3id.org/shacl-en-forme/data/stats.jsonld) into a JS
 
 | parameter | occurrences | trees | prevalence |
 | --- | ---: | ---: | ---: |
-| `sh:maxExclusive` | 1,172,259 | 2,436 | 66.59% |
-| `sh:closed` | 537,481 | 3,206 | 87.64% |
+| `sh:closed` | 58,521 | 764 | 20.89% |
+| `sh:maxExclusive` | 1,570 | 170 | 4.65% |

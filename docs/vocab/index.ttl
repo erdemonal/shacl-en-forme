@@ -107,7 +107,6 @@
 #
 # Linking Properties
 #
-
 :has_coverage a rdf:Property ; rdfs:range :DatasetCoverage .
 :has_shape_inventory a rdf:Property ; rdfs:range :ShapeInventory .
 :has_constraint_frequencies a rdf:Property ; rdfs:range :FeatureFrequencyAnalysis .
@@ -525,7 +524,7 @@
 :unknown_only_documents a skos:Concept ;
     skos:inScheme :DomainSummaryScheme ;
     skos:prefLabel "Unclassified"@en ;
-    rdfs:comment "No selected application-domain namespace IRI matched; does not imply absence of a domain outside this classification."@en .
+    rdfs:comment "Documents without a matching application-domain namespace IRI."@en .
 
 :infrastructure_documents a skos:Concept ;
     skos:inScheme :DomainSummaryScheme ;
