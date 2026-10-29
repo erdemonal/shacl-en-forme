@@ -81,6 +81,16 @@ sef:ConsistencyAnalysisShape
         sh:minCount 1 ; sh:maxCount 1 ;
     ] ;
     sh:property [
+        sh:path sef:trees_with_consistency_findings ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:denominator_extracted_trees ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
         sh:path sef:finding_count ;
         sh:class sef:FindingCount ;
         sh:minCount 2 ; sh:maxCount 2 ;

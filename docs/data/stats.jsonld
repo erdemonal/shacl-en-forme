@@ -377,6 +377,10 @@
       "@id": "sef:confirmed_consistency_findings",
       "@type": "xsd:integer"
     },
+    "trees_with_consistency_findings": {
+      "@id": "sef:trees_with_consistency_findings",
+      "@type": "xsd:integer"
+    },
     "count": {
       "@id": "sef:count",
       "@type": "xsd:integer"
@@ -1601,13 +1605,14 @@
       "has_consistency": {
         "@type": "ConsistencyAnalysis",
         "shapes_graph_policy": "sef:rdf_source_document",
-        "confirmed_consistency_findings": 345,
+        "confirmed_consistency_findings": 294,
+        "trees_with_consistency_findings": 33,
         "denominator_extracted_trees": 3658,
         "finding_count": [
           {
             "@type": "FindingCount",
             "finding_type": "sef:nested_shape_unsatisfiable",
-            "count": 338
+            "count": 287
           },
           {
             "@type": "FindingCount",

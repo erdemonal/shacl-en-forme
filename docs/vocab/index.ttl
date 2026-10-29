@@ -293,6 +293,11 @@
     rdfs:comment "Number of constraint inconsistencies confirmed by the analysis."@en ;
     rdfs:range xsd:integer .
 
+:trees_with_consistency_findings a rdf:Property ;
+    rdfs:label "trees with consistency findings"@en ;
+    rdfs:comment "Number of extracted Git trees containing at least one identified constraint inconsistency."@en ;
+    rdfs:range xsd:integer .
+
 :count a rdf:Property ; rdfs:range xsd:integer .
 
 :n_with_label a rdf:Property ;

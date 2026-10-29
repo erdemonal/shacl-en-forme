@@ -507,24 +507,34 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             <h3 id="x1.4-constraint-consistency" resource="#x1.4-constraint-consistency"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.4 </span>Constraint Consistency</span>
             </h3>
             <p>
-                The analysis identified 345 cases of constraint inconsistency across 3,658 Git trees. These include 338 cases involving combinations of nested shape constraints that cannot be satisfied and 7 cases involving conflicts between closed shapes and property paths that require values.
+                The analysis identified 294 cases of constraint inconsistency across 33 of the 3,658 Git trees analyzed. These include 287 cases involving nested shape constraints and 7 cases involving conflicts between closed shapes and required property paths.
             </p>
             <p>
-                Each shapes graph was constructed from a single RDF source document. Shape definitions from different documents were not combined. The analysis does not cover all possible combinations of SHACL Core constraints.
+                Each shapes graph was constructed from a single RDF source document. Shape definitions from different documents were not combined. The findings are concentrated in a small number of Git trees and include test fixtures and validation reports containing shapes. They do not necessarily indicate modeling errors. The analysis does not cover all possible combinations of SHACL Core constraints.
             </p>
-                <table class="data">
-                    <tbody>
-                        <tr>
-                    <th scope="row">Identified constraint inconsistencies</th>
-                    <td>345</td>
-                        </tr>
-                        <tr>
-                    <th scope="row">Git trees in scope</th>
-                    <td>3,658</td>
-                        </tr>
-                    </tbody>
-                </table>
-</section>
+            <table class="data">
+                <thead>
+                    <tr>
+                        <th>Measurement</th>
+                        <th>Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Identified constraint inconsistencies</th>
+                        <td>294</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Git trees with identified inconsistencies</th>
+                        <td>33</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Git trees analyzed</th>
+                        <td>3,658</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
         <section id="usage-contexts" typeof="bibo:Chapter" resource="#usage-contexts" property="bibo:hasPart">
             <h3 id="x1.5-usage-contexts" resource="#x1.5-usage-contexts"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.5 </span>Usage Contexts</span>
