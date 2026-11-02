@@ -10,7 +10,7 @@ Public GitHub repositories were identified through code search and repository se
 
 RDF files were retrieved from the recorded repository revisions and parsed using RDFLib. Among 550,508 files identified for RDF processing, 548,135 were successfully parsed. The analysis identified 50,872 documents containing SHACL shapes, representing 33,440 distinct document contents.
 
-The analysis measures the use of SHACL shapes, Core constraint parameters, targets, property paths, and SHACL-SPARQL. It also covers SHACL references to ontology terms and selected public vocabularies, inconsistencies involving nested shape constraints and conflicts between closed shapes and required property paths, and usage contexts classified by functional usage, document purpose, and application domain.
+The analysis measures the use of SHACL shapes, Core constraint parameters, targets, property paths, and SHACL-SPARQL. It also covers SHACL references to ontology terms and selected public vocabularies, conflicting SHACL Core constraints, and usage contexts classified by functional usage, document purpose, and application domain.
 
 ## Resources
 

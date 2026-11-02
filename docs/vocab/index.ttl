@@ -81,11 +81,11 @@
 
 :VocabularyUsageAnalysis a rdfs:Class ;
     rdfs:label "Vocabulary usage analysis"@en ;
-    rdfs:comment "Git tree prevalence of SHACL references to selected public vocabularies."@en .
+    rdfs:comment "Git tree prevalence of SHACL references to class and property terms from selected public vocabularies through constraints, targets, and property paths."@en .
 
 :ConsistencyAnalysis a rdfs:Class ;
     rdfs:label "Consistency analysis"@en ;
-    rdfs:comment "Inconsistencies among SHACL constraints."@en .
+    rdfs:comment "Detection of conflicting SHACL Core constraints within individual RDF source documents."@en .
 
 :FindingCount a rdfs:Class ;
     rdfs:label "Finding count"@en ;
@@ -201,7 +201,9 @@
     rdfs:range xsd:integer ;
     rdfs:comment "Number of RDF documents containing SHACL shapes."@en .
 
-:trees_with_shape_documents a rdf:Property ; rdfs:range xsd:integer .
+:trees_with_shape_documents a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of analyzed Git trees containing SHACL shape documents."@en .
 
 :content_sha256_groups a rdf:Property ;
     rdfs:range xsd:integer ;
@@ -306,12 +308,17 @@
 
 :confirmed_consistency_findings a rdf:Property ;
     rdfs:label "confirmed consistency findings"@en ;
-    rdfs:comment "Number of constraint inconsistencies confirmed by the analysis."@en ;
+    rdfs:comment "Total number of SHACL Core constraint conflict detections."@en ;
     rdfs:range xsd:integer .
 
 :trees_with_consistency_findings a rdf:Property ;
     rdfs:label "trees with consistency findings"@en ;
-    rdfs:comment "Number of extracted Git trees containing at least one identified constraint inconsistency."@en ;
+    rdfs:comment "Number of analyzed Git trees containing at least one identified constraint conflict."@en ;
+    rdfs:range xsd:integer .
+
+:contents_with_consistency_findings a rdf:Property ;
+    rdfs:label "contents with consistency findings"@en ;
+    rdfs:comment "Number of distinct document contents containing at least one identified constraint conflict."@en ;
     rdfs:range xsd:integer .
 
 :count a rdf:Property ; rdfs:range xsd:integer .
