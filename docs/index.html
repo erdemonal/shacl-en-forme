@@ -354,7 +354,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 A Git tree represents a snapshot of repository contents. Multiple GitHub repositories may reference the same tree. The analysis uses distinct Git trees to avoid counting identical repository snapshots more than once.
             </p>
             <p>
-                A repository was considered verified if at least one parsed RDF graph contained a SHACL Core shape declaration, target or constraint predicate, or a structurally attached SHACL-SPARQL constraint. After excluding forks, 3,677 verified repositories remained, corresponding to 3,659 distinct Git trees. The final analysis covers 3,657 Git trees with usable extracted content.
+                A repository was considered verified if at least one parsed RDF graph contained a SHACL Core shape declaration, target or constraint predicate, or a structurally attached SHACL-SPARQL constraint. After excluding forks, 3,677 verified repositories remained. These repositories correspond to 3,659 distinct Git trees. RDF extraction succeeded for 3,658 of those trees. Of the extracted trees, 3,657 contain SHACL shapes.
             </p>
             <p>
                 Among 550,508 files identified for RDF processing, 548,135 were successfully parsed.
@@ -366,7 +366,15 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 </colgroup>
                 <tbody>
                     <tr>
-                        <th scope="row">Analyzed Git trees</th>
+                        <th scope="row">Distinct Git trees</th>
+                        <td>3,659</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Extracted Git trees</th>
+                        <td>3,658</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Git trees containing SHACL shapes</th>
                         <td>3,657</td>
                     </tr>
                     <tr>
@@ -429,7 +437,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 </h4>
                 <h5 class="research-question">How often do SHACL shapes reference locally declared ontology terms?</h5>
                 <p>
-                    The analysis compares class and property IRIs referenced by SHACL shapes with ontology declarations in the same Git tree.
+                    The analysis compares class and property IRIs referenced by SHACL shapes with ontology declarations in the same Git tree. A match requires that the referenced IRI is declared in that tree as an ontology term explicitly typed as a class or property.
                 </p>
                 <table class="data">
                     <thead>
@@ -460,22 +468,19 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 </h4>
                 <h5 class="research-question">Which vocabularies are referenced by SHACL shapes?</h5>
                 <p>
-                    The analysis counts Git trees containing SHACL references to class and property terms from selected public vocabularies through constraints, targets, and property paths.
+                    The analysis counts Git trees containing SHACL references to terms from public RDF vocabularies through constraints, targets, and property paths. Both simple and complex property paths are considered. Vocabularies are ranked by the number of Git trees in which they appear.
                 </p>
                 <figure id="fig-ontology-usage">
-                    <img src="images/ontology-usage.svg" alt="Share of Git trees with SHACL references to selected public vocabularies">
-                    <figcaption>Figure 1. Share of Git trees with SHACL references to selected public vocabularies.</figcaption>
+                    <img src="images/ontology-usage.svg" alt="Share of Git trees referencing the 14 most frequent public RDF vocabularies">
+                    <figcaption>Figure 1. Share of Git trees referencing the 14 most frequent public RDF vocabularies.</figcaption>
                 </figure>
-                <p>
-                    The presence of widely used RDF vocabularies near the top of the figure is expected.
-                </p>
             </section>
         </section>
 
         <section id="constraint-consistency" typeof="bibo:Chapter" resource="#constraint-consistency" property="bibo:hasPart">
             <h3 id="x1.4-constraint-consistency" resource="#x1.4-constraint-consistency"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.4 </span>Constraint Consistency</span>
             </h3>
-            <h4 class="research-question">How prevalent are conflicting SHACL constraints across Git trees?</h4>
+            <h4 class="research-question">How common are conflicting SHACL constraints?</h4>
             <p>
                 The analysis checks 27 types of SHACL Core constraint conflicts. For example, a DCAT profile requires a <code>foaf:name</code> value to be both an <code>xsd:string</code> literal and a blank node. These conditions cannot be satisfied together.
             </p>

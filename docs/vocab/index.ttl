@@ -81,7 +81,7 @@
 
 :VocabularyUsageAnalysis a rdfs:Class ;
     rdfs:label "Vocabulary usage analysis"@en ;
-    rdfs:comment "Git tree prevalence of SHACL references to class and property terms from selected public vocabularies through constraints, targets, and property paths."@en .
+    rdfs:comment "Git tree prevalence of SHACL references to public RDF vocabulary terms through constraints, targets, and property paths."@en .
 
 :ConsistencyAnalysis a rdfs:Class ;
     rdfs:label "Consistency analysis"@en ;

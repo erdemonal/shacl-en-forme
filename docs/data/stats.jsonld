@@ -489,7 +489,7 @@
         "sniff_rejected_files": 2069,
         "parse_error_files": 263,
         "shape_documents": 50872,
-        "trees_with_shape_documents": 3658,
+        "trees_with_shape_documents": 3657,
         "content_sha256_groups": 33440,
         "parsed_file_rows": 1386769,
         "parsed_shape_rows": 4019975,
@@ -1589,7 +1589,7 @@
       "has_functional_usage": {
         "@type": "FunctionalUsageAnalysis",
         "shape_documents": 50872,
-        "trees_with_shape_documents": 3658,
+        "trees_with_shape_documents": 3657,
         "content_sha256_groups": 33440,
         "multi_label": true,
         "classification_result": [
