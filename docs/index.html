@@ -351,66 +351,35 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 A Git tree represents a snapshot of repository contents. Multiple GitHub repositories may reference the same tree. The analysis uses distinct Git trees to avoid counting identical repository snapshots more than once.
             </p>
             <p>
-                A repository was considered verified if at least one parsed RDF graph contained a SHACL Core shape declaration, target or constraint predicate, or a structurally attached SHACL-SPARQL constraint. Verified repositories were grouped by Git tree for extraction and analysis. In total, 3,659 distinct Git trees were verified, and 3,658 were successfully extracted.
+                A repository was considered verified if at least one parsed RDF graph contained a SHACL Core shape declaration, target or constraint predicate, or a structurally attached SHACL-SPARQL constraint. Verified repositories were grouped by Git tree for extraction and analysis. The analysis covers 3,677 verified repositories corresponding to 3,659 distinct Git trees, of which 3,658 were successfully extracted.
             </p>
             <p>
                 Fork repositories were excluded from the analysis. Git trees were included only if they were referenced by at least one non-fork repository. Repository counts are separate from the occurrence counts calculated from the extracted Git trees.
             </p>
-            <p>Git trees and repositories</p>
+            <p>
+                Among 550,508 files identified for RDF processing, 548,135 were successfully parsed.
+            </p>
             <table class="data coverage-counts" style="table-layout:fixed;width:100%">
-            <colgroup>
-                <col style="width:75%">
-                <col style="width:25%">
-            </colgroup>
-                    <tbody>
-                        <tr>
-                    <th scope="row">Verified Git trees</th>
-                    <td>3,659</td>
-                        </tr>
-                        <tr>
-                    <th scope="row">Extracted Git trees</th>
-                    <td>3,658</td>
-                        </tr>
-                        <tr>
-                    <th scope="row">Verified repositories</th>
-                    <td>3,677</td>
-                        </tr>
-                <tr>
-                    <th scope="row">Repositories with an extracted tree</th>
-                    <td>3,676</td>
-                            </tr>
-                        </tbody>
-                    </table>
-            <p>Documents and files</p>
-            <table class="data coverage-counts" style="table-layout:fixed;width:100%">
-            <colgroup>
-                <col style="width:75%">
-                <col style="width:25%">
-            </colgroup>
-                        <tbody>
-                            <tr>
-                    <th scope="row">Shape documents</th>
-                    <td>50,872</td>
-                            </tr>
-                            <tr>
-                    <th scope="row">Trees with shape documents</th>
-                    <td>3,657</td>
-                            </tr>
-                            <tr>
-                    <th scope="row">Distinct document contents</th>
-                    <td>33,440</td>
-                            </tr>
-                <tr>
-                    <th scope="row">Inventory files</th>
-                    <td>550,508</td>
-                            </tr>
-                            <tr>
-                    <th scope="row">Parsed files</th>
-                    <td>548,135</td>
-                            </tr>
-                        </tbody>
-                    </table>
-</section>
+                <colgroup>
+                    <col style="width:75%">
+                    <col style="width:25%">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th scope="row">Extracted Git trees</th>
+                        <td>3,658</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Shape documents</th>
+                        <td>50,872</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Parsed files</th>
+                        <td>548,135</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
         <section id="shape-distribution" typeof="bibo:Chapter" resource="#shape-distribution" property="bibo:hasPart">
             <h3 id="x1.2-shape-distribution" resource="#x1.2-shape-distribution"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.2 </span>Shape Distribution</span>
