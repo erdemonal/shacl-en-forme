@@ -73,11 +73,15 @@
 
 :AlignmentAnalysis a rdfs:Class ;
     rdfs:label "Alignment analysis"@en ;
-    rdfs:comment "IRI correspondence between SHACL shapes and ontology terms."@en .
+    rdfs:comment "Correspondence between SHACL shape references and ontology terms in the same Git tree."@en .
 
 :AlignmentRate a rdfs:Class ;
     rdfs:label "Alignment rate"@en ;
     rdfs:comment "Micro-averaged alignment rate."@en .
+
+:VocabularyUsageAnalysis a rdfs:Class ;
+    rdfs:label "Vocabulary usage analysis"@en ;
+    rdfs:comment "Git tree prevalence of SHACL references to selected public vocabularies."@en .
 
 :ConsistencyAnalysis a rdfs:Class ;
     rdfs:label "Consistency analysis"@en ;
@@ -116,6 +120,7 @@
 :has_repository_view a rdf:Property ; rdfs:range :RepositoryView .
 :has_concentration a rdf:Property ; rdfs:range :ConcentrationAnalysis .
 :has_alignment a rdf:Property ; rdfs:range :AlignmentAnalysis .
+:has_vocabulary_usage a rdf:Property ; rdfs:range :VocabularyUsageAnalysis .
 :has_consistency a rdf:Property ; rdfs:range :ConsistencyAnalysis .
 :has_functional_usage a rdf:Property ; rdfs:range :FunctionalUsageAnalysis .
 :has_purpose_classification a rdf:Property ; rdfs:range :PurposeClassificationAnalysis .
@@ -276,7 +281,18 @@
 :counts_partial a rdf:Property ; rdfs:range xsd:boolean .
 :enumeration_complete a rdf:Property ; rdfs:range xsd:boolean .
 
-:both_stream_trees a rdf:Property ; rdfs:range xsd:integer .
+:both_stream_trees a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of extracted Git trees containing both SHACL shapes and ontology terms."@en .
+
+:trees_with_matching_ontology_terms a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of both-stream Git trees with at least one SHACL class or property IRI matching an ontology declaration in the same tree."@en .
+
+:trees_without_matching_ontology_terms a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of both-stream Git trees with no SHACL class or property IRI matching an ontology declaration in the same tree."@en .
+
 :shapes_without_ontology_terms a rdf:Property ; rdfs:range xsd:integer .
 :ontology_without_shapes a rdf:Property ; rdfs:range xsd:integer .
 

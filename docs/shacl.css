@@ -302,6 +302,13 @@ h6.usage {
   margin: 1em 0 0.3em 0;
 }
 
+p.research-question {
+  font-size: 100%;
+  font-weight: normal;
+  font-style: italic;
+  margin: 0.25em 0 1em 0;
+}
+
 #fig-functional-usage img {
   width: 708px; /* 488 × 1.45 */
   max-width: 100%;
@@ -309,6 +316,11 @@ h6.usage {
 }
 #fig-core-constraints img {
   width: 706px; /* 487 × 1.45 */
+  max-width: 100%;
+  height: auto;
+}
+#fig-ontology-usage img {
+  width: 682px; /* 470 × 1.45 */
   max-width: 100%;
   height: auto;
 }

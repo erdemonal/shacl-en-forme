@@ -34,6 +34,7 @@
     "TreeConcentrationRecord": "sef:TreeConcentrationRecord",
     "AlignmentAnalysis": "sef:AlignmentAnalysis",
     "AlignmentRate": "sef:AlignmentRate",
+    "VocabularyUsageAnalysis": "sef:VocabularyUsageAnalysis",
     "ConsistencyAnalysis": "sef:ConsistencyAnalysis",
     "FindingCount": "sef:FindingCount",
     "ClassificationResult": "sef:ClassificationResult",
@@ -73,6 +74,9 @@
     },
     "has_alignment": {
       "@id": "sef:has_alignment"
+    },
+    "has_vocabulary_usage": {
+      "@id": "sef:has_vocabulary_usage"
     },
     "has_consistency": {
       "@id": "sef:has_consistency"
@@ -349,6 +353,14 @@
       "@id": "sef:both_stream_trees",
       "@type": "xsd:integer"
     },
+    "trees_with_matching_ontology_terms": {
+      "@id": "sef:trees_with_matching_ontology_terms",
+      "@type": "xsd:integer"
+    },
+    "trees_without_matching_ontology_terms": {
+      "@id": "sef:trees_without_matching_ontology_terms",
+      "@type": "xsd:integer"
+    },
     "shapes_without_ontology_terms": {
       "@id": "sef:shapes_without_ontology_terms",
       "@type": "xsd:integer"
@@ -460,12 +472,12 @@
       },
       "isBasedOn": "https://www.w3.org/TR/2017/REC-shacl-20170720/",
       "lower_bound": true,
-      "intended_unique_verified_trees": 3659,
+      "intended_unique_verified_trees": 3658,
       "extracted_unique_trees": 3658,
-      "unavailable_distinct_git_trees": 1,
+      "unavailable_distinct_git_trees": 0,
       "has_coverage": {
         "@type": "DatasetCoverage",
-        "intended_unique_verified_trees": 3659,
+        "intended_unique_verified_trees": 3658,
         "extracted_unique_trees": 3658,
         "inventory_files": 550508,
         "parsed_files": 548135,
@@ -473,7 +485,7 @@
         "sniff_rejected_files": 2069,
         "parse_error_files": 263,
         "shape_documents": 50872,
-        "trees_with_shape_documents": 3657,
+        "trees_with_shape_documents": 3658,
         "content_sha256_groups": 33440,
         "parsed_file_rows": 1386769,
         "parsed_shape_rows": 4019975,
@@ -1280,8 +1292,8 @@
       "has_repository_view": {
         "@type": "RepositoryView",
         "verified_repositories": 3677,
-        "repositories_whose_tree_was_extracted": 3676,
-        "repositories_whose_tree_was_not_extracted": 1
+        "repositories_whose_tree_was_extracted": 3677,
+        "repositories_whose_tree_was_not_extracted": 0
       },
       "has_concentration": {
         "@type": "ConcentrationAnalysis",
@@ -1553,54 +1565,14 @@
       },
       "has_alignment": {
         "@type": "AlignmentAnalysis",
-        "counting_unit": "sef:distinct_iri_within_tree",
         "denominator_extracted_trees": 3658,
         "both_stream_trees": 2805,
-        "shapes_without_ontology_terms": 852,
-        "ontology_without_shapes": 0,
-        "neither_stream_trees": 1,
-        "alignment_rate": [
-          {
-            "@type": "AlignmentRate",
-            "alignment_measure": "sef:ontology_to_shacl_project_classes",
-            "numerator": 114250,
-            "denominator": 927141,
-            "micro_rate": {
-              "@value": "0.123228",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "AlignmentRate",
-            "alignment_measure": "sef:ontology_to_shacl_project_properties",
-            "numerator": 184738,
-            "denominator": 761931,
-            "micro_rate": {
-              "@value": "0.24246",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "AlignmentRate",
-            "alignment_measure": "sef:shacl_to_ontology_class_refs",
-            "numerator": 124737,
-            "denominator": 171932,
-            "micro_rate": {
-              "@value": "0.725502",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "AlignmentRate",
-            "alignment_measure": "sef:shacl_to_ontology_property_refs",
-            "numerator": 208379,
-            "denominator": 342394,
-            "micro_rate": {
-              "@value": "0.608594",
-              "@type": "xsd:decimal"
-            }
-          }
-        ]
+        "trees_with_matching_ontology_terms": 2304,
+        "trees_without_matching_ontology_terms": 501
+      },
+      "has_vocabulary_usage": {
+        "@type": "VocabularyUsageAnalysis",
+        "trees_with_shape_documents": 3658
       },
       "has_consistency": {
         "@type": "ConsistencyAnalysis",
@@ -1624,7 +1596,7 @@
       "has_functional_usage": {
         "@type": "FunctionalUsageAnalysis",
         "shape_documents": 50872,
-        "trees_with_shape_documents": 3657,
+        "trees_with_shape_documents": 3658,
         "content_sha256_groups": 33440,
         "multi_label": true,
         "classification_result": [
@@ -1655,9 +1627,9 @@
             "category": "sef:test_fixture_conformance",
             "counting_unit": "sef:unit_git_tree",
             "n_with_label": 667,
-            "denominator": 3657,
+            "denominator": 3658,
             "rate": {
-              "@value": "0.1824",
+              "@value": "0.1823",
               "@type": "xsd:decimal"
             }
           },
@@ -1688,9 +1660,9 @@
             "category": "sef:schema_structural",
             "counting_unit": "sef:unit_git_tree",
             "n_with_label": 3275,
-            "denominator": 3657,
+            "denominator": 3658,
             "rate": {
-              "@value": "0.8955",
+              "@value": "0.8953",
               "@type": "xsd:decimal"
             }
           },
@@ -1721,9 +1693,9 @@
             "category": "sef:rules_sparql_extension",
             "counting_unit": "sef:unit_git_tree",
             "n_with_label": 1129,
-            "denominator": 3657,
+            "denominator": 3658,
             "rate": {
-              "@value": "0.3087",
+              "@value": "0.3086",
               "@type": "xsd:decimal"
             }
           },
@@ -1754,7 +1726,7 @@
             "category": "sef:generated_transform_workflow",
             "counting_unit": "sef:unit_git_tree",
             "n_with_label": 37,
-            "denominator": 3657,
+            "denominator": 3658,
             "rate": {
               "@value": "0.0101",
               "@type": "xsd:decimal"
@@ -1787,7 +1759,7 @@
             "category": "sef:application_business",
             "counting_unit": "sef:unit_git_tree",
             "n_with_label": 10,
-            "denominator": 3657,
+            "denominator": 3658,
             "rate": {
               "@value": "0.0027",
               "@type": "xsd:decimal"
@@ -1820,7 +1792,7 @@
             "category": "sef:ontology_vocabulary_spec",
             "counting_unit": "sef:unit_git_tree",
             "n_with_label": 101,
-            "denominator": 3657,
+            "denominator": 3658,
             "rate": {
               "@value": "0.0276",
               "@type": "xsd:decimal"
@@ -1854,7 +1826,7 @@
         "@type": "PurposeClassificationAnalysis",
         "shape_documents": 50872,
         "content_sha256_groups": 33440,
-        "git_trees": 3657,
+        "git_trees": 3658,
         "donor_families": 3646,
         "classification_result": [
           {
@@ -1907,7 +1879,7 @@
         "@type": "DomainClassificationAnalysis",
         "shape_documents": 50872,
         "content_sha256_groups": 33440,
-        "git_trees": 3657,
+        "git_trees": 3658,
         "donor_families": 3646,
         "classification_result": [
           {

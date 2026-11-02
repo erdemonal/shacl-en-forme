@@ -288,7 +288,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 <li class="tocline"><a href="#usage-in-practice"><span class="secno">1 </span>Usage in Practice</a>
 <ol class="toc"><li class="tocline"><a href="#dataset-and-coverage"><span class="secno">1.1 </span>Dataset and Coverage</a></li>
 <li class="tocline"><a href="#shape-distribution"><span class="secno">1.2 </span>Shape Distribution</a></li>
-<li class="tocline"><a href="#ontology-alignment"><span class="secno">1.3 </span>Ontology Alignment</a></li>
+<li class="tocline"><a href="#ontology-alignment"><span class="secno">1.3 </span>SHACL and Ontology Usage</a>
+<ol class="toc"><li class="tocline"><a href="#shacl-references-to-ontology-terms"><span class="secno">1.3.1 </span>SHACL References to Ontology Terms</a></li>
+<li class="tocline"><a href="#referenced-vocabularies"><span class="secno">1.3.2 </span>Referenced Vocabularies</a></li></ol></li>
 <li class="tocline"><a href="#constraint-consistency"><span class="secno">1.4 </span>Constraint Consistency</a></li>
 <li class="tocline"><a href="#usage-contexts"><span class="secno">1.5 </span>Usage Contexts</a>
 <ol class="toc"><li class="tocline"><a href="#functional-usage"><span class="secno">1.5.1 </span>Functional Usage</a></li>
@@ -314,7 +316,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <section class="introductory" typeof="bibo:Chapter" resource="#document-outline" property="bibo:hasPart">
         <h2 id="document-outline" resource="#document-outline"><span property="xhv:role" resource="xhv:heading">Document Outline</span></h2>
         <p>
-            Section 1 covers dataset coverage, shape distribution, ontology alignment, constraint consistency, and usage contexts.
+            Section 1 covers dataset coverage, shape distribution, SHACL and ontology usage, constraint consistency, and usage contexts.
         </p>
         <p>
             Sections 2 and 3 provide occurrence counts and Git tree prevalence for SHACL shapes, targets, property paths, and Core constraint parameters.
@@ -347,11 +349,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <section id="dataset-and-coverage" typeof="bibo:Chapter" resource="#dataset-and-coverage" property="bibo:hasPart">
             <h3 id="x1.1-dataset-and-coverage" resource="#x1.1-dataset-and-coverage"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.1 </span>Dataset and Coverage</span>
             </h3>
+            <p class="research-question">How many verified SHACL repositories and distinct Git trees are included in the study?</p>
             <p>
                 A Git tree represents a snapshot of repository contents. Multiple GitHub repositories may reference the same tree. The analysis uses distinct Git trees to avoid counting identical repository snapshots more than once.
             </p>
             <p>
-                A repository was considered verified if at least one parsed RDF graph contained a SHACL Core shape declaration, target or constraint predicate, or a structurally attached SHACL-SPARQL constraint. Verified repositories were grouped by Git tree for extraction and analysis. The analysis covers 3,677 verified repositories corresponding to 3,659 distinct Git trees, of which 3,658 were successfully extracted.
+                A repository was considered verified if at least one parsed RDF graph contained a SHACL Core shape declaration, target or constraint predicate, or a structurally attached SHACL-SPARQL constraint. Verified repositories were grouped by Git tree for extraction and analysis. The analysis includes 3,657 Git trees selected from 3,677 verified repositories.
             </p>
             <p>
                 Fork repositories were excluded from the analysis. Git trees were included only if they were referenced by at least one non-fork repository. Repository counts are separate from the occurrence counts calculated from the extracted Git trees.
@@ -366,8 +369,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 </colgroup>
                 <tbody>
                     <tr>
-                        <th scope="row">Extracted Git trees</th>
-                        <td>3,658</td>
+                        <th scope="row">Analyzed Git trees</th>
+                        <td>3,657</td>
                     </tr>
                     <tr>
                         <th scope="row">Shape documents</th>
@@ -384,8 +387,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <section id="shape-distribution" typeof="bibo:Chapter" resource="#shape-distribution" property="bibo:hasPart">
             <h3 id="x1.2-shape-distribution" resource="#x1.2-shape-distribution"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.2 </span>Shape Distribution</span>
             </h3>
+            <p class="research-question">How are SHACL shapes distributed across Git trees?</p>
             <p>
-                The analysis identified 1,183,518 distinct SHACL shapes across 3,658 Git trees.
+                The analysis identified 1,183,518 distinct SHACL shapes across 3,657 Git trees.
             </p>
                     <table class="data">
             <thead>
@@ -420,57 +424,56 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </section>
 
         <section id="ontology-alignment" typeof="bibo:Chapter" resource="#ontology-alignment" property="bibo:hasPart">
-            <h3 id="x1.3-ontology-alignment" resource="#x1.3-ontology-alignment"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.3 </span>Ontology Alignment</span>
+            <h3 id="x1.3-ontology-alignment" resource="#x1.3-ontology-alignment"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.3 </span>SHACL and Ontology Usage</span>
             </h3>
-            <p>
-                Ontology alignment is assessed using four measurements that compare ontology declarations with the class and property IRIs referenced by SHACL shapes in the same Git tree.
-            </p>
-            <p>
-                The first two measurements calculate the proportion of declared ontology classes and properties referenced by SHACL, excluding terms from RDF, RDFS, OWL, XSD, SHACL, Dublin Core, FOAF, and the XML namespace. The other two calculate the proportion of SHACL class and property references that have ontology declarations in the same tree.
-            </p>
-            <p>
-                The comparison uses exact IRI matches, counting each IRI once per tree. An IRI match does not imply semantic equivalence. An unmatched reference is not considered an undefined term.
-            </p>
-            <p>
-                The analysis covers 3,658 extracted Git trees. A total of 2,805 trees contain both SHACL shapes and ontology terms, 852 contain only SHACL shapes, and one contains neither. Each rate is calculated by dividing the total number of matching IRIs by the corresponding total across the 2,805 trees.
-            </p>
+
+            <section id="shacl-references-to-ontology-terms" typeof="bibo:Chapter" resource="#shacl-references-to-ontology-terms" property="bibo:hasPart">
+                <h4 id="x1.3.1-shacl-references-to-ontology-terms" resource="#x1.3.1-shacl-references-to-ontology-terms"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.3.1 </span>SHACL References to Ontology Terms</span>
+                </h4>
+                <p class="research-question">How often do SHACL shapes reference ontology terms declared in the same Git tree?</p>
+                <p>
+                    The analysis compares class and property IRIs referenced by SHACL shapes with ontology declarations in the same Git tree.
+                </p>
                 <table class="data">
                     <thead>
                         <tr>
-                    <th>Measurement</th>
-                    <th>Numerator</th>
-                    <th>Denominator</th>
-                    <th>Micro rate</th>
+                            <th>Result</th>
+                            <th>Git trees</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                    <th scope="row">Ontology classes to SHACL</th>
-                    <td>114,250</td>
-                    <td>927,141</td>
-                    <td>12.32%</td>
+                            <th scope="row">Both SHACL shapes and ontology terms</th>
+                            <td>2,805</td>
                         </tr>
                         <tr>
-                    <th scope="row">Ontology properties to SHACL</th>
-                    <td>184,738</td>
-                    <td>761,931</td>
-                    <td>24.25%</td>
+                            <th scope="row">At least one matching ontology term</th>
+                            <td>2,304</td>
                         </tr>
                         <tr>
-                    <th scope="row">SHACL class references to ontology</th>
-                    <td>124,737</td>
-                    <td>171,932</td>
-                    <td>72.55%</td>
-                        </tr>
-                        <tr>
-                    <th scope="row">SHACL property references to ontology</th>
-                    <td>208,379</td>
-                    <td>342,394</td>
-                    <td>60.86%</td>
+                            <th scope="row">No matching ontology terms detected</th>
+                            <td>501</td>
                         </tr>
                     </tbody>
                 </table>
             </section>
+
+            <section id="referenced-vocabularies" typeof="bibo:Chapter" resource="#referenced-vocabularies" property="bibo:hasPart">
+                <h4 id="x1.3.2-referenced-vocabularies" resource="#x1.3.2-referenced-vocabularies"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.3.2 </span>Referenced Vocabularies</span>
+                </h4>
+                <p class="research-question">Which vocabularies are referenced by SHACL shapes?</p>
+                <p>
+                    The analysis counts Git trees containing SHACL references to class or property IRIs from selected public vocabularies. The comparison covers 3,658 Git trees containing SHACL shapes.
+                </p>
+                <figure id="fig-ontology-usage">
+                    <img src="images/ontology-usage.svg" alt="Share of Git trees with SHACL references to selected public vocabularies">
+                    <figcaption>Figure 3. Share of Git trees with SHACL references to selected public vocabularies.</figcaption>
+                </figure>
+                <p>
+                    The presence of widely used RDF vocabularies near the top of the figure is expected.
+                </p>
+            </section>
+        </section>
 
         <section id="constraint-consistency" typeof="bibo:Chapter" resource="#constraint-consistency" property="bibo:hasPart">
             <h3 id="x1.4-constraint-consistency" resource="#x1.4-constraint-consistency"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.4 </span>Constraint Consistency</span>
@@ -512,7 +515,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 Shape documents are classified by functional usage, document purpose, and application domain using information from the collected files. A document may belong to multiple categories.
                 </p>
                 <p>
-                The analysis covers 50,872 shape documents with 33,440 distinct contents across 3,657 Git trees.
+                The analysis covers 50,872 shape documents with 33,440 distinct contents across 3,658 Git trees.
             </p>
 
             <section id="functional-usage" typeof="bibo:Chapter" resource="#functional-usage" property="bibo:hasPart">
@@ -545,19 +548,19 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     <th scope="row">Test fixtures and conformance</th>
                     <td>19,477<br><span style="font-size:smaller">38.29%</span></td>
                     <td>9,042<br><span style="font-size:smaller">27.04%</span></td>
-                    <td>667<br><span style="font-size:smaller">18.24%</span></td>
+                    <td>667<br><span style="font-size:smaller">18.23%</span></td>
                         </tr>
                         <tr>
                     <th scope="row">Structural schemas</th>
                     <td>25,797<br><span style="font-size:smaller">50.71%</span></td>
                     <td>18,982<br><span style="font-size:smaller">56.76%</span></td>
-                    <td>3,275<br><span style="font-size:smaller">89.55%</span></td>
+                    <td>3,275<br><span style="font-size:smaller">89.53%</span></td>
                         </tr>
                 <tr>
                     <th scope="row">SPARQL rules and extensions</th>
                     <td>9,015<br><span style="font-size:smaller">17.72%</span></td>
                     <td>6,640<br><span style="font-size:smaller">19.86%</span></td>
-                    <td>1,129<br><span style="font-size:smaller">30.87%</span></td>
+                    <td>1,129<br><span style="font-size:smaller">30.86%</span></td>
                         </tr>
                         <tr>
                     <th scope="row">Generated or transformed shapes</th>
