@@ -349,12 +349,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <section id="dataset-and-coverage" typeof="bibo:Chapter" resource="#dataset-and-coverage" property="bibo:hasPart">
             <h3 id="x1.1-dataset-and-coverage" resource="#x1.1-dataset-and-coverage"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.1 </span>Dataset and Coverage</span>
             </h3>
-            <p class="research-question">How many verified SHACL repositories and distinct Git trees are included in the study?</p>
+            <h4 class="research-question">How many verified SHACL repositories and distinct Git trees are included in the study?</h4>
             <p>
                 A Git tree represents a snapshot of repository contents. Multiple GitHub repositories may reference the same tree. The analysis uses distinct Git trees to avoid counting identical repository snapshots more than once.
             </p>
             <p>
-                A repository was considered verified if at least one parsed RDF graph contained a SHACL Core shape declaration, target or constraint predicate, or a structurally attached SHACL-SPARQL constraint. Verified repositories were grouped by Git tree for extraction and analysis. The analysis includes 3,657 Git trees selected from 3,677 verified repositories.
+                A repository was considered verified if at least one parsed RDF graph contained a SHACL Core shape declaration, target or constraint predicate, or a structurally attached SHACL-SPARQL constraint. Verified repositories were grouped by Git tree for extraction and analysis. The 3,677 verified non-fork repositories corresponded to 3,659 distinct Git trees after deduplication. The final analysis covers 3,657 Git trees with usable extracted content.
             </p>
             <p>
                 Fork repositories were excluded from the analysis. Git trees were included only if they were referenced by at least one non-fork repository. Repository counts are separate from the occurrence counts calculated from the extracted Git trees.
@@ -387,7 +387,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <section id="shape-distribution" typeof="bibo:Chapter" resource="#shape-distribution" property="bibo:hasPart">
             <h3 id="x1.2-shape-distribution" resource="#x1.2-shape-distribution"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.2 </span>Shape Distribution</span>
             </h3>
-            <p class="research-question">How are SHACL shapes distributed across Git trees?</p>
+            <h4 class="research-question">How are SHACL shapes distributed across Git trees?</h4>
             <p>
                 The analysis identified 1,183,518 distinct SHACL shapes across 3,657 Git trees.
             </p>
@@ -430,7 +430,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             <section id="shacl-references-to-ontology-terms" typeof="bibo:Chapter" resource="#shacl-references-to-ontology-terms" property="bibo:hasPart">
                 <h4 id="x1.3.1-shacl-references-to-ontology-terms" resource="#x1.3.1-shacl-references-to-ontology-terms"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.3.1 </span>SHACL References to Ontology Terms</span>
                 </h4>
-                <p class="research-question">How often do SHACL shapes reference ontology terms declared in the same Git tree?</p>
+                <h5 class="research-question">How often do SHACL shapes reference ontology terms declared in the same Git tree?</h5>
                 <p>
                     The analysis compares class and property IRIs referenced by SHACL shapes with ontology declarations in the same Git tree.
                 </p>
@@ -461,13 +461,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             <section id="referenced-vocabularies" typeof="bibo:Chapter" resource="#referenced-vocabularies" property="bibo:hasPart">
                 <h4 id="x1.3.2-referenced-vocabularies" resource="#x1.3.2-referenced-vocabularies"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.3.2 </span>Referenced Vocabularies</span>
                 </h4>
-                <p class="research-question">Which vocabularies are referenced by SHACL shapes?</p>
+                <h5 class="research-question">Which vocabularies are referenced by SHACL shapes?</h5>
                 <p>
                     The analysis counts Git trees containing SHACL references to class or property IRIs from selected public vocabularies. The comparison covers 3,658 Git trees containing SHACL shapes.
                 </p>
                 <figure id="fig-ontology-usage">
                     <img src="images/ontology-usage.svg" alt="Share of Git trees with SHACL references to selected public vocabularies">
-                    <figcaption>Figure 3. Share of Git trees with SHACL references to selected public vocabularies.</figcaption>
+                    <figcaption>Figure 1. Share of Git trees with SHACL references to selected public vocabularies.</figcaption>
                 </figure>
                 <p>
                     The presence of widely used RDF vocabularies near the top of the figure is expected.
@@ -532,7 +532,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 </p>
                 <figure id="fig-functional-usage">
                     <img src="images/functional-usage.svg" alt="Functional usage prevalence across SHACL documents and Git trees">
-                    <figcaption>Figure 1. Functional usage prevalence across SHACL documents and Git trees.</figcaption>
+                    <figcaption>Figure 2. Functional usage prevalence across SHACL documents and Git trees.</figcaption>
                 </figure>
                 <table class="data">
             <thead>
@@ -923,7 +923,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </p>
         <figure id="fig-core-constraints">
             <img src="images/core-constraints.svg" alt="Occurrence counts and Git tree prevalence of the ten SHACL Core constraint parameters with the highest occurrence counts">
-            <figcaption>Figure 2. Occurrence counts and Git tree prevalence of the ten SHACL Core constraint parameters with the highest occurrence counts.</figcaption>
+            <figcaption>Figure 3. Occurrence counts and Git tree prevalence of the ten SHACL Core constraint parameters with the highest occurrence counts.</figcaption>
         </figure>
 
         <section id="core-components-value-type" typeof="bibo:Chapter" resource="#core-components-value-type" property="bibo:hasPart">

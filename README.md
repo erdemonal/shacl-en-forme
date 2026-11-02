@@ -6,7 +6,7 @@ SHACL en Forme presents statistics on the use of the Shapes Constraint Language 
 
 ## Dataset and Methodology
 
-Public GitHub repositories were identified through code search and repository search. The search identified 15,075 candidate repositories, of which 7,569 contained qualifying SHACL content. Fork repositories were excluded, leaving 3,677 verified repositories. Repositories with identical Git tree SHAs were counted once, resulting in 3,658 extracted Git trees.
+Public GitHub repositories were identified through code search and repository search. The search identified 15,075 candidate repositories, of which 7,569 contained qualifying SHACL content. Fork repositories were excluded, leaving 3,677 verified repositories. Repositories with identical Git tree SHAs were counted once, resulting in 3,659 distinct Git trees. The final analysis covers 3,657 Git trees with usable extracted content.
 
 RDF files were retrieved from the recorded repository revisions and parsed using RDFLib. Among 550,508 files identified for RDF processing, 548,135 were successfully parsed. The analysis identified 50,872 documents containing SHACL shapes, representing 33,440 distinct document contents.
 
