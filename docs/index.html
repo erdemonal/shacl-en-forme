@@ -290,12 +290,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 <li class="tocline"><a href="#shape-distribution"><span class="secno">1.2 </span>Shape Distribution</a></li>
 <li class="tocline"><a href="#ontology-alignment"><span class="secno">1.3 </span>SHACL and Ontology Usage</a>
 <ol class="toc"><li class="tocline"><a href="#shacl-references-to-ontology-terms"><span class="secno">1.3.1 </span>SHACL References to Ontology Terms</a></li>
-<li class="tocline"><a href="#referenced-vocabularies"><span class="secno">1.3.2 </span>Referenced Vocabularies</a></li></ol></li>
+<li class="tocline"><a href="#referenced-vocabularies"><span class="secno">1.3.2 </span>Referenced Vocabularies</a></li>
+<li class="tocline"><a href="#owl-and-shacl-constraints"><span class="secno">1.3.3 </span>OWL and SHACL Constraints</a></li></ol></li>
 <li class="tocline"><a href="#constraint-consistency"><span class="secno">1.4 </span>Constraint Consistency</a></li>
 <li class="tocline"><a href="#usage-contexts"><span class="secno">1.5 </span>Usage Contexts</a>
-<ol class="toc"><li class="tocline"><a href="#functional-usage"><span class="secno">1.5.1 </span>Functional Usage</a></li>
-<li class="tocline"><a href="#document-purpose"><span class="secno">1.5.2 </span>Document Purpose</a></li>
-<li class="tocline"><a href="#application-domains"><span class="secno">1.5.3 </span>Application Domains</a></li></ol></li></ol></li>
+<ol class="toc"><li class="tocline"><a href="#document-characteristics"><span class="secno">1.5.1 </span>Document Characteristics</a></li>
+<li class="tocline"><a href="#application-domains"><span class="secno">1.5.2 </span>Application Domains</a></li></ol></li></ol></li>
 <li class="tocline"><a href="#constraints-section"><span class="secno">2 </span>Shapes and Constraints</a>
 <ol class="toc"><li class="tocline"><a href="#shapes"><span class="secno">2.1 </span>Shapes</a></li>
 <li class="tocline"><a href="#node-shapes"><span class="secno">2.2 </span>Node Shapes</a></li>
@@ -334,7 +334,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             SHACL en Forme presents statistics on how the Shapes Constraint Language (SHACL) is used in public GitHub repositories. It is an independent research resource and is not endorsed by the W3C.
         </p>
         <p>
-            The analysis covers SHACL shapes, targets, property paths, Core constraint parameters, and SHACL-SPARQL. It provides occurrence counts and Git tree prevalence using data collected from verified GitHub repositories, excluding forks.
+            The analysis covers SHACL shapes, targets, property paths, Core constraint parameters, and SHACL-SPARQL. It provides occurrence counts and Git tree prevalence using data collected from verified GitHub repositories, excluding forks. The dataset reflects the state of the verified GitHub repositories as of 11 October 2026.
         </p>
         <p>
             SHACL terminology and parameter names identify the features analyzed in this resource. Definitions, syntax rules, and validation procedures are available in the <a href="https://www.w3.org/TR/shacl/">SHACL 1.0 Recommendation</a>.
@@ -349,12 +349,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <section id="dataset-and-coverage" typeof="bibo:Chapter" resource="#dataset-and-coverage" property="bibo:hasPart">
             <h3 id="x1.1-dataset-and-coverage" resource="#x1.1-dataset-and-coverage"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.1 </span>Dataset and Coverage</span>
             </h3>
-            <h4 class="research-question">How many repositories and distinct Git trees are included in the study?</h4>
+            <h4 class="research-question">How many repositories and Git trees are included in the study?</h4>
             <p>
                 A Git tree represents a snapshot of repository contents. Multiple GitHub repositories may reference the same tree. The analysis uses distinct Git trees to avoid counting identical repository snapshots more than once.
             </p>
             <p>
-                A repository was considered verified if at least one parsed RDF graph contained a SHACL Core shape declaration, target or constraint predicate, or a structurally attached SHACL-SPARQL constraint. After excluding forks, 3,677 verified repositories remained. These repositories correspond to 3,659 distinct Git trees. RDF extraction succeeded for 3,658 of those trees. Of the extracted trees, 3,657 contain SHACL shapes.
+                A repository was considered verified if at least one parsed RDF graph contained a SHACL Core shape declaration, target or constraint predicate, or a structurally attached SHACL-SPARQL constraint. After excluding forks, 3,677 verified repositories remained. These repositories correspond to 3,659 Git trees. RDF extraction succeeded for 3,658 of those trees. Of the extracted trees, 3,657 contain SHACL shapes.
             </p>
             <p>
                 Among 550,508 files identified for RDF processing, 548,135 were successfully parsed.
@@ -426,6 +426,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     </tr>
                 </tbody>
             </table>
+            <p>
+                SHACL shapes are highly concentrated in a small number of Git trees, with the top 1% containing 58.34% of all shapes.
+            </p>
         </section>
 
         <section id="ontology-alignment" typeof="bibo:Chapter" resource="#ontology-alignment" property="bibo:hasPart">
@@ -475,6 +478,24 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     <figcaption>Figure 1. Share of Git trees referencing the 14 most frequent public RDF vocabularies.</figcaption>
                 </figure>
             </section>
+
+            <section id="owl-and-shacl-constraints" typeof="bibo:Chapter" resource="#owl-and-shacl-constraints" property="bibo:hasPart">
+                <h4 id="x1.3.3-owl-and-shacl-constraints" resource="#x1.3.3-owl-and-shacl-constraints"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.3.3 </span>OWL and SHACL Constraints</span>
+                </h4>
+                <h5 class="research-question">How do SHACL constraints relate to ontology restrictions?</h5>
+                <p>
+                    The analysis compares ontology restrictions with SHACL constraints on property cardinality and value types. Comparisons use shared property IRIs and, for cardinality and OWL value restrictions, matching class IRIs.
+                </p>
+                <p>
+                    Property range comparisons covered 1,708 Git trees. In 90,296 distinct tree–property pairs, <code>rdfs:range</code> and <code>sh:class</code> or <code>sh:datatype</code> referenced identical IRIs.
+                </p>
+                <p>
+                    OWL value restrictions were compared with <code>sh:class</code> and <code>sh:datatype</code> in 323 Git trees, using matching class IRIs. Identical value type IRIs were found in 40,758 <code>owl:allValuesFrom</code> comparisons and 6,852 <code>owl:someValuesFrom</code> comparisons.
+                </p>
+                <p>
+                    Cardinality comparisons covered 401 Git trees, using OWL cardinality restrictions and <code>sh:minCount</code> or <code>sh:maxCount</code>. At the tree–property level, identical minimum bounds were found in 6,853 pairs and identical maximum bounds in 24,460 pairs.
+                </p>
+            </section>
         </section>
 
         <section id="constraint-consistency" typeof="bibo:Chapter" resource="#constraint-consistency" property="bibo:hasPart">
@@ -482,7 +503,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             </h3>
             <h4 class="research-question">How common are conflicting SHACL constraints?</h4>
             <p>
-                The analysis checks 27 types of SHACL Core constraint conflicts. For example, a DCAT profile requires a <code>foaf:name</code> value to be both an <code>xsd:string</code> literal and a blank node. These conditions cannot be satisfied together.
+                The analysis checks for conflicting combinations of SHACL Core constraints. For example, a DCAT profile requires a <code>foaf:name</code> value to be both an <code>xsd:string</code> literal and a blank node. These requirements cannot be satisfied simultaneously.
             </p>
             <p>
                 Constraints were checked separately for each RDF source document.
@@ -518,246 +539,33 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             <h3 id="x1.5-usage-contexts" resource="#x1.5-usage-contexts"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.5 </span>Usage Contexts</span>
             </h3>
             <p>
-                Shape documents are classified by functional usage, document purpose, and application domain using information from the collected files. A document may belong to multiple categories.
-                </p>
-                <p>
-                The analysis covers 50,872 shape documents with 33,440 distinct contents across 3,658 Git trees.
+                The analysis describes SHACL shape documents through their file organization and references to application-domain vocabularies.
             </p>
 
-            <section id="functional-usage" typeof="bibo:Chapter" resource="#functional-usage" property="bibo:hasPart">
-                <h4 id="x1.5.1-functional-usage" resource="#x1.5.1-functional-usage"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.5.1 </span>Functional Usage</span>
+            <section id="document-characteristics" typeof="bibo:Chapter" resource="#document-characteristics" property="bibo:hasPart">
+                <h4 id="x1.5.1-document-characteristics" resource="#x1.5.1-document-characteristics"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.5.1 </span>Document Characteristics</span>
                 </h4>
+                <h5 class="research-question">What do file organization and naming patterns reveal about SHACL shape documents?</h5>
                 <p>
-                    Functional usage is classified using SHACL constraint predicates, document paths, and packaging information. Constraint patterns are used to identify structural schemas and SPARQL extensions. File paths and names are used to identify test fixtures and generated shapes.
+                    File paths and names contain test or example references in 19,477 documents and generation-related terms in 338 documents. Ontology and application profile indicators were found in 1,431 documents. These categories may overlap.
                 </p>
-                <p>
-                    Application use requires relational constraints associated with a specific application. Ontology and vocabulary specifications require ontology terms and vocabulary or profile packaging.
-                </p>
-                <p>
-                    A document may belong to multiple categories. Test fixtures and generated artifacts without a functional classification are counted as unclassified test or generated documents. Documents that do not meet the criteria for any functional or provenance category are counted as unknown labels only.
-                </p>
-                <figure id="fig-functional-usage">
-                    <img src="images/functional-usage.svg" alt="Functional usage prevalence across SHACL documents and Git trees">
-                    <figcaption>Figure 2. Functional usage prevalence across SHACL documents and Git trees.</figcaption>
-                </figure>
-                <table class="data">
-            <thead>
-                <tr>
-                    <th>Category</th>
-                    <th>Documents</th>
-                    <th>Contents</th>
-                    <th>Trees</th>
-                        </tr>
-            </thead>
-                    <tbody>
-                        <tr>
-                    <th scope="row">Test fixtures and conformance</th>
-                    <td>19,477<br><span style="font-size:smaller">38.29%</span></td>
-                    <td>9,042<br><span style="font-size:smaller">27.04%</span></td>
-                    <td>667<br><span style="font-size:smaller">18.23%</span></td>
-                        </tr>
-                        <tr>
-                    <th scope="row">Structural schemas</th>
-                    <td>25,797<br><span style="font-size:smaller">50.71%</span></td>
-                    <td>18,982<br><span style="font-size:smaller">56.76%</span></td>
-                    <td>3,275<br><span style="font-size:smaller">89.53%</span></td>
-                        </tr>
-                <tr>
-                    <th scope="row">SPARQL rules and extensions</th>
-                    <td>9,015<br><span style="font-size:smaller">17.72%</span></td>
-                    <td>6,640<br><span style="font-size:smaller">19.86%</span></td>
-                    <td>1,129<br><span style="font-size:smaller">30.86%</span></td>
-                        </tr>
-                        <tr>
-                    <th scope="row">Generated or transformed shapes</th>
-                    <td>338<br><span style="font-size:smaller">0.66%</span></td>
-                    <td>332<br><span style="font-size:smaller">0.99%</span></td>
-                    <td>37<br><span style="font-size:smaller">1.01%</span></td>
-                        </tr>
-                        <tr>
-                    <th scope="row">Application use</th>
-                    <td>55<br><span style="font-size:smaller">0.11%</span></td>
-                    <td>53<br><span style="font-size:smaller">0.16%</span></td>
-                    <td>10<br><span style="font-size:smaller">0.27%</span></td>
-                        </tr>
-                <tr>
-                    <th scope="row">Ontology and vocabulary specifications</th>
-                    <td>1,478<br><span style="font-size:smaller">2.91%</span></td>
-                    <td>1,125<br><span style="font-size:smaller">3.36%</span></td>
-                    <td>101<br><span style="font-size:smaller">2.76%</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="data">
-                    <tbody>
-                        <tr>
-                    <th scope="row">Unknown labels only</th>
-                    <td>7,102<br><span style="font-size:smaller">13.96%</span></td>
-                        </tr>
-                        <tr>
-                    <th scope="row">Unclassified test or generated documents</th>
-                    <td>11,009<br><span style="font-size:smaller">21.64%</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-        </section>
-
-            <section id="document-purpose" typeof="bibo:Chapter" resource="#document-purpose" property="bibo:hasPart">
-                <h4 id="x1.5.2-document-purpose" resource="#x1.5.2-document-purpose"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.5.2 </span>Document Purpose</span>
-                </h4>
-                <p>
-                    Document purpose is classified using vocabulary, schema, and application profile information, as well as references to specific applications. Schema-like documents contain vocabulary, schema, or application profile information. Application-specific documents are associated with a particular application, service, or validator.
-                </p>
-                <p>
-                    A document may belong to both categories. The classification has not been independently validated against the authors' intended purposes. The counts for schema-like and application-specific documents include documents assigned to both categories.
-                </p>
-
-                <table class="data">
-            <thead>
-                        <tr>
-                    <th>Category</th>
-                    <th>Documents</th>
-                    <th>Document rate</th>
-                        </tr>
-            </thead>
-                    <tbody>
-                        <tr>
-                    <th scope="row">Schema-like</th>
-                    <td>4,809</td>
-                    <td>9.45%</td>
-                        </tr>
-                        <tr>
-                    <th scope="row">Application-specific</th>
-                    <td>1,786</td>
-                    <td>3.51%</td>
-                        </tr>
-                <tr>
-                    <th scope="row">Both categories</th>
-                    <td>835</td>
-                    <td>1.64%</td>
-                        </tr>
-                        <tr>
-                    <th scope="row">Insufficient information or neither</th>
-                    <td>45,112</td>
-                    <td>88.68%</td>
-                        </tr>
-                    </tbody>
-                </table>
-</section>
+            </section>
 
             <section id="application-domains" typeof="bibo:Chapter" resource="#application-domains" property="bibo:hasPart">
-                <h4 id="x1.5.3-application-domains" resource="#x1.5.3-application-domains"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.5.3 </span>Application Domains</span>
+                <h4 id="x1.5.2-application-domains" resource="#x1.5.2-application-domains"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.5.2 </span>Application Domains</span>
                 </h4>
+                <h5 class="research-question">Which application domains are represented in SHACL shape documents?</h5>
                 <p>
-                    Application domains are identified using selected namespace IRIs referenced by SHACL constraints. These IRIs may occur in class references, datatypes, values, or property paths. Repository names are not sufficient to determine an application domain.
+                    Application domains were identified using vocabulary references in SHACL constraints and property paths. The classification assigned 16,227 shape documents to at least one of the 12 application domains.
                 </p>
                 <p>
-                    A document may belong to multiple domains. Documents without matching namespace references remain unclassified.
+                    Figure 5 shows the number of documents associated with each domain. Documents may be assigned to multiple domains.
                 </p>
-                <table class="data">
-            <thead>
-                        <tr>
-                    <th>Domain</th>
-                    <th>Documents</th>
-                    <th>Document rate</th>
-                        </tr>
-            </thead>
-                    <tbody>
-                        <tr>
-                    <th scope="row">Energy and power systems</th>
-                    <td>1,136</td>
-                    <td>2.23%</td>
-                        </tr>
-                        <tr>
-                    <th scope="row">Geospatial</th>
-                    <td>1,836</td>
-                    <td>3.61%</td>
-                        </tr>
-                <tr>
-                    <th scope="row">Public sector and open data</th>
-                    <td>1,868</td>
-                    <td>3.67%</td>
-                        </tr>
-                        <tr>
-                    <th scope="row">Life sciences and biomedicine</th>
-                    <td>559</td>
-                    <td>1.10%</td>
-                        </tr>
-                        <tr>
-                    <th scope="row">IoT and sensing</th>
-                    <td>1,141</td>
-                    <td>2.24%</td>
-                        </tr>
-                <tr>
-                    <th scope="row">Built environment and energy</th>
-                    <td>710</td>
-                    <td>1.40%</td>
-                        </tr>
-                        <tr>
-                    <th scope="row">Cultural heritage</th>
-                    <td>389</td>
-                    <td>0.76%</td>
-                        </tr>
-                <tr>
-                    <th scope="row">Cybersecurity</th>
-                    <td>394</td>
-                    <td>0.77%</td>
-                        </tr>
-                        <tr>
-                    <th scope="row">Data protection and privacy</th>
-                    <td>348</td>
-                    <td>0.68%</td>
-                        </tr>
-                        <tr>
-                    <th scope="row">Mobility and transport</th>
-                    <td>89</td>
-                    <td>0.17%</td>
-                        </tr>
-                <tr>
-                    <th scope="row">Software supply chain</th>
-                    <td>36</td>
-                    <td>0.07%</td>
-                        </tr>
-                        <tr>
-                    <th scope="row">Finance</th>
-                    <td>35</td>
-                    <td>0.07%</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="data">
-            <thead>
-                        <tr>
-                    <th>Classification detail</th>
-                    <th>Documents</th>
-                    <th>Document rate</th>
-                        </tr>
-            </thead>
-                    <tbody>
-                        <tr>
-                    <th scope="row">Unclassified</th>
-                    <td>34,644</td>
-                    <td>68.10%</td>
-                        </tr>
-                        <tr>
-                    <th scope="row">Infrastructure</th>
-                    <td>5,625</td>
-                    <td>11.06%</td>
-                        </tr>
-                        <tr>
-                    <th scope="row">Multiple application domains</th>
-                    <td>1,035</td>
-                    <td>2.03%</td>
-                        </tr>
-                <tr>
-                    <th scope="row">Fixture-path documents</th>
-                    <td>17,875</td>
-                    <td>35.14%</td>
-                        </tr>
-                    </tbody>
-                </table>
-</section>
-</section>
+                <figure id="fig-application-domains">
+                    <img src="images/application-domains.svg" alt="SHACL shape documents by application domain">
+                    <figcaption>Figure 5. SHACL shape documents by application domain.</figcaption>
+                </figure>
+            </section>
         </section>
 
     <section id="constraints-section" typeof="bibo:Chapter" resource="#constraints-section" property="bibo:hasPart">

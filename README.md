@@ -6,11 +6,11 @@ SHACL en Forme presents statistics on the use of the Shapes Constraint Language 
 
 ## Dataset and Methodology
 
-Public GitHub repositories were identified through code search and repository search. The search identified 15,075 candidate repositories, of which 7,569 contained qualifying SHACL content. Fork repositories were excluded, leaving 3,677 verified repositories. These repositories correspond to 3,659 distinct Git trees. RDF extraction succeeded for 3,658 of those trees. Of the extracted trees, 3,657 contain SHACL shapes.
+Public GitHub repositories were identified through code search and repository search. The search identified 15,075 candidate repositories, of which 7,569 contained qualifying SHACL content. Fork repositories were excluded, leaving 3,677 verified repositories. Repositories with identical Git tree SHAs were counted once, resulting in 3,659 distinct Git trees. RDF extraction succeeded for 3,658 of those trees. Of the extracted trees, 3,657 contain SHACL shapes.
 
 RDF files were retrieved from the recorded repository revisions and parsed using RDFLib. Among 550,508 files identified for RDF processing, 548,135 were successfully parsed. The analysis identified 50,872 documents containing SHACL shapes, representing 33,440 distinct document contents.
 
-The analysis measures the use of SHACL shapes, Core constraint parameters, targets, property paths, and SHACL-SPARQL. It also covers SHACL references to ontology terms, public RDF vocabulary usage, conflicting SHACL Core constraints, and usage contexts classified by functional usage, document purpose, and application domain.
+The analysis measures the use of SHACL shapes, Core constraint parameters, targets, property paths, and SHACL-SPARQL. It also covers SHACL references to ontology terms, public RDF vocabulary usage, comparisons between ontology restrictions and SHACL constraints, conflicting SHACL Core constraints, and usage contexts based on file organization and application-domain vocabulary references.
 
 ## Resources
 

@@ -83,6 +83,10 @@
     rdfs:label "Vocabulary usage analysis"@en ;
     rdfs:comment "Git tree prevalence of SHACL references to public RDF vocabulary terms through constraints, targets, and property paths."@en .
 
+:OwlShaclConstraintAnalysis a rdfs:Class ;
+    rdfs:label "OWL and SHACL constraint analysis"@en ;
+    rdfs:comment "Comparison of ontology restrictions with SHACL constraints on property cardinality and value types, using shared property IRIs and matching class IRIs where required."@en .
+
 :ConsistencyAnalysis a rdfs:Class ;
     rdfs:label "Consistency analysis"@en ;
     rdfs:comment "Detection of conflicting SHACL Core constraints within individual RDF source documents."@en .
@@ -105,7 +109,11 @@
 
 :DomainClassificationAnalysis a rdfs:Class ;
     rdfs:label "Domain classification analysis"@en ;
-    rdfs:comment "Classification of SHACL documents by application domain."@en .
+    rdfs:comment "Classification of SHACL documents by application domain using vocabulary references in constraints and property paths."@en .
+
+:DocumentCharacteristicsAnalysis a rdfs:Class ;
+    rdfs:label "Document characteristics analysis"@en ;
+    rdfs:comment "Characterization of SHACL shape documents from file organization and naming patterns."@en .
 
 
 #
@@ -121,7 +129,9 @@
 :has_concentration a rdf:Property ; rdfs:range :ConcentrationAnalysis .
 :has_alignment a rdf:Property ; rdfs:range :AlignmentAnalysis .
 :has_vocabulary_usage a rdf:Property ; rdfs:range :VocabularyUsageAnalysis .
+:has_owl_shacl_comparison a rdf:Property ; rdfs:range :OwlShaclConstraintAnalysis .
 :has_consistency a rdf:Property ; rdfs:range :ConsistencyAnalysis .
+:has_document_characteristics a rdf:Property ; rdfs:range :DocumentCharacteristicsAnalysis .
 :has_functional_usage a rdf:Property ; rdfs:range :FunctionalUsageAnalysis .
 :has_purpose_classification a rdf:Property ; rdfs:range :PurposeClassificationAnalysis .
 :has_domain_classification a rdf:Property ; rdfs:range :DomainClassificationAnalysis .
@@ -295,6 +305,38 @@
     rdfs:range xsd:integer ;
     rdfs:comment "Number of both-stream Git trees with no SHACL class or property IRI matching an ontology declaration in the same tree."@en .
 
+:trees_with_property_range_comparisons a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of Git trees covered by property range comparisons between rdfs:range and sh:class or sh:datatype."@en .
+
+:identical_range_tree_property_pairs a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of distinct tree-property pairs in which rdfs:range and sh:class or sh:datatype referenced identical IRIs."@en .
+
+:trees_with_owl_value_restriction_comparisons a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of Git trees covered by OWL value restriction comparisons with sh:class and sh:datatype."@en .
+
+:identical_all_values_from_comparisons a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of comparisons in which owl:allValuesFrom and sh:class or sh:datatype referenced identical value type IRIs."@en .
+
+:identical_some_values_from_comparisons a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of comparisons in which owl:someValuesFrom and sh:class or sh:datatype referenced identical value type IRIs."@en .
+
+:trees_with_cardinality_comparisons a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of Git trees covered by OWL cardinality comparisons with sh:minCount or sh:maxCount."@en .
+
+:identical_min_cardinality_tree_property_pairs a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of tree-property pairs with identical minimum cardinality bounds."@en .
+
+:identical_max_cardinality_tree_property_pairs a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of tree-property pairs with identical maximum cardinality bounds."@en .
+
 :shapes_without_ontology_terms a rdf:Property ; rdfs:range xsd:integer .
 :ontology_without_shapes a rdf:Property ; rdfs:range xsd:integer .
 
@@ -320,6 +362,22 @@
     rdfs:label "contents with consistency findings"@en ;
     rdfs:comment "Number of distinct document contents containing at least one identified constraint conflict."@en ;
     rdfs:range xsd:integer .
+
+:test_or_example_path_documents a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of shape documents whose file paths or names contain test or example references."@en .
+
+:generation_related_path_documents a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of shape documents whose file paths or names contain generation-related terms."@en .
+
+:ontology_or_profile_indicator_documents a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of shape documents with ontology or application profile indicators in file organization or naming."@en .
+
+:documents_with_application_domain a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of shape documents assigned to at least one application domain."@en .
 
 :count a rdf:Property ; rdfs:range xsd:integer .
 

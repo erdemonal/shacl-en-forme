@@ -35,12 +35,14 @@
     "AlignmentAnalysis": "sef:AlignmentAnalysis",
     "AlignmentRate": "sef:AlignmentRate",
     "VocabularyUsageAnalysis": "sef:VocabularyUsageAnalysis",
+    "OwlShaclConstraintAnalysis": "sef:OwlShaclConstraintAnalysis",
     "ConsistencyAnalysis": "sef:ConsistencyAnalysis",
     "FindingCount": "sef:FindingCount",
     "ClassificationResult": "sef:ClassificationResult",
     "FunctionalUsageAnalysis": "sef:FunctionalUsageAnalysis",
     "PurposeClassificationAnalysis": "sef:PurposeClassificationAnalysis",
     "DomainClassificationAnalysis": "sef:DomainClassificationAnalysis",
+    "DocumentCharacteristicsAnalysis": "sef:DocumentCharacteristicsAnalysis",
     "Concept": "skos:Concept",
     "ConceptScheme": "skos:ConceptScheme",
     "prefLabel": "skos:prefLabel",
@@ -78,8 +80,14 @@
     "has_vocabulary_usage": {
       "@id": "sef:has_vocabulary_usage"
     },
+    "has_owl_shacl_comparison": {
+      "@id": "sef:has_owl_shacl_comparison"
+    },
     "has_consistency": {
       "@id": "sef:has_consistency"
+    },
+    "has_document_characteristics": {
+      "@id": "sef:has_document_characteristics"
     },
     "has_functional_usage": {
       "@id": "sef:has_functional_usage"
@@ -361,6 +369,38 @@
       "@id": "sef:trees_without_matching_ontology_terms",
       "@type": "xsd:integer"
     },
+    "trees_with_property_range_comparisons": {
+      "@id": "sef:trees_with_property_range_comparisons",
+      "@type": "xsd:integer"
+    },
+    "identical_range_tree_property_pairs": {
+      "@id": "sef:identical_range_tree_property_pairs",
+      "@type": "xsd:integer"
+    },
+    "trees_with_owl_value_restriction_comparisons": {
+      "@id": "sef:trees_with_owl_value_restriction_comparisons",
+      "@type": "xsd:integer"
+    },
+    "identical_all_values_from_comparisons": {
+      "@id": "sef:identical_all_values_from_comparisons",
+      "@type": "xsd:integer"
+    },
+    "identical_some_values_from_comparisons": {
+      "@id": "sef:identical_some_values_from_comparisons",
+      "@type": "xsd:integer"
+    },
+    "trees_with_cardinality_comparisons": {
+      "@id": "sef:trees_with_cardinality_comparisons",
+      "@type": "xsd:integer"
+    },
+    "identical_min_cardinality_tree_property_pairs": {
+      "@id": "sef:identical_min_cardinality_tree_property_pairs",
+      "@type": "xsd:integer"
+    },
+    "identical_max_cardinality_tree_property_pairs": {
+      "@id": "sef:identical_max_cardinality_tree_property_pairs",
+      "@type": "xsd:integer"
+    },
     "shapes_without_ontology_terms": {
       "@id": "sef:shapes_without_ontology_terms",
       "@type": "xsd:integer"
@@ -395,6 +435,22 @@
     },
     "contents_with_consistency_findings": {
       "@id": "sef:contents_with_consistency_findings",
+      "@type": "xsd:integer"
+    },
+    "test_or_example_path_documents": {
+      "@id": "sef:test_or_example_path_documents",
+      "@type": "xsd:integer"
+    },
+    "generation_related_path_documents": {
+      "@id": "sef:generation_related_path_documents",
+      "@type": "xsd:integer"
+    },
+    "ontology_or_profile_indicator_documents": {
+      "@id": "sef:ontology_or_profile_indicator_documents",
+      "@type": "xsd:integer"
+    },
+    "documents_with_application_domain": {
+      "@id": "sef:documents_with_application_domain",
       "@type": "xsd:integer"
     },
     "count": {
@@ -1578,6 +1634,17 @@
         "@type": "VocabularyUsageAnalysis",
         "trees_with_shape_documents": 3657
       },
+      "has_owl_shacl_comparison": {
+        "@type": "OwlShaclConstraintAnalysis",
+        "trees_with_property_range_comparisons": 1708,
+        "identical_range_tree_property_pairs": 90296,
+        "trees_with_owl_value_restriction_comparisons": 323,
+        "identical_all_values_from_comparisons": 40758,
+        "identical_some_values_from_comparisons": 6852,
+        "trees_with_cardinality_comparisons": 401,
+        "identical_min_cardinality_tree_property_pairs": 6853,
+        "identical_max_cardinality_tree_property_pairs": 24460
+      },
       "has_consistency": {
         "@type": "ConsistencyAnalysis",
         "shapes_graph_policy": "sef:rdf_source_document",
@@ -1585,6 +1652,12 @@
         "trees_with_consistency_findings": 86,
         "contents_with_consistency_findings": 272,
         "denominator_extracted_trees": 3657
+      },
+      "has_document_characteristics": {
+        "@type": "DocumentCharacteristicsAnalysis",
+        "test_or_example_path_documents": 19477,
+        "generation_related_path_documents": 338,
+        "ontology_or_profile_indicator_documents": 1431
       },
       "has_functional_usage": {
         "@type": "FunctionalUsageAnalysis",
@@ -1874,6 +1947,7 @@
         "content_sha256_groups": 33440,
         "git_trees": 3658,
         "donor_families": 3646,
+        "documents_with_application_domain": 16227,
         "classification_result": [
           {
             "@type": "ClassificationResult",

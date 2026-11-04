@@ -311,18 +311,19 @@ h5.research-question {
   margin: 0.25em 0 1em 0;
 }
 
-#fig-functional-usage img {
-  width: 708px; /* 488 × 1.45 */
+/* Same CSS scale for all figures so equal TeX font sizes stay equal on the page. */
+#fig-ontology-usage img {
+  width: 590px; /* 268 × 2.2 */
   max-width: 100%;
   height: auto;
 }
 #fig-core-constraints img {
-  width: 706px; /* 487 × 1.45 */
+  width: 711px; /* 323 × 2.2 */
   max-width: 100%;
   height: auto;
 }
-#fig-ontology-usage img {
-  width: 680px; /* 469 × 1.45 */
+#fig-application-domains img {
+  width: 746px; /* 339 × 2.2 */
   max-width: 100%;
   height: auto;
 }

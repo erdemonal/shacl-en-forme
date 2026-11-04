@@ -26,6 +26,11 @@ sef:AnalysisResultsShape
         sh:minCount 1 ; sh:maxCount 1 ;
     ] ;
     sh:property [
+        sh:path sef:has_document_characteristics ;
+        sh:class sef:DocumentCharacteristicsAnalysis ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
         sh:path sef:has_functional_usage ;
         sh:class sef:FunctionalUsageAnalysis ;
         sh:minCount 1 ; sh:maxCount 1 ;
@@ -125,6 +130,69 @@ sef:VocabularyUsageAnalysisShape
     sh:targetClass sef:VocabularyUsageAnalysis ;
     sh:property [
         sh:path sef:trees_with_shape_documents ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] .
+
+sef:OwlShaclConstraintAnalysisShape
+    a sh:NodeShape ;
+    sh:targetClass sef:OwlShaclConstraintAnalysis ;
+    sh:property [
+        sh:path sef:trees_with_property_range_comparisons ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:identical_range_tree_property_pairs ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:trees_with_owl_value_restriction_comparisons ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:identical_all_values_from_comparisons ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:identical_some_values_from_comparisons ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:trees_with_cardinality_comparisons ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:identical_min_cardinality_tree_property_pairs ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:identical_max_cardinality_tree_property_pairs ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] .
+
+sef:DocumentCharacteristicsAnalysisShape
+    a sh:NodeShape ;
+    sh:targetClass sef:DocumentCharacteristicsAnalysis ;
+    sh:property [
+        sh:path sef:test_or_example_path_documents ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:generation_related_path_documents ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:ontology_or_profile_indicator_documents ;
         sh:datatype xsd:integer ;
         sh:minCount 1 ; sh:maxCount 1 ;
     ] .
