@@ -13,7 +13,7 @@
     rdfs:label "SHACL en Forme vocabulary"@en ;
     rdfs:comment "Vocabulary for SHACL usage statistics collected from GitHub repositories."@en ;
     dct:created "2026-10-12"^^xsd:date ;
-    dct:modified "2026-10-16"^^xsd:date ;
+    dct:modified "2026-11-04"^^xsd:date ;
     dct:creator erdemonal:me ;
     vann:preferredNamespaceUri "https://w3id.org/shacl-en-forme/vocab#" ;
     vann:preferredNamespacePrefix "sef" ;
@@ -83,6 +83,10 @@
     rdfs:label "Vocabulary usage analysis"@en ;
     rdfs:comment "Git tree prevalence of SHACL references to public RDF vocabulary terms through constraints, targets, and property paths."@en .
 
+:VocabularyFrequency a rdfs:Class ;
+    rdfs:label "Vocabulary frequency"@en ;
+    rdfs:comment "Number and share of Git trees containing SHACL references to terms from one public RDF vocabulary."@en .
+
 :OwlShaclConstraintAnalysis a rdfs:Class ;
     rdfs:label "OWL and SHACL constraint analysis"@en ;
     rdfs:comment "Comparison of ontology restrictions with SHACL constraints on property cardinality and value types, using shared property IRIs and matching class IRIs where required."@en .
@@ -129,11 +133,12 @@
 :has_concentration a rdf:Property ; rdfs:range :ConcentrationAnalysis .
 :has_alignment a rdf:Property ; rdfs:range :AlignmentAnalysis .
 :has_vocabulary_usage a rdf:Property ; rdfs:range :VocabularyUsageAnalysis .
+:vocabulary_frequency a rdf:Property ; rdfs:range :VocabularyFrequency .
+:vocabulary a rdf:Property ; rdfs:range skos:Concept .
+:percent_of_trees a rdf:Property ; rdfs:range xsd:decimal .
 :has_owl_shacl_comparison a rdf:Property ; rdfs:range :OwlShaclConstraintAnalysis .
 :has_consistency a rdf:Property ; rdfs:range :ConsistencyAnalysis .
 :has_document_characteristics a rdf:Property ; rdfs:range :DocumentCharacteristicsAnalysis .
-:has_functional_usage a rdf:Property ; rdfs:range :FunctionalUsageAnalysis .
-:has_purpose_classification a rdf:Property ; rdfs:range :PurposeClassificationAnalysis .
 :has_domain_classification a rdf:Property ; rdfs:range :DomainClassificationAnalysis .
 :has_distribution a rdf:Property ; rdfs:range :DistributionSummary .
 :feature_frequency a rdf:Property ; rdfs:range :FeatureFrequency .
@@ -252,7 +257,7 @@
 
 :verified_repositories a rdf:Property ;
     rdfs:range xsd:integer ;
-    rdfs:comment "Number of verified GitHub repositories associated with matching Git trees."@en .
+    rdfs:comment "Number of verified non-fork GitHub repositories in the final analysis population after excluding Git trees without extracted SHACL shape documents."@en .
 
 :percent_of_verified_repositories a rdf:Property ; rdfs:range xsd:decimal .
 :denominator_extracted_trees a rdf:Property ; rdfs:range xsd:integer .
@@ -623,3 +628,61 @@
 :fixture_path_documents a skos:Concept ;
     skos:inScheme :DomainSummaryScheme ;
     skos:prefLabel "Fixture path documents"@en .
+:ReferencedVocabularyScheme a skos:ConceptScheme ;
+    skos:prefLabel "Referenced public RDF vocabulary scheme"@en .
+
+:vocab_dublin_core_terms a skos:Concept ;
+    skos:inScheme :ReferencedVocabularyScheme ;
+    skos:prefLabel "Dublin Core Terms"@en .
+
+:vocab_schema_org a skos:Concept ;
+    skos:inScheme :ReferencedVocabularyScheme ;
+    skos:prefLabel "Schema.org"@en .
+
+:vocab_skos a skos:Concept ;
+    skos:inScheme :ReferencedVocabularyScheme ;
+    skos:prefLabel "SKOS"@en .
+
+:vocab_prov_o a skos:Concept ;
+    skos:inScheme :ReferencedVocabularyScheme ;
+    skos:prefLabel "PROV-O"@en .
+
+:vocab_foaf a skos:Concept ;
+    skos:inScheme :ReferencedVocabularyScheme ;
+    skos:prefLabel "FOAF"@en .
+
+:vocab_dcat a skos:Concept ;
+    skos:inScheme :ReferencedVocabularyScheme ;
+    skos:prefLabel "DCAT"@en .
+
+:vocab_owl_time a skos:Concept ;
+    skos:inScheme :ReferencedVocabularyScheme ;
+    skos:prefLabel "OWL-Time"@en .
+
+:vocab_vcard a skos:Concept ;
+    skos:inScheme :ReferencedVocabularyScheme ;
+    skos:prefLabel "vCard"@en .
+
+:vocab_adms a skos:Concept ;
+    skos:inScheme :ReferencedVocabularyScheme ;
+    skos:prefLabel "ADMS"@en .
+
+:vocab_geosparql a skos:Concept ;
+    skos:inScheme :ReferencedVocabularyScheme ;
+    skos:prefLabel "GeoSPARQL"@en .
+
+:vocab_locn a skos:Concept ;
+    skos:inScheme :ReferencedVocabularyScheme ;
+    skos:prefLabel "LOCN"@en .
+
+:vocab_qudt a skos:Concept ;
+    skos:inScheme :ReferencedVocabularyScheme ;
+    skos:prefLabel "QUDT"@en .
+
+:vocab_odrl a skos:Concept ;
+    skos:inScheme :ReferencedVocabularyScheme ;
+    skos:prefLabel "ODRL"@en .
+
+:vocab_dublin_core_elements a skos:Concept ;
+    skos:inScheme :ReferencedVocabularyScheme ;
+    skos:prefLabel "Dublin Core Elements"@en .

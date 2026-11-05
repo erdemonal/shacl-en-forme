@@ -349,12 +349,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <section id="dataset-and-coverage" typeof="bibo:Chapter" resource="#dataset-and-coverage" property="bibo:hasPart">
             <h3 id="x1.1-dataset-and-coverage" resource="#x1.1-dataset-and-coverage"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.1 </span>Dataset and Coverage</span>
             </h3>
-            <h4 class="research-question">How many repositories and Git trees are included in the study?</h4>
+            <h4 class="research-question">How many repositories and distinct Git trees are included in the study?</h4>
             <p>
                 A Git tree represents a snapshot of repository contents. Multiple GitHub repositories may reference the same tree. The analysis uses distinct Git trees to avoid counting identical repository snapshots more than once.
             </p>
             <p>
-                A repository was considered verified if at least one parsed RDF graph contained a SHACL Core shape declaration, target or constraint predicate, or a structurally attached SHACL-SPARQL constraint. After excluding forks, 3,677 verified repositories remained. These repositories correspond to 3,659 Git trees. RDF extraction succeeded for 3,658 of those trees. Of the extracted trees, 3,657 contain SHACL shapes.
+                Repositories were verified based on SHACL shape declarations, Core target or constraint predicates, or structurally attached SHACL-SPARQL constraints in parsed RDF graphs. After excluding forks and Git trees without extracted SHACL shape documents, the final dataset contains 3,675 repositories representing 3,657 distinct Git trees.
             </p>
             <p>
                 Among 550,508 files identified for RDF processing, 548,135 were successfully parsed.
@@ -364,17 +364,15 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     <col style="width:75%">
                     <col style="width:25%">
                 </colgroup>
+                <thead>
+                    <tr>
+                        <th>Measurement</th>
+                        <th>Count</th>
+                    </tr>
+                </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">Distinct Git trees</th>
-                        <td>3,659</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Extracted Git trees</th>
-                        <td>3,658</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Git trees containing SHACL shapes</th>
+                        <th scope="row">Analyzed Git trees</th>
                         <td>3,657</td>
                     </tr>
                     <tr>
@@ -471,7 +469,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 </h4>
                 <h5 class="research-question">Which vocabularies are referenced by SHACL shapes?</h5>
                 <p>
-                    The analysis counts Git trees containing SHACL references to terms from public RDF vocabularies through constraints, targets, and property paths. Both simple and complex property paths are considered. Vocabularies are ranked by the number of Git trees in which they appear.
+                    The analysis counts Git trees containing SHACL references to terms from public RDF vocabularies through constraints, targets, and property paths. Both simple and complex property paths are considered.
                 </p>
                 <figure id="fig-ontology-usage">
                     <img src="images/ontology-usage.svg" alt="Share of Git trees referencing the 14 most frequent public RDF vocabularies">
@@ -559,11 +557,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     Application domains were identified using vocabulary references in SHACL constraints and property paths. The classification assigned 16,227 shape documents to at least one of the 12 application domains.
                 </p>
                 <p>
-                    Figure 5 shows the number of documents associated with each domain. Documents may be assigned to multiple domains.
+                    Figure 2 shows the number of documents associated with each domain. Documents may be assigned to multiple domains.
                 </p>
                 <figure id="fig-application-domains">
                     <img src="images/application-domains.svg" alt="SHACL shape documents by application domain">
-                    <figcaption>Figure 5. SHACL shape documents by application domain.</figcaption>
+                    <figcaption>Figure 2. SHACL shape documents by application domain.</figcaption>
                 </figure>
             </section>
         </section>
@@ -588,17 +586,23 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             <div id="targetSubjectsOf"></div>
             <div id="targetObjectsOf"></div>
             <p>
-                The analysis counts resources explicitly typed as <code>sh:NodeShape</code> or <code>sh:PropertyShape</code>.
+                The analysis counts resources explicitly typed as <code>sh:NodeShape</code> or <code>sh:PropertyShape</code>. Shape IRIs are deduplicated per Git tree, and blank nodes are counted per file.
             </p>
                 <table class="data">
+                    <thead>
+                        <tr>
+                            <th>Measurement</th>
+                            <th>Count</th>
+                        </tr>
+                    </thead>
                     <tbody>
                         <tr>
-                        <th scope="row">Distinct explicitly typed shapes</th>
+                        <th scope="row">Shapes</th>
                         <td>1,183,518</td>
                         </tr>
                     </tbody>
                 </table>
-            <p>632 resources are typed as both <code>sh:NodeShape</code> and <code>sh:PropertyShape</code>.</p>
+            <p>The 632 resources typed as both <code>sh:NodeShape</code> and <code>sh:PropertyShape</code> are included in both shape type counts but counted only once in the distinct shape total.</p>
             <p>
                 The following table provides occurrence counts and Git tree prevalence for the four explicit target predicates. Implicit class targets were not counted separately.
             </p>
@@ -614,26 +618,26 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     <tbody>
                         <tr>
                         <th scope="row"><code>sh:targetNode</code></th>
-                        <td>366 / 3,658</td>
+                        <td>366 / 3,657</td>
                         <td>10.01%</td>
                         <td>29,889</td>
                         </tr>
                         <tr>
                         <th scope="row"><code>sh:targetClass</code></th>
-                        <td>3,374 / 3,658</td>
-                        <td>92.24%</td>
+                        <td>3,374 / 3,657</td>
+                        <td>92.26%</td>
                         <td>838,272</td>
                         </tr>
                     <tr>
                         <th scope="row"><code>sh:targetSubjectsOf</code></th>
-                        <td>805 / 3,658</td>
+                        <td>805 / 3,657</td>
                         <td>22.01%</td>
                         <td>27,187</td>
                         </tr>
                         <tr>
                         <th scope="row"><code>sh:targetObjectsOf</code></th>
-                        <td>570 / 3,658</td>
-                        <td>15.58%</td>
+                        <td>570 / 3,657</td>
+                        <td>15.59%</td>
                         <td>13,725</td>
                         </tr>
                     </tbody>
@@ -643,30 +647,20 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <section id="node-shapes" typeof="bibo:Chapter" resource="#node-shapes" property="bibo:hasPart">
             <h3 id="x2.2-node-shapes" resource="#x2.2-node-shapes"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.2 </span>Node Shapes</span>
             </h3>
-                <table class="data">
-                    <tbody>
-                        <tr>
-                        <th scope="row">Explicit NodeShapes</th>
-                        <td>424,580</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <p>
+                The analysis identified 424,580 node shapes.
+            </p>
         </section>
 
         <section id="property-shapes" typeof="bibo:Chapter" resource="#property-shapes" property="bibo:hasPart">
             <h3 id="x2.3-property-shapes" resource="#x2.3-property-shapes"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.3 </span>Property Shapes</span>
             </h3>
             <div id="property-paths"></div>
-            <table class="data">
-                    <tbody>
-                        <tr>
-                        <th scope="row">Explicit PropertyShapes</th>
-                        <td>759,570</td>
-                        </tr>
-                    </tbody>
-                </table>
             <p>
-                The following table shows occurrence counts and Git tree prevalence for seven SHACL property path forms.
+                The analysis identified 759,570 property shapes.
+            </p>
+            <p>
+                The following table shows occurrence counts and Git tree prevalence for seven SHACL property path forms. Occurrences include nested path forms, so a single <code>sh:path</code> declaration may contribute to multiple counts.
             </p>
                 <table class="data">
                 <thead>
@@ -680,43 +674,43 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     <tbody>
                         <tr>
                         <th scope="row"><code>PredicatePath</code></th>
-                        <td>3,508 / 3,658</td>
-                        <td>95.90%</td>
+                        <td>3,508 / 3,657</td>
+                        <td>95.93%</td>
                         <td>2,432,119</td>
                         </tr>
                         <tr>
                         <th scope="row"><code>SequencePath</code></th>
-                        <td>538 / 3,658</td>
+                        <td>538 / 3,657</td>
                         <td>14.71%</td>
                         <td>117,295</td>
                         </tr>
                     <tr>
                         <th scope="row"><code>AlternativePath</code></th>
-                        <td>385 / 3,658</td>
-                        <td>10.52%</td>
+                        <td>385 / 3,657</td>
+                        <td>10.53%</td>
                         <td>9,813</td>
                         </tr>
                         <tr>
                         <th scope="row"><code>InversePath</code></th>
-                        <td>568 / 3,658</td>
+                        <td>568 / 3,657</td>
                         <td>15.53%</td>
                         <td>15,869</td>
                         </tr>
                         <tr>
                         <th scope="row"><code>ZeroOrMorePath</code></th>
-                        <td>275 / 3,658</td>
+                        <td>275 / 3,657</td>
                         <td>7.52%</td>
                         <td>9,096</td>
                         </tr>
                     <tr>
                         <th scope="row"><code>OneOrMorePath</code></th>
-                        <td>211 / 3,658</td>
+                        <td>211 / 3,657</td>
                         <td>5.77%</td>
                         <td>571</td>
                         </tr>
                         <tr>
                         <th scope="row"><code>ZeroOrOnePath</code></th>
-                        <td>93 / 3,658</td>
+                        <td>93 / 3,657</td>
                         <td>2.54%</td>
                         <td>169</td>
                         </tr>
@@ -730,15 +724,18 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <h2 id="x3.-core-constraint-components" resource="#x3.-core-constraint-components"><span property="xhv:role" resource="xhv:heading"><span class="secno">3 </span>Core Constraint Components</span>
         </h2>
         <p>
-            This section presents occurrence counts and Git tree prevalence for SHACL Core constraint parameters across 3,658 extracted Git trees.
+            This section presents occurrence counts and Git tree prevalence for SHACL Core constraint parameters across 3,657 analyzed Git trees.
                 </p>
                 <p>
-            Occurrences count RDF triples containing each constraint parameter as a predicate. Git tree prevalence measures the proportion of extracted Git trees containing that parameter.
+            Occurrences count RDF triples containing each constraint parameter as a predicate. Git tree prevalence measures the proportion of analyzed Git trees containing that parameter.
         </p>
         <figure id="fig-core-constraints">
             <img src="images/core-constraints.svg" alt="Occurrence counts and Git tree prevalence of the ten SHACL Core constraint parameters with the highest occurrence counts">
             <figcaption>Figure 3. Occurrence counts and Git tree prevalence of the ten SHACL Core constraint parameters with the highest occurrence counts.</figcaption>
         </figure>
+        <p>
+            Constraint occurrence counts and Git tree prevalence reveal different usage patterns. <code>sh:class</code> occurs more frequently than <code>sh:datatype</code>, but <code>sh:datatype</code> appears in more Git trees. Similarly, <code>sh:maxCount</code> has more occurrences than <code>sh:minCount</code>, although <code>sh:minCount</code> is more widely distributed across Git trees.
+        </p>
 
         <section id="core-components-value-type" typeof="bibo:Chapter" resource="#core-components-value-type" property="bibo:hasPart">
             <h3 id="x3.1-value-type" resource="#x3.1-value-type"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1 </span>Value Type Constraint Components</span>
@@ -758,20 +755,20 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     <tbody>
                         <tr>
                         <th scope="row"><code>sh:class</code></th>
-                        <td>2,436 / 3,658</td>
-                        <td>66.59%</td>
+                        <td>2,436 / 3,657</td>
+                        <td>66.61%</td>
                         <td>1,172,259</td>
                         </tr>
                         <tr>
                         <th scope="row"><code>sh:datatype</code></th>
-                        <td>2,989 / 3,658</td>
-                        <td>81.71%</td>
+                        <td>2,989 / 3,657</td>
+                        <td>81.73%</td>
                         <td>654,821</td>
                         </tr>
                     <tr>
                         <th scope="row"><code>sh:nodeKind</code></th>
-                            <td>1,913 / 3,658</td>
-                            <td>52.30%</td>
+                            <td>1,913 / 3,657</td>
+                            <td>52.31%</td>
                             <td>754,832</td>
                         </tr>
                     </tbody>
@@ -795,14 +792,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     <tbody>
                         <tr>
                         <th scope="row"><code>sh:minCount</code></th>
-                            <td>3,206 / 3,658</td>
-                            <td>87.64%</td>
+                            <td>3,206 / 3,657</td>
+                            <td>87.67%</td>
                             <td>537,481</td>
                         </tr>
                     <tr>
                         <th scope="row"><code>sh:maxCount</code></th>
-                        <td>2,862 / 3,658</td>
-                        <td>78.24%</td>
+                        <td>2,862 / 3,657</td>
+                        <td>78.26%</td>
                         <td>662,881</td>
                         </tr>
                     </tbody>
@@ -828,26 +825,26 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     <tbody>
                         <tr>
                         <th scope="row"><code>sh:minExclusive</code></th>
-                        <td>336 / 3,658</td>
+                        <td>336 / 3,657</td>
                         <td>9.19%</td>
                         <td>5,565</td>
                         </tr>
                         <tr>
                         <th scope="row"><code>sh:minInclusive</code></th>
-                        <td>1,122 / 3,658</td>
-                        <td>30.67%</td>
+                        <td>1,122 / 3,657</td>
+                        <td>30.68%</td>
                         <td>31,455</td>
                         </tr>
                     <tr>
                         <th scope="row"><code>sh:maxExclusive</code></th>
-                        <td>170 / 3,658</td>
+                        <td>170 / 3,657</td>
                         <td>4.65%</td>
                         <td>1,570</td>
                         </tr>
                         <tr>
                         <th scope="row"><code>sh:maxInclusive</code></th>
-                        <td>917 / 3,658</td>
-                        <td>25.07%</td>
+                        <td>917 / 3,657</td>
+                        <td>25.08%</td>
                         <td>16,102</td>
                         </tr>
                     </tbody>
@@ -874,38 +871,38 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             <tbody>
                 <tr>
                         <th scope="row"><code>sh:minLength</code></th>
-                        <td>668 / 3,658</td>
-                        <td>18.26%</td>
+                        <td>668 / 3,657</td>
+                        <td>18.27%</td>
                         <td>8,794</td>
                 </tr>
                 <tr>
                         <th scope="row"><code>sh:maxLength</code></th>
-                        <td>364 / 3,658</td>
+                        <td>364 / 3,657</td>
                         <td>9.95%</td>
                         <td>13,232</td>
                 </tr>
                 <tr>
                         <th scope="row"><code>sh:pattern</code></th>
-                        <td>1,295 / 3,658</td>
-                        <td>35.40%</td>
+                        <td>1,295 / 3,657</td>
+                        <td>35.41%</td>
                         <td>94,905</td>
                 </tr>
                 <tr>
                         <th scope="row"><code>sh:flags</code></th>
-                        <td>185 / 3,658</td>
+                        <td>185 / 3,657</td>
                         <td>5.06%</td>
                         <td>19,997</td>
                 </tr>
                     <tr>
                         <th scope="row"><code>sh:languageIn</code></th>
-                        <td>273 / 3,658</td>
-                        <td>7.46%</td>
+                        <td>273 / 3,657</td>
+                        <td>7.47%</td>
                         <td>2,957</td>
                 </tr>
                 <tr>
                         <th scope="row"><code>sh:uniqueLang</code></th>
-                        <td>382 / 3,658</td>
-                        <td>10.44%</td>
+                        <td>382 / 3,657</td>
+                        <td>10.45%</td>
                         <td>7,520</td>
                 </tr>
             </tbody>
@@ -931,25 +928,25 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             <tbody>
                 <tr>
                         <th scope="row"><code>sh:equals</code></th>
-                        <td>168 / 3,658</td>
+                        <td>168 / 3,657</td>
                         <td>4.59%</td>
                         <td>9,358</td>
                 </tr>
                 <tr>
                         <th scope="row"><code>sh:disjoint</code></th>
-                        <td>199 / 3,658</td>
+                        <td>199 / 3,657</td>
                         <td>5.44%</td>
                         <td>1,737</td>
                 </tr>
                 <tr>
                         <th scope="row"><code>sh:lessThan</code></th>
-                        <td>178 / 3,658</td>
+                        <td>178 / 3,657</td>
                         <td>4.87%</td>
                         <td>1,883</td>
                     </tr>
                     <tr>
                         <th scope="row"><code>sh:lessThanOrEquals</code></th>
-                        <td>164 / 3,658</td>
+                        <td>164 / 3,657</td>
                         <td>4.48%</td>
                         <td>650</td>
                 </tr>
@@ -976,25 +973,25 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             <tbody>
                 <tr>
                         <th scope="row"><code>sh:not</code></th>
-                        <td>637 / 3,658</td>
-                        <td>17.41%</td>
+                        <td>637 / 3,657</td>
+                        <td>17.42%</td>
                         <td>57,824</td>
                 </tr>
                 <tr>
                         <th scope="row"><code>sh:and</code></th>
-                        <td>358 / 3,658</td>
+                        <td>358 / 3,657</td>
                         <td>9.79%</td>
                         <td>57,403</td>
                 </tr>
                 <tr>
                         <th scope="row"><code>sh:or</code></th>
-                        <td>1,388 / 3,658</td>
-                        <td>37.94%</td>
+                        <td>1,388 / 3,657</td>
+                        <td>37.95%</td>
                         <td>157,240</td>
                 </tr>
                 <tr>
                         <th scope="row"><code>sh:xone</code></th>
-                        <td>413 / 3,658</td>
+                        <td>413 / 3,657</td>
                         <td>11.29%</td>
                         <td>9,324</td>
                 </tr>
@@ -1020,37 +1017,37 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             <tbody>
                 <tr>
                         <th scope="row"><code>sh:node</code></th>
-                        <td>1,121 / 3,658</td>
+                        <td>1,121 / 3,657</td>
                         <td>30.65%</td>
                         <td>141,080</td>
                 </tr>
                 <tr>
                         <th scope="row"><code>sh:property</code></th>
-                        <td>3,477 / 3,658</td>
-                        <td>95.05%</td>
+                        <td>3,477 / 3,657</td>
+                        <td>95.08%</td>
                         <td>2,110,844</td>
                 </tr>
                 <tr>
                         <th scope="row"><code>sh:qualifiedValueShape</code></th>
-                        <td>520 / 3,658</td>
+                        <td>520 / 3,657</td>
                         <td>14.22%</td>
                         <td>86,924</td>
                 </tr>
                 <tr>
                         <th scope="row"><code>sh:qualifiedMinCount</code></th>
-                        <td>496 / 3,658</td>
+                        <td>496 / 3,657</td>
                         <td>13.56%</td>
                         <td>71,003</td>
                 </tr>
                 <tr>
                         <th scope="row"><code>sh:qualifiedMaxCount</code></th>
-                        <td>311 / 3,658</td>
+                        <td>311 / 3,657</td>
                         <td>8.50%</td>
                         <td>22,370</td>
                 </tr>
                 <tr>
                         <th scope="row"><code>sh:qualifiedValueShapesDisjoint</code></th>
-                        <td>136 / 3,658</td>
+                        <td>136 / 3,657</td>
                         <td>3.72%</td>
                         <td>2,312</td>
                 </tr>
@@ -1076,26 +1073,26 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             <tbody>
                 <tr>
                         <th scope="row"><code>sh:closed</code></th>
-                        <td>764 / 3,658</td>
+                        <td>764 / 3,657</td>
                         <td>20.89%</td>
                         <td>58,521</td>
                 </tr>
                 <tr>
                         <th scope="row"><code>sh:ignoredProperties</code></th>
-                        <td>471 / 3,658</td>
+                        <td>471 / 3,657</td>
                         <td>12.88%</td>
                         <td>29,249</td>
                 </tr>
                 <tr>
                         <th scope="row"><code>sh:hasValue</code></th>
-                        <td>1,105 / 3,658</td>
-                        <td>30.21%</td>
+                        <td>1,105 / 3,657</td>
+                        <td>30.22%</td>
                         <td>77,437</td>
                 </tr>
                 <tr>
                         <th scope="row"><code>sh:in</code></th>
-                        <td>1,578 / 3,658</td>
-                        <td>43.14%</td>
+                        <td>1,578 / 3,657</td>
+                        <td>43.15%</td>
                         <td>74,648</td>
                 </tr>
             </tbody>
@@ -1118,11 +1115,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             <tbody>
                 <tr>
                     <th scope="row">Unique Git trees</th>
-                    <td>1,065 / 3,658</td>
+                    <td>1,065 / 3,657</td>
                 </tr>
                 <tr>
                     <th scope="row">Tree prevalence</th>
-                    <td>29.11%</td>
+                    <td>29.12%</td>
                 </tr>
                 <tr>
                     <th scope="row"><code>sh:sparql</code> links</th>

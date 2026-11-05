@@ -6,11 +6,11 @@ SHACL en Forme presents statistics on the use of the Shapes Constraint Language 
 
 ## Dataset and Methodology
 
-Public GitHub repositories were identified through code search and repository search. The search identified 15,075 candidate repositories, of which 7,569 contained qualifying SHACL content. Fork repositories were excluded, leaving 3,677 verified repositories. Repositories with identical Git tree SHAs were counted once, resulting in 3,659 distinct Git trees. RDF extraction succeeded for 3,658 of those trees. Of the extracted trees, 3,657 contain SHACL shapes.
+Public GitHub repositories were identified through code search and repository search. Repositories were verified based on SHACL shape declarations, Core target or constraint predicates, or structurally attached SHACL-SPARQL constraints in parsed RDF graphs. After excluding forks and Git trees without extracted SHACL shape documents, the final dataset contains 3,675 repositories representing 3,657 distinct Git trees.
 
-RDF files were retrieved from the recorded repository revisions and parsed using RDFLib. Among 550,508 files identified for RDF processing, 548,135 were successfully parsed. The analysis identified 50,872 documents containing SHACL shapes, representing 33,440 distinct document contents.
+RDF files were retrieved from the recorded repository revisions and parsed using RDFLib. The analysis successfully parsed 548,135 of the 550,508 files identified for RDF processing. It identified 50,872 SHACL shape documents representing 33,440 distinct document contents.
 
-The analysis measures the use of SHACL shapes, Core constraint parameters, targets, property paths, and SHACL-SPARQL. It also covers SHACL references to ontology terms, public RDF vocabulary usage, comparisons between ontology restrictions and SHACL constraints, conflicting SHACL Core constraints, and usage contexts based on file organization and application-domain vocabulary references.
+The resource reports statistics on SHACL shapes, targets, property paths, Core constraint parameters, and SHACL-SPARQL. Additional analyses cover ontology references, public RDF vocabulary usage, OWL–SHACL constraint comparisons, constraint consistency, and usage contexts.
 
 ## Resources
 

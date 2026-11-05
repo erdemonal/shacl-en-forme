@@ -39,8 +39,6 @@
     "ConsistencyAnalysis": "sef:ConsistencyAnalysis",
     "FindingCount": "sef:FindingCount",
     "ClassificationResult": "sef:ClassificationResult",
-    "FunctionalUsageAnalysis": "sef:FunctionalUsageAnalysis",
-    "PurposeClassificationAnalysis": "sef:PurposeClassificationAnalysis",
     "DomainClassificationAnalysis": "sef:DomainClassificationAnalysis",
     "DocumentCharacteristicsAnalysis": "sef:DocumentCharacteristicsAnalysis",
     "Concept": "skos:Concept",
@@ -88,12 +86,6 @@
     },
     "has_document_characteristics": {
       "@id": "sef:has_document_characteristics"
-    },
-    "has_functional_usage": {
-      "@id": "sef:has_functional_usage"
-    },
-    "has_purpose_classification": {
-      "@id": "sef:has_purpose_classification"
     },
     "has_domain_classification": {
       "@id": "sef:has_domain_classification"
@@ -512,6 +504,18 @@
     "standard_deviation": {
       "@id": "sef:standard_deviation",
       "@type": "xsd:decimal"
+    },
+    "VocabularyFrequency": "sef:VocabularyFrequency",
+    "vocabulary_frequency": {
+      "@id": "sef:vocabulary_frequency"
+    },
+    "vocabulary": {
+      "@id": "sef:vocabulary",
+      "@type": "@id"
+    },
+    "percent_of_trees": {
+      "@id": "sef:percent_of_trees",
+      "@type": "xsd:decimal"
     }
   },
   "@graph": [
@@ -532,13 +536,14 @@
       },
       "isBasedOn": "https://www.w3.org/TR/2017/REC-shacl-20170720/",
       "lower_bound": true,
-      "intended_unique_verified_trees": 3658,
-      "extracted_unique_trees": 3658,
+      "intended_unique_verified_trees": 3657,
+      "extracted_unique_trees": 3657,
       "unavailable_distinct_git_trees": 0,
       "has_coverage": {
         "@type": "DatasetCoverage",
-        "intended_unique_verified_trees": 3658,
-        "extracted_unique_trees": 3658,
+        "verified_repositories": 3675,
+        "intended_unique_verified_trees": 3657,
+        "extracted_unique_trees": 3657,
         "inventory_files": 550508,
         "parsed_files": 548135,
         "jsonld_context_unresolved_files": 41,
@@ -555,7 +560,7 @@
       },
       "has_shape_inventory": {
         "@type": "ShapeInventory",
-        "denominator_extracted_trees": 3658,
+        "denominator_extracted_trees": 3657,
         "node_shapes": 424580,
         "property_shapes": 759570,
         "distinct_shapes": 1183518,
@@ -563,7 +568,7 @@
           {
             "@type": "DistributionSummary",
             "of_measure": "sef:node_shapes",
-            "sample_size": 3658,
+            "sample_size": 3657,
             "minimum": {
               "@value": "0",
               "@type": "xsd:decimal"
@@ -600,7 +605,7 @@
           {
             "@type": "DistributionSummary",
             "of_measure": "sef:property_shapes",
-            "sample_size": 3658,
+            "sample_size": 3657,
             "minimum": {
               "@value": "0",
               "@type": "xsd:decimal"
@@ -637,7 +642,7 @@
           {
             "@type": "DistributionSummary",
             "of_measure": "sef:distinct_shapes",
-            "sample_size": 3658,
+            "sample_size": 3657,
             "minimum": {
               "@value": "0",
               "@type": "xsd:decimal"
@@ -675,8 +680,8 @@
       },
       "has_constraint_frequencies": {
         "@type": "FeatureFrequencyAnalysis",
-        "denominator_extracted_trees": 3658,
-        "denominator_verified_repositories": 3677,
+        "denominator_extracted_trees": 3657,
+        "denominator_verified_repositories": 3675,
         "total_occurrences": 6954178,
         "feature_frequency": [
           {
@@ -690,7 +695,7 @@
             },
             "verified_repositories": 362,
             "percent_of_verified_repositories": {
-              "@value": "9.84",
+              "@value": "9.85",
               "@type": "xsd:decimal"
             }
           },
@@ -700,12 +705,12 @@
             "occurrences": 1172259,
             "unique_trees": 2436,
             "percent_of_extracted_trees": {
-              "@value": "66.59",
+              "@value": "66.61",
               "@type": "xsd:decimal"
             },
             "verified_repositories": 2450,
             "percent_of_verified_repositories": {
-              "@value": "66.63",
+              "@value": "66.67",
               "@type": "xsd:decimal"
             }
           },
@@ -720,7 +725,7 @@
             },
             "verified_repositories": 770,
             "percent_of_verified_repositories": {
-              "@value": "20.94",
+              "@value": "20.95",
               "@type": "xsd:decimal"
             }
           },
@@ -730,12 +735,12 @@
             "occurrences": 654821,
             "unique_trees": 2989,
             "percent_of_extracted_trees": {
-              "@value": "81.71",
+              "@value": "81.73",
               "@type": "xsd:decimal"
             },
             "verified_repositories": 3001,
             "percent_of_verified_repositories": {
-              "@value": "81.62",
+              "@value": "81.66",
               "@type": "xsd:decimal"
             }
           },
@@ -765,7 +770,7 @@
             },
             "verified_repositories": 169,
             "percent_of_verified_repositories": {
-              "@value": "4.6",
+              "@value": "4.60",
               "@type": "xsd:decimal"
             }
           },
@@ -790,12 +795,12 @@
             "occurrences": 77437,
             "unique_trees": 1105,
             "percent_of_extracted_trees": {
-              "@value": "30.21",
+              "@value": "30.22",
               "@type": "xsd:decimal"
             },
             "verified_repositories": 1106,
             "percent_of_verified_repositories": {
-              "@value": "30.08",
+              "@value": "30.10",
               "@type": "xsd:decimal"
             }
           },
@@ -810,7 +815,7 @@
             },
             "verified_repositories": 477,
             "percent_of_verified_repositories": {
-              "@value": "12.97",
+              "@value": "12.98",
               "@type": "xsd:decimal"
             }
           },
@@ -820,12 +825,12 @@
             "occurrences": 74648,
             "unique_trees": 1578,
             "percent_of_extracted_trees": {
-              "@value": "43.14",
+              "@value": "43.15",
               "@type": "xsd:decimal"
             },
             "verified_repositories": 1585,
             "percent_of_verified_repositories": {
-              "@value": "43.11",
+              "@value": "43.13",
               "@type": "xsd:decimal"
             }
           },
@@ -835,12 +840,12 @@
             "occurrences": 2957,
             "unique_trees": 273,
             "percent_of_extracted_trees": {
-              "@value": "7.46",
+              "@value": "7.47",
               "@type": "xsd:decimal"
             },
             "verified_repositories": 274,
             "percent_of_verified_repositories": {
-              "@value": "7.45",
+              "@value": "7.46",
               "@type": "xsd:decimal"
             }
           },
@@ -880,12 +885,12 @@
             "occurrences": 662881,
             "unique_trees": 2862,
             "percent_of_extracted_trees": {
-              "@value": "78.24",
+              "@value": "78.26",
               "@type": "xsd:decimal"
             },
             "verified_repositories": 2878,
             "percent_of_verified_repositories": {
-              "@value": "78.27",
+              "@value": "78.31",
               "@type": "xsd:decimal"
             }
           },
@@ -910,12 +915,12 @@
             "occurrences": 16102,
             "unique_trees": 917,
             "percent_of_extracted_trees": {
-              "@value": "25.07",
+              "@value": "25.08",
               "@type": "xsd:decimal"
             },
             "verified_repositories": 920,
             "percent_of_verified_repositories": {
-              "@value": "25.02",
+              "@value": "25.03",
               "@type": "xsd:decimal"
             }
           },
@@ -940,12 +945,12 @@
             "occurrences": 537481,
             "unique_trees": 3206,
             "percent_of_extracted_trees": {
-              "@value": "87.64",
+              "@value": "87.67",
               "@type": "xsd:decimal"
             },
             "verified_repositories": 3222,
             "percent_of_verified_repositories": {
-              "@value": "87.63",
+              "@value": "87.67",
               "@type": "xsd:decimal"
             }
           },
@@ -970,12 +975,12 @@
             "occurrences": 31455,
             "unique_trees": 1122,
             "percent_of_extracted_trees": {
-              "@value": "30.67",
+              "@value": "30.68",
               "@type": "xsd:decimal"
             },
             "verified_repositories": 1126,
             "percent_of_verified_repositories": {
-              "@value": "30.62",
+              "@value": "30.64",
               "@type": "xsd:decimal"
             }
           },
@@ -985,12 +990,12 @@
             "occurrences": 8794,
             "unique_trees": 668,
             "percent_of_extracted_trees": {
-              "@value": "18.26",
+              "@value": "18.27",
               "@type": "xsd:decimal"
             },
             "verified_repositories": 669,
             "percent_of_verified_repositories": {
-              "@value": "18.19",
+              "@value": "18.20",
               "@type": "xsd:decimal"
             }
           },
@@ -1005,7 +1010,7 @@
             },
             "verified_repositories": 1131,
             "percent_of_verified_repositories": {
-              "@value": "30.76",
+              "@value": "30.78",
               "@type": "xsd:decimal"
             }
           },
@@ -1015,12 +1020,12 @@
             "occurrences": 754832,
             "unique_trees": 1913,
             "percent_of_extracted_trees": {
-              "@value": "52.3",
+              "@value": "52.31",
               "@type": "xsd:decimal"
             },
             "verified_repositories": 1927,
             "percent_of_verified_repositories": {
-              "@value": "52.41",
+              "@value": "52.44",
               "@type": "xsd:decimal"
             }
           },
@@ -1030,12 +1035,12 @@
             "occurrences": 57824,
             "unique_trees": 637,
             "percent_of_extracted_trees": {
-              "@value": "17.41",
+              "@value": "17.42",
               "@type": "xsd:decimal"
             },
             "verified_repositories": 638,
             "percent_of_verified_repositories": {
-              "@value": "17.35",
+              "@value": "17.36",
               "@type": "xsd:decimal"
             }
           },
@@ -1045,12 +1050,12 @@
             "occurrences": 157240,
             "unique_trees": 1388,
             "percent_of_extracted_trees": {
-              "@value": "37.94",
+              "@value": "37.95",
               "@type": "xsd:decimal"
             },
             "verified_repositories": 1395,
             "percent_of_verified_repositories": {
-              "@value": "37.94",
+              "@value": "37.96",
               "@type": "xsd:decimal"
             }
           },
@@ -1060,12 +1065,12 @@
             "occurrences": 94905,
             "unique_trees": 1295,
             "percent_of_extracted_trees": {
-              "@value": "35.4",
+              "@value": "35.41",
               "@type": "xsd:decimal"
             },
             "verified_repositories": 1303,
             "percent_of_verified_repositories": {
-              "@value": "35.44",
+              "@value": "35.46",
               "@type": "xsd:decimal"
             }
           },
@@ -1075,12 +1080,12 @@
             "occurrences": 2110844,
             "unique_trees": 3477,
             "percent_of_extracted_trees": {
-              "@value": "95.05",
+              "@value": "95.08",
               "@type": "xsd:decimal"
             },
             "verified_repositories": 3495,
             "percent_of_verified_repositories": {
-              "@value": "95.05",
+              "@value": "95.10",
               "@type": "xsd:decimal"
             }
           },
@@ -1090,7 +1095,7 @@
             "occurrences": 22370,
             "unique_trees": 311,
             "percent_of_extracted_trees": {
-              "@value": "8.5",
+              "@value": "8.50",
               "@type": "xsd:decimal"
             },
             "verified_repositories": 311,
@@ -1125,7 +1130,7 @@
             },
             "verified_repositories": 521,
             "percent_of_verified_repositories": {
-              "@value": "14.17",
+              "@value": "14.18",
               "@type": "xsd:decimal"
             }
           },
@@ -1140,7 +1145,7 @@
             },
             "verified_repositories": 136,
             "percent_of_verified_repositories": {
-              "@value": "3.7",
+              "@value": "3.70",
               "@type": "xsd:decimal"
             }
           },
@@ -1150,12 +1155,12 @@
             "occurrences": 7520,
             "unique_trees": 382,
             "percent_of_extracted_trees": {
-              "@value": "10.44",
+              "@value": "10.45",
               "@type": "xsd:decimal"
             },
             "verified_repositories": 385,
             "percent_of_verified_repositories": {
-              "@value": "10.47",
+              "@value": "10.48",
               "@type": "xsd:decimal"
             }
           },
@@ -1170,7 +1175,7 @@
             },
             "verified_repositories": 414,
             "percent_of_verified_repositories": {
-              "@value": "11.26",
+              "@value": "11.27",
               "@type": "xsd:decimal"
             }
           }
@@ -1178,8 +1183,8 @@
       },
       "has_target_frequencies": {
         "@type": "FeatureFrequencyAnalysis",
-        "denominator_extracted_trees": 3658,
-        "denominator_verified_repositories": 3677,
+        "denominator_extracted_trees": 3657,
+        "denominator_verified_repositories": 3675,
         "total_occurrences": 909073,
         "feature_frequency": [
           {
@@ -1188,12 +1193,12 @@
             "occurrences": 838272,
             "unique_trees": 3374,
             "percent_of_extracted_trees": {
-              "@value": "92.24",
+              "@value": "92.26",
               "@type": "xsd:decimal"
             },
             "verified_repositories": 3389,
             "percent_of_verified_repositories": {
-              "@value": "92.17",
+              "@value": "92.22",
               "@type": "xsd:decimal"
             }
           },
@@ -1208,7 +1213,7 @@
             },
             "verified_repositories": 366,
             "percent_of_verified_repositories": {
-              "@value": "9.95",
+              "@value": "9.96",
               "@type": "xsd:decimal"
             }
           },
@@ -1218,12 +1223,12 @@
             "occurrences": 13725,
             "unique_trees": 570,
             "percent_of_extracted_trees": {
-              "@value": "15.58",
+              "@value": "15.59",
               "@type": "xsd:decimal"
             },
             "verified_repositories": 570,
             "percent_of_verified_repositories": {
-              "@value": "15.5",
+              "@value": "15.51",
               "@type": "xsd:decimal"
             }
           },
@@ -1238,7 +1243,7 @@
             },
             "verified_repositories": 808,
             "percent_of_verified_repositories": {
-              "@value": "21.97",
+              "@value": "21.99",
               "@type": "xsd:decimal"
             }
           }
@@ -1246,10 +1251,10 @@
       },
       "has_sparql_analysis": {
         "@type": "SparqlAnalysis",
-        "denominator_extracted_trees": 3658,
+        "denominator_extracted_trees": 3657,
         "trees_with_structural_constraints": 1065,
         "percent_of_extracted_trees": {
-          "@value": "29.11",
+          "@value": "29.12",
           "@type": "xsd:decimal"
         },
         "sparql_links": 85496,
@@ -1260,7 +1265,7 @@
       },
       "has_property_path_analysis": {
         "@type": "PropertyPathAnalysis",
-        "denominator_extracted_trees": 3658,
+        "denominator_extracted_trees": 3657,
         "path_declarations": 2212575,
         "classified_path_declarations": 2211409,
         "unclassified_path_declarations": 1166,
@@ -1277,7 +1282,7 @@
             "occurrences": 2432119,
             "unique_trees": 3508,
             "percent_of_extracted_trees": {
-              "@value": "95.9",
+              "@value": "95.93",
               "@type": "xsd:decimal"
             }
           },
@@ -1299,7 +1304,7 @@
             "occurrences": 9813,
             "unique_trees": 385,
             "percent_of_extracted_trees": {
-              "@value": "10.52",
+              "@value": "10.53",
               "@type": "xsd:decimal"
             }
           },
@@ -1351,9 +1356,10 @@
       },
       "has_repository_view": {
         "@type": "RepositoryView",
-        "verified_repositories": 3677,
-        "repositories_whose_tree_was_extracted": 3677,
-        "repositories_whose_tree_was_not_extracted": 0
+        "verified_repositories": 3675,
+        "repositories_whose_tree_was_extracted": 3675,
+        "repositories_whose_tree_was_not_extracted": 0,
+        "verified_repositories_before_analysis_exclusion": 3677
       },
       "has_concentration": {
         "@type": "ConcentrationAnalysis",
@@ -1632,7 +1638,135 @@
       },
       "has_vocabulary_usage": {
         "@type": "VocabularyUsageAnalysis",
-        "trees_with_shape_documents": 3657
+        "trees_with_shape_documents": 3657,
+        "vocabulary_frequency": [
+          {
+            "@type": "VocabularyFrequency",
+            "vocabulary": "sef:vocab_dublin_core_terms",
+            "unique_trees": 924,
+            "percent_of_trees": {
+              "@value": "25.27",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "VocabularyFrequency",
+            "vocabulary": "sef:vocab_schema_org",
+            "unique_trees": 848,
+            "percent_of_trees": {
+              "@value": "23.19",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "VocabularyFrequency",
+            "vocabulary": "sef:vocab_skos",
+            "unique_trees": 835,
+            "percent_of_trees": {
+              "@value": "22.83",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "VocabularyFrequency",
+            "vocabulary": "sef:vocab_prov_o",
+            "unique_trees": 563,
+            "percent_of_trees": {
+              "@value": "15.40",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "VocabularyFrequency",
+            "vocabulary": "sef:vocab_foaf",
+            "unique_trees": 520,
+            "percent_of_trees": {
+              "@value": "14.22",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "VocabularyFrequency",
+            "vocabulary": "sef:vocab_dcat",
+            "unique_trees": 395,
+            "percent_of_trees": {
+              "@value": "10.80",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "VocabularyFrequency",
+            "vocabulary": "sef:vocab_owl_time",
+            "unique_trees": 238,
+            "percent_of_trees": {
+              "@value": "6.51",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "VocabularyFrequency",
+            "vocabulary": "sef:vocab_vcard",
+            "unique_trees": 206,
+            "percent_of_trees": {
+              "@value": "5.63",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "VocabularyFrequency",
+            "vocabulary": "sef:vocab_adms",
+            "unique_trees": 193,
+            "percent_of_trees": {
+              "@value": "5.28",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "VocabularyFrequency",
+            "vocabulary": "sef:vocab_geosparql",
+            "unique_trees": 184,
+            "percent_of_trees": {
+              "@value": "5.03",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "VocabularyFrequency",
+            "vocabulary": "sef:vocab_locn",
+            "unique_trees": 171,
+            "percent_of_trees": {
+              "@value": "4.68",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "VocabularyFrequency",
+            "vocabulary": "sef:vocab_qudt",
+            "unique_trees": 171,
+            "percent_of_trees": {
+              "@value": "4.68",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "VocabularyFrequency",
+            "vocabulary": "sef:vocab_odrl",
+            "unique_trees": 161,
+            "percent_of_trees": {
+              "@value": "4.40",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "VocabularyFrequency",
+            "vocabulary": "sef:vocab_dublin_core_elements",
+            "unique_trees": 159,
+            "percent_of_trees": {
+              "@value": "4.35",
+              "@type": "xsd:decimal"
+            }
+          }
+        ]
       },
       "has_owl_shacl_comparison": {
         "@type": "OwlShaclConstraintAnalysis",
@@ -1659,293 +1793,11 @@
         "generation_related_path_documents": 338,
         "ontology_or_profile_indicator_documents": 1431
       },
-      "has_functional_usage": {
-        "@type": "FunctionalUsageAnalysis",
-        "shape_documents": 50872,
-        "trees_with_shape_documents": 3657,
-        "content_sha256_groups": 33440,
-        "multi_label": true,
-        "classification_result": [
-          {
-            "@type": "ClassificationResult",
-            "category": "sef:test_fixture_conformance",
-            "counting_unit": "sef:unit_document",
-            "n_with_label": 19477,
-            "denominator": 50872,
-            "rate": {
-              "@value": "0.3829",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "ClassificationResult",
-            "category": "sef:test_fixture_conformance",
-            "counting_unit": "sef:unit_content",
-            "n_with_label": 9042,
-            "denominator": 33440,
-            "rate": {
-              "@value": "0.2704",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "ClassificationResult",
-            "category": "sef:test_fixture_conformance",
-            "counting_unit": "sef:unit_git_tree",
-            "n_with_label": 667,
-            "denominator": 3658,
-            "rate": {
-              "@value": "0.1823",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "ClassificationResult",
-            "category": "sef:schema_structural",
-            "counting_unit": "sef:unit_document",
-            "n_with_label": 25797,
-            "denominator": 50872,
-            "rate": {
-              "@value": "0.5071",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "ClassificationResult",
-            "category": "sef:schema_structural",
-            "counting_unit": "sef:unit_content",
-            "n_with_label": 18982,
-            "denominator": 33440,
-            "rate": {
-              "@value": "0.5676",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "ClassificationResult",
-            "category": "sef:schema_structural",
-            "counting_unit": "sef:unit_git_tree",
-            "n_with_label": 3275,
-            "denominator": 3658,
-            "rate": {
-              "@value": "0.8953",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "ClassificationResult",
-            "category": "sef:rules_sparql_extension",
-            "counting_unit": "sef:unit_document",
-            "n_with_label": 9015,
-            "denominator": 50872,
-            "rate": {
-              "@value": "0.1772",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "ClassificationResult",
-            "category": "sef:rules_sparql_extension",
-            "counting_unit": "sef:unit_content",
-            "n_with_label": 6640,
-            "denominator": 33440,
-            "rate": {
-              "@value": "0.1986",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "ClassificationResult",
-            "category": "sef:rules_sparql_extension",
-            "counting_unit": "sef:unit_git_tree",
-            "n_with_label": 1129,
-            "denominator": 3658,
-            "rate": {
-              "@value": "0.3086",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "ClassificationResult",
-            "category": "sef:generated_transform_workflow",
-            "counting_unit": "sef:unit_document",
-            "n_with_label": 338,
-            "denominator": 50872,
-            "rate": {
-              "@value": "0.0066",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "ClassificationResult",
-            "category": "sef:generated_transform_workflow",
-            "counting_unit": "sef:unit_content",
-            "n_with_label": 332,
-            "denominator": 33440,
-            "rate": {
-              "@value": "0.0099",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "ClassificationResult",
-            "category": "sef:generated_transform_workflow",
-            "counting_unit": "sef:unit_git_tree",
-            "n_with_label": 37,
-            "denominator": 3658,
-            "rate": {
-              "@value": "0.0101",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "ClassificationResult",
-            "category": "sef:application_business",
-            "counting_unit": "sef:unit_document",
-            "n_with_label": 55,
-            "denominator": 50872,
-            "rate": {
-              "@value": "0.0011",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "ClassificationResult",
-            "category": "sef:application_business",
-            "counting_unit": "sef:unit_content",
-            "n_with_label": 53,
-            "denominator": 33440,
-            "rate": {
-              "@value": "0.0016",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "ClassificationResult",
-            "category": "sef:application_business",
-            "counting_unit": "sef:unit_git_tree",
-            "n_with_label": 10,
-            "denominator": 3658,
-            "rate": {
-              "@value": "0.0027",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "ClassificationResult",
-            "category": "sef:ontology_vocabulary_spec",
-            "counting_unit": "sef:unit_document",
-            "n_with_label": 1478,
-            "denominator": 50872,
-            "rate": {
-              "@value": "0.0291",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "ClassificationResult",
-            "category": "sef:ontology_vocabulary_spec",
-            "counting_unit": "sef:unit_content",
-            "n_with_label": 1125,
-            "denominator": 33440,
-            "rate": {
-              "@value": "0.0336",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "ClassificationResult",
-            "category": "sef:ontology_vocabulary_spec",
-            "counting_unit": "sef:unit_git_tree",
-            "n_with_label": 101,
-            "denominator": 3658,
-            "rate": {
-              "@value": "0.0276",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "ClassificationResult",
-            "category": "sef:documents_unknown_only",
-            "counting_unit": "sef:unit_document",
-            "n_with_label": 7102,
-            "denominator": 50872,
-            "rate": {
-              "@value": "0.1396",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "ClassificationResult",
-            "category": "sef:unclassified_test_or_generated_documents",
-            "counting_unit": "sef:unit_document",
-            "n_with_label": 11009,
-            "denominator": 50872,
-            "rate": {
-              "@value": "0.2164",
-              "@type": "xsd:decimal"
-            }
-          }
-        ]
-      },
-      "has_purpose_classification": {
-        "@type": "PurposeClassificationAnalysis",
-        "shape_documents": 50872,
-        "content_sha256_groups": 33440,
-        "git_trees": 3658,
-        "donor_families": 3646,
-        "classification_result": [
-          {
-            "@type": "ClassificationResult",
-            "category": "sef:schema_like",
-            "counting_unit": "sef:unit_document",
-            "n_with_label": 4809,
-            "denominator": 50872,
-            "rate": {
-              "@value": "0.094531",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "ClassificationResult",
-            "category": "sef:application_specific",
-            "counting_unit": "sef:unit_document",
-            "n_with_label": 1786,
-            "denominator": 50872,
-            "rate": {
-              "@value": "0.035108",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "ClassificationResult",
-            "category": "sef:purpose_overlap",
-            "counting_unit": "sef:unit_document",
-            "n_with_label": 835,
-            "denominator": 50872,
-            "rate": {
-              "@value": "0.016414",
-              "@type": "xsd:decimal"
-            }
-          },
-          {
-            "@type": "ClassificationResult",
-            "category": "sef:purpose_insufficient_or_none",
-            "counting_unit": "sef:unit_document",
-            "n_with_label": 45112,
-            "denominator": 50872,
-            "rate": {
-              "@value": "0.886775",
-              "@type": "xsd:decimal"
-            }
-          }
-        ]
-      },
       "has_domain_classification": {
         "@type": "DomainClassificationAnalysis",
         "shape_documents": 50872,
         "content_sha256_groups": 33440,
-        "git_trees": 3658,
+        "git_trees": 3657,
         "donor_families": 3646,
         "documents_with_application_domain": 16227,
         "classification_result": [
@@ -2126,7 +1978,8 @@
             }
           }
         ]
-      }
+      },
+      "analysis_population_note": "Analysis population is the 3657 extracted non-fork Git trees with at least one SHACL shape document. Two verified records without recoverable shape documents are excluded; see study notes analysis-population-shape-documents-v1."
     },
     {
       "@id": "sef:CountingUnitScheme",
@@ -2331,138 +2184,6 @@
       "inScheme": "sef:ShapesGraphPolicyScheme"
     },
     {
-      "@id": "sef:FunctionalUsageScheme",
-      "@type": "ConceptScheme",
-      "prefLabel": {
-        "@value": "Functional usage scheme",
-        "@language": "en"
-      }
-    },
-    {
-      "@id": "sef:FunctionalUsageSummaryScheme",
-      "@type": "ConceptScheme",
-      "prefLabel": {
-        "@value": "Functional usage summary scheme",
-        "@language": "en"
-      }
-    },
-    {
-      "@id": "sef:test_fixture_conformance",
-      "@type": "Concept",
-      "prefLabel": {
-        "@value": "Test fixtures and conformance",
-        "@language": "en"
-      },
-      "inScheme": "sef:FunctionalUsageScheme"
-    },
-    {
-      "@id": "sef:schema_structural",
-      "@type": "Concept",
-      "prefLabel": {
-        "@value": "Structural schemas",
-        "@language": "en"
-      },
-      "inScheme": "sef:FunctionalUsageScheme"
-    },
-    {
-      "@id": "sef:rules_sparql_extension",
-      "@type": "Concept",
-      "prefLabel": {
-        "@value": "SPARQL rules and extensions",
-        "@language": "en"
-      },
-      "inScheme": "sef:FunctionalUsageScheme"
-    },
-    {
-      "@id": "sef:generated_transform_workflow",
-      "@type": "Concept",
-      "prefLabel": {
-        "@value": "Generated transforms and workflows",
-        "@language": "en"
-      },
-      "inScheme": "sef:FunctionalUsageScheme"
-    },
-    {
-      "@id": "sef:application_business",
-      "@type": "Concept",
-      "prefLabel": {
-        "@value": "Application use",
-        "@language": "en"
-      },
-      "inScheme": "sef:FunctionalUsageScheme"
-    },
-    {
-      "@id": "sef:ontology_vocabulary_spec",
-      "@type": "Concept",
-      "prefLabel": {
-        "@value": "Ontology and vocabulary specifications",
-        "@language": "en"
-      },
-      "inScheme": "sef:FunctionalUsageScheme"
-    },
-    {
-      "@id": "sef:documents_unknown_only",
-      "@type": "Concept",
-      "prefLabel": {
-        "@value": "Unknown labels only",
-        "@language": "en"
-      },
-      "inScheme": "sef:FunctionalUsageSummaryScheme"
-    },
-    {
-      "@id": "sef:unclassified_test_or_generated_documents",
-      "@type": "Concept",
-      "prefLabel": {
-        "@value": "Unclassified test or generated documents",
-        "@language": "en"
-      },
-      "inScheme": "sef:FunctionalUsageSummaryScheme"
-    },
-    {
-      "@id": "sef:DocumentPurposeScheme",
-      "@type": "ConceptScheme",
-      "prefLabel": {
-        "@value": "Document purpose scheme",
-        "@language": "en"
-      }
-    },
-    {
-      "@id": "sef:schema_like",
-      "@type": "Concept",
-      "prefLabel": {
-        "@value": "Schema-like",
-        "@language": "en"
-      },
-      "inScheme": "sef:DocumentPurposeScheme"
-    },
-    {
-      "@id": "sef:application_specific",
-      "@type": "Concept",
-      "prefLabel": {
-        "@value": "Application-specific",
-        "@language": "en"
-      },
-      "inScheme": "sef:DocumentPurposeScheme"
-    },
-    {
-      "@id": "sef:purpose_overlap",
-      "@type": "Concept",
-      "prefLabel": {
-        "@value": "Purpose overlap",
-        "@language": "en"
-      },
-      "inScheme": "sef:DocumentPurposeScheme"
-    },
-    {
-      "@id": "sef:purpose_insufficient_or_none",
-      "@type": "Concept",
-      "prefLabel": {
-        "@value": "Insufficient information or neither",
-        "@language": "en"
-      },
-      "inScheme": "sef:DocumentPurposeScheme"
-    },
-    {
       "@id": "sef:ApplicationDomainScheme",
       "@type": "ConceptScheme",
       "prefLabel": {
@@ -2621,6 +2342,140 @@
         "@language": "en"
       },
       "inScheme": "sef:DomainSummaryScheme"
+    },
+    {
+      "@id": "sef:ReferencedVocabularyScheme",
+      "@type": "ConceptScheme",
+      "prefLabel": {
+        "@value": "Referenced public RDF vocabulary scheme",
+        "@language": "en"
+      }
+    },
+    {
+      "@id": "sef:vocab_dublin_core_terms",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Dublin Core Terms",
+        "@language": "en"
+      },
+      "inScheme": "sef:ReferencedVocabularyScheme"
+    },
+    {
+      "@id": "sef:vocab_schema_org",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Schema.org",
+        "@language": "en"
+      },
+      "inScheme": "sef:ReferencedVocabularyScheme"
+    },
+    {
+      "@id": "sef:vocab_skos",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "SKOS",
+        "@language": "en"
+      },
+      "inScheme": "sef:ReferencedVocabularyScheme"
+    },
+    {
+      "@id": "sef:vocab_prov_o",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "PROV-O",
+        "@language": "en"
+      },
+      "inScheme": "sef:ReferencedVocabularyScheme"
+    },
+    {
+      "@id": "sef:vocab_foaf",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "FOAF",
+        "@language": "en"
+      },
+      "inScheme": "sef:ReferencedVocabularyScheme"
+    },
+    {
+      "@id": "sef:vocab_dcat",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "DCAT",
+        "@language": "en"
+      },
+      "inScheme": "sef:ReferencedVocabularyScheme"
+    },
+    {
+      "@id": "sef:vocab_owl_time",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "OWL-Time",
+        "@language": "en"
+      },
+      "inScheme": "sef:ReferencedVocabularyScheme"
+    },
+    {
+      "@id": "sef:vocab_vcard",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "vCard",
+        "@language": "en"
+      },
+      "inScheme": "sef:ReferencedVocabularyScheme"
+    },
+    {
+      "@id": "sef:vocab_adms",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "ADMS",
+        "@language": "en"
+      },
+      "inScheme": "sef:ReferencedVocabularyScheme"
+    },
+    {
+      "@id": "sef:vocab_geosparql",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "GeoSPARQL",
+        "@language": "en"
+      },
+      "inScheme": "sef:ReferencedVocabularyScheme"
+    },
+    {
+      "@id": "sef:vocab_locn",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "LOCN",
+        "@language": "en"
+      },
+      "inScheme": "sef:ReferencedVocabularyScheme"
+    },
+    {
+      "@id": "sef:vocab_qudt",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "QUDT",
+        "@language": "en"
+      },
+      "inScheme": "sef:ReferencedVocabularyScheme"
+    },
+    {
+      "@id": "sef:vocab_odrl",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "ODRL",
+        "@language": "en"
+      },
+      "inScheme": "sef:ReferencedVocabularyScheme"
+    },
+    {
+      "@id": "sef:vocab_dublin_core_elements",
+      "@type": "Concept",
+      "prefLabel": {
+        "@value": "Dublin Core Elements",
+        "@language": "en"
+      },
+      "inScheme": "sef:ReferencedVocabularyScheme"
     }
   ]
 }
