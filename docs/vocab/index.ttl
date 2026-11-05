@@ -49,7 +49,7 @@
 
 :SparqlAnalysis a rdfs:Class ;
     rdfs:label "SPARQL analysis"@en ;
-    rdfs:comment "Counts of SHACL-SPARQL constraints and targets."@en .
+    rdfs:comment "SHACL-SPARQL usage identified through structurally valid SPARQL constructs, including sh:sparql links and explicitly typed SPARQL constraint nodes counted per RDF file."@en .
 
 :PropertyPathAnalysis a rdfs:Class ;
     rdfs:label "Property path analysis"@en ;
@@ -264,9 +264,17 @@
 :denominator_verified_repositories a rdf:Property ; rdfs:range xsd:integer .
 :total_occurrences a rdf:Property ; rdfs:range xsd:integer .
 
-:trees_with_structural_constraints a rdf:Property ; rdfs:range xsd:integer .
-:sparql_links a rdf:Property ; rdfs:range xsd:integer .
-:sparql_constraint_nodes a rdf:Property ; rdfs:range xsd:integer .
+:trees_with_structural_constraints a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of analyzed Git trees containing structurally valid SHACL-SPARQL constructs."@en .
+
+:sparql_links a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of structurally valid sh:sparql triples counted as links."@en .
+
+:sparql_constraint_nodes a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of SPARQL constraint nodes counted per RDF file when explicitly typed as sh:SPARQLConstraint or a subclass."@en .
 :sparql_target_trees a rdf:Property ; rdfs:range xsd:integer .
 :sparql_only_content_trees a rdf:Property ; rdfs:range xsd:integer .
 :sparql_only_verification_trees a rdf:Property ; rdfs:range xsd:integer .

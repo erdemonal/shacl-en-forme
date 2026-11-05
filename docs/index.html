@@ -1106,15 +1106,21 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <h2 id="x4.-sparql-based-constraints" resource="#x4.-sparql-based-constraints"><span property="xhv:role" resource="xhv:heading"><span class="secno">4 </span>SPARQL-based Constraints</span>
         </h2>
         <p>
-            SHACL-SPARQL usage is measured through <code>sh:sparql</code> links and explicitly typed SPARQL constraint nodes.
-                </p>
-                <p>
-            Each structurally valid <code>sh:sparql</code> triple is counted as one link. SPARQL constraint nodes are counted as distinct resources typed as <code>sh:SPARQLConstraint</code> or one of its subclasses. These measurements count different structures.
-                </p>
-                <table class="data">
+            SHACL-SPARQL usage is identified through structurally valid SPARQL constructs. Git tree prevalence measures the proportion of analyzed Git trees containing such constructs.
+        </p>
+        <p>
+            Each structurally valid <code>sh:sparql</code> triple is counted as one link. SPARQL constraint nodes are counted per RDF file when explicitly typed as <code>sh:SPARQLConstraint</code> or one of its subclasses. These measurements count different structures.
+        </p>
+        <table class="data">
+            <thead>
+                <tr>
+                    <th>Measurement</th>
+                    <th>Count</th>
+                </tr>
+            </thead>
             <tbody>
                 <tr>
-                    <th scope="row">Unique Git trees</th>
+                    <th scope="row">Git trees with SHACL-SPARQL usage</th>
                     <td>1,065 / 3,657</td>
                 </tr>
                 <tr>
