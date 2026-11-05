@@ -327,4 +327,9 @@ h5.research-question {
   max-width: 100%;
   height: auto;
 }
+#fig-sparql-constructs img {
+  width: 726px; /* 330 × 2.2 */
+  max-width: 100%;
+  height: auto;
+}
 

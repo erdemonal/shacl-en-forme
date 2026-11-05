@@ -309,7 +309,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 <li class="tocline"><a href="#core-components-logical"><span class="secno">3.6 </span>Logical Constraint Components</a></li>
 <li class="tocline"><a href="#core-components-shape"><span class="secno">3.7 </span>Shape-based Constraint Components</a></li>
 <li class="tocline"><a href="#core-components-others"><span class="secno">3.8 </span>Other Constraint Components</a></li></ol></li>
-<li class="tocline"><a href="#sparql-constraints"><span class="secno">4 </span>SPARQL-based Constraints</a></li></ol>
+<li class="tocline"><a href="#shacl-sparql"><span class="secno">4 </span>SHACL-SPARQL</a>
+<ol class="toc"><li class="tocline"><a href="#sparql-based-constraints"><span class="secno">4.1 </span>SPARQL-based Constraints</a></li>
+<li class="tocline"><a href="#sparql-based-constraint-components"><span class="secno">4.2 </span>SPARQL-based Constraint Components</a></li></ol></li></ol>
     </nav>
 
 
@@ -322,7 +324,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             Sections 2 and 3 provide occurrence counts and Git tree prevalence for SHACL shapes, targets, property paths, and Core constraint parameters.
         </p>
         <p>
-            Section 4 provides usage statistics for SPARQL-based constraints.
+            Section 4 analyzes the use of SPARQL-based constraints and constraint components.
         </p>
     </section>
 
@@ -1101,42 +1103,94 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
     </section>
 
-    <section id="sparql-constraints" typeof="bibo:Chapter" resource="#sparql-constraints" property="bibo:hasPart">
+    <section id="shacl-sparql" typeof="bibo:Chapter" resource="#shacl-sparql" property="bibo:hasPart">
         <!--OddPage-->
-        <h2 id="x4.-sparql-based-constraints" resource="#x4.-sparql-based-constraints"><span property="xhv:role" resource="xhv:heading"><span class="secno">4 </span>SPARQL-based Constraints</span>
+        <h2 id="x4.-shacl-sparql" resource="#x4.-shacl-sparql"><span property="xhv:role" resource="xhv:heading"><span class="secno">4 </span>SHACL-SPARQL</span>
         </h2>
-        <p>
-            SHACL-SPARQL usage is identified through structurally valid SPARQL constructs. Git tree prevalence measures the proportion of analyzed Git trees containing such constructs.
-        </p>
-        <p>
-            Each structurally valid <code>sh:sparql</code> triple is counted as one link. SPARQL constraint nodes are counted per RDF file when explicitly typed as <code>sh:SPARQLConstraint</code> or one of its subclasses. These measurements count different structures.
-        </p>
-        <table class="data">
-            <thead>
-                <tr>
-                    <th>Measurement</th>
-                    <th>Count</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">Git trees with SHACL-SPARQL usage</th>
-                    <td>1,065 / 3,657</td>
-                </tr>
-                <tr>
-                    <th scope="row">Tree prevalence</th>
-                    <td>29.12%</td>
-                </tr>
-                <tr>
-                    <th scope="row"><code>sh:sparql</code> links</th>
-                    <td>85,496</td>
-                </tr>
-                <tr>
-                    <th scope="row">SPARQL constraint nodes</th>
-                    <td>25,073</td>
-                </tr>
-            </tbody>
-        </table>
+        <h4 class="research-question">How is SHACL-SPARQL used in practice?</h4>
+
+        <section id="sparql-based-constraints" typeof="bibo:Chapter" resource="#sparql-based-constraints" property="bibo:hasPart">
+            <h3 id="x4.1-sparql-based-constraints" resource="#x4.1-sparql-based-constraints"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.1 </span>SPARQL-based Constraints</span>
+            </h3>
+            <p>
+                The analysis counts structurally identified <code>sh:sparql</code> links and explicitly typed SPARQL constraint nodes, counted per RDF file.
+            </p>
+            <table class="data">
+                <thead>
+                    <tr>
+                        <th>Measurement</th>
+                        <th>Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Git trees</th>
+                        <td>1,065</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Tree prevalence</th>
+                        <td>29.12%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><code>sh:sparql</code> links</th>
+                        <td>85,496</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">SPARQL constraint nodes</th>
+                        <td>25,073</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5 class="research-question">Which SPARQL constructs are used in these constraints?</h5>
+            <p>
+                The analysis identified 84,467 links to parseable SELECT queries across 1,040 Git trees.
+            </p>
+            <figure id="fig-sparql-constructs">
+                <img src="images/sparql-constructs.svg" alt="SPARQL construct prevalence in Git trees with parseable SELECT queries">
+                <figcaption>Figure 4. SPARQL construct prevalence in Git trees with parseable SELECT queries.</figcaption>
+            </figure>
+            <p>
+                <code>FILTER</code> and <code>NOT EXISTS</code> are the most widespread constructs, indicating that filtering and absence checks are more prevalent than grouping and aggregation in SPARQL-based constraints.
+            </p>
+            <p>
+                Observed SPARQL constructs are reported as they appear in parseable SELECT queries. The presence of <code>MINUS</code> does not imply conformance with the SHACL 1.0 restrictions on pre-bound variables.
+            </p>
+        </section>
+
+        <section id="sparql-based-constraint-components" typeof="bibo:Chapter" resource="#sparql-based-constraint-components" property="bibo:hasPart">
+            <h3 id="x4.2-sparql-based-constraint-components" resource="#x4.2-sparql-based-constraint-components"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2 </span>SPARQL-based Constraint Components</span>
+            </h3>
+            <h4 class="research-question">How widely are custom SPARQL-based constraint components used?</h4>
+            <table class="data">
+                <thead>
+                    <tr>
+                        <th>Measurement</th>
+                        <th>Git trees</th>
+                        <th>Tree prevalence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Custom constraint components</th>
+                        <td>102</td>
+                        <td>2.79%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ASK-based validators</th>
+                        <td>91</td>
+                        <td>2.49%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">SELECT-based validators</th>
+                        <td>94</td>
+                        <td>2.57%</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                SPARQL-based constraints appear in approximately ten times as many Git trees as custom constraint components. Much of the custom component usage comes from SHACL test suites and DASH material.
+            </p>
+        </section>
     </section>
 
 

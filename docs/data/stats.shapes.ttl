@@ -192,6 +192,84 @@ sef:OwlShaclConstraintAnalysisShape
         sh:minCount 1 ; sh:maxCount 1 ;
     ] .
 
+sef:SparqlAnalysisShape
+    a sh:NodeShape ;
+    sh:targetClass sef:SparqlAnalysis ;
+    sh:property [
+        sh:path sef:denominator_extracted_trees ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:trees_with_structural_constraints ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:percent_of_extracted_trees ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:sparql_links ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:sparql_constraint_nodes ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:parseable_select_links ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:trees_with_parseable_select ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:construct_frequency ;
+        sh:class sef:SparqlConstructFrequency ;
+        sh:minCount 13 ; sh:maxCount 13 ;
+    ] ;
+    sh:property [
+        sh:path sef:trees_with_custom_constraint_components ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:trees_with_ask_based_validators ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:trees_with_select_based_validators ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] .
+
+sef:SparqlConstructFrequencyShape
+    a sh:NodeShape ;
+    sh:targetClass sef:SparqlConstructFrequency ;
+    sh:property [
+        sh:path sef:construct_label ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:unique_trees ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:percent_of_trees ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] .
+
 sef:DocumentCharacteristicsAnalysisShape
     a sh:NodeShape ;
     sh:targetClass sef:DocumentCharacteristicsAnalysis ;

@@ -27,6 +27,7 @@
     "FeatureFrequencyAnalysis": "sef:FeatureFrequencyAnalysis",
     "FeatureFrequency": "sef:FeatureFrequency",
     "SparqlAnalysis": "sef:SparqlAnalysis",
+    "SparqlConstructFrequency": "sef:SparqlConstructFrequency",
     "PropertyPathAnalysis": "sef:PropertyPathAnalysis",
     "RepositoryView": "sef:RepositoryView",
     "ConcentrationAnalysis": "sef:ConcentrationAnalysis",
@@ -288,6 +289,33 @@
     },
     "sparql_only_verification_trees": {
       "@id": "sef:sparql_only_verification_trees",
+      "@type": "xsd:integer"
+    },
+    "parseable_select_links": {
+      "@id": "sef:parseable_select_links",
+      "@type": "xsd:integer"
+    },
+    "trees_with_parseable_select": {
+      "@id": "sef:trees_with_parseable_select",
+      "@type": "xsd:integer"
+    },
+    "construct_frequency": {
+      "@id": "sef:construct_frequency",
+      "@container": "@set"
+    },
+    "construct_label": {
+      "@id": "sef:construct_label"
+    },
+    "trees_with_custom_constraint_components": {
+      "@id": "sef:trees_with_custom_constraint_components",
+      "@type": "xsd:integer"
+    },
+    "trees_with_ask_based_validators": {
+      "@id": "sef:trees_with_ask_based_validators",
+      "@type": "xsd:integer"
+    },
+    "trees_with_select_based_validators": {
+      "@id": "sef:trees_with_select_based_validators",
       "@type": "xsd:integer"
     },
     "path_declarations": {
@@ -1261,7 +1289,131 @@
         "sparql_constraint_nodes": 25073,
         "sparql_target_trees": 302,
         "sparql_only_content_trees": 1,
-        "sparql_only_verification_trees": 3
+        "sparql_only_verification_trees": 3,
+        "parseable_select_links": 84467,
+        "trees_with_parseable_select": 1040,
+        "construct_frequency": [
+          {
+            "@type": "SparqlConstructFrequency",
+            "construct_label": "FILTER",
+            "unique_trees": 965,
+            "percent_of_trees": {
+              "@value": "92.79",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "SparqlConstructFrequency",
+            "construct_label": "NOT EXISTS",
+            "unique_trees": 692,
+            "percent_of_trees": {
+              "@value": "66.54",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "SparqlConstructFrequency",
+            "construct_label": "SPARQL property paths",
+            "unique_trees": 312,
+            "percent_of_trees": {
+              "@value": "30.00",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "SparqlConstructFrequency",
+            "construct_label": "UNION",
+            "unique_trees": 263,
+            "percent_of_trees": {
+              "@value": "25.29",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "SparqlConstructFrequency",
+            "construct_label": "GROUP BY",
+            "unique_trees": 190,
+            "percent_of_trees": {
+              "@value": "18.27",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "SparqlConstructFrequency",
+            "construct_label": "OPTIONAL",
+            "unique_trees": 164,
+            "percent_of_trees": {
+              "@value": "15.77",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "SparqlConstructFrequency",
+            "construct_label": "COUNT",
+            "unique_trees": 163,
+            "percent_of_trees": {
+              "@value": "15.67",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "SparqlConstructFrequency",
+            "construct_label": "EXISTS",
+            "unique_trees": 127,
+            "percent_of_trees": {
+              "@value": "12.21",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "SparqlConstructFrequency",
+            "construct_label": "HAVING",
+            "unique_trees": 110,
+            "percent_of_trees": {
+              "@value": "10.58",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "SparqlConstructFrequency",
+            "construct_label": "SUM",
+            "unique_trees": 58,
+            "percent_of_trees": {
+              "@value": "5.58",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "SparqlConstructFrequency",
+            "construct_label": "MINUS",
+            "unique_trees": 47,
+            "percent_of_trees": {
+              "@value": "4.52",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "SparqlConstructFrequency",
+            "construct_label": "MAX",
+            "unique_trees": 17,
+            "percent_of_trees": {
+              "@value": "1.63",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "SparqlConstructFrequency",
+            "construct_label": "MIN",
+            "unique_trees": 16,
+            "percent_of_trees": {
+              "@value": "1.54",
+              "@type": "xsd:decimal"
+            }
+          }
+        ],
+        "trees_with_custom_constraint_components": 102,
+        "trees_with_ask_based_validators": 91,
+        "trees_with_select_based_validators": 94
       },
       "has_property_path_analysis": {
         "@type": "PropertyPathAnalysis",
