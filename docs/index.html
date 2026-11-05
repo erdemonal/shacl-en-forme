@@ -1146,14 +1146,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 The analysis identified 84,467 links to parseable SELECT queries across 1,040 Git trees.
             </p>
             <figure id="fig-sparql-constructs">
-                <img src="images/sparql-constructs.svg" alt="SPARQL construct prevalence in Git trees with parseable SELECT queries">
-                <figcaption>Figure 4. SPARQL construct prevalence in Git trees with parseable SELECT queries.</figcaption>
+                <img src="images/sparql-constructs.svg" alt="Git tree prevalence of SPARQL constructs in these queries">
+                <figcaption>Figure 4. Git tree prevalence of SPARQL constructs in these queries.</figcaption>
             </figure>
             <p>
-                <code>FILTER</code> and <code>NOT EXISTS</code> are the most widespread constructs, indicating that filtering and absence checks are more prevalent than grouping and aggregation in SPARQL-based constraints.
+                <code>FILTER</code> and <code>NOT EXISTS</code> are the most widespread constructs. Grouping and aggregation are considerably less common.
             </p>
             <p>
-                Observed SPARQL constructs are reported as they appear in parseable SELECT queries. The presence of <code>MINUS</code> does not imply conformance with the SHACL 1.0 restrictions on pre-bound variables.
+                Although <code>MINUS</code> appears in the analyzed queries, its use is prohibited by SHACL 1.0.
             </p>
         </section>
 
@@ -1188,7 +1188,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 </tbody>
             </table>
             <p>
-                SPARQL-based constraints appear in approximately ten times as many Git trees as custom constraint components. Much of the custom component usage comes from SHACL test suites and DASH material.
+                SPARQL-based constraints appear in approximately ten times as many Git trees as custom constraint components. Much of this usage comes from SHACL test suites and DASH, with additional components found in examples and other projects.
             </p>
         </section>
     </section>
