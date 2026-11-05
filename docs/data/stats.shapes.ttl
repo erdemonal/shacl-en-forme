@@ -34,6 +34,35 @@ sef:AnalysisResultsShape
         sh:path sef:has_domain_classification ;
         sh:class sef:DomainClassificationAnalysis ;
         sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:has_shape_characteristics ;
+        sh:class sef:ShapeCharacteristicsAnalysis ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] .
+
+sef:ShapeCharacteristicsAnalysisShape
+    a sh:NodeShape ;
+    sh:targetClass sef:ShapeCharacteristicsAnalysis ;
+    sh:property [
+        sh:path sef:denominator_extracted_trees ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:feature_frequency ;
+        sh:class sef:FeatureFrequency ;
+        sh:minCount 8 ; sh:maxCount 8 ;
+    ] ;
+    sh:property [
+        sh:path sef:trees_with_deactivated_true ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path sef:percent_with_deactivated_true ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 1 ; sh:maxCount 1 ;
     ] .
 
 sef:ClassificationResultShape

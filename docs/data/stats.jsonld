@@ -42,6 +42,7 @@
     "ClassificationResult": "sef:ClassificationResult",
     "DomainClassificationAnalysis": "sef:DomainClassificationAnalysis",
     "DocumentCharacteristicsAnalysis": "sef:DocumentCharacteristicsAnalysis",
+    "ShapeCharacteristicsAnalysis": "sef:ShapeCharacteristicsAnalysis",
     "Concept": "skos:Concept",
     "ConceptScheme": "skos:ConceptScheme",
     "prefLabel": "skos:prefLabel",
@@ -88,8 +89,19 @@
     "has_document_characteristics": {
       "@id": "sef:has_document_characteristics"
     },
+    "has_shape_characteristics": {
+      "@id": "sef:has_shape_characteristics"
+    },
     "has_domain_classification": {
       "@id": "sef:has_domain_classification"
+    },
+    "trees_with_deactivated_true": {
+      "@id": "sef:trees_with_deactivated_true",
+      "@type": "xsd:integer"
+    },
+    "percent_with_deactivated_true": {
+      "@id": "sef:percent_with_deactivated_true",
+      "@type": "xsd:decimal"
     },
     "feature_frequency": {
       "@id": "sef:feature_frequency",
@@ -1505,6 +1517,89 @@
             }
           }
         ]
+      },
+      "has_shape_characteristics": {
+        "@type": "ShapeCharacteristicsAnalysis",
+        "denominator_extracted_trees": 3657,
+        "feature_frequency": [
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#message",
+            "unique_trees": 2135,
+            "percent_of_extracted_trees": {
+              "@value": "58.38",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#name",
+            "unique_trees": 1210,
+            "percent_of_extracted_trees": {
+              "@value": "33.09",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#description",
+            "unique_trees": 1069,
+            "percent_of_extracted_trees": {
+              "@value": "29.23",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#severity",
+            "unique_trees": 1048,
+            "percent_of_extracted_trees": {
+              "@value": "28.66",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#order",
+            "unique_trees": 436,
+            "percent_of_extracted_trees": {
+              "@value": "11.92",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#deactivated",
+            "unique_trees": 239,
+            "percent_of_extracted_trees": {
+              "@value": "6.54",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#group",
+            "unique_trees": 166,
+            "percent_of_extracted_trees": {
+              "@value": "4.54",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "FeatureFrequency",
+            "feature": "http://www.w3.org/ns/shacl#defaultValue",
+            "unique_trees": 144,
+            "percent_of_extracted_trees": {
+              "@value": "3.94",
+              "@type": "xsd:decimal"
+            }
+          }
+        ],
+        "trees_with_deactivated_true": 216,
+        "percent_with_deactivated_true": {
+          "@value": "5.91",
+          "@type": "xsd:decimal"
+        }
       },
       "has_repository_view": {
         "@type": "RepositoryView",

@@ -299,7 +299,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 <li class="tocline"><a href="#constraints-section"><span class="secno">2 </span>Shapes and Constraints</a>
 <ol class="toc"><li class="tocline"><a href="#shapes"><span class="secno">2.1 </span>Shapes</a></li>
 <li class="tocline"><a href="#node-shapes"><span class="secno">2.2 </span>Node Shapes</a></li>
-<li class="tocline"><a href="#property-shapes"><span class="secno">2.3 </span>Property Shapes</a></li></ol></li>
+<li class="tocline"><a href="#property-shapes"><span class="secno">2.3 </span>Property Shapes</a></li>
+<li class="tocline"><a href="#shape-characteristics"><span class="secno">2.4 </span>Shape Characteristics</a></li></ol></li>
 <li class="tocline"><a href="#core-components"><span class="secno">3 </span>Core Constraint Components</a>
 <ol class="toc"><li class="tocline"><a href="#core-components-value-type"><span class="secno">3.1 </span>Value Type Constraint Components</a></li>
 <li class="tocline"><a href="#core-components-count"><span class="secno">3.2 </span>Cardinality Constraint Components</a></li>
@@ -321,7 +322,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             Section 1 covers dataset coverage, shape distribution, SHACL and ontology usage, constraint consistency, and usage contexts.
         </p>
         <p>
-            Sections 2 and 3 provide occurrence counts and Git tree prevalence for SHACL shapes, targets, property paths, and Core constraint parameters.
+            Sections 2 and 3 provide occurrence counts and Git tree prevalence for SHACL shapes, targets, property paths, shape characteristics, and Core constraint parameters.
         </p>
         <p>
             Section 4 analyzes the use of SPARQL-based constraints and constraint components.
@@ -700,6 +701,75 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                         </tr>
                     </tbody>
                 </table>
+        </section>
+
+        <section id="shape-characteristics" typeof="bibo:Chapter" resource="#shape-characteristics" property="bibo:hasPart">
+            <h3 id="x2.4-shape-characteristics" resource="#x2.4-shape-characteristics"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.4 </span>Shape Characteristics</span>
+            </h3>
+            <h4 class="research-question">How are SHACL shapes documented and configured?</h4>
+            <p>
+                The analysis counts these properties on shape subjects in the extracted Git trees, including resources that are not explicitly typed as <code>sh:NodeShape</code> or <code>sh:PropertyShape</code>.
+            </p>
+            <table class="data">
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Git trees</th>
+                        <th>Tree prevalence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row"><code>sh:message</code></th>
+                        <td>2,135</td>
+                        <td>58.38%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><code>sh:name</code></th>
+                        <td>1,210</td>
+                        <td>33.09%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><code>sh:description</code></th>
+                        <td>1,069</td>
+                        <td>29.23%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><code>sh:severity</code></th>
+                        <td>1,048</td>
+                        <td>28.66%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><code>sh:order</code></th>
+                        <td>436</td>
+                        <td>11.92%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><code>sh:deactivated</code></th>
+                        <td>239</td>
+                        <td>6.54%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><code>sh:group</code></th>
+                        <td>166</td>
+                        <td>4.54%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><code>sh:defaultValue</code></th>
+                        <td>144</td>
+                        <td>3.94%</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                <code>sh:message</code> is the most widespread of these properties. For severity, <code>sh:Violation</code> has the highest occurrence count, but <code>sh:Warning</code> appears in more Git trees. Severity values are counted only when declared, excluding the default <code>sh:Violation</code>.
+            </p>
+            <p>
+                Deactivation is less common. The value <code>true</code> appears in 216 Git trees, compared with 239 trees containing <code>sh:deactivated</code> declarations of any value.
+            </p>
+            <p>
+                Names and descriptions are more widespread than ordering, grouping, and default values.
+            </p>
         </section>
 </section>
 

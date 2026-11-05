@@ -123,6 +123,10 @@
     rdfs:label "Document characteristics analysis"@en ;
     rdfs:comment "Characterization of SHACL shape documents from file organization and naming patterns."@en .
 
+:ShapeCharacteristicsAnalysis a rdfs:Class ;
+    rdfs:label "Shape characteristics analysis"@en ;
+    rdfs:comment "Git tree prevalence of non-constraint SHACL shape properties used for documentation and configuration, including messages, names, descriptions, severity, ordering, grouping, default values, and deactivation. Counts cover shape subjects beyond those explicitly typed as sh:NodeShape or sh:PropertyShape. Severity values are counted only when declared, excluding the default sh:Violation."@en .
+
 
 #
 # Linking Properties
@@ -143,7 +147,16 @@
 :has_owl_shacl_comparison a rdf:Property ; rdfs:range :OwlShaclConstraintAnalysis .
 :has_consistency a rdf:Property ; rdfs:range :ConsistencyAnalysis .
 :has_document_characteristics a rdf:Property ; rdfs:range :DocumentCharacteristicsAnalysis .
+:has_shape_characteristics a rdf:Property ; rdfs:range :ShapeCharacteristicsAnalysis .
 :has_domain_classification a rdf:Property ; rdfs:range :DomainClassificationAnalysis .
+
+:trees_with_deactivated_true a rdf:Property ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of analyzed Git trees containing at least one sh:deactivated true statement."@en .
+
+:percent_with_deactivated_true a rdf:Property ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "Share of analyzed Git trees containing at least one sh:deactivated true statement."@en .
 :has_distribution a rdf:Property ; rdfs:range :DistributionSummary .
 :feature_frequency a rdf:Property ; rdfs:range :FeatureFrequency .
 :classification_result a rdf:Property ; rdfs:range :ClassificationResult .
