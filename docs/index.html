@@ -455,15 +455,15 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">Both SHACL shapes and ontology terms</th>
+                            <th scope="row">Trees containing both SHACL shapes and ontology terms</th>
                             <td>2,805</td>
                         </tr>
                         <tr>
-                            <th scope="row">At least one matching ontology term</th>
+                            <th scope="row">Trees with at least one matching ontology term IRI</th>
                             <td>2,304</td>
                         </tr>
                         <tr>
-                            <th scope="row">No matching ontology terms detected</th>
+                            <th scope="row">Trees with no matching ontology term IRIs</th>
                             <td>501</td>
                         </tr>
                     </tbody>
@@ -775,10 +775,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 </tbody>
             </table>
             <p>
-                <code>sh:message</code> is the most widespread of these properties. For severity, <code>sh:Violation</code> has the highest occurrence count, but <code>sh:Warning</code> appears in more Git trees. Severity values are counted only when declared, excluding the default <code>sh:Violation</code>.
+                <code>sh:message</code> is the most widespread of these properties. For severity (<code>sh:Violation</code> = error, <code>sh:Warning</code> = warning, <code>sh:Info</code> = information), <code>sh:Violation</code> has the highest occurrence count, but <code>sh:Warning</code> appears in more Git trees. Only declared severity values are counted, excluding the default <code>sh:Violation</code>.
             </p>
             <p>
-                Deactivation is less common. The value <code>true</code> appears in 216 Git trees, compared with 239 trees containing <code>sh:deactivated</code> declarations of any value.
+                The <code>sh:deactivated</code> property appears in 239 Git trees. In 216 of these trees, at least one shape is deactivated using <code>sh:deactivated true</code>.
             </p>
             <p>
                 Names and descriptions are more widespread than ordering, grouping, and default values.
@@ -791,7 +791,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <h2 id="x3.-core-constraint-components" resource="#x3.-core-constraint-components"><span property="xhv:role" resource="xhv:heading"><span class="secno">3 </span>Core Constraint Components</span>
         </h2>
         <p>
-            This section presents occurrence counts and Git tree prevalence for SHACL Core constraint parameters across 3,657 analyzed Git trees.
+            This section presents occurrence counts and Git tree prevalence for SHACL Core constraint parameters.
                 </p>
                 <p>
             Occurrences count RDF triples containing each constraint parameter as a predicate. Git tree prevalence measures the proportion of analyzed Git trees containing that parameter.
@@ -1178,7 +1178,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             <h3 id="x4.1-sparql-based-constraints" resource="#x4.1-sparql-based-constraints"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.1 </span>SPARQL-based Constraints</span>
             </h3>
             <p>
-                The analysis counts structurally identified <code>sh:sparql</code> links and explicitly typed SPARQL constraint nodes, counted per RDF file.
+                The analysis counts <code>sh:sparql</code> triples and typed SPARQL constraint nodes per RDF file.
             </p>
             <table class="data">
                 <thead>
@@ -1197,26 +1197,23 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                         <td>29.12%</td>
                     </tr>
                     <tr>
-                        <th scope="row"><code>sh:sparql</code> links</th>
+                        <th scope="row"><code>sh:sparql</code> triples</th>
                         <td>85,496</td>
                     </tr>
                     <tr>
-                        <th scope="row">SPARQL constraint nodes</th>
+                        <th scope="row">Typed SPARQL constraint nodes</th>
                         <td>25,073</td>
                     </tr>
                 </tbody>
             </table>
             <h5 class="research-question">Which SPARQL constructs are used in these constraints?</h5>
             <p>
-                The analysis identified 84,467 links to parseable SELECT queries across 1,040 Git trees.
+                The analysis identified 84,467 <code>sh:sparql</code> triples referencing SELECT queries that could be parsed, out of 85,496 triples, across 1,040 Git trees.
             </p>
             <figure id="fig-sparql-constructs">
                 <img src="images/sparql-constructs.svg" alt="Git tree prevalence of SPARQL constructs in these queries">
                 <figcaption>Figure 4. Git tree prevalence of SPARQL constructs in these queries.</figcaption>
             </figure>
-            <p>
-                <code>FILTER</code> and <code>NOT EXISTS</code> are the most widespread constructs. Grouping and aggregation are considerably less common.
-            </p>
             <p>
                 Although <code>MINUS</code> appears in the analyzed queries, its use is prohibited by SHACL 1.0.
             </p>
