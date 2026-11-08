@@ -491,19 +491,19 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     The analysis compares ontology restrictions with SHACL constraints on property cardinality and value types. Comparisons use shared property IRIs and, for cardinality and OWL value restrictions, matching class IRIs.
                 </p>
                 <p>
-                    Property range comparisons covered 1,708 Git trees. In 90,296 distinct tree–property pairs, <code>rdfs:range</code> and <code>sh:class</code> or <code>sh:datatype</code> referenced identical IRIs.
+                    Property range comparisons covered 1,708 Git trees. In 90,296 distinct tree–property pairs (each representing one property IRI in one Git tree), <code>rdfs:range</code> and <code>sh:class</code> or <code>sh:datatype</code> referenced identical IRIs.
                 </p>
                 <p>
                     OWL value restrictions were compared with <code>sh:class</code> and <code>sh:datatype</code> in 323 Git trees, using matching class IRIs. Identical value type IRIs were found in 40,758 <code>owl:allValuesFrom</code> comparisons and 6,852 <code>owl:someValuesFrom</code> comparisons.
                 </p>
                 <p>
-                    Cardinality comparisons covered 401 Git trees, using OWL cardinality restrictions and <code>sh:minCount</code> or <code>sh:maxCount</code>. At the tree–property level, identical minimum bounds were found in 6,853 pairs and identical maximum bounds in 24,460 pairs.
+                    Cardinality comparisons covered 401 Git trees, using <code>owl:minCardinality</code>, <code>owl:maxCardinality</code>, and <code>owl:cardinality</code> with <code>sh:minCount</code> or <code>sh:maxCount</code>. At the tree–property level, identical minimum bounds were found in 6,853 pairs and identical maximum bounds in 24,460 pairs.
                 </p>
                 <p>
-                    Potential cardinality conflicts were also investigated by comparing OWL restrictions with individual SHACL property shapes for the same class and property. The analysis covered 120,819 comparisons across 387 Git trees. Potentially incompatible bounds were found in two distinct Git tree–property pairs, both involving test cases. No other cases were found under these matching conditions.
+                    OWL cardinality restrictions were also compared with SHACL constraints for the same class and property. Among 26,446 distinct Git tree–property pairs, 26,344 had at least one matching minimum or maximum bound. Another 100 had no matching bounds, but no conflicting bounds were found. Conflicting bounds were found in two pairs, both from test files.
                 </p>
                 <p>
-                    Datatype comparisons also identified potentially incompatible requirements. For <code>owl:allValuesFrom</code> and SHACL datatype constraints, these were found in 134 distinct Git tree–property pairs across 20 Git trees. For <code>rdfs:range</code> and SHACL datatype constraints, they were found in 614 pairs across 458 Git trees. In 68 of the latter pairs, SHACL required at least one value through <code>sh:minCount</code>.
+                    Datatype comparisons also covered ontology restrictions and SHACL constraints for the same properties. For <code>owl:allValuesFrom</code>, identical datatypes were found in 5,103 of 5,264 Git tree–property pairs, and incompatible datatype requirements were found in 134 pairs across 20 Git trees. For <code>rdfs:range</code>, 85,601 of 88,425 pairs had identical datatypes, and 614 pairs across 458 Git trees had incompatible datatype requirements. Other pairs had compatible datatype requirements or no detected conflict. Across both comparisons, 748 distinct pairs had incompatible datatype requirements. Four pairs involved two properties with conflicting requirements when the ontology and SHACL constraints are applied together. Another 43 pairs came from different contexts. For the remaining 701 pairs, the repository files did not show that the constraints were used together.
                 </p>
             </section>
         </section>
