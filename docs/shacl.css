@@ -302,6 +302,14 @@ h6.usage {
   margin: 1em 0 0.3em 0;
 }
 
+/* Nested numbered headings (e.g. 1.3.3.1) stay bold like h4, not italic like bare h5. */
+section section h5:not(.research-question) {
+  font-size: 100%;
+  font-weight: bold;
+  font-style: normal;
+  font-variant: normal;
+}
+
 h4.research-question,
 h5.research-question {
   font-size: 100%;
