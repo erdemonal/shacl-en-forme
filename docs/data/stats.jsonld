@@ -589,9 +589,9 @@
         "jsonld_context_unresolved_files": 41,
         "sniff_rejected_files": 2069,
         "parse_error_files": 263,
-        "shape_documents": 50872,
+        "shape_documents": 50625,
         "trees_with_shape_documents": 3657,
-        "content_sha256_groups": 33440,
+        "content_sha256_groups": 33230,
         "parsed_file_rows": 1386769,
         "parsed_shape_rows": 4019975,
         "parsed_constraint_rows": 14599701,
@@ -2042,8 +2042,8 @@
       },
       "has_domain_classification": {
         "@type": "DomainClassificationAnalysis",
-        "shape_documents": 50872,
-        "content_sha256_groups": 33440,
+        "shape_documents": 50625,
+        "content_sha256_groups": 33230,
         "git_trees": 3657,
         "donor_families": 3646,
         "documents_with_application_domain": 16227,
@@ -2053,9 +2053,9 @@
             "category": "sef:energy_power_systems",
             "counting_unit": "sef:unit_document",
             "n_with_label": 1136,
-            "denominator": 50872,
+            "denominator": 50625,
             "rate": {
-              "@value": "0.022331",
+              "@value": "0.022440",
               "@type": "xsd:decimal"
             }
           },
@@ -2064,9 +2064,9 @@
             "category": "sef:geospatial",
             "counting_unit": "sef:unit_document",
             "n_with_label": 1836,
-            "denominator": 50872,
+            "denominator": 50625,
             "rate": {
-              "@value": "0.036091",
+              "@value": "0.036267",
               "@type": "xsd:decimal"
             }
           },
@@ -2075,9 +2075,9 @@
             "category": "sef:public_sector_open_data",
             "counting_unit": "sef:unit_document",
             "n_with_label": 1868,
-            "denominator": 50872,
+            "denominator": 50625,
             "rate": {
-              "@value": "0.03672",
+              "@value": "0.036899",
               "@type": "xsd:decimal"
             }
           },
@@ -2086,9 +2086,9 @@
             "category": "sef:life_sciences_biomedicine",
             "counting_unit": "sef:unit_document",
             "n_with_label": 559,
-            "denominator": 50872,
+            "denominator": 50625,
             "rate": {
-              "@value": "0.010988",
+              "@value": "0.011042",
               "@type": "xsd:decimal"
             }
           },
@@ -2097,9 +2097,9 @@
             "category": "sef:iot_sensing",
             "counting_unit": "sef:unit_document",
             "n_with_label": 1141,
-            "denominator": 50872,
+            "denominator": 50625,
             "rate": {
-              "@value": "0.022429",
+              "@value": "0.022538",
               "@type": "xsd:decimal"
             }
           },
@@ -2108,9 +2108,9 @@
             "category": "sef:built_environment_energy",
             "counting_unit": "sef:unit_document",
             "n_with_label": 710,
-            "denominator": 50872,
+            "denominator": 50625,
             "rate": {
-              "@value": "0.013957",
+              "@value": "0.014025",
               "@type": "xsd:decimal"
             }
           },
@@ -2119,9 +2119,9 @@
             "category": "sef:cultural_heritage",
             "counting_unit": "sef:unit_document",
             "n_with_label": 389,
-            "denominator": 50872,
+            "denominator": 50625,
             "rate": {
-              "@value": "0.007647",
+              "@value": "0.007684",
               "@type": "xsd:decimal"
             }
           },
@@ -2130,9 +2130,9 @@
             "category": "sef:cybersecurity",
             "counting_unit": "sef:unit_document",
             "n_with_label": 394,
-            "denominator": 50872,
+            "denominator": 50625,
             "rate": {
-              "@value": "0.007745",
+              "@value": "0.007783",
               "@type": "xsd:decimal"
             }
           },
@@ -2141,9 +2141,9 @@
             "category": "sef:data_protection_privacy",
             "counting_unit": "sef:unit_document",
             "n_with_label": 348,
-            "denominator": 50872,
+            "denominator": 50625,
             "rate": {
-              "@value": "0.006841",
+              "@value": "0.006874",
               "@type": "xsd:decimal"
             }
           },
@@ -2152,9 +2152,9 @@
             "category": "sef:mobility_transport",
             "counting_unit": "sef:unit_document",
             "n_with_label": 89,
-            "denominator": 50872,
+            "denominator": 50625,
             "rate": {
-              "@value": "0.001749",
+              "@value": "0.001758",
               "@type": "xsd:decimal"
             }
           },
@@ -2163,9 +2163,9 @@
             "category": "sef:software_supply_chain",
             "counting_unit": "sef:unit_document",
             "n_with_label": 36,
-            "denominator": 50872,
+            "denominator": 50625,
             "rate": {
-              "@value": "0.000708",
+              "@value": "0.000711",
               "@type": "xsd:decimal"
             }
           },
@@ -2174,9 +2174,9 @@
             "category": "sef:finance",
             "counting_unit": "sef:unit_document",
             "n_with_label": 35,
-            "denominator": 50872,
+            "denominator": 50625,
             "rate": {
-              "@value": "0.000688",
+              "@value": "0.000691",
               "@type": "xsd:decimal"
             }
           },
@@ -2185,9 +2185,9 @@
             "category": "sef:unknown_only_documents",
             "counting_unit": "sef:unit_document",
             "n_with_label": 34644,
-            "denominator": 50872,
+            "denominator": 50625,
             "rate": {
-              "@value": "0.681003",
+              "@value": "0.684326",
               "@type": "xsd:decimal"
             }
           },
@@ -2196,9 +2196,9 @@
             "category": "sef:infrastructure_documents",
             "counting_unit": "sef:unit_document",
             "n_with_label": 5625,
-            "denominator": 50872,
+            "denominator": 50625,
             "rate": {
-              "@value": "0.110572",
+              "@value": "0.111111",
               "@type": "xsd:decimal"
             }
           },
@@ -2207,9 +2207,9 @@
             "category": "sef:multi_application_domain_documents",
             "counting_unit": "sef:unit_document",
             "n_with_label": 1035,
-            "denominator": 50872,
+            "denominator": 50625,
             "rate": {
-              "@value": "0.020345",
+              "@value": "0.020444",
               "@type": "xsd:decimal"
             }
           },
@@ -2218,9 +2218,9 @@
             "category": "sef:fixture_path_documents",
             "counting_unit": "sef:unit_document",
             "n_with_label": 17875,
-            "denominator": 50872,
+            "denominator": 50625,
             "rate": {
-              "@value": "0.351372",
+              "@value": "0.353086",
               "@type": "xsd:decimal"
             }
           }

@@ -340,7 +340,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             The analysis covers SHACL shapes, targets, property paths, Core constraint parameters, and SHACL-SPARQL. It provides occurrence counts and Git tree prevalence using data collected from verified GitHub repositories, excluding forks. The dataset reflects the state of the verified GitHub repositories as of 11 October 2026.
         </p>
         <p>
-            SHACL terminology and parameter names identify the features analyzed in this resource. Definitions, syntax rules, and validation procedures are available in the <a href="https://www.w3.org/TR/shacl/">SHACL 1.0 Recommendation</a>.
+            Definitions, syntax rules, and validation procedures are available in the <a href="https://www.w3.org/TR/shacl/">SHACL 1.0 Recommendation</a>.
         </p>
         </section>
 
@@ -362,6 +362,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             <p>
                 Among 550,508 files identified for RDF processing, 548,135 were successfully parsed.
             </p>
+            <p>
+                A file is counted as a SHACL shape document if it contains at least one SHACL shape. Files containing only annotations or validation reports are not counted.
+            </p>
             <table class="data coverage-counts" style="table-layout:fixed;width:100%">
                 <colgroup>
                     <col style="width:75%">
@@ -380,7 +383,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     </tr>
                     <tr>
                         <th scope="row">Shape documents</th>
-                        <td>50,872</td>
+                        <td>50,625</td>
                     </tr>
                     <tr>
                         <th scope="row">Parsed RDF files</th>

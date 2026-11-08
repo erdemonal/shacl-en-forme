@@ -8,7 +8,7 @@ SHACL en Forme presents statistics on the use of the Shapes Constraint Language 
 
 Public GitHub repositories were identified through code search and repository search. Repositories were verified based on SHACL shape declarations, Core target or constraint predicates, or structurally attached SHACL-SPARQL constraints in parsed RDF graphs. After excluding forks and Git trees without extracted SHACL shape documents, the final dataset contains 3,675 repositories representing 3,657 distinct Git trees.
 
-RDF files were retrieved from the recorded repository revisions and parsed using RDFLib. The analysis successfully parsed 548,135 of the 550,508 files identified for RDF processing. It identified 50,872 SHACL shape documents representing 33,440 distinct document contents.
+RDF files were retrieved from the recorded repository revisions and parsed using RDFLib. The analysis successfully parsed 548,135 of the 550,508 files identified for RDF processing. It identified 50,625 SHACL shape documents representing 33,230 distinct document contents. A file is counted as a SHACL shape document if it contains at least one SHACL shape. Files containing only annotations or validation reports are not counted.
 
 The resource reports statistics on SHACL shapes, targets, property paths, Core constraint parameters, and SHACL-SPARQL. Additional analyses cover ontology references, public RDF vocabulary usage, OWL–SHACL constraint comparisons, constraint consistency, and usage contexts.
 
