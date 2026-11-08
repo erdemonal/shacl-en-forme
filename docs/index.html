@@ -491,7 +491,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     The analysis compares ontology restrictions with SHACL constraints on property cardinality and value types. Comparisons use shared property IRIs and, for cardinality and OWL value restrictions, matching class IRIs.
                 </p>
                 <p>
-                    Property range comparisons covered 1,708 Git trees. In 90,296 distinct tree–property pairs (each representing one property IRI in one Git tree), <code>rdfs:range</code> and <code>sh:class</code> or <code>sh:datatype</code> referenced identical IRIs.
+                    Property range comparisons covered 1,708 Git trees. In 90,296 distinct tree–property pairs (each representing one property IRI in one Git tree), <code>rdfs:range</code> specified the same class or datatype IRI as <code>sh:class</code> or <code>sh:datatype</code>.
                 </p>
                 <p>
                     OWL value restrictions were compared with <code>sh:class</code> and <code>sh:datatype</code> in 323 Git trees, using matching class IRIs. Identical value type IRIs were found in 40,758 <code>owl:allValuesFrom</code> comparisons and 6,852 <code>owl:someValuesFrom</code> comparisons.
@@ -503,7 +503,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     OWL cardinality restrictions were also compared with SHACL constraints for the same class and property. Among 26,446 distinct Git tree–property pairs, 26,344 had at least one matching minimum or maximum bound. Another 100 had no matching bounds, but no conflicting bounds were found. Conflicting bounds were found in two pairs, both from test files.
                 </p>
                 <p>
-                    Datatype comparisons also covered ontology restrictions and SHACL constraints for the same properties. For <code>owl:allValuesFrom</code>, identical datatypes were found in 5,103 of 5,264 Git tree–property pairs, and incompatible datatype requirements were found in 134 pairs across 20 Git trees. For <code>rdfs:range</code>, 85,601 of 88,425 pairs had identical datatypes, and 614 pairs across 458 Git trees had incompatible datatype requirements. Other pairs had compatible datatype requirements or no detected conflict. Across both comparisons, 748 distinct pairs had incompatible datatype requirements. Four pairs involved two properties with conflicting requirements when the ontology and SHACL constraints are applied together. Another 43 pairs came from different contexts. For the remaining 701 pairs, the repository files did not show that the constraints were used together.
+                    Datatype comparisons also covered ontology restrictions and SHACL constraints for the same properties. For <code>owl:allValuesFrom</code>, identical datatypes were found in 5,103 of 5,264 Git tree–property pairs, and incompatible datatype requirements were found in 134 pairs across 20 Git trees. For <code>rdfs:range</code>, 85,601 of 88,425 pairs had identical datatypes, and 614 pairs across 458 Git trees had incompatible datatype requirements. The remaining 27 <code>owl:allValuesFrom</code> pairs and 2,210 <code>rdfs:range</code> pairs showed no datatype conflicts. Across both comparisons, 748 distinct pairs had incompatible datatype requirements. Two properties had conflicting datatype requirements, with SHACL requiring at least one value for each. These findings appeared in four Git tree–property pairs. Among the other 744 pairs, 43 came from different contexts and 701 lacked sufficient information to determine if the constraints were used together.
                 </p>
             </section>
         </section>
@@ -599,10 +599,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 The analysis identified 1,183,518 shapes explicitly typed as <code>sh:NodeShape</code> or <code>sh:PropertyShape</code>. Shape IRIs are deduplicated per Git tree, and blank nodes are counted per file. The 632 resources typed as both <code>sh:NodeShape</code> and <code>sh:PropertyShape</code> are counted only once in the total.
             </p>
             <p>
-                Untyped property shapes were identified in 3,225 Git trees. Most occur under <code>sh:property</code>, without a <code>sh:PropertyShape</code> type declaration.
+                Implicit property shapes were identified in 3,225 Git trees. A separate analysis counted 1,008,575 such shapes, using distinct IRIs per Git tree and blank nodes per file. Most occur under <code>sh:property</code>, without a <code>sh:PropertyShape</code> type declaration. Likewise, these shapes are included in the Core constraint, property path, SHACL-SPARQL, and OWL–SHACL analyses.
             </p>
             <p>
-                The table reports occurrence counts and Git tree prevalence for the four explicit target predicates. Implicit class targets are not counted separately.
+                The table shows occurrence counts and Git tree prevalence for the four SHACL target predicates.
             </p>
                 <table class="data">
                 <thead>
