@@ -560,22 +560,22 @@
   },
   "@graph": [
     {
-      "@id": "https://w3id.org/shacl-en-forme/data/stats.jsonld",
-      "@type": [
-        "schema:Dataset",
-        "AnalysisResults"
-      ],
-      "name": "SHACL en Forme",
-      "description": "SHACL 1.0 usage statistics from public GitHub repositories.",
-      "url": "https://w3id.org/shacl-en-forme/",
-      "datePublished": "2026",
-      "author": {
-        "@id": "https://w3id.org/people/erdemonal",
-        "@type": "schema:Person",
-        "name": "Erdem Önal"
-      },
-      "isBasedOn": "https://www.w3.org/TR/2017/REC-shacl-20170720/",
-      "lower_bound": true,
+  "@id": "https://w3id.org/shacl-en-forme/data/stats.jsonld",
+  "@type": [
+    "schema:Dataset",
+    "AnalysisResults"
+  ],
+  "name": "SHACL en Forme",
+  "description": "SHACL 1.0 usage statistics from public GitHub repositories.",
+  "url": "https://w3id.org/shacl-en-forme/",
+  "datePublished": "2026",
+  "author": {
+    "@id": "https://w3id.org/people/erdemonal",
+    "@type": "schema:Person",
+    "name": "Erdem Önal"
+  },
+  "isBasedOn": "https://www.w3.org/TR/2017/REC-shacl-20170720/",
+  "lower_bound": true,
       "intended_unique_verified_trees": 3657,
       "extracted_unique_trees": 3657,
       "unavailable_distinct_git_trees": 0,
@@ -1656,226 +1656,226 @@
         "heavy_tree": [
           {
             "@type": "TreeConcentrationRecord",
-            "donor": "oeg-upm/AstreaRun",
-            "tree_sha": "e764ed61eba147c719ce8c2fe803ce36e9803b8c",
-            "distinct_shapes": 84974,
-            "node_shapes": 35486,
-            "property_shapes": 49507,
-            "repository_count": 1,
-            "counts_partial": true,
-            "enumeration_complete": true
-          },
-          {
+        "donor": "oeg-upm/AstreaRun",
+        "tree_sha": "e764ed61eba147c719ce8c2fe803ce36e9803b8c",
+        "distinct_shapes": 84974,
+        "node_shapes": 35486,
+        "property_shapes": 49507,
+        "repository_count": 1,
+        "counts_partial": true,
+        "enumeration_complete": true
+      },
+      {
             "@type": "TreeConcentrationRecord",
-            "donor": "meaningfy-ws/shacl-driven-consistency-validation",
-            "tree_sha": "d6dab5899ca90d976644687a7cccc108bc95f81e",
-            "distinct_shapes": 81687,
-            "node_shapes": 1187,
-            "property_shapes": 80500,
-            "repository_count": 1,
-            "counts_partial": true,
-            "enumeration_complete": true
-          },
-          {
+        "donor": "meaningfy-ws/shacl-driven-consistency-validation",
+        "tree_sha": "d6dab5899ca90d976644687a7cccc108bc95f81e",
+        "distinct_shapes": 81687,
+        "node_shapes": 1187,
+        "property_shapes": 80500,
+        "repository_count": 1,
+        "counts_partial": true,
+        "enumeration_complete": true
+      },
+      {
             "@type": "TreeConcentrationRecord",
-            "donor": "matejkratochvil/entsoe-application-profiles-library",
-            "tree_sha": "48d49e6f67800fdf8d3299bdda03dc15de6d1511",
+        "donor": "matejkratochvil/entsoe-application-profiles-library",
+        "tree_sha": "48d49e6f67800fdf8d3299bdda03dc15de6d1511",
             "distinct_shapes": 34272,
             "node_shapes": 10117,
             "property_shapes": 24213,
-            "repository_count": 1,
+        "repository_count": 1,
             "counts_partial": true,
-            "enumeration_complete": true
-          },
-          {
+        "enumeration_complete": true
+      },
+      {
             "@type": "TreeConcentrationRecord",
-            "donor": "niubisile-wq/pcc-power-grid-transformation",
-            "tree_sha": "992e7ec2f902a8fdfee3a0c137f0070ff755c58c",
+        "donor": "niubisile-wq/pcc-power-grid-transformation",
+        "tree_sha": "992e7ec2f902a8fdfee3a0c137f0070ff755c58c",
             "distinct_shapes": 31813,
             "node_shapes": 6497,
             "property_shapes": 25316,
-            "repository_count": 1,
-            "counts_partial": true,
-            "enumeration_complete": true
-          },
-          {
+        "repository_count": 1,
+        "counts_partial": true,
+        "enumeration_complete": true
+      },
+      {
             "@type": "TreeConcentrationRecord",
-            "donor": "sogno-platform/cgmes-application-profiles-library",
-            "tree_sha": "b299ec4dd54c102e41528335c971057a205aa472",
+        "donor": "sogno-platform/cgmes-application-profiles-library",
+        "tree_sha": "b299ec4dd54c102e41528335c971057a205aa472",
             "distinct_shapes": 31769,
             "node_shapes": 353,
             "property_shapes": 31416,
-            "repository_count": 1,
-            "counts_partial": false,
-            "enumeration_complete": true
-          },
-          {
+        "repository_count": 1,
+        "counts_partial": false,
+        "enumeration_complete": true
+      },
+      {
             "@type": "TreeConcentrationRecord",
-            "donor": "ADam-LVA/application-profiles-library",
-            "tree_sha": "df4c310f079c4880b32a4d367335d1551198b52f",
+        "donor": "ADam-LVA/application-profiles-library",
+        "tree_sha": "df4c310f079c4880b32a4d367335d1551198b52f",
             "distinct_shapes": 25595,
             "node_shapes": 863,
             "property_shapes": 24732,
-            "repository_count": 1,
+        "repository_count": 1,
             "counts_partial": true,
-            "enumeration_complete": true
-          },
-          {
+        "enumeration_complete": true
+      },
+      {
             "@type": "TreeConcentrationRecord",
-            "donor": "nikolatulechki/application-profiles-library",
-            "tree_sha": "40a5bddc2acee1d0d72b489daadb14e167c80bdd",
+        "donor": "nikolatulechki/application-profiles-library",
+        "tree_sha": "40a5bddc2acee1d0d72b489daadb14e167c80bdd",
             "distinct_shapes": 25594,
             "node_shapes": 863,
             "property_shapes": 24731,
-            "repository_count": 1,
+        "repository_count": 1,
             "counts_partial": true,
-            "enumeration_complete": true
-          },
-          {
+        "enumeration_complete": true
+      },
+      {
             "@type": "TreeConcentrationRecord",
-            "donor": "Stichting-CROW/imbor-development",
-            "tree_sha": "2d35541c0fd0b955ce44f24bcc3ae552d4044d04",
+        "donor": "Stichting-CROW/imbor-development",
+        "tree_sha": "2d35541c0fd0b955ce44f24bcc3ae552d4044d04",
             "distinct_shapes": 24307,
             "node_shapes": 6782,
             "property_shapes": 17525,
-            "repository_count": 1,
-            "counts_partial": true,
-            "enumeration_complete": true
-          },
-          {
+        "repository_count": 1,
+        "counts_partial": true,
+        "enumeration_complete": true
+      },
+      {
             "@type": "TreeConcentrationRecord",
-            "donor": "meaningfy-ws/tda-mapping-artefacts",
-            "tree_sha": "b9b208327c0bb7b2c5802a076e0e64d14d419b88",
+        "donor": "meaningfy-ws/tda-mapping-artefacts",
+        "tree_sha": "b9b208327c0bb7b2c5802a076e0e64d14d419b88",
             "distinct_shapes": 23059,
             "node_shapes": 17372,
             "property_shapes": 5797,
-            "repository_count": 1,
-            "counts_partial": false,
-            "enumeration_complete": true
-          },
-          {
+        "repository_count": 1,
+        "counts_partial": false,
+        "enumeration_complete": true
+      },
+      {
             "@type": "TreeConcentrationRecord",
-            "donor": "dkw-aau/KG2PG",
-            "tree_sha": "23f8d2ec56101da29c24ce9c25e2bb855c66e9bf",
+        "donor": "dkw-aau/KG2PG",
+        "tree_sha": "23f8d2ec56101da29c24ce9c25e2bb855c66e9bf",
             "distinct_shapes": 18626,
             "node_shapes": 16053,
             "property_shapes": 2574,
-            "repository_count": 1,
-            "counts_partial": true,
-            "enumeration_complete": true
-          },
-          {
+        "repository_count": 1,
+        "counts_partial": true,
+        "enumeration_complete": true
+      },
+      {
             "@type": "TreeConcentrationRecord",
-            "donor": "kworkr/s3pg",
-            "tree_sha": "8c22020766b60027cc717c2524e6dad046712a3d",
+        "donor": "kworkr/s3pg",
+        "tree_sha": "8c22020766b60027cc717c2524e6dad046712a3d",
             "distinct_shapes": 18099,
             "node_shapes": 1600,
             "property_shapes": 16499,
-            "repository_count": 1,
+        "repository_count": 1,
             "counts_partial": false,
-            "enumeration_complete": true
-          },
-          {
+        "enumeration_complete": true
+      },
+      {
             "@type": "TreeConcentrationRecord",
-            "donor": "tecnomod-um/cfihos",
-            "tree_sha": "eba6ed052101c5f2d5ca2218b2e0aac67afeceec",
+        "donor": "tecnomod-um/cfihos",
+        "tree_sha": "eba6ed052101c5f2d5ca2218b2e0aac67afeceec",
             "distinct_shapes": 16776,
             "node_shapes": 3329,
             "property_shapes": 13505,
-            "repository_count": 1,
-            "counts_partial": true,
-            "enumeration_complete": true
-          },
-          {
+        "repository_count": 1,
+        "counts_partial": true,
+        "enumeration_complete": true
+      },
+      {
             "@type": "TreeConcentrationRecord",
-            "donor": "Salva5297/shacl_integration",
-            "tree_sha": "da0dabd6368bfdf736caf9f227b911f2983e1d1e",
+        "donor": "Salva5297/shacl_integration",
+        "tree_sha": "da0dabd6368bfdf736caf9f227b911f2983e1d1e",
             "distinct_shapes": 16061,
             "node_shapes": 353,
             "property_shapes": 15708,
-            "repository_count": 1,
-            "counts_partial": false,
-            "enumeration_complete": true
-          },
-          {
+        "repository_count": 1,
+        "counts_partial": false,
+        "enumeration_complete": true
+      },
+      {
             "@type": "TreeConcentrationRecord",
-            "donor": "oeg-upm/shacl_integration",
-            "tree_sha": "fcf0c9d05f541abe82279a4d77253ba3fcafcd7b",
+        "donor": "oeg-upm/shacl_integration",
+        "tree_sha": "fcf0c9d05f541abe82279a4d77253ba3fcafcd7b",
             "distinct_shapes": 14665,
             "node_shapes": 1339,
             "property_shapes": 13326,
-            "repository_count": 1,
+        "repository_count": 1,
             "counts_partial": true,
-            "enumeration_complete": true
-          },
-          {
+        "enumeration_complete": true
+      },
+      {
             "@type": "TreeConcentrationRecord",
-            "donor": "aivliev/amf-oas3-fork",
-            "tree_sha": "a3b45691501998347f8f9b3c6f5433a29293de26",
+        "donor": "aivliev/amf-oas3-fork",
+        "tree_sha": "a3b45691501998347f8f9b3c6f5433a29293de26",
             "distinct_shapes": 14340,
             "node_shapes": 1983,
             "property_shapes": 12357,
-            "repository_count": 1,
+        "repository_count": 1,
             "counts_partial": false,
-            "enumeration_complete": true
-          },
-          {
+        "enumeration_complete": true
+      },
+      {
             "@type": "TreeConcentrationRecord",
-            "donor": "Akarsh-2004/amf_byme",
-            "tree_sha": "1a03747570b37011334ddc8dd6243faa93101b81",
+        "donor": "Akarsh-2004/amf_byme",
+        "tree_sha": "1a03747570b37011334ddc8dd6243faa93101b81",
             "distinct_shapes": 14236,
             "node_shapes": 421,
             "property_shapes": 13815,
-            "repository_count": 1,
-            "counts_partial": true,
-            "enumeration_complete": true
-          },
-          {
+        "repository_count": 1,
+        "counts_partial": true,
+        "enumeration_complete": true
+      },
+      {
             "@type": "TreeConcentrationRecord",
-            "donor": "f-schnabel/amf",
-            "tree_sha": "7cc73460520fcd7db20534560d2cd8293afa5939",
+        "donor": "f-schnabel/amf",
+        "tree_sha": "7cc73460520fcd7db20534560d2cd8293afa5939",
             "distinct_shapes": 14236,
             "node_shapes": 421,
             "property_shapes": 13815,
-            "repository_count": 1,
-            "counts_partial": true,
-            "enumeration_complete": true
-          },
-          {
+        "repository_count": 1,
+        "counts_partial": true,
+        "enumeration_complete": true
+      },
+      {
             "@type": "TreeConcentrationRecord",
-            "donor": "tecnomod-um/CBAM",
-            "tree_sha": "93b3bb55ebc43be9abcb893156b14c8f09a25fee",
+        "donor": "tecnomod-um/CBAM",
+        "tree_sha": "93b3bb55ebc43be9abcb893156b14c8f09a25fee",
             "distinct_shapes": 13828,
             "node_shapes": 1778,
             "property_shapes": 12108,
-            "repository_count": 1,
-            "counts_partial": true,
-            "enumeration_complete": true
-          },
-          {
+        "repository_count": 1,
+        "counts_partial": true,
+        "enumeration_complete": true
+      },
+      {
             "@type": "TreeConcentrationRecord",
-            "donor": "diogo-olpereira/KGSwitch",
-            "tree_sha": "d96d4a0ca7641acdff24576d23c971afc8e3a93a",
+        "donor": "diogo-olpereira/KGSwitch",
+        "tree_sha": "d96d4a0ca7641acdff24576d23c971afc8e3a93a",
             "distinct_shapes": 12980,
             "node_shapes": 462,
             "property_shapes": 12518,
-            "repository_count": 1,
-            "counts_partial": false,
-            "enumeration_complete": true
-          },
-          {
+        "repository_count": 1,
+        "counts_partial": false,
+        "enumeration_complete": true
+      },
+      {
             "@type": "TreeConcentrationRecord",
-            "donor": "ar-chad/application-profiles-library",
-            "tree_sha": "8747882da5c410dcbc7d320bb4c723032469c98e",
+        "donor": "ar-chad/application-profiles-library",
+        "tree_sha": "8747882da5c410dcbc7d320bb4c723032469c98e",
             "distinct_shapes": 12794,
             "node_shapes": 440,
             "property_shapes": 12354,
-            "repository_count": 1,
-            "counts_partial": true,
-            "enumeration_complete": true
-          }
-        ]
-      },
+        "repository_count": 1,
+        "counts_partial": true,
+        "enumeration_complete": true
+      }
+    ]
+  },
       "has_alignment": {
         "@type": "AlignmentAnalysis",
         "denominator_extracted_trees": 3657,
