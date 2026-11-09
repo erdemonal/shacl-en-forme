@@ -447,7 +447,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 </h4>
                 <h5 class="research-question">How often do SHACL shapes reference locally declared ontology terms?</h5>
                 <p>
-                    The analysis compares class and property IRIs referenced by SHACL shapes with ontology declarations in the same Git tree. A match requires that the referenced IRI is declared in that tree as an ontology term explicitly typed as a class or property.
+                    The analysis compares class and property IRIs referenced by SHACL shapes with ontology declarations in the same Git tree. A match requires the referenced IRI to be explicitly declared as an ontology class or property in the same Git tree.
                 </p>
                 <table class="data">
                     <thead>
@@ -587,10 +587,23 @@ ex:PersonShape a sh:NodeShape ;
             </h3>
             <h4 class="research-question">How common are incompatible SHACL constraints?</h4>
             <p>
-                The analysis checks for combinations of SHACL Core constraints that cannot be satisfied together. These include incompatibilities involving cardinality, datatype, node kind, nested shapes, and closed shapes. For example, a property value required to be both an <code>xsd:string</code> literal and a blank node cannot satisfy both constraints.
+                The analysis checks for combinations of SHACL Core constraints that cannot be satisfied together. These include incompatibilities involving cardinality, datatype, node kind, nested shapes, and closed shapes. Constraints are checked separately for each RDF source document.
             </p>
             <p>
-                Constraints were checked separately for each RDF source document.
+                For example, a property value required to be both an <code>xsd:string</code> literal and a blank node cannot satisfy both constraints.
+            </p>
+            <pre class="example-other">
+ex:PersonShape a sh:NodeShape ;
+    sh:targetClass ex:Person ;
+    sh:property [
+        sh:path ex:name ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:nodeKind sh:BlankNode
+    ] .
+            </pre>
+            <p>
+                The required <code>ex:name</code> value cannot be both an <code>xsd:string</code> literal and a blank node.
             </p>
             <table class="data">
                 <thead>
@@ -631,7 +644,7 @@ ex:PersonShape a sh:NodeShape ;
                 </h4>
                 <h5 class="research-question">What do file organization and naming patterns reveal about SHACL shape documents?</h5>
                 <p>
-                    File paths and names contain test or example references in 19,477 documents and generation-related terms in 338 documents. Ontology and application profile indicators were found in 1,431 documents. These categories may overlap.
+                    File paths and names contain test or example references in 19,477 documents and generation-related terms (such as <code>generated</code>, <code>codegen</code>, and <code>auto-gen</code>) in 338 documents. Ontology and application profile indicators were found in 1,431 documents. These categories may overlap.
                 </p>
             </section>
 
@@ -657,6 +670,7 @@ ex:PersonShape a sh:NodeShape ;
         <!--OddPage-->
         <h2 id="x2.-shapes-and-constraints" resource="#x2.-shapes-and-constraints"><span property="xhv:role" resource="xhv:heading"><span class="secno">2 </span>Shapes and Constraints</span>
         </h2>
+        <h4 class="research-question">How are SHACL shapes and their properties used in practice?</h4>
 
         <section id="shapes" typeof="bibo:Chapter" resource="#shapes" property="bibo:hasPart">
             <h3 id="x2.1-shapes" resource="#x2.1-shapes"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1 </span>Shapes</span>
@@ -795,7 +809,7 @@ ex:PersonShape a sh:NodeShape ;
             </h3>
             <h4 class="research-question">How are SHACL shapes documented and configured?</h4>
             <p>
-                The analysis counts these properties on shape subjects in the extracted Git trees, including resources that are not explicitly typed as <code>sh:NodeShape</code> or <code>sh:PropertyShape</code>.
+                The analysis counts these properties on shape subjects in the extracted Git trees, even when the subjects are not explicitly typed as <code>sh:NodeShape</code> or <code>sh:PropertyShape</code>.
             </p>
             <table class="data">
                 <thead>
@@ -849,7 +863,7 @@ ex:PersonShape a sh:NodeShape ;
                 </tbody>
             </table>
             <p>
-                <code>sh:message</code> is the most widespread of these properties. For severity (<code>sh:Violation</code> = error, <code>sh:Warning</code> = warning, <code>sh:Info</code> = information), <code>sh:Violation</code> has the highest occurrence count, but <code>sh:Warning</code> appears in more Git trees. Only declared severity values are counted, excluding the default <code>sh:Violation</code>.
+                <code>sh:message</code> is the most widespread of these properties. SHACL defines three severity levels: <code>sh:Violation</code>, <code>sh:Warning</code>, and <code>sh:Info</code>. <code>sh:Violation</code> has the highest occurrence count, but <code>sh:Warning</code> appears in more Git trees.
             </p>
             <p>
                 The <code>sh:deactivated</code> property appears in 239 Git trees. In 216 of these trees, at least one shape is deactivated using <code>sh:deactivated true</code>.
@@ -864,6 +878,7 @@ ex:PersonShape a sh:NodeShape ;
         <!--OddPage-->
         <h2 id="x3.-core-constraint-components" resource="#x3.-core-constraint-components"><span property="xhv:role" resource="xhv:heading"><span class="secno">3 </span>Core Constraint Components</span>
         </h2>
+        <h4 class="research-question">Which SHACL Core constraint parameters are most widely used?</h4>
         <p>
             This section presents occurrence counts and Git tree prevalence for SHACL Core constraint parameters.
                 </p>
@@ -1251,6 +1266,7 @@ ex:PersonShape a sh:NodeShape ;
         <section id="sparql-based-constraints" typeof="bibo:Chapter" resource="#sparql-based-constraints" property="bibo:hasPart">
             <h3 id="x4.1-sparql-based-constraints" resource="#x4.1-sparql-based-constraints"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.1 </span>SPARQL-based Constraints</span>
             </h3>
+            <h4 class="research-question">Which SPARQL constructs are used in these constraints?</h4>
             <p>
                 The analysis counts <code>sh:sparql</code> triples and typed SPARQL constraint nodes per RDF file.
             </p>
@@ -1280,7 +1296,6 @@ ex:PersonShape a sh:NodeShape ;
                     </tr>
                 </tbody>
             </table>
-            <h5 class="research-question">Which SPARQL constructs are used in these constraints?</h5>
             <p>
                 The analysis identified 84,467 <code>sh:sparql</code> triples referencing SELECT queries that could be parsed, out of 85,496 triples, across 1,040 Git trees.
             </p>
@@ -1297,6 +1312,9 @@ ex:PersonShape a sh:NodeShape ;
             <h3 id="x4.2-sparql-based-constraint-components" resource="#x4.2-sparql-based-constraint-components"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2 </span>SPARQL-based Constraint Components</span>
             </h3>
             <h4 class="research-question">How widely are custom SPARQL-based constraint components used?</h4>
+            <p>
+                Custom constraint components allow developers to define validation rules using SPARQL. Their use was analyzed by checking for mandatory custom parameter predicates in shapes from the same Git tree as the component definition.
+            </p>
             <table class="data">
                 <thead>
                     <tr>
@@ -1324,10 +1342,7 @@ ex:PersonShape a sh:NodeShape ;
                 </tbody>
             </table>
             <p>
-                SPARQL-based constraints appear in approximately ten times as many Git trees as custom constraint components. Custom constraint components are frequently found in SHACL test suites and DASH (Data Shapes Vocabulary), as well as in examples and other projects.
-            </p>
-            <p>
-                The dataset contains 115 distinct SPARQL-based custom constraint component IRIs. Usage was checked for 106 of them by matching required parameter predicates in shapes. Of these, 31 had matching shapes, including 20 with matches in multiple shapes. No matching shapes were found for the remaining 75 components in the Git trees where they were defined.
+                The dataset contains 115 distinct SPARQL-based custom constraint component IRIs. This analysis covered 106 components. The other nine had no mandatory custom parameter predicates that could be used for this check. Parameter matches were found for 31 components, including 20 with matches in multiple shapes. No matches were found for the remaining 75.
             </p>
         </section>
     </section>
