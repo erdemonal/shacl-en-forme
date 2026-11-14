@@ -291,11 +291,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 <li class="tocline"><a href="#ontology-alignment"><span class="secno">1.3 </span>SHACL and Ontology Usage</a>
 <ol class="toc"><li class="tocline"><a href="#shacl-references-to-ontology-terms"><span class="secno">1.3.1 </span>SHACL References to Ontology Terms</a></li>
 <li class="tocline"><a href="#ontology-terms-shared-across-documents"><span class="secno">1.3.2 </span>Ontology Terms Shared Across Documents</a></li>
-<li class="tocline"><a href="#owl-and-shacl-constraints"><span class="secno">1.3.3 </span>OWL and SHACL Constraints</a>
-<ol class="toc"><li class="tocline"><a href="#value-type-comparisons"><span class="secno">1.3.3.1 </span>Value Type Comparisons</a></li>
-<li class="tocline"><a href="#cardinality-comparisons"><span class="secno">1.3.3.2 </span>Cardinality Comparisons</a></li>
-<li class="tocline"><a href="#datatype-comparisons"><span class="secno">1.3.3.3 </span>Datatype Comparisons</a></li></ol></li></ol></li>
-<li class="tocline"><a href="#constraint-consistency"><span class="secno">1.4 </span>Constraint Consistency</a></li></ol></li>
+<li class="tocline"><a href="#owl-and-shacl-constraints"><span class="secno">1.3.3 </span>OWL and SHACL Constraints</a></li></ol></li>
+<li class="tocline"><a href="#constraint-satisfiability"><span class="secno">1.4 </span>SHACL Constraint Satisfiability</a></li></ol></li>
 <li class="tocline"><a href="#constraints-section"><span class="secno">2 </span>Shapes and Constraints</a>
 <ol class="toc"><li class="tocline"><a href="#shapes"><span class="secno">2.1 </span>Shapes</a>
 <ol class="toc"><li class="tocline"><a href="#targets"><span class="secno">2.1.1 </span>Targets</a></li>
@@ -324,7 +321,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <section class="introductory" typeof="bibo:Chapter" resource="#document-outline" property="bibo:hasPart">
         <h2 id="document-outline" resource="#document-outline"><span property="xhv:role" resource="xhv:heading">Document Outline</span></h2>
         <p>
-            Section 1 covers dataset coverage, shape distribution, SHACL and ontology usage, and constraint consistency.
+            Section 1 covers dataset coverage, shape distribution, SHACL and ontology usage, and constraint satisfiability.
         </p>
         <p>
             Sections 2 and 3 provide occurrence counts and Git tree prevalence for SHACL shapes, targets, property paths, shape characteristics, and Core constraint parameters.
@@ -492,7 +489,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 </h4>
                 <h5 class="research-question">How often does another RDF document declare the terms used in a SHACL document?</h5>
                 <p>
-                    The analysis covered 44,748 SHACL documents that use class or property IRIs. For each document, it looked for corresponding class or property declarations in other files in the same Git tree and in external RDF documents.
+                    The analysis covered 44,748 SHACL documents that use class or property IRIs. For each document, it checked which IRIs had matching class or property declarations in other files in the same Git tree or in external RDF documents.
                 </p>
                 <table class="data">
                     <thead>
@@ -536,146 +533,129 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             <section id="owl-and-shacl-constraints" typeof="bibo:Chapter" resource="#owl-and-shacl-constraints" property="bibo:hasPart">
                 <h4 id="x1.3.3-owl-and-shacl-constraints" resource="#x1.3.3-owl-and-shacl-constraints"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.3.3 </span>OWL and SHACL Constraints</span>
                 </h4>
-                <h5 class="research-question">How do SHACL constraints relate to ontology restrictions?</h5>
+                <h5 class="research-question">How often do SHACL constraints match ontology restrictions?</h5>
                 <p>
-                    Ontology restrictions are compared with SHACL constraints on property cardinality and value types. Comparisons use shared property IRIs and, for cardinality and OWL value restrictions, matching class IRIs.
+                    The analysis used <a href="https://doi.org/10.5281/zenodo.3571009">Astrea-KG version 1.1</a> to derive SHACL constraints from ontology documents. Each comparison checked one derived constraint against one SHACL document. The analysis covered the links across documents described in Section&nbsp;1.3.2 and cases where the ontology and the shapes appeared in the same file.
                 </p>
                 <p>
-                    Cardinality bounds and XSD datatype requirements are checked for incompatibilities. Different class IRIs are not treated as incompatible because the classes may overlap. <code>owl:someValuesFrom</code> is included in the value-type comparisons but excluded from the incompatibility checks because it requires at least one value of a given type rather than restricting all values.
+                    For OWL restrictions on a class, the SHACL document had to use the same target class and property path. For <code>rdfs:range</code>, the comparison used the same property path regardless of target class. A match required the corresponding SHACL constraint to contain the derived value. For exact cardinality, both bounds had to equal that value on the same property shape.
                 </p>
-
-                <section id="value-type-comparisons" typeof="bibo:Chapter" resource="#value-type-comparisons" property="bibo:hasPart">
-                    <h5 id="x1.3.3.1-value-type-comparisons" resource="#x1.3.3.1-value-type-comparisons"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.3.3.1 </span>Value Type Comparisons</span>
-                    </h5>
-                    <h5 class="research-question">Which ontology and SHACL value types match?</h5>
-                    <p>
-                        Property range comparisons covered 1,708 Git trees. In 90,296 distinct Git tree–property pairs (one pair for each property in each Git tree), <code>rdfs:range</code> specified the same class or datatype IRI as <code>sh:class</code> or <code>sh:datatype</code>.
-                    </p>
-                    <p>
-                        OWL property value restrictions were compared with <code>sh:class</code> and <code>sh:datatype</code> in 323 Git trees. Each comparison involves one OWL restriction and one SHACL property shape with matching class and property IRIs. Matching value-type IRIs were found in 40,758 <code>owl:allValuesFrom</code> comparisons and 6,852 <code>owl:someValuesFrom</code> comparisons.
-                    </p>
-                </section>
-
-                <section id="cardinality-comparisons" typeof="bibo:Chapter" resource="#cardinality-comparisons" property="bibo:hasPart">
-                    <h5 id="x1.3.3.2-cardinality-comparisons" resource="#x1.3.3.2-cardinality-comparisons"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.3.3.2 </span>Cardinality Comparisons</span>
-                    </h5>
-                    <h5 class="research-question">How do OWL and SHACL cardinality bounds compare?</h5>
-                    <p>
-                        Cardinality comparisons covered 387 Git trees, using <code>owl:minCardinality</code>, <code>owl:maxCardinality</code>, and <code>owl:cardinality</code> with <code>sh:minCount</code> or <code>sh:maxCount</code>. OWL and SHACL cardinality bounds were compared for the same class and property, with results counted separately for each Git tree–class–property combination (one combination for each class and property in each Git tree). At least one matching minimum or maximum bound, with no incompatible bounds, was found in 35,640 of 35,746 combinations. Incompatible cardinality bounds were found in two combinations, both from test files.
-                    </p>
-                    <pre class="example-other">
-ex:Person rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:onProperty ex:age ;
-    owl:minCardinality 1
-] .
-
-ex:PersonShape a sh:NodeShape ;
-    sh:targetClass ex:Person ;
-    sh:property [
-        sh:path ex:age ;
-        sh:minCount 1
-    ] .
-                    </pre>
-                    <p>
-                        Both specify the same minimum cardinality for <code>ex:age</code> on instances of <code>ex:Person</code>.
-                    </p>
-                </section>
-
-                <section id="datatype-comparisons" typeof="bibo:Chapter" resource="#datatype-comparisons" property="bibo:hasPart">
-                    <h5 id="x1.3.3.3-datatype-comparisons" resource="#x1.3.3.3-datatype-comparisons"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.3.3.3 </span>Datatype Comparisons</span>
-                    </h5>
-                    <h5 class="research-question">How do ontology and SHACL datatype requirements compare?</h5>
-                    <p>
-                        The datatype comparisons identify matching and incompatible requirements, but incompatible datatype requirements do not by themselves mean that the constraints apply together.
-                    </p>
-                    <p>
-                        For <code>owl:allValuesFrom</code>, identical datatypes were found in 5,103 of 5,264 Git tree–property pairs, and 134 pairs had incompatible datatype requirements.
-                    </p>
-                    <pre class="example-other">
-ex:Person rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:onProperty ex:age ;
-    owl:allValuesFrom xsd:integer
-] .
-
-ex:PersonShape a sh:NodeShape ;
-    sh:targetClass ex:Person ;
-    sh:property [
-        sh:path ex:age ;
-        sh:datatype xsd:integer
-    ] .
-                    </pre>
-                    <p>
-                        Both specify <code>xsd:integer</code> for <code>ex:age</code> on instances of <code>ex:Person</code>.
-                    </p>
-                    <p>
-                        For <code>rdfs:range</code>, identical datatypes were found in 85,601 of 88,425 Git tree–property pairs, and 614 pairs had incompatible datatype requirements.
-                    </p>
-                    <pre class="example-other">
-ex:age rdfs:range xsd:integer .
-
-ex:PersonShape a sh:NodeShape ;
-    sh:targetClass ex:Person ;
-    sh:property [
-        sh:path ex:age ;
-        sh:datatype xsd:string
-    ] .
-                    </pre>
-                    <p>
-                        The RDFS range specifies <code>xsd:integer</code> for <code>ex:age</code> in general, but the SHACL constraint requires <code>xsd:string</code> for instances of <code>ex:Person</code>.
-                    </p>
-                </section>
+                <table class="data">
+                    <thead>
+                        <tr>
+                            <th>Ontology restriction</th>
+                            <th>Corresponding SHACL constraint</th>
+                            <th>Comparisons</th>
+                            <th>Matches</th>
+                            <th>Match rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><code>owl:maxCardinality</code></th>
+                            <td><code>sh:maxCount</code></td>
+                            <td>68,005</td>
+                            <td>61,071</td>
+                            <td>89.8%</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><code>owl:minCardinality</code></th>
+                            <td><code>sh:minCount</code></td>
+                            <td>9,757</td>
+                            <td>7,069</td>
+                            <td>72.5%</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><code>owl:cardinality</code></th>
+                            <td><code>sh:minCount</code> and <code>sh:maxCount</code></td>
+                            <td>18,208</td>
+                            <td>11,884</td>
+                            <td>65.3%</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><code>rdfs:range</code> with a datatype</th>
+                            <td><code>sh:datatype</code></td>
+                            <td>215,995</td>
+                            <td>152,158</td>
+                            <td>70.4%</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><code>rdfs:range</code> with a class</th>
+                            <td><code>sh:class</code></td>
+                            <td>195,963</td>
+                            <td>125,926</td>
+                            <td>64.3%</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><code>owl:allValuesFrom</code></th>
+                            <td><code>sh:class</code> or <code>sh:datatype</code></td>
+                            <td>14,291</td>
+                            <td>12,067</td>
+                            <td>84.4%</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><code>owl:hasValue</code></th>
+                            <td><code>sh:hasValue</code></td>
+                            <td>1,388</td>
+                            <td>1,242</td>
+                            <td>89.5%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    The derived value was present in 371,417 of the 523,607 comparisons, or 70.9%. In 46,692 comparisons, the corresponding constraint contained only other values. In the remaining 105,498, the SHACL document used the property but did not express the corresponding constraint.
+                </p>
             </section>
         </section>
 
-        <section id="constraint-consistency" typeof="bibo:Chapter" resource="#constraint-consistency" property="bibo:hasPart">
-            <h3 id="x1.4-constraint-consistency" resource="#x1.4-constraint-consistency"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.4 </span>Constraint Consistency</span>
+        <section id="constraint-satisfiability" typeof="bibo:Chapter" resource="#constraint-satisfiability" property="bibo:hasPart">
+            <h3 id="x1.4-constraint-satisfiability" resource="#x1.4-constraint-satisfiability"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.4 </span>SHACL Constraint Satisfiability</span>
             </h3>
-            <h4 class="research-question">How common are incompatible SHACL constraints?</h4>
+            <h4 class="research-question">How often can a shape’s constraints be satisfied together?</h4>
             <p>
-                The analysis checks for combinations of SHACL Core constraints that cannot be satisfied together. These include incompatibilities involving cardinality, datatype, node kind, nested shapes, and closed shapes. Constraints are checked separately for each RDF source document.
+                The analysis covered a subset of SHACL Core constraints. Where a shape used a property path, the path had to be a single property IRI. Each selected shape was analyzed together with the shapes it referenced. Counting each distinct constraint structure once gave 394,685 structures.
             </p>
             <p>
-                For example, a property value required to be both an <code>xsd:string</code> literal and a blank node cannot satisfy both constraints.
-            </p>
-            <pre class="example-other">
-ex:PersonShape a sh:NodeShape ;
-    sh:targetClass ex:Person ;
-    sh:property [
-        sh:path ex:name ;
-        sh:minCount 1 ;
-        sh:datatype xsd:string ;
-        sh:nodeKind sh:BlankNode
-    ] .
-            </pre>
-            <p>
-                The required <code>ex:name</code> value cannot be both an <code>xsd:string</code> literal and a blank node.
+                A translation based on <a href="https://arxiv.org/abs/2406.08018">SHACL2FOL</a> expressed each structure in first-order logic. Vampire, an automated theorem prover, tested whether an RDF node could satisfy all the constraints together.
             </p>
             <table class="data">
                 <thead>
                     <tr>
-                        <th>Measurement</th>
-                        <th>Count</th>
+                        <th>Result</th>
+                        <th>Distinct structures</th>
+                        <th>Share</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">Git trees with incompatibilities</th>
-                        <td>86</td>
+                        <th scope="row">All constraints can be satisfied together</th>
+                        <td>386,686</td>
+                        <td>97.97%</td>
                     </tr>
                     <tr>
-                        <th scope="row">Distinct document contents with incompatibilities</th>
-                        <td>272</td>
+                        <th scope="row">The constraints cannot all be satisfied together</th>
+                        <td>971</td>
+                        <td>0.25%</td>
                     </tr>
                     <tr>
-                        <th scope="row">Total incompatibility occurrences</th>
-                        <td>3,664</td>
+                        <th scope="row">No conclusive answer</th>
+                        <td>1,099</td>
+                        <td>0.28%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Unsupported input</th>
+                        <td>5,002</td>
+                        <td>1.27%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Tool error</th>
+                        <td>927</td>
+                        <td>0.23%</td>
                     </tr>
                 </tbody>
             </table>
             <p>
-                The findings are concentrated in a small number of Git trees. Four trees contribute approximately 75% of all incompatibility occurrences, largely due to repeated or generated shapes. Some findings also come from test material.
+                For example, a shape in a test file required at least two email addresses but allowed at most one.
             </p>
         </section>
 
