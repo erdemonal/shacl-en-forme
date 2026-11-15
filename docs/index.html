@@ -398,55 +398,61 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <section id="shape-distribution" typeof="bibo:Chapter" resource="#shape-distribution" property="bibo:hasPart">
             <h3 id="x1.2-shape-distribution" resource="#x1.2-shape-distribution"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.2 </span>Shape Distribution</span>
             </h3>
-            <h4 class="research-question">How are SHACL shapes distributed?</h4>
+            <h4 class="research-question">How are SHACL shapes distributed across Git trees?</h4>
             <p>
-                The analysis identified 1,183,518 distinct shapes typed as <code>sh:NodeShape</code> or <code>sh:PropertyShape</code>.
+                The dataset contains 3,159,949 distinct shapes. Some were explicitly typed as <code>sh:NodeShape</code> or <code>sh:PropertyShape</code>. Others were identified from SHACL targets, constraints, property paths, or references from other shapes. Each shape IRI was counted once per Git tree and each blank node once per file.
             </p>
-                    <table class="data">
-            <thead>
-                <tr>
-                    <th>Share of trees</th>
-                    <th>Trees</th>
-                    <th>Distinct shapes</th>
-                    <th>Share of distinct shapes</th>
-                            </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">Top 1%</th>
-                    <td>37</td>
-                    <td>690,425</td>
-                    <td>58.34%</td>
-                            </tr>
-                            <tr>
-                    <th scope="row">Top 5%</th>
-                    <td>183</td>
-                    <td>1,037,474</td>
-                    <td>87.66%</td>
-                            </tr>
-                <tr>
-                    <th scope="row">Top 10%</th>
-                    <td>366</td>
-                    <td>1,104,828</td>
-                    <td>93.35%</td>
+            <table class="data">
+                <thead>
+                    <tr>
+                        <th>Share of trees</th>
+                        <th>Git trees</th>
+                        <th>Distinct shapes</th>
+                        <th>Share of distinct shapes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Top 1%</th>
+                        <td>37</td>
+                        <td>1,684,699</td>
+                        <td>53.31%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Top 5%</th>
+                        <td>183</td>
+                        <td>2,570,629</td>
+                        <td>81.35%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Top 10%</th>
+                        <td>366</td>
+                        <td>2,830,876</td>
+                        <td>89.59%</td>
                     </tr>
                 </tbody>
             </table>
             <p>
-                SHACL shapes are highly concentrated in a small number of Git trees, with the top 1% containing 58.34% of all shapes.
+                More than half of these shapes occur in just 37 Git trees.
             </p>
         </section>
 
         <section id="ontology-alignment" typeof="bibo:Chapter" resource="#ontology-alignment" property="bibo:hasPart">
             <h3 id="x1.3-ontology-alignment" resource="#x1.3-ontology-alignment"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.3 </span>SHACL and Ontology Usage</span>
             </h3>
+            <p>
+                A SHACL shape can refer to a class or property declared in the same RDF document or elsewhere.
+            </p>
 
             <section id="shacl-references-to-ontology-terms" typeof="bibo:Chapter" resource="#shacl-references-to-ontology-terms" property="bibo:hasPart">
                 <h4 id="x1.3.1-shacl-references-to-ontology-terms" resource="#x1.3.1-shacl-references-to-ontology-terms"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.3.1 </span>SHACL References to Ontology Terms</span>
                 </h4>
                 <h5 class="research-question">How often are the terms used by SHACL shapes typed as classes or properties?</h5>
                 <p>
-                    The analysis identified 384,106 distinct IRIs used as classes or properties by SHACL shapes. An IRI counts as a match if the RDF contains an <code>rdf:type</code> triple consistent with its use in SHACL. For example, an IRI used with <code>sh:targetClass</code> matches if it is typed as <code>owl:Class</code> or <code>rdfs:Class</code>. For an IRI used in both roles, a match in either role is sufficient. To find declarations on the web, the analysis looked up term IRIs over HTTP and also checked linked RDF documents and vocabulary files.
+                    SHACL shapes used 384,106 distinct IRIs as classes or properties. An IRI counts as a match if an explicit <code>rdf:type</code> declaration identifies it as a class or property consistent with its use in SHACL. For example, if a shape uses <code>ex:Student</code> with <code>sh:targetClass</code>, a declaration of <code>ex:Student</code> as <code>owl:Class</code> or <code>rdfs:Class</code> counts as a match. If the same IRI is used as both a class and a property, a declaration matching either role is sufficient.
+                </p>
+                <p>
+                    The analysis looked for these declarations in Git trees where each IRI was used. To find external declarations, it looked up term IRIs over HTTP and checked linked RDF documents and vocabulary files.
                 </p>
                 <table class="data">
                     <thead>
@@ -480,16 +486,16 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     </tbody>
                 </table>
                 <p>
-                    For 53.96% of the IRIs, a matching type was found in at least one Git tree where the IRI was used. Across Git trees and RDF documents retrieved from the web, 252,114 IRIs had a matching type, or 65.64% of the total.
+                    For 53.96% of the IRIs, a matching declaration was found in at least one Git tree where the IRI was used. External RDF provided matching declarations for a further 44,854 IRIs. In total, 252,114 IRIs had a matching declaration, or 65.64% of all IRIs considered.
                 </p>
             </section>
 
             <section id="ontology-terms-shared-across-documents" typeof="bibo:Chapter" resource="#ontology-terms-shared-across-documents" property="bibo:hasPart">
                 <h4 id="x1.3.2-ontology-terms-shared-across-documents" resource="#x1.3.2-ontology-terms-shared-across-documents"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.3.2 </span>Ontology Terms Shared Across Documents</span>
                 </h4>
-                <h5 class="research-question">How often does another RDF document declare the terms used in a SHACL document?</h5>
+                <h5 class="research-question">How often does another RDF document declare at least one term used in a SHACL document?</h5>
                 <p>
-                    The analysis covered 44,748 SHACL documents that use class or property IRIs. For each document, it checked which IRIs had matching class or property declarations in other files in the same Git tree or in external RDF documents.
+                    Across the dataset, 44,748 SHACL documents used at least one IRI as a class or property. For each document, the search covered other files in the same Git tree and RDF documents retrieved from the web. A document appears in the <em>Both</em> row if at least one term had a matching declaration in another file in the same Git tree and at least one had a matching declaration on the web. These can be different terms.
                 </p>
                 <table class="data">
                     <thead>
@@ -523,27 +529,47 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     </tbody>
                 </table>
                 <p>
-                    For 31,228 SHACL documents, another RDF document declared at least one of their terms. Such matches occurred in 3,264 of the 3,636 verified repositories containing SHACL documents that use class or property IRIs.
+                    In 31,228 of the 44,748 SHACL documents, at least one term had a matching declaration in another RDF document. Such matches occurred in 3,264 of the 3,636 verified repositories containing SHACL documents that used class or property IRIs.
                 </p>
                 <p>
-                    For each of the 31,228 documents, the analysis calculated the percentage of its distinct terms declared by the source with the most matches. The median was approximately 72%. For 8,571 documents, a single source declared all the terms. In 7,263 SHACL documents that used two or more terms, each matching source declared only one term from the document.
+                    For each of the 31,228 documents with a match, the analysis calculated the percentage of its distinct terms declared by the single RDF document with the most matches. The median was approximately 72%. A single RDF document declared all the terms in 8,571 SHACL documents. In 7,263 SHACL documents with two or more distinct terms, each matching RDF document declared only one of those terms.
                 </p>
             </section>
 
             <section id="owl-and-shacl-constraints" typeof="bibo:Chapter" resource="#owl-and-shacl-constraints" property="bibo:hasPart">
                 <h4 id="x1.3.3-owl-and-shacl-constraints" resource="#x1.3.3-owl-and-shacl-constraints"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.3.3 </span>OWL and SHACL Constraints</span>
                 </h4>
-                <h5 class="research-question">How often do SHACL constraints match ontology restrictions?</h5>
+                <h5 class="research-question">How often do SHACL constraints match the values derived from OWL restrictions and RDFS range declarations?</h5>
                 <p>
-                    The analysis used <a href="https://doi.org/10.5281/zenodo.3571009">Astrea-KG version 1.1</a> to derive SHACL constraints from ontology documents. Each comparison checked one derived constraint against one SHACL document. The analysis covered the links across documents described in Section&nbsp;1.3.2 and cases where the ontology and the shapes appeared in the same file.
+                    Section&nbsp;1.3.2 identified SHACL documents that used terms declared in other RDF documents. The constraint comparison covered these document pairs and files containing both ontology statements and SHACL shapes. The comparison used the mappings in <a href="https://zenodo.org/records/3626676">Astrea-KG</a> to identify the corresponding SHACL constraint for each OWL restriction or RDFS range declaration.
                 </p>
                 <p>
-                    For OWL restrictions on a class, the SHACL document had to use the same target class and property path. For <code>rdfs:range</code>, the comparison used the same property path regardless of target class. A match required the corresponding SHACL constraint to contain the derived value. For exact cardinality, both bounds had to equal that value on the same property shape.
+                    For an OWL restriction on a class, the SHACL shape had to target that class and use the property from the restriction as its path. For an <code>rdfs:range</code> declaration, the comparison used the property path regardless of the target class. A match required the corresponding SHACL constraint to contain every value derived for that comparison. For exact cardinality, a derived value counted as present only if the same property shape specified it as both <code>sh:minCount</code> and <code>sh:maxCount</code>.
+                </p>
+                <pre class="example-other">
+# OWL restriction
+ex:HenriFayolSeminar rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty ex:startTime ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger
+] .
+
+# Matching SHACL constraint
+ex:SeminarShape a sh:NodeShape ;
+    sh:targetClass ex:HenriFayolSeminar ;
+    sh:property [
+        sh:path ex:startTime ;
+        sh:minCount 1 ;
+        sh:maxCount 1
+    ] .
+                </pre>
+                <p>
+                    Each comparison pairs one constraint derived from an ontology with one SHACL document.
                 </p>
                 <table class="data">
                     <thead>
                         <tr>
-                            <th>Ontology restriction</th>
+                            <th>OWL restriction or RDFS range</th>
                             <th>Corresponding SHACL constraint</th>
                             <th>Comparisons</th>
                             <th>Matches</th>
@@ -573,14 +599,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                             <td>65.3%</td>
                         </tr>
                         <tr>
-                            <th scope="row"><code>rdfs:range</code> with a datatype</th>
+                            <th scope="row"><code>rdfs:range</code> <span style="font-weight: normal">with a datatype</span></th>
                             <td><code>sh:datatype</code></td>
                             <td>215,995</td>
                             <td>152,158</td>
                             <td>70.4%</td>
                         </tr>
                         <tr>
-                            <th scope="row"><code>rdfs:range</code> with a class</th>
+                            <th scope="row"><code>rdfs:range</code> <span style="font-weight: normal">with a class</span></th>
                             <td><code>sh:class</code></td>
                             <td>195,963</td>
                             <td>125,926</td>
@@ -603,7 +629,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     </tbody>
                 </table>
                 <p>
-                    The derived value was present in 371,417 of the 523,607 comparisons, or 70.9%. In 46,692 comparisons, the corresponding constraint contained only other values. In the remaining 105,498, the SHACL document used the property but did not express the corresponding constraint.
+                    The SHACL document contained all the derived values in 371,417 of the 523,607 comparisons, or 70.9%. In 46,692 comparisons, the corresponding SHACL constraint had at least one value, but at least one derived value was missing. In the remaining 105,498 comparisons, no value was found for the corresponding SHACL constraint in the required context.
                 </p>
             </section>
         </section>
@@ -611,30 +637,51 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <section id="constraint-satisfiability" typeof="bibo:Chapter" resource="#constraint-satisfiability" property="bibo:hasPart">
             <h3 id="x1.4-constraint-satisfiability" resource="#x1.4-constraint-satisfiability"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.4 </span>SHACL Constraint Satisfiability</span>
             </h3>
-            <h4 class="research-question">How often can a shape’s constraints be satisfied together?</h4>
+            <h4 class="research-question">How many constraint structures are satisfiable?</h4>
             <p>
-                The analysis covered a subset of SHACL Core constraints. Where a shape used a property path, the path had to be a single property IRI. Each selected shape was analyzed together with the shapes it referenced. Counting each distinct constraint structure once gave 394,685 structures.
+                A shape is satisfiable if there is an RDF graph in which at least one node satisfies all its constraints.
+            </p>
+            <pre class="example-other">
+ex:BuildingShape a sh:NodeShape ;
+    sh:targetNode ex:EmseCoursFauriel ;
+    sh:property [
+        sh:path ex:address ;
+        sh:minCount 2 ;
+        sh:maxCount 1
+    ] .
+            </pre>
+            <p>
+                This shape requires at least two distinct addresses for <code>ex:EmseCoursFauriel</code> but allows at most one. No node can satisfy both constraints.
             </p>
             <p>
-                A translation based on <a href="https://arxiv.org/abs/2406.08018">SHACL2FOL</a> expressed each structure in first-order logic. Vampire, an automated theorem prover, tested whether an RDF node could satisfy all the constraints together.
+                The satisfiability check used 12 SHACL Core parameters. These include all three <a href="https://www.w3.org/TR/shacl/#core-components-value-type">value type parameters</a> and both <a href="https://www.w3.org/TR/shacl/#core-components-count">cardinality parameters</a> in SHACL&nbsp;1.0. The other seven are <code>sh:and</code>, <code>sh:or</code>, <code>sh:not</code>, <code>sh:node</code>, <code>sh:property</code>, <code>sh:hasValue</code>, and <code>sh:in</code>. Each <code>sh:path</code> had to be a single property IRI, as in <code>sh:path ex:address</code>.
+            </p>
+            <p>
+                A translation based on <a href="https://arxiv.org/html/2406.08018v1">SHACL2FOL</a> expressed the constraints of each shape and its referenced shapes in first-order logic. Let <i>S</i>(<i>x</i>) mean that node <i>x</i> satisfies the shape. The translation required at least one such node to exist.
+            </p>
+            <p style="text-align: center">
+                ∃<i>x</i>&nbsp;<i>S</i>(<i>x</i>)
+            </p>
+            <p>
+                <a href="https://vprover.github.io/">Vampire</a> checked the resulting theories for satisfiability. Across 394,133 distinct constraint structures, 386,150 were satisfiable and 970 were unsatisfiable.
             </p>
             <table class="data">
                 <thead>
                     <tr>
                         <th>Result</th>
                         <th>Distinct structures</th>
-                        <th>Share</th>
+                        <th>Share of structures</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <th scope="row">All constraints can be satisfied together</th>
-                        <td>386,686</td>
+                        <td>386,150</td>
                         <td>97.97%</td>
                     </tr>
                     <tr>
-                        <th scope="row">The constraints cannot all be satisfied together</th>
-                        <td>971</td>
+                        <th scope="row">No node can satisfy all the constraints</th>
+                        <td>970</td>
                         <td>0.25%</td>
                     </tr>
                     <tr>
@@ -644,19 +691,16 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     </tr>
                     <tr>
                         <th scope="row">Unsupported input</th>
-                        <td>5,002</td>
+                        <td>4,987</td>
                         <td>1.27%</td>
                     </tr>
                     <tr>
                         <th scope="row">Tool error</th>
                         <td>927</td>
-                        <td>0.23%</td>
+                        <td>0.24%</td>
                     </tr>
                 </tbody>
             </table>
-            <p>
-                For example, a shape in a test file required at least two email addresses but allowed at most one.
-            </p>
         </section>
 
     </section>
