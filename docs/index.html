@@ -321,13 +321,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <section class="introductory" typeof="bibo:Chapter" resource="#document-outline" property="bibo:hasPart">
         <h2 id="document-outline" resource="#document-outline"><span property="xhv:role" resource="xhv:heading">Document Outline</span></h2>
         <p>
-            Section 1 covers dataset coverage, shape distribution, SHACL and ontology usage, and constraint satisfiability.
+            Section 1 introduces the dataset and describes how shapes are distributed across Git trees, how they use ontology terms, and how often their constraints can be satisfied together.
         </p>
         <p>
-            Sections 2 and 3 provide occurrence counts and Git tree prevalence for SHACL shapes, targets, property paths, shape characteristics, and Core constraint parameters.
-        </p>
-        <p>
-            Section 4 analyzes the use of SPARQL-based constraints and constraint components.
+            Section 2 describes shapes, targets, property paths, and shape characteristics. Section 3 presents occurrence counts and Git tree prevalence for the 33 SHACL Core constraint parameters. Section 4 describes how SHACL documents use SPARQL to define constraints and reusable constraint components.
         </p>
     </section>
 
@@ -336,13 +333,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <h2 id="x-introduction" resource="#x-introduction"><span property="xhv:role" resource="xhv:heading">Introduction</span>
         </h2>
         <p>
-            SHACL en Forme presents statistics on how the Shapes Constraint Language (SHACL) is used in public GitHub repositories. It is an independent research resource and is not endorsed by the W3C.
+            SHACL en Forme presents statistics on how the Shapes Constraint Language (SHACL) is used in public GitHub repositories.
         </p>
         <p>
-            The analysis covers SHACL shapes, targets, property paths, Core constraint parameters, and SHACL-SPARQL. It provides occurrence counts and Git tree prevalence using data collected from verified GitHub repositories, excluding forks. The dataset reflects the state of the verified GitHub repositories as of 11 October 2026.
+            The dataset reflects repository contents as of 11 October 2026. The study excludes forks and counts each distinct Git tree once because several repositories can share the same snapshot.
         </p>
         <p>
-            Definitions, syntax rules, and validation procedures are available in the <a href="https://www.w3.org/TR/shacl/">SHACL 1.0 Recommendation</a>.
+            SHACL en Forme is an independent research resource and is not endorsed by the World Wide Web Consortium (W3C). The <a href="https://www.w3.org/TR/shacl/">SHACL 1.0 Recommendation</a> defines the language, its syntax, and its validation procedures.
         </p>
         </section>
 
@@ -359,7 +356,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 A Git tree represents a snapshot of repository contents. Multiple GitHub repositories may reference the same tree. The analysis uses distinct Git trees to avoid counting identical repository snapshots more than once.
             </p>
             <p>
-                Repositories were verified based on SHACL shape declarations, Core target or constraint predicates, or structurally attached SHACL-SPARQL constraints in parsed RDF graphs. After excluding forks and Git trees without extracted SHACL shape documents, the final dataset contains 3,675 repositories representing 3,657 distinct Git trees.
+                Repositories were verified based on SHACL shape declarations, Core target or constraint predicates, or structurally attached SHACL-SPARQL constraints in parsed Resource Description Framework (RDF) graphs. After excluding forks and Git trees without extracted SHACL shape documents, the final dataset contains 3,675 repositories representing 3,657 distinct Git trees.
             </p>
             <p>
                 Among 550,508 files identified for RDF processing, 548,135 were successfully parsed.
@@ -400,7 +397,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             </h3>
             <h4 class="research-question">How are SHACL shapes distributed across Git trees?</h4>
             <p>
-                The dataset contains 3,159,949 distinct shapes. Some were explicitly typed as <code>sh:NodeShape</code> or <code>sh:PropertyShape</code>. Others were identified from SHACL targets, constraints, property paths, or references from other shapes. Each shape IRI was counted once per Git tree and each blank node once per file.
+                The dataset contains 3,159,949 distinct shapes. Some were explicitly typed as <code>sh:NodeShape</code> or <code>sh:PropertyShape</code>. Others were identified from SHACL targets, constraints, property paths, or references from other shapes. Each Internationalized Resource Identifier (IRI) identifying a shape was counted once per Git tree and each blank node once per file.
             </p>
             <table class="data">
                 <thead>
@@ -433,7 +430,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 </tbody>
             </table>
             <p>
-                More than half of these shapes occur in just 37 Git trees.
+                The 37 Git trees with the most shapes contain 53.31% of all shapes in the dataset.
             </p>
         </section>
 
@@ -452,7 +449,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     SHACL shapes used 384,106 distinct IRIs as classes or properties. An IRI counts as a match if an explicit <code>rdf:type</code> declaration identifies it as a class or property consistent with its use in SHACL. For example, if a shape uses <code>ex:Student</code> with <code>sh:targetClass</code>, a declaration of <code>ex:Student</code> as <code>owl:Class</code> or <code>rdfs:Class</code> counts as a match. If the same IRI is used as both a class and a property, a declaration matching either role is sufficient.
                 </p>
                 <p>
-                    The analysis looked for these declarations in Git trees where each IRI was used. To find external declarations, it looked up term IRIs over HTTP and checked linked RDF documents and vocabulary files.
+                    The analysis looked for these declarations in Git trees where each IRI was used. To find external declarations, it looked up term IRIs over Hypertext Transfer Protocol (HTTP) and checked linked RDF documents and vocabulary files.
                 </p>
                 <table class="data">
                     <thead>
@@ -493,9 +490,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             <section id="ontology-terms-shared-across-documents" typeof="bibo:Chapter" resource="#ontology-terms-shared-across-documents" property="bibo:hasPart">
                 <h4 id="x1.3.2-ontology-terms-shared-across-documents" resource="#x1.3.2-ontology-terms-shared-across-documents"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.3.2 </span>Ontology Terms Shared Across Documents</span>
                 </h4>
-                <h5 class="research-question">How often does another RDF document declare at least one term used in a SHACL document?</h5>
+                <h5 class="research-question">How many SHACL documents use at least one term declared in another RDF document?</h5>
                 <p>
-                    Across the dataset, 44,748 SHACL documents used at least one IRI as a class or property. For each document, the search covered other files in the same Git tree and RDF documents retrieved from the web. A document appears in the <em>Both</em> row if at least one term had a matching declaration in another file in the same Git tree and at least one had a matching declaration on the web. These can be different terms.
+                    Across the dataset, 44,748 SHACL documents contained shapes that referred to at least one class or property by its IRI. For each document, the search looked for matching declarations in other files in the same Git tree and in RDF documents retrieved from the web. A document appears in the Both row when each source declares at least one of its terms. The two sources can declare different terms.
                 </p>
                 <table class="data">
                     <thead>
@@ -529,19 +526,19 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     </tbody>
                 </table>
                 <p>
-                    In 31,228 of the 44,748 SHACL documents, at least one term had a matching declaration in another RDF document. Such matches occurred in 3,264 of the 3,636 verified repositories containing SHACL documents that used class or property IRIs.
+                    In 31,228 of the 44,748 SHACL documents, at least one term had a matching declaration in a different RDF file. This represents 69.79% of the documents.
                 </p>
                 <p>
-                    For each of the 31,228 documents with a match, the analysis calculated the percentage of its distinct terms declared by the single RDF document with the most matches. The median was approximately 72%. A single RDF document declared all the terms in 8,571 SHACL documents. In 7,263 SHACL documents with two or more distinct terms, each matching RDF document declared only one of those terms.
+                    For each of these documents, the analysis calculated the share of its distinct terms declared by the RDF file with the most matches. The median share was approximately 72%. For 8,571 SHACL documents, one RDF file declared all the terms used by that SHACL document. In 7,263 documents with two or more distinct terms, each matching file declared only one of those terms.
                 </p>
             </section>
 
             <section id="owl-and-shacl-constraints" typeof="bibo:Chapter" resource="#owl-and-shacl-constraints" property="bibo:hasPart">
                 <h4 id="x1.3.3-owl-and-shacl-constraints" resource="#x1.3.3-owl-and-shacl-constraints"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.3.3 </span>OWL and SHACL Constraints</span>
                 </h4>
-                <h5 class="research-question">How often do SHACL constraints match the values derived from OWL restrictions and RDFS range declarations?</h5>
+                <h5 class="research-question">How often do SHACL constraints match the values derived from OWL restrictions and RDFS ranges?</h5>
                 <p>
-                    Section&nbsp;1.3.2 identified SHACL documents that used terms declared in other RDF documents. The constraint comparison covered these document pairs and files containing both ontology statements and SHACL shapes. The comparison used the mappings in <a href="https://zenodo.org/records/3626676">Astrea-KG</a> to identify the corresponding SHACL constraint for each OWL restriction or RDFS range declaration.
+                    Section&nbsp;1.3.2 identified SHACL documents that used terms declared in other RDF documents. The comparison covered these document pairs as well as files containing both ontology statements and SHACL shapes. For each Web Ontology Language (OWL) restriction or RDF Schema (RDFS) range declaration, the analysis used the mappings in <a href="https://zenodo.org/records/3626676">Astrea-KG</a> to identify the corresponding SHACL constraint.
                 </p>
                 <p>
                     For an OWL restriction on a class, the SHACL shape had to target that class and use the property from the restriction as its path. For an <code>rdfs:range</code> declaration, the comparison used the property path regardless of the target class. A match required the corresponding SHACL constraint to contain every value derived for that comparison. For exact cardinality, a derived value counted as present only if the same property shape specified it as both <code>sh:minCount</code> and <code>sh:maxCount</code>.
@@ -637,7 +634,7 @@ ex:SeminarShape a sh:NodeShape ;
         <section id="constraint-satisfiability" typeof="bibo:Chapter" resource="#constraint-satisfiability" property="bibo:hasPart">
             <h3 id="x1.4-constraint-satisfiability" resource="#x1.4-constraint-satisfiability"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.4 </span>SHACL Constraint Satisfiability</span>
             </h3>
-            <h4 class="research-question">How many constraint structures are satisfiable?</h4>
+            <h4 class="research-question">How many of the shapes tested were satisfiable?</h4>
             <p>
                 A shape is satisfiable if there is an RDF graph in which at least one node satisfies all its constraints.
             </p>
@@ -654,33 +651,33 @@ ex:BuildingShape a sh:NodeShape ;
                 This shape requires at least two distinct addresses for <code>ex:EmseCoursFauriel</code> but allows at most one. No node can satisfy both constraints.
             </p>
             <p>
-                The satisfiability check used 12 SHACL Core parameters. These include all three <a href="https://www.w3.org/TR/shacl/#core-components-value-type">value type parameters</a> and both <a href="https://www.w3.org/TR/shacl/#core-components-count">cardinality parameters</a> in SHACL&nbsp;1.0. The other seven are <code>sh:and</code>, <code>sh:or</code>, <code>sh:not</code>, <code>sh:node</code>, <code>sh:property</code>, <code>sh:hasValue</code>, and <code>sh:in</code>. Each <code>sh:path</code> had to be a single property IRI, as in <code>sh:path ex:address</code>.
+                The satisfiability check used 12 SHACL Core parameters. These include all three <a href="https://www.w3.org/TR/shacl/#core-components-value-type">value type parameters</a> and both <a href="https://www.w3.org/TR/shacl/#core-components-count">cardinality parameters</a> in SHACL&nbsp;1.0. The other seven are <code>sh:and</code>, <code>sh:or</code>, <code>sh:not</code>, <code>sh:node</code>, <code>sh:property</code>, <code>sh:hasValue</code>, and <code>sh:in</code>. Each <code>sh:path</code> had to be a single property IRI, as in <code>sh:path ex:address</code>. Each shape was considered together with the shapes it referenced. Shapes with the same constraint structure were counted once.
             </p>
             <p>
-                A translation based on <a href="https://arxiv.org/html/2406.08018v1">SHACL2FOL</a> expressed the constraints of each shape and its referenced shapes in first-order logic. Let <i>S</i>(<i>x</i>) mean that node <i>x</i> satisfies the shape. The translation required at least one such node to exist.
+                A translation based on <a href="https://arxiv.org/html/2406.08018v1">SHACL2FOL</a> expressed the constraints of each shape and its referenced shapes in first-order logic. If <i>S</i>(<i>x</i>) means that node <i>x</i> satisfies the shape, the following formula requires at least one such node to exist.
             </p>
             <p style="text-align: center">
                 ∃<i>x</i>&nbsp;<i>S</i>(<i>x</i>)
             </p>
             <p>
-                <a href="https://vprover.github.io/">Vampire</a> checked the resulting theories for satisfiability. Across 394,133 distinct constraint structures, 386,150 were satisfiable and 970 were unsatisfiable.
+                <a href="https://vprover.github.io/">Vampire</a> checked the resulting theories for satisfiability. The table gives the results for 394,133 shapes.
             </p>
             <table class="data">
                 <thead>
                     <tr>
                         <th>Result</th>
-                        <th>Distinct structures</th>
-                        <th>Share of structures</th>
+                        <th>Shapes</th>
+                        <th>Share</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">All constraints can be satisfied together</th>
+                        <th scope="row">Satisfiable</th>
                         <td>386,150</td>
                         <td>97.97%</td>
                     </tr>
                     <tr>
-                        <th scope="row">No node can satisfy all the constraints</th>
+                        <th scope="row">Unsatisfiable</th>
                         <td>970</td>
                         <td>0.25%</td>
                     </tr>
@@ -701,6 +698,9 @@ ex:BuildingShape a sh:NodeShape ;
                     </tr>
                 </tbody>
             </table>
+            <p>
+                For the remaining 7,013 shapes, the analysis gave no definite answer. In 1,099 runs, the prover ended without a decision, the run reached its time limit, or the software could not interpret the prover’s output. Unsupported input refers to shapes the software could not process, for example because a referenced shape was missing or an RDF list could not be read. In 927 cases, an error interrupted execution. In 482 of those cases, the software encountered a <code>sh:datatype</code> value it could not read as an IRI.
+            </p>
         </section>
 
     </section>
@@ -715,13 +715,13 @@ ex:BuildingShape a sh:NodeShape ;
             <h3 id="x2.1-shapes" resource="#x2.1-shapes"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1 </span>Shapes</span>
             </h3>
             <p>
-                The analysis identified 1,183,518 shapes explicitly typed as <code>sh:NodeShape</code> or <code>sh:PropertyShape</code>. Shape IRIs are deduplicated per Git tree, and blank nodes are counted per file. The 632 resources typed as both <code>sh:NodeShape</code> and <code>sh:PropertyShape</code> are counted only once in the total.
+                The dataset contains 1,183,518 shapes explicitly typed as <code>sh:NodeShape</code> or <code>sh:PropertyShape</code>. Each shape IRI was counted once per Git tree and each blank node once per file. The total includes 632 shapes typed as both <code>sh:NodeShape</code> and <code>sh:PropertyShape</code>.
             </p>
             <p>
-                Implicit property shapes were identified in 3,225 Git trees. A separate analysis counted 1,008,575 such shapes, using distinct IRIs per Git tree and blank nodes per file. Most occur under <code>sh:property</code>, without a <code>sh:PropertyShape</code> type declaration. Likewise, these shapes are included in the Core constraint, property path, SHACL-SPARQL, and OWL–SHACL analyses.
+                Across 3,225 Git trees, 1,008,575 shapes had a <code>sh:path</code> but no <code>sh:NodeShape</code> or <code>sh:PropertyShape</code> declaration in the same file. Most of these implicit property shapes appeared as the object of <code>sh:property</code>. They were included in the analyses of Core constraints, property paths, and SHACL-SPARQL, as well as the comparison between ontology and SHACL constraints.
             </p>
             <p>
-                Shape prevalence is calculated over 424,580 explicitly typed node shapes and 759,570 explicitly typed property shapes. Git tree counts may also include shape subjects that are not explicitly typed as <code>sh:NodeShape</code> or <code>sh:PropertyShape</code>.
+                The node shape and property shape columns give the percentage of explicitly typed shapes of each kind that use the property listed in the row. Git tree counts also include uses on subjects without an explicit shape type.
             </p>
             <div id="constraints"></div>
             <div id="focusNodes"></div>
@@ -735,7 +735,7 @@ ex:BuildingShape a sh:NodeShape ;
                 <div id="targetSubjectsOf"></div>
                 <div id="targetObjectsOf"></div>
                 <p>
-                    The table shows occurrence counts and Git tree prevalence for the four SHACL target predicates.
+                    <code>sh:targetClass</code> appears in 3,374 of the 3,657 Git trees, making it the most widely used of the four target predicates.
                 </p>
                 <table class="data">
                     <thead>
@@ -799,7 +799,7 @@ ex:BuildingShape a sh:NodeShape ;
                     </tbody>
                 </table>
                 <p>
-                    The following table shows the distribution of explicitly declared severity levels.
+                    The table gives shape counts for <code>sh:Violation</code>, <code>sh:Warning</code>, and <code>sh:Info</code>.
                 </p>
                 <table class="data">
                     <thead>
@@ -856,7 +856,7 @@ ex:BuildingShape a sh:NodeShape ;
                     </tbody>
                 </table>
                 <p>
-                    <code>sh:message</code> is the most common of the eight properties across Git trees. It is also more common on property shapes than on node shapes.
+                    <code>sh:message</code> appears on 15.42% of property shapes and 7.75% of node shapes.
                 </p>
             </section>
 
@@ -917,7 +917,7 @@ ex:BuildingShape a sh:NodeShape ;
             <h3 id="x2.2-node-shapes" resource="#x2.2-node-shapes"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.2 </span>Node Shapes</span>
             </h3>
             <p>
-                The analysis identified 424,580 node shapes.
+                In the dataset, 424,580 shapes are typed as <code>sh:NodeShape</code>.
             </p>
         </section>
 
@@ -925,14 +925,14 @@ ex:BuildingShape a sh:NodeShape ;
             <h3 id="x2.3-property-shapes" resource="#x2.3-property-shapes"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.3 </span>Property Shapes</span>
             </h3>
             <p>
-                The analysis identified 759,570 property shapes.
+                In the dataset, 759,570 shapes are typed as <code>sh:PropertyShape</code>. The property path counts below also include implicit property shapes.
             </p>
 
             <section id="property-paths" typeof="bibo:Chapter" resource="#property-paths" property="bibo:hasPart">
                 <h4 id="x2.3.1-property-paths" resource="#x2.3.1-property-paths"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.3.1 </span>Property Paths</span>
                 </h4>
                 <p>
-                    The following table shows occurrence counts and Git tree prevalence for seven SHACL property path forms. Occurrences include nested path forms, so a single <code>sh:path</code> declaration may contribute to multiple counts.
+                    A single <code>sh:path</code> declaration can contribute to several rows. For example, an inverse path inside a sequence counts toward both <code>InversePath</code> and <code>SequencePath</code>.
                 </p>
                 <table class="data">
                     <thead>
@@ -1043,7 +1043,7 @@ ex:BuildingShape a sh:NodeShape ;
                     </tbody>
                 </table>
                 <p>
-                    <code>sh:name</code> is the most common of these properties on both node shapes and property shapes. <code>sh:order</code> and <code>sh:group</code> are more common on property shapes than on node shapes.
+                    <code>sh:name</code> is the most common of the five properties on both node shapes and property shapes. <code>sh:group</code> appears on 12.41% of property shapes and 0.88% of node shapes.
                 </p>
             </section>
         </section>
@@ -1055,17 +1055,14 @@ ex:BuildingShape a sh:NodeShape ;
         </h2>
         <h4 class="research-question">Which SHACL Core constraint parameters are most widely used?</h4>
         <p>
-            This section presents occurrence counts and Git tree prevalence for SHACL Core constraint parameters.
-                </p>
-                <p>
-            Occurrences count RDF triples containing each constraint parameter as a predicate. Git tree prevalence measures the proportion of analyzed Git trees containing that parameter.
+            An occurrence is an RDF triple that uses the parameter as its predicate. Git tree prevalence is the percentage of analyzed Git trees in which the parameter occurs.
         </p>
         <figure id="fig-core-constraints">
             <img src="images/core-constraints.svg" alt="The ten most frequent SHACL Core constraint parameters by occurrence count, with their Git tree prevalence">
             <figcaption>Figure 1. The ten most frequent SHACL Core constraint parameters by occurrence count, with their Git tree prevalence.</figcaption>
         </figure>
         <p>
-            Occurrence counts and Git tree prevalence show different patterns. For example, <code>sh:class</code> has more occurrences than <code>sh:datatype</code>, but <code>sh:datatype</code> is found in more Git trees. The same pattern appears for <code>sh:maxCount</code> and <code>sh:minCount</code>.
+            <code>sh:property</code> ranks first by both measures. <code>sh:class</code> occurs more often than <code>sh:datatype</code>, but <code>sh:datatype</code> appears in more Git trees. Likewise, <code>sh:maxCount</code> occurs more often than <code>sh:minCount</code>, but <code>sh:minCount</code> appears in more Git trees.
         </p>
 
         <section id="core-components-value-type" typeof="bibo:Chapter" resource="#core-components-value-type" property="bibo:hasPart">
@@ -1443,43 +1440,36 @@ ex:BuildingShape a sh:NodeShape ;
             </h3>
             <h4 class="research-question">Which SPARQL constructs are used in these constraints?</h4>
             <p>
-                The analysis counts <code>sh:sparql</code> triples and typed SPARQL constraint nodes per RDF file.
+                Constraints based on the SPARQL Protocol and RDF Query Language (SPARQL) occur in 1,065 of the 3,657 Git trees, or 29.12%. The RDF files contain 85,496 <code>sh:sparql</code> triples and 25,073 typed SPARQL constraint nodes.
             </p>
-            <table class="data">
-                <thead>
-                    <tr>
-                        <th>Measurement</th>
-                        <th>Count</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Git trees</th>
-                        <td>1,065</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Tree prevalence</th>
-                        <td>29.12%</td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><code>sh:sparql</code> triples</th>
-                        <td>85,496</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Typed SPARQL constraint nodes</th>
-                        <td>25,073</td>
-                    </tr>
-                </tbody>
-            </table>
             <p>
-                The analysis identified 84,467 <code>sh:sparql</code> triples referencing SELECT queries that could be parsed, out of 85,496 triples, across 1,040 Git trees.
+                In 1,040 Git trees, 84,467 of these triples referenced a SELECT query that could be parsed.
             </p>
             <figure id="fig-sparql-constructs">
-                <img src="images/sparql-constructs.svg" alt="Git tree prevalence of SPARQL constructs in these queries">
-                <figcaption>Figure 2. Git tree prevalence of SPARQL constructs in these queries.</figcaption>
+                <img src="images/sparql-constructs.svg" alt="Percentage of the 1,040 Git trees in which a parsed SELECT query used each SPARQL construct">
+                <figcaption>Figure 2. Percentage of the 1,040 Git trees in which a parsed SELECT query used each SPARQL construct.</figcaption>
             </figure>
             <p>
-                Although <code>MINUS</code> appears in the analyzed queries, its use is prohibited by SHACL 1.0.
+                <code>FILTER</code> was the most widespread construct, appearing in 965 trees, followed by <code>NOT EXISTS</code> in 692. Queries in 47 trees used <code>MINUS</code>, which SHACL&nbsp;1.0 <a href="https://www.w3.org/TR/shacl/#sparql-constraints">prohibits</a> in SPARQL-based constraints.
+            </p>
+            <pre class="example-other">
+ex:SeminarShape a sh:NodeShape ;
+    sh:targetClass ex:HenriFayolSeminar ;
+    sh:sparql [
+        sh:message "The seminar ends before it starts." ;
+        sh:select """
+            PREFIX ex: &lt;http://example.org/ns#&gt;
+            SELECT $this
+            WHERE {
+                $this ex:startTime ?start ;
+                      ex:endTime ?end .
+                FILTER (?end &lt; ?start)
+            }
+        """
+    ] .
+            </pre>
+            <p>
+                The query returns each seminar whose end time is earlier than its start time.
             </p>
         </section>
 
@@ -1488,12 +1478,12 @@ ex:BuildingShape a sh:NodeShape ;
             </h3>
             <h4 class="research-question">How widely are custom SPARQL-based constraint components used?</h4>
             <p>
-                Custom constraint components allow developers to define validation rules using SPARQL. Their use was analyzed by checking for mandatory custom parameter predicates in shapes from the same Git tree as the component definition.
+                A custom constraint component defines a reusable rule. Its validator uses an ASK or SELECT query to check the rule. A Git tree can contain both types of validator.
             </p>
             <table class="data">
                 <thead>
                     <tr>
-                        <th>Measurement</th>
+                        <th>Component or validator</th>
                         <th>Git trees</th>
                         <th>Tree prevalence</th>
                     </tr>
@@ -1517,7 +1507,10 @@ ex:BuildingShape a sh:NodeShape ;
                 </tbody>
             </table>
             <p>
-                The dataset contains 115 distinct SPARQL-based custom constraint component IRIs. This analysis covered 106 components. The other nine had no mandatory custom parameter predicates that could be used for this check. Parameter matches were found for 31 components, including 20 with matches in multiple shapes. No matches were found for the remaining 75.
+                The dataset contains 115 distinct custom component IRIs. For 106 components, the analysis looked for shapes in the same Git tree that used a mandatory parameter from the component definition. The remaining nine had no mandatory parameter suitable for this check.
+            </p>
+            <p>
+                For 31 of the 106 components, at least one shape used a mandatory parameter from the component definition. For 20 of those 31 components, matches occurred in more than one shape.
             </p>
         </section>
     </section>
