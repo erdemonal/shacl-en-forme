@@ -356,7 +356,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 A Git tree represents a snapshot of repository contents. Multiple GitHub repositories may reference the same tree. The analysis uses distinct Git trees to avoid counting identical repository snapshots more than once.
             </p>
             <p>
-                Repositories were verified based on SHACL shape declarations, Core target or constraint predicates, or structurally attached SHACL-SPARQL constraints in parsed Resource Description Framework (RDF) graphs. After excluding forks and Git trees without extracted SHACL shape documents, the final dataset contains 3,675 repositories representing 3,657 distinct Git trees.
+                Repository verification used parsed Resource Description Framework (RDF) graphs. A repository qualified if a graph contained shape declarations, Core target or constraint predicates, or constraints attached to shapes through <code>sh:sparql</code>. These constraints use the SPARQL Protocol and RDF Query Language (SPARQL). After excluding forks and Git trees without extracted SHACL shape documents, the final dataset contains 3,675 repositories representing 3,657 distinct Git trees.
             </p>
             <p>
                 Among 550,508 files identified for RDF processing, 548,135 were successfully parsed.
@@ -397,7 +397,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             </h3>
             <h4 class="research-question">How are SHACL shapes distributed across Git trees?</h4>
             <p>
-                The dataset contains 3,159,949 distinct shapes. Some were explicitly typed as <code>sh:NodeShape</code> or <code>sh:PropertyShape</code>. Others were identified from SHACL targets, constraints, property paths, or references from other shapes. Each Internationalized Resource Identifier (IRI) identifying a shape was counted once per Git tree and each blank node once per file.
+                The dataset contains 3,159,949 distinct shapes. Some were explicitly typed as <code>sh:NodeShape</code> or <code>sh:PropertyShape</code>. Others were identified from SHACL targets, constraints, property paths, or references from other shapes. A shape identified by an Internationalized Resource Identifier (IRI) was counted once per Git tree. A blank node was counted once per file.
             </p>
             <table class="data">
                 <thead>
@@ -544,6 +544,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     For an OWL restriction on a class, the SHACL shape had to target that class and use the property from the restriction as its path. For an <code>rdfs:range</code> declaration, the comparison used the property path regardless of the target class. A match required the corresponding SHACL constraint to contain every value derived for that comparison. For exact cardinality, a derived value counted as present only if the same property shape specified it as both <code>sh:minCount</code> and <code>sh:maxCount</code>.
                 </p>
                 <pre class="example-other">
+@prefix ex: &lt;http://example.org/ns#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
 # OWL restriction
 ex:HenriFayolSeminar rdfs:subClassOf [
     a owl:Restriction ;
@@ -639,6 +645,9 @@ ex:SeminarShape a sh:NodeShape ;
                 A shape is satisfiable if there is an RDF graph in which at least one node satisfies all its constraints.
             </p>
             <pre class="example-other">
+@prefix ex: &lt;http://example.org/ns#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+
 ex:BuildingShape a sh:NodeShape ;
     sh:targetNode ex:EmseCoursFauriel ;
     sh:property [
@@ -1440,7 +1449,7 @@ ex:BuildingShape a sh:NodeShape ;
             </h3>
             <h4 class="research-question">Which SPARQL constructs are used in these constraints?</h4>
             <p>
-                Constraints based on the SPARQL Protocol and RDF Query Language (SPARQL) occur in 1,065 of the 3,657 Git trees, or 29.12%. The RDF files contain 85,496 <code>sh:sparql</code> triples and 25,073 typed SPARQL constraint nodes.
+                SPARQL-based constraints occur in 1,065 of the 3,657 Git trees, or 29.12%. The RDF files contain 85,496 <code>sh:sparql</code> triples and 25,073 typed SPARQL constraint nodes.
             </p>
             <p>
                 In 1,040 Git trees, 84,467 of these triples referenced a SELECT query that could be parsed.
@@ -1453,6 +1462,9 @@ ex:BuildingShape a sh:NodeShape ;
                 <code>FILTER</code> was the most widespread construct, appearing in 965 trees, followed by <code>NOT EXISTS</code> in 692. Queries in 47 trees used <code>MINUS</code>, which SHACL&nbsp;1.0 <a href="https://www.w3.org/TR/shacl/#sparql-constraints">prohibits</a> in SPARQL-based constraints.
             </p>
             <pre class="example-other">
+@prefix ex: &lt;http://example.org/ns#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+
 ex:SeminarShape a sh:NodeShape ;
     sh:targetClass ex:HenriFayolSeminar ;
     sh:sparql [

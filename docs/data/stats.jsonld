@@ -579,6 +579,238 @@
       "intended_unique_verified_trees": 3657,
       "extracted_unique_trees": 3657,
       "unavailable_distinct_git_trees": 0,
+      "schema:hasPart": [
+        {
+          "@type": "schema:Dataset",
+          "name": "SHACL references to ontology terms",
+          "description": "Distinct IRIs used as classes or properties.",
+          "schema:url": {
+            "@id": "https://w3id.org/shacl-en-forme/#shacl-references-to-ontology-terms"
+          },
+          "schema:variableMeasured": [
+            {
+              "@type": "schema:PropertyValue",
+              "name": "Same Git tree only",
+              "schema:value": 184491
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "External RDF only",
+              "schema:value": 44854
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "Both",
+              "schema:value": 22769
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "Neither",
+              "schema:value": 131992
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "Total IRIs",
+              "schema:value": 384106
+            }
+          ]
+        },
+        {
+          "@type": "schema:Dataset",
+          "name": "Ontology terms shared across documents",
+          "description": "SHACL documents with class or property references.",
+          "schema:url": {
+            "@id": "https://w3id.org/shacl-en-forme/#ontology-terms-shared-across-documents"
+          },
+          "schema:variableMeasured": [
+            {
+              "@type": "schema:PropertyValue",
+              "name": "Same Git tree only",
+              "schema:value": 10243
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "External RDF only",
+              "schema:value": 11072
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "Both",
+              "schema:value": 9913
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "Neither",
+              "schema:value": 13520
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "Total documents",
+              "schema:value": 44748
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "Documents with a match",
+              "schema:value": 31228
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "Approximate median percentage of terms declared by one source among matched documents",
+              "schema:value": 72
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "Documents with all terms declared together",
+              "schema:value": 8571
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "Multi-term documents with at most one match per source",
+              "schema:value": 7263
+            }
+          ]
+        },
+        {
+          "@type": "schema:Dataset",
+          "name": "OWL and SHACL constraints",
+          "description": "One derived constraint compared with one SHACL document.",
+          "schema:url": {
+            "@id": "https://w3id.org/shacl-en-forme/#owl-and-shacl-constraints"
+          },
+          "schema:variableMeasured": [
+            {
+              "@type": "schema:PropertyValue",
+              "name": "owl:maxCardinality comparisons",
+              "schema:value": 68005
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "owl:maxCardinality matches",
+              "schema:value": 61071
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "owl:minCardinality comparisons",
+              "schema:value": 9757
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "owl:minCardinality matches",
+              "schema:value": 7069
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "owl:cardinality comparisons",
+              "schema:value": 18208
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "owl:cardinality matches",
+              "schema:value": 11884
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "rdfs:range with a datatype comparisons",
+              "schema:value": 215995
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "rdfs:range with a datatype matches",
+              "schema:value": 152158
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "rdfs:range with a class comparisons",
+              "schema:value": 195963
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "rdfs:range with a class matches",
+              "schema:value": 125926
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "owl:allValuesFrom comparisons",
+              "schema:value": 14291
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "owl:allValuesFrom matches",
+              "schema:value": 12067
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "owl:hasValue comparisons",
+              "schema:value": 1388
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "owl:hasValue matches",
+              "schema:value": 1242
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "Comparisons",
+              "schema:value": 523607
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "Matches",
+              "schema:value": 371417
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "Nonempty observed values with at least one derived value missing",
+              "schema:value": 46692
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "No corresponding value in context",
+              "schema:value": 105498
+            }
+          ]
+        },
+        {
+          "@type": "schema:Dataset",
+          "name": "SHACL constraint satisfiability",
+          "description": "Distinct constraint structures in the published 12-parameter analysis with single-property paths.",
+          "schema:url": {
+            "@id": "https://w3id.org/shacl-en-forme/#constraint-satisfiability"
+          },
+          "schema:variableMeasured": [
+            {
+              "@type": "schema:PropertyValue",
+              "name": "Satisfiable",
+              "schema:value": 386150
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "Unsatisfiable",
+              "schema:value": 970
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "No conclusive answer",
+              "schema:value": 1099
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "Unsupported input",
+              "schema:value": 4987
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "Tool error",
+              "schema:value": 927
+            },
+            {
+              "@type": "schema:PropertyValue",
+              "name": "Total",
+              "schema:value": 394133
+            }
+          ]
+        }
+      ],
       "has_coverage": {
         "@type": "DatasetCoverage",
         "verified_repositories": 3675,
@@ -1610,7 +1842,53 @@
       },
       "has_concentration": {
         "@type": "ConcentrationAnalysis",
-        "population_label": "extracted unique trees",
+        "population_label": "Shapes identified by type, target, constraint, path, or reference per Git tree",
+        "distinct_shape_total": 3159949,
+        "percentile_slice": [
+          {
+            "@type": "ConcentrationSlice",
+            "percentile_threshold": {
+              "@value": "0.01",
+              "@type": "xsd:decimal"
+            },
+            "tree_count": 37,
+            "distinct_shapes": 1684699,
+            "share_of_total": {
+              "@value": "0.5331",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ConcentrationSlice",
+            "percentile_threshold": {
+              "@value": "0.05",
+              "@type": "xsd:decimal"
+            },
+            "tree_count": 183,
+            "distinct_shapes": 2570629,
+            "share_of_total": {
+              "@value": "0.8135",
+              "@type": "xsd:decimal"
+            }
+          },
+          {
+            "@type": "ConcentrationSlice",
+            "percentile_threshold": {
+              "@value": "0.1",
+              "@type": "xsd:decimal"
+            },
+            "tree_count": 366,
+            "distinct_shapes": 2830876,
+            "share_of_total": {
+              "@value": "0.8959",
+              "@type": "xsd:decimal"
+            }
+          }
+        ]
+      },
+      "sef:explicit_shape_concentration": {
+        "@type": "ConcentrationAnalysis",
+        "population_label": "Explicitly typed shapes per Git tree",
         "distinct_shape_total": 1183518,
         "percentile_slice": [
           {

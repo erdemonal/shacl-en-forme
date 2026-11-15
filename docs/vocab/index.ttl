@@ -138,6 +138,8 @@
 :has_sparql_analysis a rdf:Property ; rdfs:range :SparqlAnalysis .
 :has_property_path_analysis a rdf:Property ; rdfs:range :PropertyPathAnalysis .
 :has_repository_view a rdf:Property ; rdfs:range :RepositoryView .
+:explicit_shape_concentration a rdf:Property ; rdfs:range :ConcentrationAnalysis ;
+    rdfs:comment "Concentration among explicitly typed shapes, including tree-level records."@en .
 :has_concentration a rdf:Property ; rdfs:range :ConcentrationAnalysis .
 :has_alignment a rdf:Property ; rdfs:range :AlignmentAnalysis .
 :has_vocabulary_usage a rdf:Property ; rdfs:range :VocabularyUsageAnalysis .
