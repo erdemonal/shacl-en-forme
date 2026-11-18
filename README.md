@@ -1,5 +1,7 @@
 # SHACL en Forme <a href="https://www.w3.org/TR/shacl/"><img src="docs/images/shacl.svg" align="right" width="120" height="120" alt="SHACL"></a>
 
+[![100.00 % FAIR](https://img.shields.io/badge/FAIR_assessment-100.00_%25-green)](https://w3id.org/fairchecker/assessment/6afdf0f106b01a7def4eed72)
+
 **SHACL Usage in the Wild**
 
 SHACL en Forme presents statistics on how the Shapes Constraint Language (SHACL) is used in public GitHub repositories.
