@@ -1,0 +1,13 @@
+PREFIX sef: <https://w3id.org/shacl-en-forme/vocab#>
+
+SELECT ?construct_label ?unique_trees ?percent_of_trees
+WHERE {
+  ?dataset a sef:AnalysisResults ;
+           sef:has_sparql_analysis ?analysis .
+  ?analysis sef:construct_frequency ?record .
+  ?record a sef:SparqlConstructFrequency ;
+          sef:construct_label ?construct_label ;
+          sef:unique_trees ?unique_trees ;
+          sef:percent_of_trees ?percent_of_trees .
+}
+ORDER BY DESC(?unique_trees)

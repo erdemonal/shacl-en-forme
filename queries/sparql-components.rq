@@ -1,0 +1,11 @@
+PREFIX sef: <https://w3id.org/shacl-en-forme/vocab#>
+
+SELECT ?trees_with_custom_constraint_components ?trees_with_ask_based_validators ?trees_with_select_based_validators ?trees_with_structural_constraints
+WHERE {
+  ?dataset a sef:AnalysisResults ;
+           sef:has_sparql_analysis ?analysis .
+  ?analysis sef:trees_with_custom_constraint_components ?trees_with_custom_constraint_components ;
+            sef:trees_with_ask_based_validators ?trees_with_ask_based_validators ;
+            sef:trees_with_select_based_validators ?trees_with_select_based_validators ;
+            sef:trees_with_structural_constraints ?trees_with_structural_constraints .
+}

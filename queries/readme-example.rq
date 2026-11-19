@@ -1,0 +1,14 @@
+PREFIX sef: <https://w3id.org/shacl-en-forme/vocab#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+
+SELECT ?parameter ?occurrences ?trees ?prevalence
+WHERE {
+  ?record a sef:FeatureFrequency ;
+          sef:feature ?parameter ;
+          sef:occurrences ?occurrences ;
+          sef:unique_trees ?trees ;
+          sef:percent_of_extracted_trees ?prevalence .
+
+  VALUES ?parameter { sh:closed sh:maxExclusive }
+}
+ORDER BY DESC(?occurrences)

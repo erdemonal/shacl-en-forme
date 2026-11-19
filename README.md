@@ -22,28 +22,14 @@ The resource covers SHACL shapes, targets, property paths, Core constraint param
 
 ## Query Example
 
-The statistics are published as JSON-LD and can be queried using SPARQL.
+The statistics are available as JSON-LD and can be queried using SPARQL. Example queries are provided in [`queries/`](queries/). Run them with:
 
-Example: retrieve occurrence counts and Git tree prevalence for `sh:closed` and `sh:maxExclusive`.
-
-```sparql
-PREFIX sef: <https://w3id.org/shacl-en-forme/vocab#>
-PREFIX sh: <http://www.w3.org/ns/shacl#>
-
-SELECT ?parameter ?occurrences ?trees ?prevalence
-WHERE {
-  ?record a sef:FeatureFrequency ;
-          sef:feature ?parameter ;
-          sef:occurrences ?occurrences ;
-          sef:unique_trees ?trees ;
-          sef:percent_of_extracted_trees ?prevalence .
-
-  VALUES ?parameter { sh:closed sh:maxExclusive }
-}
-ORDER BY DESC(?occurrences)
+```bash
+npm install
+npm run query
 ```
 
-Load [stats.jsonld](https://w3id.org/shacl-en-forme/data/stats.jsonld) into a JSON-LD–capable SPARQL environment (for example [Comunica](https://comunica.dev/)) and run the query. Results:
+For example, the following results are retrieved from the dataset:
 
 | parameter | occurrences | trees | prevalence |
 | --- | ---: | ---: | ---: |

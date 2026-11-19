@@ -1,0 +1,13 @@
+{
+  "name": "shacl-en-forme",
+  "private": true,
+  "description": "SPARQL reproducibility helpers for SHACL en Forme",
+  "license": "CC-BY-4.0",
+  "scripts": {
+    "query": "node scripts/run-queries.mjs"
+  },
+  "devDependencies": {
+    "@comunica/query-sparql": "^5.4.1",
+    "jsonld": "^9.0.0"
+  }
+}

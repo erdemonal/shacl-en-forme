@@ -1,0 +1,14 @@
+PREFIX sef: <https://w3id.org/shacl-en-forme/vocab#>
+
+SELECT ?target ?occurrences ?unique_trees ?percent_of_extracted_trees
+WHERE {
+  ?dataset a sef:AnalysisResults ;
+           sef:has_target_frequencies ?analysis .
+  ?analysis sef:feature_frequency ?record .
+  ?record a sef:FeatureFrequency ;
+          sef:feature ?target ;
+          sef:occurrences ?occurrences ;
+          sef:unique_trees ?unique_trees ;
+          sef:percent_of_extracted_trees ?percent_of_extracted_trees .
+}
+ORDER BY DESC(?occurrences)

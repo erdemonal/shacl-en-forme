@@ -1,0 +1,13 @@
+PREFIX sef: <https://w3id.org/shacl-en-forme/vocab#>
+
+SELECT ?verified_repositories ?extracted_unique_trees ?shape_documents ?parsed_files ?inventory_files ?content_sha256_groups
+WHERE {
+  ?dataset a sef:AnalysisResults ;
+           sef:has_coverage ?coverage .
+  ?coverage sef:verified_repositories ?verified_repositories ;
+            sef:extracted_unique_trees ?extracted_unique_trees ;
+            sef:shape_documents ?shape_documents ;
+            sef:parsed_files ?parsed_files ;
+            sef:inventory_files ?inventory_files ;
+            sef:content_sha256_groups ?content_sha256_groups .
+}
