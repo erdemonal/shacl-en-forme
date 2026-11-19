@@ -329,7 +329,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 <ol class="toc"><li class="tocline"><a href="#shacl-references-to-ontology-terms"><span class="secno">1.3.1 </span>Class and Property Declarations for SHACL Terms</a></li>
 <li class="tocline"><a href="#ontology-terms-shared-across-documents"><span class="secno">1.3.2 </span>Class and Property Declarations in Other RDF Documents</a></li>
 <li class="tocline"><a href="#owl-and-shacl-constraints"><span class="secno">1.3.3 </span>OWL and SHACL Constraints</a></li></ol></li>
-<li class="tocline"><a href="#constraint-satisfiability"><span class="secno">1.4 </span>SHACL Constraint Satisfiability</a></li></ol></li>
+<li class="tocline"><a href="#constraint-satisfiability"><span class="secno">1.4 </span>SHACL Constraint Satisfiability</a></li>
+<li class="tocline"><a href="#decidability-and-complexity"><span class="secno">1.5 </span>SHACL Decidability and Complexity</a></li></ol></li>
 <li class="tocline"><a href="#constraints-section"><span class="secno">2 </span>Shapes and Constraints</a>
 <ol class="toc"><li class="tocline"><a href="#shapes"><span class="secno">2.1 </span>Shapes</a>
 <ol class="toc"><li class="tocline"><a href="#targets"><span class="secno">2.1.1 </span>Targets</a></li>
@@ -358,7 +359,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <section class="introductory">
         <h2 id="document-outline">Document Outline</h2>
         <p>
-            Section 1 introduces the dataset and describes how shapes are distributed across Git trees, how they use ontology terms, and how often their constraints can be satisfied together.
+            Section 1 introduces the dataset and describes how shapes are distributed across Git trees, how they use ontology terms, how often their constraints can be satisfied together, and how complex they are.
         </p>
         <p>
             Section 2 describes shapes, targets, property paths, and shape characteristics. Section 3 presents occurrence counts and Git tree prevalence for the 33 SHACL Core constraint parameters. Section 4 describes how SHACL documents use SPARQL to define constraints and reusable constraint components.
@@ -745,7 +746,84 @@ ex:BuildingShape a sh:NodeShape ;
                 Some of the 226 shapes classified as unsatisfiable were deliberately written with conflicting constraints to test conflict detection. In 110 cases, the translation did not recognize a custom path predicate and applied <code>sh:hasValue</code> directly to the focus node, requiring it to match multiple distinct values at once. The analysis also treated five shapes marked <code>sh:deactivated true</code> as active and classified them as unsatisfiable. Three shapes had two <code>sh:in</code> values each. The <a href="https://www.w3.org/TR/shacl/#syntax-rule-in-maxCount">SHACL&nbsp;1.0 syntax rules</a> allow at most one <code>sh:in</code> value per shape.
             </p>
             <p>
-                For the remaining 8,595 shapes, the analysis gave no definite answer. Among the 1,374 inconclusive runs, 285 ended without a decision, 294 timed out, and 795 produced output the software could not interpret. Unsupported input refers to shapes the software could not process, for example because it could not find a referenced shape or encountered a malformed RDF list. In 579 cases, an error interrupted execution. In 215 of those cases, the software encountered an RDF literal where it expected a property path. The remaining 364 errors involved numerical parsing and complex property path encoding.
+                For the remaining 8,595 shapes, the analysis gave no definite answer. Among the 1,374 inconclusive runs, 285 ended without a decision, 294 timed out, and 795 produced output the software could not interpret. Unsupported input refers to shapes the software could not process, for example because it could not find a referenced shape or encountered a malformed RDF list.                 In 579 cases, an error interrupted execution. In 215 of those cases, the software encountered an RDF literal where it expected a property path. The remaining 364 errors involved numerical parsing and complex property path encoding.
+            </p>
+        </section>
+
+        <section id="decidability-and-complexity">
+            <h3 id="x1.5-decidability-and-complexity"><span class="secno">1.5 </span>SHACL Decidability and Complexity
+            </h3>
+            <h4 class="research-question">How complex are SHACL shapes?</h4>
+            <p>
+                <a href="https://arxiv.org/abs/2108.13063">Satisfiability and Containment of Recursive SHACL</a> identifies SHACL fragments with different decidability and complexity properties. These fragments are distinguished by eight prominent SHACL features, listed in the following table.
+            </p>
+            <table class="data">
+                <thead>
+                    <tr>
+                        <th>Abbr.</th>
+                        <th>Name</th>
+                        <th>SHACL component</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">D</th>
+                        <td>Property pair disjointness</td>
+                        <td><code>sh:disjoint</code></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">E</th>
+                        <td>Property pair equality</td>
+                        <td><code>sh:equals</code></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">O</th>
+                        <td>Property pair order</td>
+                        <td><code>sh:lessThan</code>, <code>sh:lessThanOrEquals</code></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">C</th>
+                        <td>Cardinality constraints</td>
+                        <td><code>sh:qualifiedValueShape</code>, <code>sh:qualifiedMinCount</code>, <code>sh:qualifiedMaxCount</code></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">S</th>
+                        <td>Sequence paths</td>
+                        <td>SHACL list</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Z</th>
+                        <td>Zero-or-one paths</td>
+                        <td><code>sh:zeroOrOnePath</code></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">A</th>
+                        <td>Alternative paths</td>
+                        <td><code>sh:alternativePath</code></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">T</th>
+                        <td>Transitive paths</td>
+                        <td><code>sh:zeroOrMorePath</code>, <code>sh:oneOrMorePath</code></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                For example, the SZA fragment allows the base language together with sequence, zero-or-one, and alternative paths.
+            </p>
+            <pre class="example-other">
+ex:ErdosConnectionShape a sh:NodeShape ;
+    sh:targetNode ex:AntoineZimmermann ;
+    sh:property [
+        sh:path ( ex:coauthor ex:coauthor ex:coauthor ) ;
+        sh:hasValue ex:PaulErdos
+    ] .
+            </pre>
+            <p>
+                This shape requires Antoine Zimmermann to be connected to Paul Erdős through three consecutive coauthorship relations. The sequence path corresponds to the S feature of the SZA fragment.
+            </p>
+            <p>
+                Related shapes were grouped into subdocuments to avoid excluding entire SHACL documents when some shapes could not be classified. Shape dependencies were preserved, and only subdocuments with complete references and supported constraints were considered. Recursive shapes were excluded because <a href="https://www.w3.org/TR/shacl/#shapes-recursion">SHACL&nbsp;1.0</a> leaves their validation semantics undefined. In total, 310,247 subdocuments were classified.
             </p>
         </section>
 
@@ -756,9 +834,6 @@ ex:BuildingShape a sh:NodeShape ;
         <h2 id="x2.-shapes-and-constraints"><span class="secno">2 </span>Shapes and Constraints
         </h2>
         <h4 class="research-question">How are SHACL shapes and their properties used in practice?</h4>
-        <p>
-            <a href="https://ceur-ws.org/Vol-4064/UKG-paper3.pdf">SHACLEval</a> uses non-validating SHACL properties to assess the availability of human-readable information in shapes. This analysis measures the use of these properties across GitHub projects.
-        </p>
 
         <section id="shapes">
             <h3 id="x2.1-shapes"><span class="secno">2.1 </span>Shapes
@@ -1043,6 +1118,9 @@ ex:BuildingShape a sh:NodeShape ;
                 <h4 id="x2.3.2-non-validating-characteristics"><span class="secno">2.3.2 </span>Non-Validating Property Shape Characteristics
                 </h4>
                 <div id="shape-characteristics"></div>
+                <p>
+                    <a href="https://ceur-ws.org/Vol-4064/UKG-paper3.pdf">SHACLEval</a> uses non-validating SHACL properties to assess the availability of human-readable information in shapes. The following table shows the usage of five such properties in the dataset.
+                </p>
                 <table class="data">
                     <thead>
                         <tr>
