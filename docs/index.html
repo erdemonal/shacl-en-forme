@@ -825,6 +825,48 @@ ex:ErdosConnectionShape a sh:NodeShape ;
             <p>
                 Related shapes were grouped into subdocuments to avoid excluding entire SHACL documents when some shapes could not be classified. Shape dependencies were preserved, and only subdocuments with complete references and supported constraints were considered. Recursive shapes were excluded because <a href="https://www.w3.org/TR/shacl/#shapes-recursion">SHACL&nbsp;1.0</a> leaves their validation semantics undefined. In total, 310,247 subdocuments were classified.
             </p>
+            <p>
+                Decidability means that an algorithm can always determine if SHACL constraints are satisfiable. Complexity describes how the computational resources needed to make this decision grow with the input size. The classification uses ZADEC and SZATD, the two largest decidable fragments, together with SZA. Their satisfiability complexity results are given in Theorems 9, 11, and 12. When a subdocument matched multiple fragments, the tighter complexity bound was used.
+            </p>
+            <table class="data">
+                <thead>
+                    <tr>
+                        <th>Fragment</th>
+                        <th>Satisfiability complexity</th>
+                        <th>Subdocuments</th>
+                        <th>Share</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">SZA</th>
+                        <td>ExpTime-complete</td>
+                        <td>234,424</td>
+                        <td>75.56%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ZADEC</th>
+                        <td>NExpTime-complete</td>
+                        <td>72,687</td>
+                        <td>23.43%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">SZATD</th>
+                        <td>In 2ExpTime</td>
+                        <td>222</td>
+                        <td>0.07%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Outside these fragments</th>
+                        <td>Unknown</td>
+                        <td>2,914</td>
+                        <td>0.94%</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                Most subdocuments fall under SZA, followed by ZADEC. The complexity results concern the satisfiability problems of the fragments, not the running time of individual subdocuments. The remaining 2,914 subdocuments fall outside the three selected fragments, but this does not mean they are undecidable. The results describe connected groups of shapes rather than entire SHACL documents.
+            </p>
         </section>
 
     </section>
