@@ -573,7 +573,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             <section id="owl-and-shacl-constraints">
                 <h4 id="x1.3.3-owl-and-shacl-constraints"><span class="secno">1.3.3 </span>OWL and SHACL Constraints
                 </h4>
-                <h5 class="research-question">How often do SHACL constraints match the values derived from OWL restrictions and RDFS ranges?</h5>
+                <h5 class="research-question">How do SHACL constraints compare with OWL restrictions and RDFS ranges?</h5>
                 <p>
                     Section&nbsp;1.3.2 identified SHACL documents that used terms declared in other RDF documents. The comparison covered these document pairs as well as files containing both ontology statements and SHACL shapes. For each Web Ontology Language (OWL) restriction or RDF Schema (RDFS) range declaration, the analysis used the mappings in <a href="https://zenodo.org/records/3626676">Astrea-KG</a> to identify the corresponding SHACL constraint.
                 </p>
@@ -663,7 +663,10 @@ ex:SeminarShape a sh:NodeShape ;
                     </tbody>
                 </table>
                 <p>
-                    The SHACL document contained all the derived values in 371,417 of the 523,607 comparisons, or 70.9%. In 46,692 comparisons, the corresponding SHACL constraint had at least one value, but at least one derived value was missing. In the remaining 105,498 comparisons, no value was found for the corresponding SHACL constraint in the required context.
+                    The derived constraints matched the SHACL constraints in 371,417 of the 523,607 comparisons, or 70.9%. In 46,692 comparisons, the corresponding SHACL parameter had at least one value, but the derived value was not fully matched. In the remaining 105,498 comparisons, the relevant property was found, but the expected SHACL parameter had no value.
+                </p>
+                <p>
+                    Most nonmatches resulted from a missing SHACL parameter rather than a different value. Among the 46,692 value differences, 44,706 compared two different single values. Most were found in the <code>rdfs:range</code> comparisons for <code>sh:datatype</code> and <code>sh:class</code>. In 6,324 exact cardinality comparisons, the required <code>sh:minCount</code> and <code>sh:maxCount</code> values were not found together on the same property shape. Another 80 comparisons had different minimum cardinalities. For example, <code>owl:minCardinality 1</code> corresponded to <code>sh:minCount 2</code>. In another case, <code>rdfs:range</code> specified <code>xsd:decimal</code>, but <code>sh:datatype</code> specified <code>xsd:double</code>.
                 </p>
             </section>
         </section>
@@ -671,7 +674,7 @@ ex:SeminarShape a sh:NodeShape ;
         <section id="constraint-satisfiability">
             <h3 id="x1.4-constraint-satisfiability"><span class="secno">1.4 </span>SHACL Constraint Satisfiability
             </h3>
-            <h4 class="research-question">How many of the shapes tested were satisfiable?</h4>
+            <h4 class="research-question">How many shapes were satisfiable?</h4>
             <p>
                 A shape is satisfiable if there is an RDF graph in which at least one node satisfies all its constraints.
             </p>
@@ -688,16 +691,19 @@ ex:BuildingShape a sh:NodeShape ;
                 This shape requires at least two distinct addresses for <code>ex:EmseCoursFauriel</code> but allows at most one. No node can satisfy both constraints.
             </p>
             <p>
-                The satisfiability check used 12 SHACL Core parameters. These include all three <a href="https://www.w3.org/TR/shacl/#core-components-value-type">value type parameters</a> and both <a href="https://www.w3.org/TR/shacl/#core-components-count">cardinality parameters</a> in SHACL&nbsp;1.0. The other seven are <code>sh:and</code>, <code>sh:or</code>, <code>sh:not</code>, <code>sh:node</code>, <code>sh:property</code>, <code>sh:hasValue</code>, and <code>sh:in</code>. Each <code>sh:path</code> had to be a single property IRI, as in <code>sh:path ex:address</code>. Each shape was considered together with the shapes it referenced. Shapes with the same constraint structure were counted once.
+                The satisfiability check covered all constraints in two sections of SHACL&nbsp;1.0, <a href="https://www.w3.org/TR/shacl/#core-components-count">Cardinality Constraint Components</a> and <a href="https://www.w3.org/TR/shacl/#core-components-others">Other Constraint Components</a>. It also covered <code>sh:class</code> and <code>sh:nodeKind</code> from Value Type Constraint Components, <code>sh:equals</code> and <code>sh:disjoint</code> from Property Pair Constraint Components, and <code>sh:not</code>, <code>sh:and</code>, and <code>sh:or</code> from Logical Constraint Components. From Shape-based Constraint Components, it covered <code>sh:node</code>, <code>sh:property</code>, <code>sh:qualifiedValueShape</code>, <code>sh:qualifiedMinCount</code>, and <code>sh:qualifiedMaxCount</code>.
             </p>
             <p>
-                A translation based on <a href="https://arxiv.org/html/2406.08018v1">SHACL2FOL</a> expressed the constraints of each shape and its referenced shapes in first-order logic. If <i>S</i>(<i>x</i>) means that node <i>x</i> satisfies the shape, the following formula requires at least one such node to exist.
+                The analysis included all seven forms of SHACL property paths. Each shape was analyzed together with the shapes it referenced. Shapes with the same constraint structure were counted once.
+            </p>
+            <p>
+                <a href="https://arxiv.org/html/2406.08018v1">SHACL2FOL</a> was chosen because it supports satisfiability checking without requiring a fixed RDF graph. The analysis used its translation to express the constraints of each shape and the shapes it referenced in first-order logic. If <i>S</i>(<i>x</i>) means that node <i>x</i> satisfies the shape, the following formula requires at least one such node to exist.
             </p>
             <p style="text-align: center">
                 ∃<i>x</i>&nbsp;<i>S</i>(<i>x</i>)
             </p>
             <p>
-                <a href="https://vprover.github.io/">Vampire</a> checked the resulting theories for satisfiability. The table gives the results for 394,133 shapes.
+                <a href="https://vprover.github.io/">Vampire</a>, a theorem prover supported by SHACL2FOL, was used to check the resulting theories for satisfiability. The table gives the results for 302,669 shapes.
             </p>
             <table class="data">
                 <thead>
@@ -710,33 +716,36 @@ ex:BuildingShape a sh:NodeShape ;
                 <tbody>
                     <tr>
                         <th scope="row">Satisfiable</th>
-                        <td>386,150</td>
-                        <td>97.97%</td>
+                        <td>293,848</td>
+                        <td>97.09%</td>
                     </tr>
                     <tr>
                         <th scope="row">Unsatisfiable</th>
-                        <td>970</td>
-                        <td>0.25%</td>
+                        <td>226</td>
+                        <td>0.07%</td>
                     </tr>
                     <tr>
                         <th scope="row">No conclusive answer</th>
-                        <td>1,099</td>
-                        <td>0.28%</td>
+                        <td>1,374</td>
+                        <td>0.45%</td>
                     </tr>
                     <tr>
                         <th scope="row">Unsupported input</th>
-                        <td>4,987</td>
-                        <td>1.27%</td>
+                        <td>6,642</td>
+                        <td>2.19%</td>
                     </tr>
                     <tr>
                         <th scope="row">Tool error</th>
-                        <td>927</td>
-                        <td>0.24%</td>
+                        <td>579</td>
+                        <td>0.19%</td>
                     </tr>
                 </tbody>
             </table>
             <p>
-                For the remaining 7,013 shapes, the analysis gave no definite answer. In 1,099 runs, the prover ended without a decision, the run reached its time limit, or the software could not interpret the prover’s output. Unsupported input refers to shapes the software could not process, for example because a referenced shape was missing or an RDF list could not be read. In 927 cases, an error interrupted execution. In 482 of those cases, the software encountered a <code>sh:datatype</code> value it could not read as an IRI.
+                Some of the 226 shapes classified as unsatisfiable were deliberately written with conflicting constraints to test conflict detection. In 110 cases, the translation did not recognize a custom path predicate and applied <code>sh:hasValue</code> directly to the focus node, requiring it to match multiple distinct values at once. The analysis also treated five shapes marked <code>sh:deactivated true</code> as active and classified them as unsatisfiable. Three shapes had two <code>sh:in</code> values each. The <a href="https://www.w3.org/TR/shacl/#syntax-rule-in-maxCount">SHACL&nbsp;1.0 syntax rules</a> allow at most one <code>sh:in</code> value per shape.
+            </p>
+            <p>
+                For the remaining 8,595 shapes, the analysis gave no definite answer. Among the 1,374 inconclusive runs, 285 ended without a decision, 294 timed out, and 795 produced output the software could not interpret. Unsupported input refers to shapes the software could not process, for example because it could not find a referenced shape or encountered a malformed RDF list. In 579 cases, an error interrupted execution. In 215 of those cases, the software encountered an RDF literal where it expected a property path. The remaining 364 errors involved numerical parsing and complex property path encoding.
             </p>
         </section>
 
@@ -747,6 +756,9 @@ ex:BuildingShape a sh:NodeShape ;
         <h2 id="x2.-shapes-and-constraints"><span class="secno">2 </span>Shapes and Constraints
         </h2>
         <h4 class="research-question">How are SHACL shapes and their properties used in practice?</h4>
+        <p>
+            <a href="https://ceur-ws.org/Vol-4064/UKG-paper3.pdf">SHACLEval</a> uses non-validating SHACL properties to assess the availability of human-readable information in shapes. This analysis measures the use of these properties across GitHub projects.
+        </p>
 
         <section id="shapes">
             <h3 id="x2.1-shapes"><span class="secno">2.1 </span>Shapes
@@ -777,7 +789,7 @@ ex:BuildingShape a sh:NodeShape ;
                 <table class="data">
                     <thead>
                         <tr>
-                            <th>Parameter</th>
+                            <th>Target predicate</th>
                             <th>Unique Git trees</th>
                             <th>Tree prevalence</th>
                             <th>Occurrences</th>
@@ -1080,7 +1092,7 @@ ex:BuildingShape a sh:NodeShape ;
                     </tbody>
                 </table>
                 <p>
-                    <code>sh:name</code> is the most common of the five properties on both node shapes and property shapes. <code>sh:group</code> appears on 12.41% of property shapes and 0.88% of node shapes.
+                    <code>sh:name</code> is the most common of these five properties on both node shapes and property shapes. It appears on 45.18% of property shapes, compared with 26.19% for <code>sh:description</code>. <code>sh:defaultValue</code> is rarely used.
                 </p>
             </section>
         </section>
@@ -1487,7 +1499,7 @@ ex:BuildingShape a sh:NodeShape ;
                 <figcaption>Figure 2. Percentage of the 1,040 Git trees in which a parsed SELECT query used each SPARQL construct.</figcaption>
             </figure>
             <p>
-                <code>FILTER</code> was the most widespread construct, appearing in 965 trees, followed by <code>NOT EXISTS</code> in 692. Queries in 47 trees used <code>MINUS</code>, which SHACL&nbsp;1.0 <a href="https://www.w3.org/TR/shacl/#sparql-constraints">prohibits</a> in SPARQL-based constraints.
+                <code>FILTER</code> was the most widespread construct, appearing in 965 trees, followed by <code>NOT EXISTS</code> in 692. Queries in 47 trees used <code>MINUS</code>, which SHACL&nbsp;1.0 <a href="https://www.w3.org/TR/shacl/#pre-binding">prohibits</a> in SPARQL-based constraints.
             </p>
             <pre class="example-other">
 ex:SeminarShape a sh:NodeShape ;
