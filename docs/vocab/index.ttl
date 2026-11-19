@@ -13,7 +13,7 @@
     rdfs:label "SHACL en Forme vocabulary"@en ;
     rdfs:comment "Vocabulary for SHACL usage statistics collected from GitHub repositories."@en ;
     dct:created "2026-10-12"^^xsd:date ;
-    dct:modified "2026-11-05"^^xsd:date ;
+    dct:modified "2026-11-19"^^xsd:date ;
     dct:creator erdemonal:me ;
     vann:preferredNamespaceUri "https://w3id.org/shacl-en-forme/vocab#" ;
     vann:preferredNamespacePrefix "sef" ;
@@ -127,6 +127,42 @@
     rdfs:label "Shape characteristics analysis"@en ;
     rdfs:comment "Git tree prevalence of non-constraint SHACL shape properties used for documentation and configuration, including messages, names, descriptions, severity, ordering, grouping, default values, and deactivation. Counts cover shape subjects beyond those explicitly typed as sh:NodeShape or sh:PropertyShape. Severity values are counted only when declared, excluding the default sh:Violation."@en .
 
+:ShapeDistributionAnalysis a rdfs:Class ;
+    rdfs:label "Shape distribution analysis"@en ;
+    rdfs:comment "Concentration of all identified SHACL shapes across Git trees, including shapes not explicitly typed as sh:NodeShape or sh:PropertyShape."@en .
+
+:TermDeclarationAnalysis a rdfs:Class ;
+    rdfs:label "Term declaration analysis"@en ;
+    rdfs:comment "Matching rdf:type declarations for class and property IRIs used by SHACL shapes."@en .
+
+:DocumentDeclarationAnalysis a rdfs:Class ;
+    rdfs:label "Document declaration analysis"@en ;
+    rdfs:comment "SHACL documents that use terms declared in other RDF documents."@en .
+
+:DeclarationSourceCount a rdfs:Class ;
+    rdfs:label "Declaration source count"@en ;
+    rdfs:comment "Count and share for one declaration-source category."@en .
+
+:ConstraintComparisonRate a rdfs:Class ;
+    rdfs:label "Constraint comparison rate"@en ;
+    rdfs:comment "Match rate between one OWL or RDFS constraint form and corresponding SHACL parameters."@en .
+
+:SatisfiabilityAnalysis a rdfs:Class ;
+    rdfs:label "Satisfiability analysis"@en ;
+    rdfs:comment "Satisfiability outcomes for unique constraint structures."@en .
+
+:SatisfiabilityResultCount a rdfs:Class ;
+    rdfs:label "Satisfiability result count"@en ;
+    rdfs:comment "Number and share of shapes for one satisfiability outcome."@en .
+
+:ComplexityClassificationAnalysis a rdfs:Class ;
+    rdfs:label "Complexity classification analysis"@en ;
+    rdfs:comment "Classification of non-recursive SHACL subdocuments into decidable fragments."@en .
+
+:FragmentClassificationCount a rdfs:Class ;
+    rdfs:label "Fragment classification count"@en ;
+    rdfs:comment "Number and share of subdocuments assigned to one fragment category."@en .
+
 
 #
 # Linking Properties
@@ -149,6 +185,40 @@
 :has_document_characteristics a rdf:Property ; rdfs:range :DocumentCharacteristicsAnalysis .
 :has_shape_characteristics a rdf:Property ; rdfs:range :ShapeCharacteristicsAnalysis .
 :has_domain_classification a rdf:Property ; rdfs:range :DomainClassificationAnalysis .
+:has_shape_distribution a rdf:Property ; rdfs:range :ShapeDistributionAnalysis .
+:has_term_declaration_analysis a rdf:Property ; rdfs:range :TermDeclarationAnalysis .
+:has_document_declaration_analysis a rdf:Property ; rdfs:range :DocumentDeclarationAnalysis .
+:has_satisfiability_analysis a rdf:Property ; rdfs:range :SatisfiabilityAnalysis .
+:has_complexity_classification a rdf:Property ; rdfs:range :ComplexityClassificationAnalysis .
+
+:declaration_source_count a rdf:Property ; rdfs:range :DeclarationSourceCount .
+:constraint_comparison a rdf:Property ; rdfs:range :ConstraintComparisonRate .
+:result_count a rdf:Property ; rdfs:range :SatisfiabilityResultCount .
+:fragment_count a rdf:Property ; rdfs:range :FragmentClassificationCount .
+
+:declaration_source a rdf:Property ;
+    rdfs:label "declaration source"@en ;
+    rdfs:range skos:Concept .
+
+:ontology_constraint a rdf:Property ;
+    rdfs:label "ontology constraint"@en ;
+    rdfs:range rdfs:Resource .
+
+:corresponding_shacl_parameter a rdf:Property ;
+    rdfs:label "corresponding SHACL parameter"@en ;
+    rdfs:range rdfs:Resource .
+
+:satisfiability_result a rdf:Property ;
+    rdfs:label "satisfiability result"@en ;
+    rdfs:range skos:Concept .
+
+:fragment a rdf:Property ;
+    rdfs:label "fragment"@en ;
+    rdfs:range skos:Concept .
+
+:range_kind a rdf:Property ;
+    rdfs:label "range kind"@en ;
+    rdfs:range skos:Concept .
 
 :trees_with_deactivated_true a rdf:Property ;
     rdfs:range xsd:integer ;
@@ -464,6 +534,43 @@
 :percentile_95 a rdf:Property ; rdfs:range xsd:decimal .
 :standard_deviation a rdf:Property ; rdfs:range xsd:decimal .
 
+:share_of_total_percent a rdf:Property ; rdfs:range xsd:decimal .
+:item_count a rdf:Property ; rdfs:range xsd:integer .
+:comparisons a rdf:Property ; rdfs:range xsd:integer .
+:matches a rdf:Property ; rdfs:range xsd:integer .
+:match_rate_percent a rdf:Property ; rdfs:range xsd:decimal .
+:shapes a rdf:Property ; rdfs:range xsd:integer .
+:share_percent a rdf:Property ; rdfs:range xsd:decimal .
+:subdocuments a rdf:Property ; rdfs:range xsd:integer .
+:satisfiability_complexity a rdf:Property ; rdfs:range xsd:string .
+:total_iris a rdf:Property ; rdfs:range xsd:integer .
+:iris_with_matching_declaration a rdf:Property ; rdfs:range xsd:integer .
+:percent_with_matching_declaration a rdf:Property ; rdfs:range xsd:decimal .
+:iris_declared_in_same_tree a rdf:Property ; rdfs:range xsd:integer .
+:percent_declared_in_same_tree a rdf:Property ; rdfs:range xsd:decimal .
+:total_documents a rdf:Property ; rdfs:range xsd:integer .
+:documents_with_matching_declaration a rdf:Property ; rdfs:range xsd:integer .
+:documents_with_single_file_declaring_all_terms a rdf:Property ; rdfs:range xsd:integer .
+:documents_with_singleton_term_matches_only a rdf:Property ; rdfs:range xsd:integer .
+:total_comparisons a rdf:Property ; rdfs:range xsd:integer .
+:total_matches a rdf:Property ; rdfs:range xsd:integer .
+:overall_match_rate_percent a rdf:Property ; rdfs:range xsd:decimal .
+:value_difference_comparisons a rdf:Property ; rdfs:range xsd:integer .
+:missing_parameter_comparisons a rdf:Property ; rdfs:range xsd:integer .
+:single_value_differences a rdf:Property ; rdfs:range xsd:integer .
+:exact_cardinality_pair_missing a rdf:Property ; rdfs:range xsd:integer .
+:different_min_cardinality_comparisons a rdf:Property ; rdfs:range xsd:integer .
+:shapes_evaluated a rdf:Property ; rdfs:range xsd:integer .
+:subdocuments_classified a rdf:Property ; rdfs:range xsd:integer .
+:inconclusive_no_decision a rdf:Property ; rdfs:range xsd:integer .
+:inconclusive_timeout a rdf:Property ; rdfs:range xsd:integer .
+:inconclusive_uninterpretable_output a rdf:Property ; rdfs:range xsd:integer .
+:tool_errors_literal_path a rdf:Property ; rdfs:range xsd:integer .
+:tool_errors_other a rdf:Property ; rdfs:range xsd:integer .
+:unsatisfiable_custom_path_hasvalue a rdf:Property ; rdfs:range xsd:integer .
+:unsatisfiable_deactivated_treated_active a rdf:Property ; rdfs:range xsd:integer .
+:unsatisfiable_multiple_sh_in a rdf:Property ; rdfs:range xsd:integer .
+
 
 #
 # SKOS Concepts
@@ -544,6 +651,79 @@
 :closed_shape_path_conflict a skos:Concept ;
     skos:inScheme :FindingTypeScheme ;
     skos:prefLabel "Closed shape conflicting with required property paths"@en .
+
+
+:DeclarationSourceScheme a skos:ConceptScheme ;
+    skos:prefLabel "Declaration source scheme"@en .
+
+:same_git_tree_only a skos:Concept ;
+    skos:inScheme :DeclarationSourceScheme ;
+    skos:prefLabel "Same Git tree only"@en .
+
+:external_rdf_only a skos:Concept ;
+    skos:inScheme :DeclarationSourceScheme ;
+    skos:prefLabel "External RDF only"@en .
+
+:both_sources a skos:Concept ;
+    skos:inScheme :DeclarationSourceScheme ;
+    skos:prefLabel "Both"@en .
+
+:neither_source a skos:Concept ;
+    skos:inScheme :DeclarationSourceScheme ;
+    skos:prefLabel "Neither"@en .
+
+:RangeKindScheme a skos:ConceptScheme ;
+    skos:prefLabel "RDFS range kind scheme"@en .
+
+:range_datatype a skos:Concept ;
+    skos:inScheme :RangeKindScheme ;
+    skos:prefLabel "Datatype range"@en .
+
+:range_class a skos:Concept ;
+    skos:inScheme :RangeKindScheme ;
+    skos:prefLabel "Class range"@en .
+
+:SatisfiabilityResultScheme a skos:ConceptScheme ;
+    skos:prefLabel "Satisfiability result scheme"@en .
+
+:satisfiable a skos:Concept ;
+    skos:inScheme :SatisfiabilityResultScheme ;
+    skos:prefLabel "Satisfiable"@en .
+
+:unsatisfiable a skos:Concept ;
+    skos:inScheme :SatisfiabilityResultScheme ;
+    skos:prefLabel "Unsatisfiable"@en .
+
+:no_conclusive_answer a skos:Concept ;
+    skos:inScheme :SatisfiabilityResultScheme ;
+    skos:prefLabel "No conclusive answer"@en .
+
+:unsupported_input a skos:Concept ;
+    skos:inScheme :SatisfiabilityResultScheme ;
+    skos:prefLabel "Unsupported input"@en .
+
+:tool_error a skos:Concept ;
+    skos:inScheme :SatisfiabilityResultScheme ;
+    skos:prefLabel "Tool error"@en .
+
+:FragmentScheme a skos:ConceptScheme ;
+    skos:prefLabel "SHACL decidability fragment scheme"@en .
+
+:fragment_SZA a skos:Concept ;
+    skos:inScheme :FragmentScheme ;
+    skos:prefLabel "SZA"@en .
+
+:fragment_ZADEC a skos:Concept ;
+    skos:inScheme :FragmentScheme ;
+    skos:prefLabel "ZADEC"@en .
+
+:fragment_SZATD a skos:Concept ;
+    skos:inScheme :FragmentScheme ;
+    skos:prefLabel "SZATD"@en .
+
+:fragment_outside_selected a skos:Concept ;
+    skos:inScheme :FragmentScheme ;
+    skos:prefLabel "Outside these fragments"@en .
 
 :ShapesGraphPolicyScheme a skos:ConceptScheme ;
     skos:prefLabel "Shapes graph policy scheme"@en .

@@ -1,0 +1,16 @@
+PREFIX sef: <https://w3id.org/shacl-en-forme/vocab#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?label ?satisfiability_complexity ?subdocuments ?share_percent ?subdocuments_classified
+WHERE {
+  ?dataset a sef:AnalysisResults ;
+           sef:has_complexity_classification ?analysis .
+  ?analysis sef:subdocuments_classified ?subdocuments_classified ;
+            sef:fragment_count ?row .
+  ?row sef:fragment ?fragment ;
+       sef:satisfiability_complexity ?satisfiability_complexity ;
+       sef:subdocuments ?subdocuments ;
+       sef:share_percent ?share_percent .
+  ?fragment skos:prefLabel ?label .
+}
+ORDER BY DESC(?subdocuments)

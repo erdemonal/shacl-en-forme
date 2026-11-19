@@ -1,0 +1,17 @@
+PREFIX sef: <https://w3id.org/shacl-en-forme/vocab#>
+
+SELECT ?ontology_constraint ?range_kind ?comparisons ?matches ?match_rate_percent ?total_comparisons ?total_matches ?overall_match_rate_percent
+WHERE {
+  ?dataset a sef:AnalysisResults ;
+           sef:has_owl_shacl_comparison ?analysis .
+  ?analysis sef:total_comparisons ?total_comparisons ;
+            sef:total_matches ?total_matches ;
+            sef:overall_match_rate_percent ?overall_match_rate_percent ;
+            sef:constraint_comparison ?row .
+  ?row sef:ontology_constraint ?ontology_constraint ;
+       sef:comparisons ?comparisons ;
+       sef:matches ?matches ;
+       sef:match_rate_percent ?match_rate_percent .
+  OPTIONAL { ?row sef:range_kind ?range_kind }
+}
+ORDER BY DESC(?comparisons)

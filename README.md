@@ -12,7 +12,7 @@ Public GitHub repositories were identified through code search and repository se
 
 RDF files were retrieved from the recorded repository revisions and parsed using RDFLib. The analysis successfully parsed 548,135 of the 550,508 files identified for RDF processing. It identified 50,625 SHACL shape documents representing 33,230 distinct document contents. A file is counted as a SHACL shape document if it contains at least one SHACL shape. Files containing only annotations or validation reports are not counted.
 
-The resource covers SHACL shapes, targets, property paths, Core constraint parameters, and SHACL-SPARQL. Additional analyses examine ontology term declarations, OWL–SHACL constraint comparisons, and constraint satisfiability.
+The resource covers SHACL shapes, targets, property paths, Core constraint parameters, and SHACL-SPARQL. Additional analyses cover ontology term declarations, OWL–SHACL constraint comparisons, constraint satisfiability, and decidability and complexity.
 
 ## Resources
 
@@ -22,7 +22,7 @@ The resource covers SHACL shapes, targets, property paths, Core constraint param
 
 ## Query Example
 
-The statistics are available as JSON-LD and can be queried using SPARQL. Example queries are provided in [`queries/`](queries/). Run them with:
+The statistics are available as JSON-LD and can be queried using SPARQL. Example queries in [`queries/`](queries/) cover dataset coverage, shape distribution, ontology declarations and OWL/RDFS comparisons, satisfiability, decidability fragments, Core constraints, targets, property paths, and SHACL-SPARQL. Run them with:
 
 ```bash
 npm install

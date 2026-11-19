@@ -1,0 +1,15 @@
+PREFIX sef: <https://w3id.org/shacl-en-forme/vocab#>
+
+SELECT ?percentile_threshold ?tree_count ?distinct_shapes ?share_of_total_percent ?distinct_shape_total
+WHERE {
+  ?dataset a sef:AnalysisResults ;
+           sef:has_shape_distribution ?analysis .
+  ?analysis sef:distinct_shape_total ?distinct_shape_total ;
+            sef:percentile_slice ?slice .
+  ?slice a sef:ConcentrationSlice ;
+         sef:percentile_threshold ?percentile_threshold ;
+         sef:tree_count ?tree_count ;
+         sef:distinct_shapes ?distinct_shapes ;
+         sef:share_of_total_percent ?share_of_total_percent .
+}
+ORDER BY ?percentile_threshold

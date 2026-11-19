@@ -1,0 +1,17 @@
+PREFIX sef: <https://w3id.org/shacl-en-forme/vocab#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?label ?item_count ?share_of_total_percent ?total_documents ?documents_with_matching_declaration ?percent_with_matching_declaration
+WHERE {
+  ?dataset a sef:AnalysisResults ;
+           sef:has_document_declaration_analysis ?analysis .
+  ?analysis sef:total_documents ?total_documents ;
+            sef:documents_with_matching_declaration ?documents_with_matching_declaration ;
+            sef:percent_with_matching_declaration ?percent_with_matching_declaration ;
+            sef:declaration_source_count ?row .
+  ?row sef:declaration_source ?source ;
+       sef:item_count ?item_count ;
+       sef:share_of_total_percent ?share_of_total_percent .
+  ?source skos:prefLabel ?label .
+}
+ORDER BY DESC(?item_count)

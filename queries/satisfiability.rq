@@ -1,0 +1,15 @@
+PREFIX sef: <https://w3id.org/shacl-en-forme/vocab#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?label ?shapes ?share_percent ?shapes_evaluated
+WHERE {
+  ?dataset a sef:AnalysisResults ;
+           sef:has_satisfiability_analysis ?analysis .
+  ?analysis sef:shapes_evaluated ?shapes_evaluated ;
+            sef:result_count ?row .
+  ?row sef:satisfiability_result ?result ;
+       sef:shapes ?shapes ;
+       sef:share_percent ?share_percent .
+  ?result skos:prefLabel ?label .
+}
+ORDER BY DESC(?shapes)
