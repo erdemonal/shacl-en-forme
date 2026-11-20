@@ -20,7 +20,7 @@ The resource covers SHACL shapes, targets, property paths, Core constraint param
 - [Statistics (JSON-LD)](https://w3id.org/shacl-en-forme/data/stats.jsonld)
 - [RDF Vocabulary (Turtle)](https://w3id.org/shacl-en-forme/vocab/index.ttl)
 
-## Query Example
+## SPARQL Queries
 
 The statistics are available as JSON-LD and can be queried using SPARQL. Example queries in [`queries/`](queries/) cover dataset coverage, shape distribution, ontology declarations and OWL/RDFS comparisons, satisfiability, decidability fragments, Core constraints, targets, property paths, and SHACL-SPARQL. Run them with:
 
