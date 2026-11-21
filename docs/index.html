@@ -432,7 +432,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             </h3>
             <h4 class="research-question">How are SHACL shapes distributed across Git trees?</h4>
             <p>
-                The dataset contains 3,159,949 distinct shapes. Some were explicitly typed as <code>sh:NodeShape</code> or <code>sh:PropertyShape</code>. Others were identified from SHACL targets, constraints, property paths, or references from other shapes. Each shape with an Internationalized Resource Identifier (IRI) was counted once per Git tree. Each blank node was counted once per file.
+                The dataset contains 3,062,787 distinct shapes. Some were explicitly typed as <code>sh:NodeShape</code> or <code>sh:PropertyShape</code>. Others were identified from SHACL targets, constraints, property paths, or references from other shapes. Each shape with an Internationalized Resource Identifier (IRI) was counted once per Git tree. Each blank node was counted once per file.
             </p>
             <table class="data">
                 <thead>
@@ -447,25 +447,25 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     <tr>
                         <th scope="row">Top 1%</th>
                         <td>37</td>
-                        <td>1,684,699</td>
-                        <td>53.31%</td>
+                        <td>1,671,854</td>
+                        <td>54.59%</td>
                     </tr>
                     <tr>
                         <th scope="row">Top 5%</th>
                         <td>183</td>
-                        <td>2,570,629</td>
+                        <td>2,491,529</td>
                         <td>81.35%</td>
                     </tr>
                     <tr>
                         <th scope="row">Top 10%</th>
                         <td>366</td>
-                        <td>2,830,876</td>
-                        <td>89.59%</td>
+                        <td>2,742,035</td>
+                        <td>89.53%</td>
                     </tr>
                 </tbody>
             </table>
             <p>
-                The 37 Git trees with the most shapes contain 53.31% of all shapes in the dataset.
+                The 37 Git trees with the most shapes contain 54.59% of all shapes in the dataset.
             </p>
         </section>
 
@@ -884,7 +884,7 @@ ex:ErdosConnectionShape a sh:NodeShape ;
                 Across 3,225 Git trees, 1,008,575 shapes had a <code>sh:path</code> but no <code>sh:NodeShape</code> or <code>sh:PropertyShape</code> declaration in the same file. Most of these implicit property shapes appeared as the object of <code>sh:property</code>. They were included in the analyses of Core constraints, property paths, and SHACL-SPARQL, as well as the comparison between ontology and SHACL constraints.
             </p>
             <p>
-                The node shape and property shape columns give the percentage of explicitly typed shapes of each kind that use the property listed in the row. Git tree counts also include uses on subjects without an explicit shape type.
+                The node shape and property shape columns give the percentage of explicitly and implicitly identified shapes of each kind that use the property listed in the row. Git tree counts also include uses on subjects without an explicit shape type.
             </p>
             <div id="constraints"></div>
             <div id="focusNodes"></div>
@@ -956,8 +956,8 @@ ex:ErdosConnectionShape a sh:NodeShape ;
                             <th scope="row"><code>sh:severity</code></th>
                             <td>1,048 / 3,657</td>
                             <td>28.66%</td>
-                            <td>7.58%</td>
-                            <td>14.46%</td>
+                            <td>2.36%</td>
+                            <td>10.36%</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1013,13 +1013,13 @@ ex:ErdosConnectionShape a sh:NodeShape ;
                             <th scope="row"><code>sh:message</code></th>
                             <td>2,135 / 3,657</td>
                             <td>58.38%</td>
-                            <td>7.75%</td>
-                            <td>15.42%</td>
+                            <td>2.60%</td>
+                            <td>13.21%</td>
                         </tr>
                     </tbody>
                 </table>
                 <p>
-                    <code>sh:message</code> appears on 15.42% of property shapes and 7.75% of node shapes.
+                    <code>sh:message</code> appears on 13.21% of property shapes and 2.60% of node shapes.
                 </p>
             </section>
 
@@ -1175,41 +1175,41 @@ ex:ErdosConnectionShape a sh:NodeShape ;
                             <th scope="row"><code>sh:name</code></th>
                             <td>1,210 / 3,657</td>
                             <td>33.09%</td>
-                            <td>20.84%</td>
-                            <td>45.18%</td>
+                            <td>7.26%</td>
+                            <td>31.87%</td>
                         </tr>
                         <tr>
                             <th scope="row"><code>sh:description</code></th>
                             <td>1,069 / 3,657</td>
                             <td>29.23%</td>
-                            <td>7.92%</td>
-                            <td>26.19%</td>
+                            <td>2.51%</td>
+                            <td>23.88%</td>
                         </tr>
                         <tr>
                             <th scope="row"><code>sh:order</code></th>
                             <td>436 / 3,657</td>
                             <td>11.92%</td>
-                            <td>1.23%</td>
-                            <td>13.05%</td>
+                            <td>0.37%</td>
+                            <td>11.62%</td>
                         </tr>
                         <tr>
                             <th scope="row"><code>sh:group</code></th>
                             <td>166 / 3,657</td>
                             <td>4.54%</td>
-                            <td>0.88%</td>
-                            <td>12.41%</td>
+                            <td>0.26%</td>
+                            <td>6.13%</td>
                         </tr>
                         <tr>
                             <th scope="row"><code>sh:defaultValue</code></th>
                             <td>144 / 3,657</td>
                             <td>3.94%</td>
-                            <td>0.003%</td>
-                            <td>0.03%</td>
+                            <td>0.0058%</td>
+                            <td>0.0441%</td>
                         </tr>
                     </tbody>
                 </table>
                 <p>
-                    <code>sh:name</code> is the most common of these five properties on both node shapes and property shapes. It appears on 45.18% of property shapes, compared with 26.19% for <code>sh:description</code>. <code>sh:defaultValue</code> is rarely used.
+                    <code>sh:name</code> is the most common of these five properties on both node shapes and property shapes. It appears on 31.87% of property shapes, compared with 23.88% for <code>sh:description</code>. <code>sh:defaultValue</code> is rarely used.
                 </p>
             </section>
         </section>

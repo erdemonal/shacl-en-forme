@@ -766,6 +766,22 @@
     "unsatisfiable_multiple_sh_in": {
       "@id": "sef:unsatisfiable_multiple_sh_in",
       "@type": "xsd:integer"
+    },
+    "denominator_node_shapes": {
+      "@id": "sef:denominator_node_shapes",
+      "@type": "xsd:integer"
+    },
+    "denominator_property_shapes": {
+      "@id": "sef:denominator_property_shapes",
+      "@type": "xsd:integer"
+    },
+    "percent_of_node_shapes": {
+      "@id": "sef:percent_of_node_shapes",
+      "@type": "xsd:decimal"
+    },
+    "percent_of_property_shapes": {
+      "@id": "sef:percent_of_property_shapes",
+      "@type": "xsd:decimal"
     }
   },
   "@graph": [
@@ -1739,6 +1755,14 @@
             "percent_of_extracted_trees": {
               "@value": "58.38",
               "@type": "xsd:decimal"
+            },
+            "percent_of_node_shapes": {
+              "@value": "2.60",
+              "@type": "xsd:decimal"
+            },
+            "percent_of_property_shapes": {
+              "@value": "13.21",
+              "@type": "xsd:decimal"
             }
           },
           {
@@ -1747,6 +1771,14 @@
             "unique_trees": 1210,
             "percent_of_extracted_trees": {
               "@value": "33.09",
+              "@type": "xsd:decimal"
+            },
+            "percent_of_node_shapes": {
+              "@value": "7.26",
+              "@type": "xsd:decimal"
+            },
+            "percent_of_property_shapes": {
+              "@value": "31.87",
               "@type": "xsd:decimal"
             }
           },
@@ -1757,6 +1789,14 @@
             "percent_of_extracted_trees": {
               "@value": "29.23",
               "@type": "xsd:decimal"
+            },
+            "percent_of_node_shapes": {
+              "@value": "2.51",
+              "@type": "xsd:decimal"
+            },
+            "percent_of_property_shapes": {
+              "@value": "23.88",
+              "@type": "xsd:decimal"
             }
           },
           {
@@ -1766,6 +1806,14 @@
             "percent_of_extracted_trees": {
               "@value": "28.66",
               "@type": "xsd:decimal"
+            },
+            "percent_of_node_shapes": {
+              "@value": "2.36",
+              "@type": "xsd:decimal"
+            },
+            "percent_of_property_shapes": {
+              "@value": "10.36",
+              "@type": "xsd:decimal"
             }
           },
           {
@@ -1774,6 +1822,14 @@
             "unique_trees": 436,
             "percent_of_extracted_trees": {
               "@value": "11.92",
+              "@type": "xsd:decimal"
+            },
+            "percent_of_node_shapes": {
+              "@value": "0.37",
+              "@type": "xsd:decimal"
+            },
+            "percent_of_property_shapes": {
+              "@value": "11.62",
               "@type": "xsd:decimal"
             }
           },
@@ -1793,6 +1849,14 @@
             "percent_of_extracted_trees": {
               "@value": "4.54",
               "@type": "xsd:decimal"
+            },
+            "percent_of_node_shapes": {
+              "@value": "0.26",
+              "@type": "xsd:decimal"
+            },
+            "percent_of_property_shapes": {
+              "@value": "6.13",
+              "@type": "xsd:decimal"
             }
           },
           {
@@ -1802,6 +1866,14 @@
             "percent_of_extracted_trees": {
               "@value": "3.94",
               "@type": "xsd:decimal"
+            },
+            "percent_of_node_shapes": {
+              "@value": "0.0058",
+              "@type": "xsd:decimal"
+            },
+            "percent_of_property_shapes": {
+              "@value": "0.0441",
+              "@type": "xsd:decimal"
             }
           }
         ],
@@ -1809,7 +1881,9 @@
         "percent_with_deactivated_true": {
           "@value": "5.91",
           "@type": "xsd:decimal"
-        }
+        },
+        "denominator_node_shapes": 1382895,
+        "denominator_property_shapes": 1668131
       },
       "has_repository_view": {
         "@type": "RepositoryView",
@@ -2548,7 +2622,7 @@
       "has_shape_distribution": {
         "@type": "ShapeDistributionAnalysis",
         "population_label": "all identified shapes",
-        "distinct_shape_total": 3159949,
+        "distinct_shape_total": 3062787,
         "percentile_slice": [
           {
             "@type": "ConcentrationSlice",
@@ -2557,9 +2631,9 @@
               "@type": "xsd:decimal"
             },
             "tree_count": 37,
-            "distinct_shapes": 1684699,
+            "distinct_shapes": 1671854,
             "share_of_total_percent": {
-              "@value": "53.31",
+              "@value": "54.59",
               "@type": "xsd:decimal"
             }
           },
@@ -2570,7 +2644,7 @@
               "@type": "xsd:decimal"
             },
             "tree_count": 183,
-            "distinct_shapes": 2570629,
+            "distinct_shapes": 2491529,
             "share_of_total_percent": {
               "@value": "81.35",
               "@type": "xsd:decimal"
@@ -2583,9 +2657,9 @@
               "@type": "xsd:decimal"
             },
             "tree_count": 366,
-            "distinct_shapes": 2830876,
+            "distinct_shapes": 2742035,
             "share_of_total_percent": {
-              "@value": "89.59",
+              "@value": "89.53",
               "@type": "xsd:decimal"
             }
           }
