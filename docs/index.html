@@ -432,7 +432,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             </h3>
             <h4 class="research-question">How are SHACL shapes distributed across Git trees?</h4>
             <p>
-                The dataset contains 3,062,787 distinct shapes. Some were explicitly typed as <code>sh:NodeShape</code> or <code>sh:PropertyShape</code>. Others were identified from SHACL targets, constraints, property paths, or references from other shapes. Each shape with an Internationalized Resource Identifier (IRI) was counted once per Git tree. Each blank node was counted once per file.
+                The dataset contains 3,062,787 distinct shapes. Some were explicitly typed as <code>sh:NodeShape</code> or <code>sh:PropertyShape</code>. Others were identified from SHACL targets, constraints, or references from other shapes. Each shape with an Internationalized Resource Identifier (IRI) was counted once per Git tree. Each blank node was counted once per file.
             </p>
             <table class="data">
                 <thead>
@@ -1224,8 +1224,8 @@ ex:ErdosConnectionShape a sh:NodeShape ;
             An occurrence is an RDF triple that uses the parameter as its predicate. Git tree prevalence is the percentage of analyzed Git trees in which the parameter occurs.
         </p>
         <figure id="fig-core-constraints">
-            <img src="images/core-constraints.svg" alt="The ten most frequent SHACL Core constraint parameters by occurrence count, with their Git tree prevalence">
-            <figcaption>Figure 1. The ten most frequent SHACL Core constraint parameters by occurrence count, with their Git tree prevalence.</figcaption>
+            <img src="images/core-constraints.svg" alt="The ten most frequent SHACL Core constraint parameters by occurrence count and Git tree prevalence">
+            <figcaption>Figure 1. The ten most frequent SHACL Core constraint parameters by occurrence count and Git tree prevalence.</figcaption>
         </figure>
         <p>
             <code>sh:property</code> ranks first by both measures. <code>sh:class</code> occurs more often than <code>sh:datatype</code>, but <code>sh:datatype</code> appears in more Git trees. Likewise, <code>sh:maxCount</code> occurs more often than <code>sh:minCount</code>, but <code>sh:minCount</code> appears in more Git trees.
@@ -1612,8 +1612,8 @@ ex:ErdosConnectionShape a sh:NodeShape ;
                 In 1,040 Git trees, 84,467 of these triples referenced a SELECT query that could be parsed.
             </p>
             <figure id="fig-sparql-constructs">
-                <img src="images/sparql-constructs.svg" alt="Percentage of the 1,040 Git trees in which a parsed SELECT query used each SPARQL construct">
-                <figcaption>Figure 2. Percentage of the 1,040 Git trees in which a parsed SELECT query used each SPARQL construct.</figcaption>
+                <img src="images/sparql-constructs.svg" alt="Prevalence of SPARQL constructs in Git trees with parsed SELECT queries">
+                <figcaption>Figure 2. Prevalence of SPARQL constructs in Git trees with parsed SELECT queries.</figcaption>
             </figure>
             <p>
                 <code>FILTER</code> was the most widespread construct, appearing in 965 trees, followed by <code>NOT EXISTS</code> in 692. Queries in 47 trees used <code>MINUS</code>, which SHACL&nbsp;1.0 <a href="https://www.w3.org/TR/shacl/#pre-binding">prohibits</a> in SPARQL-based constraints.
