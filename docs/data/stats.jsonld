@@ -1840,6 +1840,14 @@
             "percent_of_extracted_trees": {
               "@value": "6.54",
               "@type": "xsd:decimal"
+            },
+            "percent_of_node_shapes": {
+              "@value": "0.08",
+              "@type": "xsd:decimal"
+            },
+            "percent_of_property_shapes": {
+              "@value": "0.01",
+              "@type": "xsd:decimal"
             }
           },
           {

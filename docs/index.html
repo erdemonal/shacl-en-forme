@@ -881,7 +881,7 @@ ex:ErdosConnectionShape a sh:NodeShape ;
                 The dataset contains 1,183,518 shapes explicitly typed as <code>sh:NodeShape</code> or <code>sh:PropertyShape</code>. Each shape IRI was counted once per Git tree and each blank node once per file. The total includes 632 shapes typed as both <code>sh:NodeShape</code> and <code>sh:PropertyShape</code>.
             </p>
             <p>
-                Across 3,225 Git trees, 1,008,575 shapes had a <code>sh:path</code> but no <code>sh:NodeShape</code> or <code>sh:PropertyShape</code> declaration in the same file. Most of these implicit property shapes appeared as the object of <code>sh:property</code>. They were included in the analyses of Core constraints, property paths, and SHACL-SPARQL, as well as the comparison between ontology and SHACL constraints.
+                Across 3,225 Git trees, 1,008,575 subjects had a <code>sh:path</code> but no <code>sh:NodeShape</code> or <code>sh:PropertyShape</code> declaration in the same file. Most appeared as the object of <code>sh:property</code>. Not every such subject satisfies the SHACL&nbsp;1.0 shape conditions; those that do were treated as implicit property shapes and included in the analyses of Core constraints, property paths, and SHACL-SPARQL, as well as the comparison between ontology and SHACL constraints.
             </p>
             <p>
                 The node shape and property shape columns give the percentage of explicitly and implicitly identified shapes of each kind that use the property listed in the row. Git tree counts also include uses on subjects without an explicit shape type.
@@ -1041,8 +1041,8 @@ ex:ErdosConnectionShape a sh:NodeShape ;
                             <th scope="row"><code>sh:deactivated</code></th>
                             <td>239 / 3,657</td>
                             <td>6.54%</td>
-                            <td>0.27%</td>
-                            <td>0.03%</td>
+                            <td>0.08%</td>
+                            <td>0.01%</td>
                         </tr>
                     </tbody>
                 </table>
