@@ -2436,7 +2436,7 @@
       },
       "has_document_characteristics": {
         "@type": "DocumentCharacteristicsAnalysis",
-        "test_or_example_path_documents": 19477,
+        "test_or_example_path_documents": 19364,
         "generation_related_path_documents": 338,
         "ontology_or_profile_indicator_documents": 1431
       },
@@ -2584,10 +2584,10 @@
             "@type": "ClassificationResult",
             "category": "sef:unknown_only_documents",
             "counting_unit": "sef:unit_document",
-            "n_with_label": 34644,
+            "n_with_label": 34430,
             "denominator": 50625,
             "rate": {
-              "@value": "0.684326",
+              "@value": "0.680099",
               "@type": "xsd:decimal"
             }
           },
@@ -2595,10 +2595,10 @@
             "@type": "ClassificationResult",
             "category": "sef:infrastructure_documents",
             "counting_unit": "sef:unit_document",
-            "n_with_label": 5625,
+            "n_with_label": 5592,
             "denominator": 50625,
             "rate": {
-              "@value": "0.111111",
+              "@value": "0.110459",
               "@type": "xsd:decimal"
             }
           },
@@ -2617,10 +2617,10 @@
             "@type": "ClassificationResult",
             "category": "sef:fixture_path_documents",
             "counting_unit": "sef:unit_document",
-            "n_with_label": 17875,
+            "n_with_label": 17799,
             "denominator": 50625,
             "rate": {
-              "@value": "0.353086",
+              "@value": "0.351585",
               "@type": "xsd:decimal"
             }
           }
